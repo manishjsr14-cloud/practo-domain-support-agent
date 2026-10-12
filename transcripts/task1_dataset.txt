@@ -1,0 +1,20 @@
+seed=42; records=50
+fee_rounding_inr=50; days_since_created=uniform_integer(0,30)
+follow_up_required=Bernoulli(p=0.20)
+Coverage: first reserve one row per category and status, then weighted draws
+Category | weight | fee range INR | count
+General Medicine | 0.30 | 300-600 | 12
+Cardiology | 0.15 | 800-1500 | 8
+Dermatology | 0.20 | 500-1000 | 11
+Pediatrics | 0.20 | 400-800 | 8
+Orthopedics | 0.15 | 600-1200 | 11
+Status | weight | count
+Completed | 0.45 | 20
+Scheduled | 0.25 | 15
+Cancelled | 0.12 | 8
+Rescheduled | 0.10 | 4
+No-Show | 0.08 | 3
+Overall designed fee range: 300-1500 INR
+Follow-up required: 13/50 = 26.00% (required band: 10%-30%)
+Exported 50 fabricated records to data/appointments.json
+Dataset validation: PASS
