@@ -1,0 +1,20 @@
+test_all_chunk_offsets_match_parent_text (tests.test_part1.ChunkingTests.test_all_chunk_offsets_match_parent_text) ... ok
+test_fixed_windows_cover_source_with_exact_overlap (tests.test_part1.ChunkingTests.test_fixed_windows_cover_source_with_exact_overlap) ... ok
+test_sentence_chunks_preserve_boundaries_and_short_tail (tests.test_part1.ChunkingTests.test_sentence_chunks_preserve_boundaries_and_short_tail) ... ok
+test_counts_and_coverage (tests.test_part1.DatasetTests.test_counts_and_coverage) ... ok
+test_deterministic_and_independent_of_global_rng (tests.test_part1.DatasetTests.test_deterministic_and_independent_of_global_rng) ... ok
+test_schema_identifiers_and_ranges (tests.test_part1.DatasetTests.test_schema_identifiers_and_ranges) ... ok
+C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\.venv\Lib\site-packages\chromadb\api\models\CollectionCommon.py:147: DeprecationWarning: legacy embedding function config
+  return load_collection_configuration_from_json(self._model.configuration_json)
+C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\.venv\Lib\site-packages\chromadb\api\models\CollectionCommon.py:147: DeprecationWarning: legacy embedding function config
+  return load_collection_configuration_from_json(self._model.configuration_json)
+test_changed_corpus_is_rejected_until_rebuilt (tests.test_part1.IndexTests.test_changed_corpus_is_rejected_until_rebuilt) ... ok
+test_retrieval_uses_cosine_distance_and_both_find_cancellation_policy (tests.test_part1.IndexTests.test_retrieval_uses_cosine_distance_and_both_find_cancellation_policy) ... ok
+test_separate_cosine_collections_with_parent_metadata_and_stable_upserts (tests.test_part1.IndexTests.test_separate_cosine_collections_with_parent_metadata_and_stable_upserts) ... ok
+test_every_topic_has_a_document_with_valid_sentences_and_fees (tests.test_part1.KnowledgeBaseTests.test_every_topic_has_a_document_with_valid_sentences_and_fees) ... ok
+test_missing_topics_are_rejected (tests.test_part1.KnowledgeBaseTests.test_missing_topics_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 30.018s
+
+OK

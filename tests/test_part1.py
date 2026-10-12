@@ -3,6 +3,7 @@
 from collections import Counter
 from pathlib import Path
 import random
+import shutil
 import tempfile
 import unittest
 
@@ -11,6 +12,10 @@ from dataset import (
     generate_appointments, validate_appointments,
 )
 from scripts.validate_kb import TOPICS, validate_kb
+from rag.chunking import (
+    FIXED_CHUNK_OVERLAP, FIXED_CHUNK_SIZE, chunk_documents,
+    fixed_overlap_chunks, load_documents, sentence_chunks,
+)
 
 
 class DatasetTests(unittest.TestCase):
@@ -59,6 +64,88 @@ class KnowledgeBaseTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             with self.assertRaisesRegex(ValueError, "topic files"):
                 validate_kb(Path(directory))
+
+
+class ChunkingTests(unittest.TestCase):
+    def test_fixed_windows_cover_source_with_exact_overlap(self):
+        body = "a" * (FIXED_CHUNK_SIZE * 3)
+        chunks = fixed_overlap_chunks("sample", body)
+        self.assertEqual(chunks[0].start, 0)
+        self.assertEqual(chunks[-1].end, len(body))
+        for previous, current in zip(chunks, chunks[1:]):
+            self.assertEqual(previous.end - current.start, FIXED_CHUNK_OVERLAP)
+            self.assertEqual(previous.text[-FIXED_CHUNK_OVERLAP:],
+                             current.text[:FIXED_CHUNK_OVERLAP])
+        self.assertEqual(fixed_overlap_chunks("empty", ""), [])
+        with self.assertRaises(ValueError):
+            fixed_overlap_chunks("bad", "text", size=10, overlap=10)
+
+    def test_sentence_chunks_preserve_boundaries_and_short_tail(self):
+        body = "First sentence. Second sentence? Third sentence!"
+        chunks = sentence_chunks("sample", body)
+        self.assertEqual([chunk.text for chunk in chunks],
+                         ["First sentence. Second sentence?", "Third sentence!"])
+        self.assertEqual(sentence_chunks("empty", ""), [])
+
+    def test_all_chunk_offsets_match_parent_text(self):
+        documents = load_documents()
+        for strategy in ("fixed_overlap", "sentence"):
+            chunks = chunk_documents(documents, strategy)
+            self.assertEqual(len({chunk.id for chunk in chunks}), len(chunks))
+            self.assertEqual({chunk.parent_id for chunk in chunks}, set(documents))
+            for chunk in chunks:
+                self.assertEqual(documents[chunk.parent_id][chunk.start:chunk.end], chunk.text)
+
+
+class IndexTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        from rag.index import RAGIndex
+        cls.temporary = tempfile.TemporaryDirectory(ignore_cleanup_errors=True)
+        cls.directory = Path(cls.temporary.name)
+        cls.kb_dir = cls.directory / "kb"
+        shutil.copytree(Path(__file__).resolve().parents[1] / "kb", cls.kb_dir)
+        cls.index = RAGIndex(store_path=cls.directory / "chroma", kb_dir=cls.kb_dir)
+        cls.counts = cls.index.build()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.temporary.cleanup()
+
+    def test_separate_cosine_collections_with_parent_metadata_and_stable_upserts(self):
+        collections = [self.index.get_collection(name) for name in ("fixed_overlap", "sentence")]
+        self.assertNotEqual(collections[0].id, collections[1].id)
+        self.assertEqual(self.counts, self.index.build())
+        documents = self.index.documents
+        for collection in collections:
+            self.assertEqual(collection.configuration["hnsw"]["space"], "cosine")
+            stored = collection.get(include=["metadatas", "documents"])
+            for text, metadata in zip(stored["documents"], stored["metadatas"]):
+                self.assertIn(metadata["parent_id"], documents)
+                self.assertEqual(text, documents[metadata["parent_id"]][metadata["start"]:metadata["end"]])
+
+    def test_retrieval_uses_cosine_distance_and_both_find_cancellation_policy(self):
+        import numpy as np
+        query = "What is the cancellation and rescheduling window?"
+        query_vector = self.index._embed([query])[0]
+        for strategy in ("fixed_overlap", "sentence"):
+            hits = self.index.retrieve(query, strategy, top_k=3)
+            self.assertEqual(hits[0]["parent_id"], "02_cancellation_rescheduling")
+            self.assertEqual(hits[0]["similarity"], 1.0 - hits[0]["distance"])
+            vector = self.index.get_collection(strategy).get(
+                ids=[hits[0]["chunk_id"]], include=["embeddings"])["embeddings"][0]
+            cosine = np.dot(query_vector, vector) / (np.linalg.norm(query_vector) * np.linalg.norm(vector))
+            self.assertAlmostEqual(float(cosine), hits[0]["similarity"], places=5)
+
+    def test_changed_corpus_is_rejected_until_rebuilt(self):
+        path = self.kb_dir / "01_appointment_booking.md"
+        original = path.read_text(encoding="utf-8")
+        try:
+            path.write_text(original + "\nA changed policy must be reindexed.\n", encoding="utf-8")
+            with self.assertRaisesRegex(RuntimeError, "Stale"):
+                self.index.retrieve("How do I book an appointment?")
+        finally:
+            path.write_text(original, encoding="utf-8")
 
 
 if __name__ == "__main__":
