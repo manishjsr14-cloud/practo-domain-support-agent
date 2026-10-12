@@ -256,7 +256,7 @@ The README must:
 
 | Part | Status | Notes |
 |---|---|---|
-| Part 1 | in progress | Task 1 complete: deterministic dataset and tests; see transcripts/task1_dataset.txt. |
+| Part 1 | in progress | Tasks 1-2 complete: deterministic dataset, original fictional KB drafts and tests; see transcripts/. |
 | Part 2 | not started | |
 | Part 3 | not started | |
 | Part 4 | not started | |

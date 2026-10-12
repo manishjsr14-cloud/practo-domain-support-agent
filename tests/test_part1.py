@@ -1,13 +1,16 @@
 """Part 1 checks use unittest so dataset/KB checks need no dependencies."""
 
 from collections import Counter
+from pathlib import Path
 import random
+import tempfile
 import unittest
 
 from dataset import (
     APPOINTMENTS, CATEGORY_WEIGHTS, FEE_RANGES, RECORD_COUNT, STATUS_WEIGHTS,
     generate_appointments, validate_appointments,
 )
+from scripts.validate_kb import TOPICS, validate_kb
 
 
 class DatasetTests(unittest.TestCase):
@@ -44,6 +47,18 @@ class DatasetTests(unittest.TestCase):
             self.assertIs(type(row["days_since_created"]), int)
             self.assertTrue(0 <= row["days_since_created"] <= 30)
             self.assertIs(type(row["follow_up_required"]), bool)
+
+
+class KnowledgeBaseTests(unittest.TestCase):
+    def test_every_topic_has_a_document_with_valid_sentences_and_fees(self):
+        results = validate_kb()
+        self.assertEqual({name for name, count in results}, set(TOPICS))
+        self.assertTrue(all(2 <= count <= 5 for name, count in results))
+
+    def test_missing_topics_are_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            with self.assertRaisesRegex(ValueError, "topic files"):
+                validate_kb(Path(directory))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,10 @@
+test_counts_and_coverage (tests.test_part1.DatasetTests.test_counts_and_coverage) ... ok
+test_deterministic_and_independent_of_global_rng (tests.test_part1.DatasetTests.test_deterministic_and_independent_of_global_rng) ... ok
+test_schema_identifiers_and_ranges (tests.test_part1.DatasetTests.test_schema_identifiers_and_ranges) ... ok
+test_every_topic_has_a_document_with_valid_sentences_and_fees (tests.test_part1.KnowledgeBaseTests.test_every_topic_has_a_document_with_valid_sentences_and_fees) ... ok
+test_missing_topics_are_rejected (tests.test_part1.KnowledgeBaseTests.test_missing_topics_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.009s
+
+OK

@@ -32,3 +32,13 @@ python -m unittest tests.test_part1 -v
 ```
 
 [Generated dataset](data/appointments.json) · [Dataset tests](transcripts/task1_tests.txt)
+
+## Knowledge base
+
+[The knowledge base](kb/) contains **12** original draft documents covering all required topics. Each has **4** sentences, except consultation fees with **5**; [the validator output](transcripts/task2_knowledge_base.txt) records these counts and verifies fee consistency. The author should review and rewrite these educational policy drafts in their own voice before submitting the capstone.
+
+```powershell
+python -m scripts.validate_kb
+```
+
+[Dataset and knowledge-base tests](transcripts/task2_tests.txt)
