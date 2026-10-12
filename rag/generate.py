@@ -12,9 +12,13 @@ ROOT = Path(__file__).resolve().parents[1]
 FALLBACK = "I don't know based on the available clinic-policy context."
 
 
-def deployed_strategy() -> str:
-    path = ROOT / "rag" / "deployment.json"
-    return json.loads(path.read_text(encoding="utf-8"))["strategy"] if path.exists() else "sentence"
+def deployed_strategy(index: RAGIndex, path: Path = ROOT / "rag" / "deployment.json") -> str:
+    if not path.exists():
+        return "sentence"
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if data["fingerprint"] != index.corpus_fingerprint:
+        raise RuntimeError("Stale deployment choice; rerun python -m rag.evaluate")
+    return data["strategy"]
 
 
 def load_threshold(index: RAGIndex, strategy: str,
@@ -68,7 +72,7 @@ class GroundedGenerator:
         if os.environ.get("MOCK_LLM", "true").lower() not in {"true", "1"}:
             raise ValueError("Part 1 supports only deterministic MOCK_LLM=true")
         self.index = index
-        self.strategy = strategy or deployed_strategy()
+        self.strategy = strategy or deployed_strategy(index)
         self.calibration_path = calibration_path
 
     def answer(self, query: str, top_k: int = TOP_K) -> dict:

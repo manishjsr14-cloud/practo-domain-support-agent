@@ -1,0 +1,17 @@
+{
+  "fingerprint": "3c4da873972cdda4b844f9b5e79abe06acc0201a64418c88835cc0be0141461f",
+  "metrics": {
+    "fixed_overlap": {
+      "precision": 0.5,
+      "recall": 1.0
+    },
+    "sentence": {
+      "precision": 0.5,
+      "recall": 1.0
+    }
+  },
+  "query_count": 6,
+  "selection_reason": "equal macro recall and precision, with complete-sentence boundaries",
+  "strategy": "sentence",
+  "top_k_chunks": 3
+}

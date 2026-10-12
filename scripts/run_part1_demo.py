@@ -14,8 +14,9 @@ from rag.index import RAGIndex
 from rag.queries import DEMO_OUT_OF_SCOPE, DEMO_QUERIES, TOP_K
 
 
-def run_demo(index: RAGIndex, strategy: str | None = None) -> list[dict]:
-    generator = GroundedGenerator(index, strategy)
+def run_demo(index: RAGIndex, strategy: str | None = None,
+             calibration_path: Path = ROOT / "rag" / "calibration.json") -> list[dict]:
+    generator = GroundedGenerator(index, strategy, calibration_path)
     print(f"MOCK_LLM=true; strategy={generator.strategy}; top_k={TOP_K}")
     results = []
     for query in [item["query"] for item in DEMO_QUERIES] + [DEMO_OUT_OF_SCOPE]:

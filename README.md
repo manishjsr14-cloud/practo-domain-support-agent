@@ -1,6 +1,6 @@
-# Practo (Healthcare) — Part 1 in progress
+# Practo (Healthcare) — Part 1 completed
 
-This repository implements the Dataset Design and RAG Core portion of the Practo capstone. Later Parts have not been implemented. All appointment records and clinic policies are fabricated educational examples; the policies are not statements of Practo's actual services.
+The Practo (Healthcare) track's Part 1, Dataset Design and RAG Core, is completed. Later Parts have not been implemented. All appointment records and clinic policies are fabricated educational examples; the policies are not statements of Practo's actual services.
 
 ## Dataset design
 
@@ -102,3 +102,87 @@ Retrieval takes the **3** most similar chunks. Under `MOCK_LLM`, top-one similar
 [The demonstration](transcripts/task4_demo.txt) answers **6** in-scope questions about booking, cancellation, specialty fees, laboratory reports, follow-up discounts, and insurance claims. Its separate brownie-recipe query scores **0.023517489** with sentence chunks and triggers the fallback. [Structured answers and original retrieved context](transcripts/task4_demo.json) allow the extraction to be audited; [generation tests](transcripts/task4_tests.txt) check both strategies, the fallback, extraction boundaries, and stale calibration.
 
 This small calibration set contains unrelated negative queries. Similarity alone does not establish medical safety, detect prompt injection, or distinguish every unsupported question that shares clinic terminology; those later guardrails are outside this session's scope.
+
+## Parent-document evaluation
+
+```powershell
+python -m rag.evaluate
+```
+
+The evaluator uses the exact same **6** in-scope queries as the demo, with hand-labelled relevant parents in [rag/queries.py](rag/queries.py). It retrieves **3 chunks** from each collection, maps each chunk to its parent document, deduplicates parents, and computes precision as relevant retrieved parents divided by all retrieved parents, and recall as relevant retrieved parents divided by all labelled relevant parents. Evaluation applies no similarity filter; averages are macro averages across queries.
+
+| Query | Policy question |
+|---|---|
+| q01 | How do I book an appointment and know that my slot is confirmed? |
+| q02 | What is the cancellation and rescheduling window? |
+| q03 | What are the consultation fees for each specialty? |
+| q04 | How long do routine and specialized lab test reports take? |
+| q05 | When does a follow-up visit qualify for a discount? |
+| q06 | How do I submit an insurance reimbursement claim? |
+
+### Fixed overlap
+
+| Query | Labelled parent documents | Retrieved parent documents (deduped) | Precision arithmetic | Recall arithmetic |
+|---|---|---|---|---|
+| q01 | 01_appointment_booking | 01_appointment_booking, 02_cancellation_rescheduling | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q02 | 02_cancellation_rescheduling | 02_cancellation_rescheduling, 01_appointment_booking | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q03 | 03_consultation_fees | 03_consultation_fees, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q04 | 06_lab_turnaround | 06_lab_turnaround, 03_consultation_fees | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q05 | 10_follow_up_discount | 10_follow_up_discount, 02_cancellation_rescheduling | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q06 | 04_insurance_claims | 04_insurance_claims, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| Macro average | | | 0.500000 | 1.000000 |
+
+### Sentence chunks
+
+| Query | Labelled parent documents | Retrieved parent documents (deduped) | Precision arithmetic | Recall arithmetic |
+|---|---|---|---|---|
+| q01 | 01_appointment_booking | 01_appointment_booking, 02_cancellation_rescheduling | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q02 | 02_cancellation_rescheduling | 02_cancellation_rescheduling, 01_appointment_booking | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q03 | 03_consultation_fees | 03_consultation_fees, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q04 | 06_lab_turnaround | 06_lab_turnaround, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q05 | 10_follow_up_discount | 10_follow_up_discount, 12_home_visits | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q06 | 04_insurance_claims | 04_insurance_claims, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| Macro average | | | 0.500000 | 1.000000 |
+
+Across 6 hand-labelled queries, fixed_overlap achieved macro precision 0.500000 and macro recall 1.000000, while sentence achieved macro precision 0.500000 and macro recall 1.000000. Deploy sentence because it has equal macro recall and precision, with complete-sentence boundaries. This small policy sample supports a local choice and does not establish universal retrieval quality.
+
+[The full evaluation transcript](transcripts/task5_evaluation.txt) includes both strategies side by side, retrieved chunk IDs, deduplicated parent IDs, labels, and arithmetic. [The machine-readable report](transcripts/task5_evaluation.json) and [deployment choice](rag/deployment.json) were generated by the evaluator. Grounded generation now defaults to `practo_sentence` and its measured threshold **0.345280051**; changing the corpus invalidates the saved deployment choice.
+
+Precision is **0.500000** because each query retrieves its relevant parent plus another parent. The generation step's extraction from the strongest parent does not change these reported retrieval metrics.
+
+## Reproduce and verify
+
+After the one-time dependency/model setup, all commands below run offline with zero API keys and zero paid accounts:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+python dataset.py --export data/appointments.json
+python -m scripts.validate_kb
+python -m rag.index
+python scripts/calibrate_threshold.py
+python -m rag.evaluate
+python scripts/run_part1_demo.py
+python -m unittest discover -s tests -v
+python scripts/verify_offline.py
+```
+
+If script activation is disabled, run each command with `.\.venv\Scripts\python.exe` directly. Run commands from the repository root. Rerun indexing, calibration, and evaluation after editing policies; the demo then uses the resulting deployment choice.
+
+[The full suite](transcripts/part1_tests.txt) passed **21 tests**. [The offline verification](transcripts/part1_offline.txt) clears API-key environment variables, blocks Python sockets and DNS before importing frameworks, rebuilds both collections in a fresh temporary store, recalibrates, evaluates, and demonstrates the answers and fallback. It recorded **0** outbound Python network attempts. Those runtime commands also ran successfully under the execution environment's network restrictions.
+
+| Task | Saved evidence |
+|---|---|
+| Dataset | [Generator output](transcripts/task1_dataset.txt), [tests](transcripts/task1_tests.txt), [generated records](data/appointments.json) |
+| Knowledge base | [Validator output](transcripts/task2_knowledge_base.txt), [tests](transcripts/task2_tests.txt) |
+| Chunking and indexing | [Indexing and retrieval](transcripts/task3_indexing.txt), [tests](transcripts/task3_tests.txt) |
+| Grounded generation | [Calibration](transcripts/task4_calibration.txt), [demo](transcripts/task4_demo.txt), [retrieved contexts](transcripts/task4_demo.json), [tests](transcripts/task4_tests.txt) |
+| Strategy evaluation | [Arithmetic and recommendation](transcripts/task5_evaluation.txt), [structured metrics](transcripts/task5_evaluation.json), [tests including deployment freshness](transcripts/task5_tests.txt) |
+| Environment | [Exact dependencies](transcripts/dependencies.txt), [dependency check](transcripts/dependency_check.txt), [offline run](transcripts/part1_offline.txt), [complete tests](transcripts/part1_tests.txt) |
+
+## Scope and remaining verification
+
+Only Part 1 is implemented. CrewAI orchestration, appointment lookup, memory, structured crew output, guardrails, API deployment, judge evaluation, Autogen review, governance, and caching remain for their requested sessions. The escalation formula and later-Part evidence therefore are not claimed here.
+
+No dataset design choices changed. The dependency installation required initial network access; the exact embedding checkpoint was already cached, so a fresh download through `scripts/download_model.py` was not executed. Loading that checkpoint and the complete RAG workflow were verified offline. Chroma emits a non-failing legacy embedding-configuration deprecation warning in the saved unit-test output; explicit embeddings and disabled automatic embedding remain verified.
+
+The repository is local and has not been published to a public GitHub remote. The KB prose is an original assisted draft that the student should review and rewrite before submission. Results establish the requested small Part 1 demonstration, with the similarity-only limitations described above.

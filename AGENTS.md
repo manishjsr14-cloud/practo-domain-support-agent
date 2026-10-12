@@ -227,11 +227,11 @@ The README must:
 ## 10. Acceptance checklist
 
 **Part 1**
-- [ ] `dataset.py` generates >= 40 records; category counts >= 3 each; all statuses present; follow-up % within 10-30%; choices stated in README
-- [ ] >= 12 KB documents covering every required topic
-- [ ] Both chunking strategies indexed into two separate ChromaDB collections; both retrieve sensibly
-- [ ] Grounded generation demonstrated on >= 5 in-scope queries + 1 out-of-scope fallback
-- [ ] Precision/recall for BOTH collections on the same queries with visible arithmetic + numbers-cited recommendation
+- [x] `dataset.py` generates >= 40 records; category counts >= 3 each; all statuses present; follow-up % within 10-30%; choices stated in README
+- [x] >= 12 KB documents covering every required topic
+- [x] Both chunking strategies indexed into two separate ChromaDB collections; both retrieve sensibly
+- [x] Grounded generation demonstrated on >= 5 in-scope queries + 1 out-of-scope fallback
+- [x] Precision/recall for BOTH collections on the same queries with visible arithmetic + numbers-cited recommendation
 
 **Part 2**
 - [ ] `check_appointment_status` works; designed, justified `escalation_score`
@@ -256,7 +256,7 @@ The README must:
 
 | Part | Status | Notes |
 |---|---|---|
-| Part 1 | in progress | Tasks 1-4 complete: dataset, KB, two collections, measured calibration and grounded MOCK_LLM demo verified; see transcripts/. |
+| Part 1 | completed | Tasks 1-5 verified; sentence chunks selected after tied metrics; tests and fresh offline workflow pass. All real evidence is in transcripts/. Local repository only; model download script not exercised because checkpoint was cached. |
 | Part 2 | not started | |
 | Part 3 | not started | |
 | Part 4 | not started | |
