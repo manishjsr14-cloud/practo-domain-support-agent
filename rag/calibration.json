@@ -1,0 +1,99 @@
+{
+  "fingerprint": "3c4da873972cdda4b844f9b5e79abe06acc0201a64418c88835cc0be0141461f",
+  "strategies": {
+    "fixed_overlap": {
+      "threshold": 0.3047132194042206,
+      "measurements": [
+        {
+          "label": "in_scope",
+          "query": "How can I reserve a clinic appointment?",
+          "similarity": 0.7561131715774536,
+          "parent_id": "01_appointment_booking"
+        },
+        {
+          "label": "in_scope",
+          "query": "How much does a Cardiology consultation cost?",
+          "similarity": 0.7442057728767395,
+          "parent_id": "03_consultation_fees"
+        },
+        {
+          "label": "in_scope",
+          "query": "What documents are needed for an insurance claim?",
+          "similarity": 0.4346066117286682,
+          "parent_id": "04_insurance_claims"
+        },
+        {
+          "label": "in_scope",
+          "query": "Who is allowed to authorize a prescription refill?",
+          "similarity": 0.6898401379585266,
+          "parent_id": "05_prescription_refills"
+        },
+        {
+          "label": "out_of_scope",
+          "query": "How do I repair a punctured bicycle tyre?",
+          "similarity": 0.17481982707977295,
+          "parent_id": "04_insurance_claims"
+        },
+        {
+          "label": "out_of_scope",
+          "query": "What is the orbital period of Neptune?",
+          "similarity": 0.10867351293563843,
+          "parent_id": "02_cancellation_rescheduling"
+        },
+        {
+          "label": "out_of_scope",
+          "query": "Write a sorting algorithm in Rust.",
+          "similarity": 0.04749655723571777,
+          "parent_id": "06_lab_turnaround"
+        }
+      ]
+    },
+    "sentence": {
+      "threshold": 0.3452800512313843,
+      "measurements": [
+        {
+          "label": "in_scope",
+          "query": "How can I reserve a clinic appointment?",
+          "similarity": 0.7325945496559143,
+          "parent_id": "01_appointment_booking"
+        },
+        {
+          "label": "in_scope",
+          "query": "How much does a Cardiology consultation cost?",
+          "similarity": 0.9045220613479614,
+          "parent_id": "03_consultation_fees"
+        },
+        {
+          "label": "in_scope",
+          "query": "What documents are needed for an insurance claim?",
+          "similarity": 0.49659597873687744,
+          "parent_id": "04_insurance_claims"
+        },
+        {
+          "label": "in_scope",
+          "query": "Who is allowed to authorize a prescription refill?",
+          "similarity": 0.6989158391952515,
+          "parent_id": "05_prescription_refills"
+        },
+        {
+          "label": "out_of_scope",
+          "query": "How do I repair a punctured bicycle tyre?",
+          "similarity": 0.1939641237258911,
+          "parent_id": "02_cancellation_rescheduling"
+        },
+        {
+          "label": "out_of_scope",
+          "query": "What is the orbital period of Neptune?",
+          "similarity": 0.12530159950256348,
+          "parent_id": "02_cancellation_rescheduling"
+        },
+        {
+          "label": "out_of_scope",
+          "query": "Write a sorting algorithm in Rust.",
+          "similarity": 0.05085313320159912,
+          "parent_id": "06_lab_turnaround"
+        }
+      ]
+    }
+  }
+}

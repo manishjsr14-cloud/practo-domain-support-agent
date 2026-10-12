@@ -256,7 +256,7 @@ The README must:
 
 | Part | Status | Notes |
 |---|---|---|
-| Part 1 | in progress | Tasks 1-3 complete: dataset, fictional KB, local embeddings and two Chroma collections verified; see transcripts/. |
+| Part 1 | in progress | Tasks 1-4 complete: dataset, KB, two collections, measured calibration and grounded MOCK_LLM demo verified; see transcripts/. |
 | Part 2 | not started | |
 | Part 3 | not started | |
 | Part 4 | not started | |

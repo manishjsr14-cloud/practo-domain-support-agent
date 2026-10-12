@@ -1,0 +1,412 @@
+[
+  {
+    "query": "How do I book an appointment and know that my slot is confirmed?",
+    "answer": "Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled. A requested slot is not reserved until confirmation is issued. Keep the appointment record ID to check its status or request a change without sharing personal details in support chat.",
+    "fallback": false,
+    "strategy": "sentence",
+    "threshold": 0.3452800512313843,
+    "top_similarity": 0.6556336283683777,
+    "source_chunks": [
+      "01_appointment_booking:sentence:000",
+      "01_appointment_booking:sentence:001"
+    ],
+    "retrieved_context": [
+      {
+        "chunk_id": "01_appointment_booking:sentence:001",
+        "parent_id": "01_appointment_booking",
+        "text": "A requested slot is not reserved until confirmation is issued. Keep the appointment record ID to check its status or request a change without sharing personal details in support chat.",
+        "distance": 0.3443663716316223,
+        "similarity": 0.6556336283683777,
+        "metadata": {
+          "starts_sentence": true,
+          "start": 217,
+          "strategy": "sentence",
+          "parent_id": "01_appointment_booking",
+          "index": 1,
+          "end": 400
+        }
+      },
+      {
+        "chunk_id": "01_appointment_booking:sentence:000",
+        "parent_id": "01_appointment_booking",
+        "text": "Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled.",
+        "distance": 0.4083474278450012,
+        "similarity": 0.5916525721549988,
+        "metadata": {
+          "parent_id": "01_appointment_booking",
+          "starts_sentence": true,
+          "end": 216,
+          "index": 0,
+          "strategy": "sentence",
+          "start": 0
+        }
+      },
+      {
+        "chunk_id": "02_cancellation_rescheduling:sentence:000",
+        "parent_id": "02_cancellation_rescheduling",
+        "text": "Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund.",
+        "distance": 0.5208972692489624,
+        "similarity": 0.4791027307510376,
+        "metadata": {
+          "index": 0,
+          "strategy": "sentence",
+          "start": 0,
+          "end": 213,
+          "starts_sentence": true,
+          "parent_id": "02_cancellation_rescheduling"
+        }
+      }
+    ]
+  },
+  {
+    "query": "What is the cancellation and rescheduling window?",
+    "answer": "Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund. A rescheduled appointment receives a new confirmed time, while a cancelled appointment releases its slot. Reception explains any applicable charge before accepting a late change.",
+    "fallback": false,
+    "strategy": "sentence",
+    "threshold": 0.3452800512313843,
+    "top_similarity": 0.5655031204223633,
+    "source_chunks": [
+      "02_cancellation_rescheduling:sentence:000",
+      "02_cancellation_rescheduling:sentence:001"
+    ],
+    "retrieved_context": [
+      {
+        "chunk_id": "02_cancellation_rescheduling:sentence:001",
+        "parent_id": "02_cancellation_rescheduling",
+        "text": "A rescheduled appointment receives a new confirmed time, while a cancelled appointment releases its slot. Reception explains any applicable charge before accepting a late change.",
+        "distance": 0.4344968795776367,
+        "similarity": 0.5655031204223633,
+        "metadata": {
+          "starts_sentence": true,
+          "strategy": "sentence",
+          "index": 1,
+          "end": 392,
+          "parent_id": "02_cancellation_rescheduling",
+          "start": 214
+        }
+      },
+      {
+        "chunk_id": "02_cancellation_rescheduling:sentence:000",
+        "parent_id": "02_cancellation_rescheduling",
+        "text": "Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund.",
+        "distance": 0.46670979261398315,
+        "similarity": 0.5332902073860168,
+        "metadata": {
+          "parent_id": "02_cancellation_rescheduling",
+          "end": 213,
+          "start": 0,
+          "index": 0,
+          "starts_sentence": true,
+          "strategy": "sentence"
+        }
+      },
+      {
+        "chunk_id": "01_appointment_booking:sentence:001",
+        "parent_id": "01_appointment_booking",
+        "text": "A requested slot is not reserved until confirmation is issued. Keep the appointment record ID to check its status or request a change without sharing personal details in support chat.",
+        "distance": 0.6788033246994019,
+        "similarity": 0.32119667530059814,
+        "metadata": {
+          "parent_id": "01_appointment_booking",
+          "strategy": "sentence",
+          "start": 217,
+          "end": 400,
+          "index": 1,
+          "starts_sentence": true
+        }
+      }
+    ]
+  },
+  {
+    "query": "What are the consultation fees for each specialty?",
+    "answer": "General Medicine consultations cost INR 300-600, and Pediatrics consultations cost INR 400-800. Dermatology consultations cost INR 500-1000, and Orthopedics consultations cost INR 600-1200. Cardiology consultations cost INR 800-1500. The exact consultation fee within the specialty range is shown before the appointment is confirmed.",
+    "fallback": false,
+    "strategy": "sentence",
+    "threshold": 0.3452800512313843,
+    "top_similarity": 0.6513397097587585,
+    "source_chunks": [
+      "03_consultation_fees:sentence:000",
+      "03_consultation_fees:sentence:001"
+    ],
+    "retrieved_context": [
+      {
+        "chunk_id": "03_consultation_fees:sentence:000",
+        "parent_id": "03_consultation_fees",
+        "text": "General Medicine consultations cost INR 300-600, and Pediatrics consultations cost INR 400-800. Dermatology consultations cost INR 500-1000, and Orthopedics consultations cost INR 600-1200.",
+        "distance": 0.34866029024124146,
+        "similarity": 0.6513397097587585,
+        "metadata": {
+          "starts_sentence": true,
+          "start": 0,
+          "index": 0,
+          "parent_id": "03_consultation_fees",
+          "end": 189,
+          "strategy": "sentence"
+        }
+      },
+      {
+        "chunk_id": "03_consultation_fees:sentence:001",
+        "parent_id": "03_consultation_fees",
+        "text": "Cardiology consultations cost INR 800-1500. The exact consultation fee within the specialty range is shown before the appointment is confirmed.",
+        "distance": 0.36611407995224,
+        "similarity": 0.63388592004776,
+        "metadata": {
+          "starts_sentence": true,
+          "end": 333,
+          "start": 190,
+          "index": 1,
+          "parent_id": "03_consultation_fees",
+          "strategy": "sentence"
+        }
+      },
+      {
+        "chunk_id": "11_second_opinion:sentence:001",
+        "parent_id": "11_second_opinion",
+        "text": "The reviewing clinician makes an independent assessment and may request an in-person consultation. A second opinion is billed at the chosen specialty's standard consultation fee and does not refund the earlier visit.",
+        "distance": 0.4003748297691345,
+        "similarity": 0.5996251702308655,
+        "metadata": {
+          "starts_sentence": true,
+          "start": 223,
+          "strategy": "sentence",
+          "parent_id": "11_second_opinion",
+          "index": 1,
+          "end": 439
+        }
+      }
+    ]
+  },
+  {
+    "query": "How long do routine and specialized lab test reports take?",
+    "answer": "Routine blood-test reports are usually available within 1-2 working days after the laboratory accepts the sample. Specialized tests usually take 3-5 working days, and the laboratory gives a test-specific estimate when the sample is accepted. Weekends, holidays, and a request for another sample can extend that estimate. Reception can check whether a report is ready, while a clinician must explain what the results mean.",
+    "fallback": false,
+    "strategy": "sentence",
+    "threshold": 0.3452800512313843,
+    "top_similarity": 0.6866230368614197,
+    "source_chunks": [
+      "06_lab_turnaround:sentence:000",
+      "06_lab_turnaround:sentence:001"
+    ],
+    "retrieved_context": [
+      {
+        "chunk_id": "06_lab_turnaround:sentence:000",
+        "parent_id": "06_lab_turnaround",
+        "text": "Routine blood-test reports are usually available within 1-2 working days after the laboratory accepts the sample. Specialized tests usually take 3-5 working days, and the laboratory gives a test-specific estimate when the sample is accepted.",
+        "distance": 0.3133769631385803,
+        "similarity": 0.6866230368614197,
+        "metadata": {
+          "index": 0,
+          "parent_id": "06_lab_turnaround",
+          "end": 241,
+          "strategy": "sentence",
+          "start": 0,
+          "starts_sentence": true
+        }
+      },
+      {
+        "chunk_id": "06_lab_turnaround:sentence:001",
+        "parent_id": "06_lab_turnaround",
+        "text": "Weekends, holidays, and a request for another sample can extend that estimate. Reception can check whether a report is ready, while a clinician must explain what the results mean.",
+        "distance": 0.5440821051597595,
+        "similarity": 0.4559178948402405,
+        "metadata": {
+          "starts_sentence": true,
+          "start": 242,
+          "strategy": "sentence",
+          "index": 1,
+          "parent_id": "06_lab_turnaround",
+          "end": 421
+        }
+      },
+      {
+        "chunk_id": "11_second_opinion:sentence:001",
+        "parent_id": "11_second_opinion",
+        "text": "The reviewing clinician makes an independent assessment and may request an in-person consultation. A second opinion is billed at the chosen specialty's standard consultation fee and does not refund the earlier visit.",
+        "distance": 0.7464346885681152,
+        "similarity": 0.25356531143188477,
+        "metadata": {
+          "index": 1,
+          "starts_sentence": true,
+          "strategy": "sentence",
+          "start": 223,
+          "parent_id": "11_second_opinion",
+          "end": 439
+        }
+      }
+    ]
+  },
+  {
+    "query": "When does a follow-up visit qualify for a discount?",
+    "answer": "A follow-up consultation within 7 calendar days of a completed visit qualifies for a 20 percent consultation-fee discount when it is with the same specialty for the same issue. Reception checks the original appointment reference and confirms eligibility before booking the follow-up. A record marked follow_up_required indicates that follow-up was requested but does not by itself prove discount eligibility. Lab tests, procedures, and travel charges are excluded from the discount.",
+    "fallback": false,
+    "strategy": "sentence",
+    "threshold": 0.3452800512313843,
+    "top_similarity": 0.6917534470558167,
+    "source_chunks": [
+      "10_follow_up_discount:sentence:000",
+      "10_follow_up_discount:sentence:001"
+    ],
+    "retrieved_context": [
+      {
+        "chunk_id": "10_follow_up_discount:sentence:001",
+        "parent_id": "10_follow_up_discount",
+        "text": "A record marked follow_up_required indicates that follow-up was requested but does not by itself prove discount eligibility. Lab tests, procedures, and travel charges are excluded from the discount.",
+        "distance": 0.30824655294418335,
+        "similarity": 0.6917534470558167,
+        "metadata": {
+          "index": 1,
+          "end": 482,
+          "strategy": "sentence",
+          "start": 284,
+          "starts_sentence": true,
+          "parent_id": "10_follow_up_discount"
+        }
+      },
+      {
+        "chunk_id": "10_follow_up_discount:sentence:000",
+        "parent_id": "10_follow_up_discount",
+        "text": "A follow-up consultation within 7 calendar days of a completed visit qualifies for a 20 percent consultation-fee discount when it is with the same specialty for the same issue. Reception checks the original appointment reference and confirms eligibility before booking the follow-up.",
+        "distance": 0.35760462284088135,
+        "similarity": 0.6423953771591187,
+        "metadata": {
+          "parent_id": "10_follow_up_discount",
+          "start": 0,
+          "index": 0,
+          "end": 283,
+          "strategy": "sentence",
+          "starts_sentence": true
+        }
+      },
+      {
+        "chunk_id": "12_home_visits:sentence:001",
+        "parent_id": "12_home_visits",
+        "text": "The consultation fee and any travel charge are quoted before the visit is confirmed. Home visits are scheduled outpatient services and cannot be used for an emergency.",
+        "distance": 0.6474400162696838,
+        "similarity": 0.35255998373031616,
+        "metadata": {
+          "parent_id": "12_home_visits",
+          "index": 1,
+          "end": 402,
+          "start": 235,
+          "starts_sentence": true,
+          "strategy": "sentence"
+        }
+      }
+    ]
+  },
+  {
+    "query": "How do I submit an insurance reimbursement claim?",
+    "answer": "Pay the clinic bill and request an itemized invoice and consultation receipt for an insurance reimbursement claim. Submit those documents with the insurer's claim form through the insurer's own approved channel. Reception can correct billing details after verification but cannot decide coverage or promise claim approval. Direct cashless settlement is not offered by this fictional clinic.",
+    "fallback": false,
+    "strategy": "sentence",
+    "threshold": 0.3452800512313843,
+    "top_similarity": 0.6871151924133301,
+    "source_chunks": [
+      "04_insurance_claims:sentence:000",
+      "04_insurance_claims:sentence:001"
+    ],
+    "retrieved_context": [
+      {
+        "chunk_id": "04_insurance_claims:sentence:000",
+        "parent_id": "04_insurance_claims",
+        "text": "Pay the clinic bill and request an itemized invoice and consultation receipt for an insurance reimbursement claim. Submit those documents with the insurer's claim form through the insurer's own approved channel.",
+        "distance": 0.3128848075866699,
+        "similarity": 0.6871151924133301,
+        "metadata": {
+          "start": 0,
+          "end": 211,
+          "starts_sentence": true,
+          "index": 0,
+          "parent_id": "04_insurance_claims",
+          "strategy": "sentence"
+        }
+      },
+      {
+        "chunk_id": "04_insurance_claims:sentence:001",
+        "parent_id": "04_insurance_claims",
+        "text": "Reception can correct billing details after verification but cannot decide coverage or promise claim approval. Direct cashless settlement is not offered by this fictional clinic.",
+        "distance": 0.6422649025917053,
+        "similarity": 0.3577350974082947,
+        "metadata": {
+          "strategy": "sentence",
+          "index": 1,
+          "end": 390,
+          "parent_id": "04_insurance_claims",
+          "start": 212,
+          "starts_sentence": true
+        }
+      },
+      {
+        "chunk_id": "11_second_opinion:sentence:001",
+        "parent_id": "11_second_opinion",
+        "text": "The reviewing clinician makes an independent assessment and may request an in-person consultation. A second opinion is billed at the chosen specialty's standard consultation fee and does not refund the earlier visit.",
+        "distance": 0.6798030138015747,
+        "similarity": 0.3201969861984253,
+        "metadata": {
+          "start": 223,
+          "starts_sentence": true,
+          "end": 439,
+          "index": 1,
+          "strategy": "sentence",
+          "parent_id": "11_second_opinion"
+        }
+      }
+    ]
+  },
+  {
+    "query": "Give me a recipe for chocolate brownies.",
+    "answer": "I don't know based on the available clinic-policy context.",
+    "fallback": true,
+    "strategy": "sentence",
+    "threshold": 0.3452800512313843,
+    "top_similarity": 0.023517489433288574,
+    "source_chunks": [],
+    "retrieved_context": [
+      {
+        "chunk_id": "09_patient_privacy:sentence:001",
+        "parent_id": "09_patient_privacy",
+        "text": "Requests to correct or delete records go to the privacy desk, which verifies the requester's authority before acting. This educational prototype accepts fabricated examples only, so do not submit real patient names, contact numbers, insurance identifiers, or medical records.",
+        "distance": 0.9764825105667114,
+        "similarity": 0.023517489433288574,
+        "metadata": {
+          "start": 229,
+          "end": 504,
+          "index": 1,
+          "starts_sentence": true,
+          "parent_id": "09_patient_privacy",
+          "strategy": "sentence"
+        }
+      },
+      {
+        "chunk_id": "06_lab_turnaround:sentence:001",
+        "parent_id": "06_lab_turnaround",
+        "text": "Weekends, holidays, and a request for another sample can extend that estimate. Reception can check whether a report is ready, while a clinician must explain what the results mean.",
+        "distance": 0.9808891415596008,
+        "similarity": 0.01911085844039917,
+        "metadata": {
+          "index": 1,
+          "parent_id": "06_lab_turnaround",
+          "strategy": "sentence",
+          "starts_sentence": true,
+          "start": 242,
+          "end": 421
+        }
+      },
+      {
+        "chunk_id": "02_cancellation_rescheduling:sentence:000",
+        "parent_id": "02_cancellation_rescheduling",
+        "text": "Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund.",
+        "distance": 0.9902008771896362,
+        "similarity": 0.00979912281036377,
+        "metadata": {
+          "parent_id": "02_cancellation_rescheduling",
+          "start": 0,
+          "strategy": "sentence",
+          "index": 0,
+          "starts_sentence": true,
+          "end": 213
+        }
+      }
+    ]
+  }
+]

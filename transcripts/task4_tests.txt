@@ -1,0 +1,15 @@
+test_midpoint_separates_observed_clusters_and_overlap_fails (tests.test_generation.CalibrationTests.test_midpoint_separates_observed_clusters_and_overlap_fails) ... ok
+test_stale_calibration_fails_before_generation (tests.test_generation.CalibrationTests.test_stale_calibration_fails_before_generation) ... ok
+test_fixed_chunk_starting_at_sentence_boundary_is_preserved (tests.test_generation.ExtractionTests.test_fixed_chunk_starting_at_sentence_boundary_is_preserved) ... ok
+test_partial_sentences_are_excluded_and_overlaps_are_not_repeated (tests.test_generation.ExtractionTests.test_partial_sentences_are_excluded_and_overlaps_are_not_repeated) ... ok
+C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\.venv\Lib\site-packages\chromadb\api\models\CollectionCommon.py:147: DeprecationWarning: legacy embedding function config
+  return load_collection_configuration_from_json(self._model.configuration_json)
+C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\.venv\Lib\site-packages\chromadb\api\models\CollectionCommon.py:147: DeprecationWarning: legacy embedding function config
+  return load_collection_configuration_from_json(self._model.configuration_json)
+test_both_calibrated_strategies_accept_demo_queries_and_refuse_unrelated_query (tests.test_generation.GenerationIntegrationTests.test_both_calibrated_strategies_accept_demo_queries_and_refuse_unrelated_query) ... ok
+test_real_llm_mode_is_explicitly_rejected (tests.test_generation.GenerationIntegrationTests.test_real_llm_mode_is_explicitly_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 15.541s
+
+OK
