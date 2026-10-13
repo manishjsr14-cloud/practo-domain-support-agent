@@ -1,0 +1,15 @@
+01_appointment_booking: 4 sentences; topic covered
+02_cancellation_rescheduling: 4 sentences; topic covered
+03_consultation_fees: 5 sentences; topic covered
+04_insurance_claims: 4 sentences; topic covered
+05_prescription_refills: 4 sentences; topic covered
+06_lab_turnaround: 4 sentences; topic covered
+07_telemedicine: 4 sentences; topic covered
+08_emergency_protocol: 4 sentences; topic covered
+09_patient_privacy: 4 sentences; topic covered
+10_follow_up_discount: 4 sentences; topic covered
+11_second_opinion: 4 sentences; topic covered
+12_home_visits: 4 sentences; topic covered
+Documents: 12; required sentences per document: 2-5
+All specialty fee ranges match dataset.FEE_RANGES
+Knowledge-base validation: PASS

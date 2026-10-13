@@ -1,0 +1,25 @@
+Whole-query gate and calibration are unchanged; these are diagnostic component cosine scores.
+Component: video appointment | strategy: fixed_overlap
+parent=07_telemedicine | chunk=07_telemedicine:fixed_overlap:000 | cosine=0.573621869 | literal_anchor_tokens=['video']
+parent=01_appointment_booking | chunk=01_appointment_booking:fixed_overlap:000 | cosine=0.525134563 | literal_anchor_tokens=['appointment']
+parent=02_cancellation_rescheduling | chunk=02_cancellation_rescheduling:fixed_overlap:000 | cosine=0.407585561 | literal_anchor_tokens=['appointment']
+top_parent_margin=0.048487306
+
+Component: video appointment | strategy: sentence
+parent=07_telemedicine | chunk=07_telemedicine:sentence:000 | cosine=0.563703775 | literal_anchor_tokens=['video']
+parent=01_appointment_booking | chunk=01_appointment_booking:sentence:000 | cosine=0.524985433 | literal_anchor_tokens=['appointment']
+parent=04_insurance_claims | chunk=04_insurance_claims:sentence:001 | cosine=0.426531255 | literal_anchor_tokens=['appointment']
+top_parent_margin=0.038718343
+
+Component: original visit | strategy: fixed_overlap
+parent=03_consultation_fees | chunk=03_consultation_fees:fixed_overlap:001 | cosine=0.264426470 | literal_anchor_tokens=['visit']
+parent=10_follow_up_discount | chunk=10_follow_up_discount:fixed_overlap:001 | cosine=0.262797832 | literal_anchor_tokens=['original', 'visit']
+parent=12_home_visits | chunk=12_home_visits:fixed_overlap:003 | cosine=0.235538766 | literal_anchor_tokens=['visit']
+top_parent_margin=0.001628637
+
+Component: original visit | strategy: sentence
+parent=10_follow_up_discount | chunk=10_follow_up_discount:sentence:000 | cosine=0.252492875 | literal_anchor_tokens=['visit']
+parent=12_home_visits | chunk=12_home_visits:sentence:001 | cosine=0.240195945 | literal_anchor_tokens=['visit']
+parent=07_telemedicine | chunk=07_telemedicine:sentence:001 | cosine=0.210801408 | literal_anchor_tokens=['visit']
+top_parent_margin=0.012296930
+

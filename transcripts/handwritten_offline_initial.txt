@@ -1,0 +1,24 @@
+API-key environment variables cleared; MOCK_LLM=true
+Outbound Python sockets and DNS blocked before framework imports
+Fresh offline build: {'fixed_overlap': 39, 'sentence': 36}
+Cosine similarity = 1 - Chroma cosine distance
+
+Collection strategy: fixed_overlap
+Traceback (most recent call last):
+  File "C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\scripts\verify_offline.py", line 55, in <module>
+    main()
+  File "C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\scripts\verify_offline.py", line 43, in main
+    calibrate(index, calibration_path)
+  File "C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\scripts\calibrate_threshold.py", line 38, in calibrate
+    hit = index.retrieve(query, strategy=strategy, top_k=1)[0]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\rag\index.py", line 223, in retrieve
+    result = collection.query(
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\.venv\Lib\site-packages\chromadb\api\models\Collection.py", line 225, in query
+    query_results = self._client._query(
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\.venv\Lib\site-packages\chromadb\api\rust.py", line 519, in _query
+    rust_response = self.bindings.query(
+                    ^^^^^^^^^^^^^^^^^^^^
+chromadb.errors.InternalError: Error executing plan: Internal error: Error creating hnsw segment reader: Nothing found on disk

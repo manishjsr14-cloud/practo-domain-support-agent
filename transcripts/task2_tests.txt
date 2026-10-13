@@ -1,10 +1,14 @@
-test_counts_and_coverage (tests.test_part1.DatasetTests.test_counts_and_coverage) ... ok
-test_deterministic_and_independent_of_global_rng (tests.test_part1.DatasetTests.test_deterministic_and_independent_of_global_rng) ... ok
-test_schema_identifiers_and_ranges (tests.test_part1.DatasetTests.test_schema_identifiers_and_ranges) ... ok
 test_every_topic_has_a_document_with_valid_sentences_and_fees (tests.test_part1.KnowledgeBaseTests.test_every_topic_has_a_document_with_valid_sentences_and_fees) ... ok
+test_existing_recorded_fee_authority_cannot_be_removed_or_negated (tests.test_part1.KnowledgeBaseTests.test_existing_recorded_fee_authority_cannot_be_removed_or_negated) ... ok
+test_fixed_standard_fees_stay_within_unchanged_dataset_ranges (tests.test_part1.KnowledgeBaseTests.test_fixed_standard_fees_stay_within_unchanged_dataset_ranges) ... ok
+test_in_range_but_incorrect_standard_fee_is_rejected (tests.test_part1.KnowledgeBaseTests.test_in_range_but_incorrect_standard_fee_is_rejected) ... ok
 test_missing_topics_are_rejected (tests.test_part1.KnowledgeBaseTests.test_missing_topics_are_rejected) ... ok
+test_new_booking_and_existing_booking_distinction_is_required (tests.test_part1.KnowledgeBaseTests.test_new_booking_and_existing_booking_distinction_is_required) ... ok
+test_sentence_limits_are_still_enforced (tests.test_part1.KnowledgeBaseTests.test_sentence_limits_are_still_enforced) ... ok
+test_standard_fee_outside_dataset_range_is_rejected (tests.test_part1.KnowledgeBaseTests.test_standard_fee_outside_dataset_range_is_rejected) ... ok
+test_topic_title_cannot_replace_privacy_policy_content (tests.test_part1.KnowledgeBaseTests.test_topic_title_cannot_replace_privacy_policy_content) ... ok
 
 ----------------------------------------------------------------------
-Ran 5 tests in 0.009s
+Ran 9 tests in 0.104s
 
 OK

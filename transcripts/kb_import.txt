@@ -1,0 +1,14 @@
+01_appointment_booking.md: 763 bytes; exact copy=True; sha256=cdf0b9516dac0b404fc84cd5b2ce21d7d5c405d7157fd94d7527f36896ada9d4
+02_cancellation_rescheduling.md: 819 bytes; exact copy=True; sha256=806e8c9f735f5dc509fa18a2acbb874feda04412452c92d74a7aa3ed62be831f
+03_consultation_fees.md: 823 bytes; exact copy=True; sha256=d9d7d28f69ceedf55b0d8972ce78fb7d25d3ba71a494aeba7feceb1bca8f68a4
+04_insurance_claims.md: 809 bytes; exact copy=True; sha256=2e909033e739497f1f83ea2645ae0cc1689a64da669b22a447b74a0f94d2913b
+05_prescription_refills.md: 722 bytes; exact copy=True; sha256=4e860c608b9f82b624c462742fba181c5f806e1410ad47a7b587475d35647ead
+06_lab_turnaround.md: 778 bytes; exact copy=True; sha256=071eb77dddd7903de75b2e12066ae6738b4dfc5212b723866d05262a6a9729c3
+07_telemedicine.md: 719 bytes; exact copy=True; sha256=d82647ff68a714966263c1c3a0345555f9ed89a8c732b9cb6718fe87892143dd
+08_emergency_protocol.md: 792 bytes; exact copy=True; sha256=cc78b9f97943d1587275f8b41e7b46f58bda71386dfd6ef6b6e373478a1ed112
+09_patient_privacy.md: 849 bytes; exact copy=True; sha256=8cba6f4df04339435c4d5dcc161c51f8db390170530dfc5e91567d00f4acb997
+10_follow_up_discount.md: 908 bytes; exact copy=True; sha256=b0b8f80203b34bcd932688e8709f9989a509a4345dcf3347ae9928c53fe77aa5
+11_second_opinion.md: 801 bytes; exact copy=True; sha256=ee5fdbef6637e96e489c06801341079e4f16b16c8e7e0ebb040b7eca27d1382b
+12_home_visits.md: 930 bytes; exact copy=True; sha256=7b969d00bfa9e4d88ed7607c73eaff34ee4b8ae0899be010c6e9abdd131d5fe4
+Imported handwritten knowledge-base documents: 12
+Original source files preserved; knowledge-base copy verification: PASS

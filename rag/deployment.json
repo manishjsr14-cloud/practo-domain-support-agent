@@ -1,17 +1,17 @@
 {
-  "fingerprint": "3c4da873972cdda4b844f9b5e79abe06acc0201a64418c88835cc0be0141461f",
+  "fingerprint": "20b708cbde2d997bc9d1eab11304bd12a6c6d73d4a1105ed9d6c1113bf04f812",
   "metrics": {
     "fixed_overlap": {
-      "precision": 0.6111111111111112,
+      "precision": 0.8888888888888888,
       "recall": 1.0
     },
     "sentence": {
-      "precision": 0.6666666666666666,
+      "precision": 0.9444444444444444,
       "recall": 1.0
     }
   },
   "query_count": 9,
-  "retrieval_fingerprint": "104118cfa0d9fe6c7ce119fc78313f9cbc619702dbe92eca242ef56ba1c4c9da",
+  "retrieval_fingerprint": "26fa037347d761648207b3671ae7341a470dd6ea38f459d73693622311659c0c",
   "selection_reason": "equal macro recall and higher macro precision",
   "strategy": "sentence",
   "top_k_chunks": 3

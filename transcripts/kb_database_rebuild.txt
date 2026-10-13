@@ -1,0 +1,2 @@
+Verified database deletion target: C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\.runtime\chroma
+Old persistent RAG database removed: True

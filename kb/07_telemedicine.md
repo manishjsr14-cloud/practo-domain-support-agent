@@ -1,3 +1,3 @@
-# Telemedicine eligibility - fictional clinic policy
+# Telemedicine-Eligibility Policy (fictional clinic)
 
-Telemedicine appointments are available for routine follow-ups when the clinician confirms that an in-person examination is unnecessary. The patient must consent to a remote consultation and have access to the clinic's secure video service. A clinician may move the appointment to an in-person visit if remote assessment is insufficient. Telemedicine is not an emergency service.
+Routine telemedicine consultations are available only for General Medicine and Dermatology patients aged 18 years or older, subject to clinician approval. Before a video consultation, you need a supported video connection, completion of the clinic's identity check, and recorded consent. The booked clinician decides whether remote consultation is suitable and may ask you to arrange an in-person visit. The selected specialty's standard consultation fee applies, while the fee recorded for an existing appointment remains authoritative. Telemedicine does not provide emergency care, and only a clinician can decide suitability and approve the remote consultation.

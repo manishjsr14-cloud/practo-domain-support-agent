@@ -3,8 +3,8 @@
 import re
 
 
-RETRIEVAL_POLICY = "parent-question-focus-coverage-v1"
-COVERAGE_POLICY = "semantic-with-lexical-anchors-v1"
+RETRIEVAL_POLICY = "parent-question-focus-component-reservation-v2"
+COVERAGE_POLICY = "semantic-with-discriminative-anchors-v2"
 
 QUESTION_STARTERS = (
     "can", "could", "do", "does", "did", "is", "are", "what", "which",
@@ -83,3 +83,21 @@ def question_components(query: str) -> list[str]:
             words.append(token.casefold().replace("’", "'"))
     finish_phrase()
     return components
+
+
+def component_anchor(component: str, text: str, documents: dict[str, str]) -> bool:
+    """Anchor on the least common observed content word in a phrase.
+
+    A shared generic word must not substitute for the phrase's distinguishing
+    word. Unseen paraphrase words do not veto its observed textual anchor.
+    """
+    patterns = {word: re.compile(r"\b" + re.escape(word) + r"\b", re.IGNORECASE)
+                for word in component.split()}
+    frequencies = {word: sum(bool(pattern.search(body)) for body in documents.values())
+                   for word, pattern in patterns.items()}
+    observed = {word: count for word, count in frequencies.items() if count}
+    if not observed:
+        return False
+    rarest = min(observed.values())
+    return any(patterns[word].search(text) for word, count in observed.items()
+               if count == rarest)

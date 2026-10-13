@@ -3,7 +3,7 @@ C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\.venv\Lib\site-package
 C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\.venv\Lib\site-packages\chromadb\api\models\CollectionCommon.py:147: DeprecationWarning: legacy embedding function config
   return load_collection_configuration_from_json(self._model.configuration_json)
 test_additional_paraphrases_cite_the_required_policies (tests.test_answer_coverage.AnswerCoverageTests.test_additional_paraphrases_cite_the_required_policies) ... ok
-test_cardiologist_home_visit_includes_fees_and_separate_travel_quote (tests.test_answer_coverage.AnswerCoverageTests.test_cardiologist_home_visit_includes_fees_and_separate_travel_quote) ... ok
+test_cardiologist_home_visit_explains_general_medicine_only_restriction (tests.test_answer_coverage.AnswerCoverageTests.test_cardiologist_home_visit_explains_general_medicine_only_restriction) ... ok
 test_coverage_cannot_override_whole_query_fallback (tests.test_answer_coverage.AnswerCoverageTests.test_coverage_cannot_override_whole_query_fallback) ... ok
 test_follow_up_paraphrase_retrieves_and_cites_discount_policy (tests.test_answer_coverage.AnswerCoverageTests.test_follow_up_paraphrase_retrieves_and_cites_discount_policy) ... ok
 test_grammar_helpers_do_not_need_clinic_topics_or_query_ids (tests.test_answer_coverage.AnswerCoverageTests.test_grammar_helpers_do_not_need_clinic_topics_or_query_ids) ... ok
@@ -17,6 +17,6 @@ test_both_calibrated_strategies_accept_demo_queries_and_refuse_unrelated_query (
 test_real_llm_mode_is_explicitly_rejected (tests.test_generation.GenerationIntegrationTests.test_real_llm_mode_is_explicitly_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 13 tests in 15.106s
+Ran 13 tests in 24.268s
 
 OK

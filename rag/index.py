@@ -8,7 +8,7 @@ from functools import lru_cache
 from pathlib import Path
 
 from rag import RUNTIME_ENVIRONMENT
-from rag.retrieval import RETRIEVAL_POLICY, question_focus, question_components
+from rag.retrieval import RETRIEVAL_POLICY, component_anchor, question_focus, question_components
 from rag.chunking import (
     FIXED_CHUNK_OVERLAP, FIXED_CHUNK_SIZE, ROOT, SENTENCES_PER_CHUNK,
     SENTENCE_SPLIT_PATTERN, STRATEGIES, chunk_documents, load_documents,
@@ -238,7 +238,7 @@ class RAGIndex:
         if top_k == 1:
             return hits
         self._rank_evidence(query, hits, result["embeddings"][0], documents)
-        return self._select_context(query, hits, result["embeddings"][0], top_k)
+        return self._select_context(query, hits, result["embeddings"][0], top_k, documents)
 
     def _rank_evidence(self, query, hits, chunk_vectors, documents):
         import numpy as np
@@ -264,18 +264,28 @@ class RAGIndex:
                 "retrieval_role": "supporting_context",
             })
 
-    def _select_context(self, query, hits, chunk_vectors, top_k):
+    def _select_context(self, query, hits, chunk_vectors, top_k, documents):
         """Cover distinct question components without filling slots with repeats."""
         import numpy as np
 
         selected = [0]
         hits[0]["retrieval_role"] = "cosine_anchor"
         primary = max(hits, key=lambda hit: hit["parent_relevance"])["parent_id"]
-        if primary != hits[0]["parent_id"] and top_k > 1:
-            best_primary = max((i for i, hit in enumerate(hits) if hit["parent_id"] == primary),
+        primary_candidates = [i for i, hit in enumerate(hits) if hit["parent_id"] == primary]
+        primary_is_complete = any(hits[i]["parent_id"] == primary
+                                  and hits[i]["metadata"].get("starts_sentence", False)
+                                  for i in selected)
+        if not primary_is_complete and top_k > 1:
+            # A mid-sentence chunk can score well but lose its defining rule
+            # when extraction removes the cut fragment. Prefer a complete
+            # sentence boundary for the primary policy's supporting entry.
+            complete = [i for i in primary_candidates
+                        if hits[i]["metadata"].get("starts_sentence", False)]
+            best_primary = max(complete or primary_candidates,
                                key=lambda i: hits[i]["selection_score"])
-            selected.append(best_primary)
-            hits[best_primary]["retrieval_role"] = "primary_policy"
+            if best_primary not in selected:
+                selected.append(best_primary)
+                hits[best_primary]["retrieval_role"] = "primary_policy"
         components = question_components(query)
         if components:
             scores = np.asarray(self._embed(components)) @ np.asarray(chunk_vectors).T
@@ -288,6 +298,29 @@ class RAGIndex:
                                     for parent in parent_ids], axis=1)
             ordered = np.sort(parent_best, axis=1)
             margins = ordered[:, -1] - ordered[:, -2] if len(parent_ids) > 1 else np.ones(len(components))
+            # Reserve a global semantic winner for an uncovered question part
+            # before repeated chunks from a dominant parent fill the context.
+            # Literal overlap anchors the proposal; no topic vocabulary,
+            # labelled parent, or calibrated acceptance cutoff is involved.
+            proposals = []
+            for component, similarities, margin in zip(components, scores, margins):
+                # An isolated word such as a verb is too ambiguous to reserve
+                # a different policy. Single words retain their soft coverage
+                # gain below; explicit reservations require a content phrase.
+                if len(component.split()) < 2:
+                    continue
+                winner = int(np.argmax(similarities))
+                anchored = component_anchor(component, hits[winner]["text"], documents)
+                if anchored and margin > 0:
+                    proposals.append((float(margin), winner))
+            for margin, winner in sorted(proposals, reverse=True):
+                represented = {hits[i]["parent_id"] for i in selected}
+                if len(selected) >= min(top_k, len(hits)):
+                    break
+                if hits[winner]["parent_id"] not in represented:
+                    selected.append(winner)
+                    hits[winner]["retrieval_role"] = "question_component"
+                    hits[winner]["component_margin"] = margin
             # Normalize only the coverage objective within each phrase's own
             # candidate distribution, so a clear but lower-scoring aspect can
             # compete with an already covered, high-scoring topic.

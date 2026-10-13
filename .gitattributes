@@ -1,0 +1,2 @@
+# Preserve the exact bytes of the student's handwritten policy files.
+kb/*.md -text

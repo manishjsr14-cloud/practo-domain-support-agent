@@ -1,15 +1,20 @@
-01_appointment_booking: 4 sentences; topic covered
-02_cancellation_rescheduling: 4 sentences; topic covered
+01_appointment_booking: 5 sentences; topic covered
+02_cancellation_rescheduling: 5 sentences; topic covered
 03_consultation_fees: 5 sentences; topic covered
-04_insurance_claims: 4 sentences; topic covered
-05_prescription_refills: 4 sentences; topic covered
-06_lab_turnaround: 4 sentences; topic covered
-07_telemedicine: 4 sentences; topic covered
-08_emergency_protocol: 4 sentences; topic covered
-09_patient_privacy: 4 sentences; topic covered
-10_follow_up_discount: 4 sentences; topic covered
-11_second_opinion: 4 sentences; topic covered
-12_home_visits: 4 sentences; topic covered
+04_insurance_claims: 5 sentences; topic covered
+05_prescription_refills: 5 sentences; topic covered
+06_lab_turnaround: 5 sentences; topic covered
+07_telemedicine: 5 sentences; topic covered
+08_emergency_protocol: 5 sentences; topic covered
+09_patient_privacy: 5 sentences; topic covered
+10_follow_up_discount: 5 sentences; topic covered
+11_second_opinion: 5 sentences; topic covered
+12_home_visits: 5 sentences; topic covered
 Documents: 12; required sentences per document: 2-5
-All specialty fee ranges match dataset.FEE_RANGES
+General Medicine: standard new-booking fee INR 500; dataset fee range INR 300-600; within range: True
+Cardiology: standard new-booking fee INR 1200; dataset fee range INR 800-1500; within range: True
+Dermatology: standard new-booking fee INR 800; dataset fee range INR 500-1000; within range: True
+Pediatrics: standard new-booking fee INR 600; dataset fee range INR 400-800; within range: True
+Orthopedics: standard new-booking fee INR 1000; dataset fee range INR 600-1200; within range: True
+Existing appointment recorded fees remain authoritative; standard new-booking fees do not overwrite them
 Knowledge-base validation: PASS

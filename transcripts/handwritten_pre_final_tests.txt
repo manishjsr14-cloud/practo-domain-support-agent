@@ -1,0 +1,65 @@
+C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\.venv\Lib\site-packages\chromadb\api\models\CollectionCommon.py:147: DeprecationWarning: legacy embedding function config
+  return load_collection_configuration_from_json(self._model.configuration_json)
+C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\.venv\Lib\site-packages\chromadb\api\models\CollectionCommon.py:147: DeprecationWarning: legacy embedding function config
+  return load_collection_configuration_from_json(self._model.configuration_json)
+test_additional_paraphrases_cite_the_required_policies (test_answer_coverage.AnswerCoverageTests.test_additional_paraphrases_cite_the_required_policies) ... 
+  test_additional_paraphrases_cite_the_required_policies (test_answer_coverage.AnswerCoverageTests.test_additional_paraphrases_cite_the_required_policies) (strategy='fixed_overlap', query='How much is a cardiology appointment at home, including travel?') ... FAIL
+  test_additional_paraphrases_cite_the_required_policies (test_answer_coverage.AnswerCoverageTests.test_additional_paraphrases_cite_the_required_policies) (strategy='sentence', query='How much is a cardiology appointment at home, including travel?') ... FAIL
+test_cardiologist_home_visit_explains_general_medicine_only_restriction (test_answer_coverage.AnswerCoverageTests.test_cardiologist_home_visit_explains_general_medicine_only_restriction) ... ok
+test_coverage_cannot_override_whole_query_fallback (test_answer_coverage.AnswerCoverageTests.test_coverage_cannot_override_whole_query_fallback) ... ok
+test_follow_up_paraphrase_retrieves_and_cites_discount_policy (test_answer_coverage.AnswerCoverageTests.test_follow_up_paraphrase_retrieves_and_cites_discount_policy) ... ok
+test_grammar_helpers_do_not_need_clinic_topics_or_query_ids (test_answer_coverage.AnswerCoverageTests.test_grammar_helpers_do_not_need_clinic_topics_or_query_ids) ... ok
+test_original_cosine_anchor_is_independent_of_context_ranking (test_answer_coverage.AnswerCoverageTests.test_original_cosine_anchor_is_independent_of_context_ranking) ... ok
+test_video_second_opinion_includes_process_and_telemedicine_limits (test_answer_coverage.AnswerCoverageTests.test_video_second_opinion_includes_process_and_telemedicine_limits) ... ok
+test_deployment_choice_must_match_current_corpus (test_evaluation.EvaluationTests.test_deployment_choice_must_match_current_corpus) ... ok
+test_duplicate_parents_do_not_inflate_precision_or_recall (test_evaluation.EvaluationTests.test_duplicate_parents_do_not_inflate_precision_or_recall) ... ok
+test_fixed_demo_queries_and_labels_are_preserved (test_evaluation.EvaluationTests.test_fixed_demo_queries_and_labels_are_preserved) ... ok
+test_multi_parent_recall_counts_each_relevant_parent_once (test_evaluation.EvaluationTests.test_multi_parent_recall_counts_each_relevant_parent_once) ... ok
+test_real_report_uses_exact_shared_queries_and_document_denominators (test_evaluation.EvaluationTests.test_real_report_uses_exact_shared_queries_and_document_denominators) ... ok
+test_selection_prefers_recall_then_precision_then_sentence_tie (test_evaluation.EvaluationTests.test_selection_prefers_recall_then_precision_then_sentence_tie) ... ok
+test_midpoint_separates_observed_clusters_and_overlap_fails (test_generation.CalibrationTests.test_midpoint_separates_observed_clusters_and_overlap_fails) ... ok
+test_stale_calibration_fails_before_generation (test_generation.CalibrationTests.test_stale_calibration_fails_before_generation) ... ok
+test_fixed_chunk_starting_at_sentence_boundary_is_preserved (test_generation.ExtractionTests.test_fixed_chunk_starting_at_sentence_boundary_is_preserved) ... ok
+test_partial_sentences_are_excluded_and_overlaps_are_not_repeated (test_generation.ExtractionTests.test_partial_sentences_are_excluded_and_overlaps_are_not_repeated) ... ok
+test_both_calibrated_strategies_accept_demo_queries_and_refuse_unrelated_query (test_generation.GenerationIntegrationTests.test_both_calibrated_strategies_accept_demo_queries_and_refuse_unrelated_query) ... ok
+test_real_llm_mode_is_explicitly_rejected (test_generation.GenerationIntegrationTests.test_real_llm_mode_is_explicitly_rejected) ... ok
+test_all_chunk_offsets_match_parent_text (test_part1.ChunkingTests.test_all_chunk_offsets_match_parent_text) ... ok
+test_fixed_windows_cover_source_with_exact_overlap (test_part1.ChunkingTests.test_fixed_windows_cover_source_with_exact_overlap) ... ok
+test_sentence_chunks_preserve_boundaries_and_short_tail (test_part1.ChunkingTests.test_sentence_chunks_preserve_boundaries_and_short_tail) ... ok
+test_counts_and_coverage (test_part1.DatasetTests.test_counts_and_coverage) ... ok
+test_deterministic_and_independent_of_global_rng (test_part1.DatasetTests.test_deterministic_and_independent_of_global_rng) ... ok
+test_schema_identifiers_and_ranges (test_part1.DatasetTests.test_schema_identifiers_and_ranges) ... ok
+test_changed_corpus_is_rejected_until_rebuilt (test_part1.IndexTests.test_changed_corpus_is_rejected_until_rebuilt) ... ok
+test_retrieval_uses_cosine_distance_and_both_find_cancellation_policy (test_part1.IndexTests.test_retrieval_uses_cosine_distance_and_both_find_cancellation_policy) ... ok
+test_separate_cosine_collections_with_parent_metadata_and_stable_upserts (test_part1.IndexTests.test_separate_cosine_collections_with_parent_metadata_and_stable_upserts) ... ok
+test_every_topic_has_a_document_with_valid_sentences_and_fees (test_part1.KnowledgeBaseTests.test_every_topic_has_a_document_with_valid_sentences_and_fees) ... ok
+test_existing_recorded_fee_authority_cannot_be_removed_or_negated (test_part1.KnowledgeBaseTests.test_existing_recorded_fee_authority_cannot_be_removed_or_negated) ... ok
+test_fixed_standard_fees_stay_within_unchanged_dataset_ranges (test_part1.KnowledgeBaseTests.test_fixed_standard_fees_stay_within_unchanged_dataset_ranges) ... ok
+test_in_range_but_incorrect_standard_fee_is_rejected (test_part1.KnowledgeBaseTests.test_in_range_but_incorrect_standard_fee_is_rejected) ... ok
+test_missing_topics_are_rejected (test_part1.KnowledgeBaseTests.test_missing_topics_are_rejected) ... ok
+test_new_booking_and_existing_booking_distinction_is_required (test_part1.KnowledgeBaseTests.test_new_booking_and_existing_booking_distinction_is_required) ... ok
+test_sentence_limits_are_still_enforced (test_part1.KnowledgeBaseTests.test_sentence_limits_are_still_enforced) ... ok
+test_standard_fee_outside_dataset_range_is_rejected (test_part1.KnowledgeBaseTests.test_standard_fee_outside_dataset_range_is_rejected) ... ok
+test_topic_title_cannot_replace_privacy_policy_content (test_part1.KnowledgeBaseTests.test_topic_title_cannot_replace_privacy_policy_content) ... ok
+test_real_cli_reports_both_strategies_without_changing_calibration (test_stress_threshold.StressThresholdTests.test_real_cli_reports_both_strategies_without_changing_calibration) ... ok
+
+======================================================================
+FAIL: test_additional_paraphrases_cite_the_required_policies (test_answer_coverage.AnswerCoverageTests.test_additional_paraphrases_cite_the_required_policies) (strategy='fixed_overlap', query='How much is a cardiology appointment at home, including travel?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\tests\test_answer_coverage.py", line 89, in test_additional_paraphrases_cite_the_required_policies
+    self.assertIn(text, response["answer"])
+AssertionError: 'INR 800 in total' not found in 'Non-emergency home visits are available only for General Medicine patients aged 18 years or older with an address within five kilometres of the clinic. Visit slots run from 09:00 to 17:00 local clinic time, and staff must confirm clinician availability and address eligibility.\n\nTo request an appointment, provide your patient reference, the specialty, a preferred clinician or a request for any available clinician, and your preferred date and time. Routine appointments can be requested up to 30 calendar days in advance, subject to clinician and slot availability.'
+
+======================================================================
+FAIL: test_additional_paraphrases_cite_the_required_policies (test_answer_coverage.AnswerCoverageTests.test_additional_paraphrases_cite_the_required_policies) (strategy='sentence', query='How much is a cardiology appointment at home, including travel?')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\tests\test_answer_coverage.py", line 89, in test_additional_paraphrases_cite_the_required_policies
+    self.assertIn(text, response["answer"])
+AssertionError: 'available only for General Medicine patients aged 18 years or older' not found in 'A standard home visit costs INR 800 in total: INR 500 for the General Medicine consultation plus a separate INR 300 travel surcharge, with any eligible follow-up discount applied only to the consultation fee. The travel surcharge is refunded only when a cancellation qualifies under the cancellation policy and occurs before the clinician is dispatched; consultation-fee refunds follow that policy.\n\nTo request an appointment, provide your patient reference, the specialty, a preferred clinician or a request for any available clinician, and your preferred date and time. Routine appointments can be requested up to 30 calendar days in advance, subject to clinician and slot availability.'
+
+----------------------------------------------------------------------
+Ran 38 tests in 44.785s
+
+FAILED (failures=2)

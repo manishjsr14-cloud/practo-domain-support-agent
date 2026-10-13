@@ -7,7 +7,7 @@ import re
 
 from rag.index import RAGIndex
 from rag.queries import TOP_K
-from rag.retrieval import COVERAGE_POLICY, question_components, question_focus
+from rag.retrieval import COVERAGE_POLICY, component_anchor, question_components, question_focus
 
 ROOT = Path(__file__).resolve().parents[1]
 FALLBACK = "I don't know based on the available clinic-policy context."
@@ -60,12 +60,10 @@ def select_evidence(query: str, hits: list[dict], index: RAGIndex):
             similarity = float(np.max(similarities))
             primary_similarity = max(float(similarities[i]) for i, hit in enumerate(hits)
                                      if hit["parent_id"] == primary)
-            # Secondary excerpts need both a semantic win and a textual anchor.
-            # A phrase can match on one content word while its other words are
-            # paraphrases; the primary policy still uses full-question semantics.
-            lexical_anchor = any(re.search(r"\b" + re.escape(word) + r"\b",
-                                           best["text"], re.IGNORECASE)
-                                 for word in component.split())
+            # Secondary excerpts need a semantic win and the phrase's least
+            # common observed content word, rather than a generic shared word.
+            # The primary policy still uses full-question semantics.
+            lexical_anchor = component_anchor(component, best["text"], index.documents)
             selected = best["parent_id"] == primary or (
                 similarity > primary_similarity and lexical_anchor)
             if selected:

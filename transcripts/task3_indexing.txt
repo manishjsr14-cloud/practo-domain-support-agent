@@ -5,25 +5,25 @@ Fixed chunk size: 320 characters
 Fixed overlap: 80 characters
 Sentence chunk size: 2 sentences
 Parent document count: 12
-Corpus fingerprint: 3c4da873972cdda4b844f9b5e79abe06acc0201a64418c88835cc0be0141461f
-Retrieval policy: parent-question-focus-coverage-v1
-Retrieval fingerprint: 104118cfa0d9fe6c7ce119fc78313f9cbc619702dbe92eca242ef56ba1c4c9da
-First build counts: {"fixed_overlap": 24, "sentence": 25}
-Repeated upsert counts: {"fixed_overlap": 24, "sentence": 25}
+Corpus fingerprint: 20b708cbde2d997bc9d1eab11304bd12a6c6d73d4a1105ed9d6c1113bf04f812
+Retrieval policy: parent-question-focus-component-reservation-v2
+Retrieval fingerprint: 26fa037347d761648207b3671ae7341a470dd6ea38f459d73693622311659c0c
+First build counts: {"fixed_overlap": 39, "sentence": 36}
+Repeated upsert counts: {"fixed_overlap": 39, "sentence": 36}
 Repeated upsert preserved collection sizes: True
 Cosine similarity = 1 - cosine distance
 Sample query: What is the cancellation and rescheduling window?
 Collection: practo_fixed_overlap
-  1: 02_cancellation_rescheduling distance=0.395958 similarity=0.604042
-     Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund. A rescheduled appointment receives a new confirmed time, while a cancelled appointment releases its slot.
-  2: 02_cancellation_rescheduling distance=0.479983 similarity=0.520017
-     receives a new confirmed time, while a cancelled appointment releases its slot. Reception explains any applicable charge before accepting a late change.
-  3: 01_appointment_booking distance=0.642359 similarity=0.357641
-     reserved until confirmation is issued. Keep the appointment record ID to check its status or request a change without sharing personal details in support chat.
+  1: 02_cancellation_rescheduling distance=0.424669 similarity=0.575331
+     You can cancel or reschedule without a change fee if clinic staff receive your request at least 24 hours before the appointment starts. A cancellation within this window receives a full refund of the consultation fee recorded for the appointment; a later patient cancellation or a No-Show receives no consultation-fee re
+  2: 02_cancellation_rescheduling distance=0.444160 similarity=0.555840
+     tment; a later patient cancellation or a No-Show receives no consultation-fee refund. Rescheduling depends on an available slot, keeps your original paid consultation fee, and is confirmed only when staff mark the appointment Rescheduled. If the clinic cancels, you receive a full consultation-fee refund regardless of n
+  3: 02_cancellation_rescheduling distance=0.599129 similarity=0.400871
+     f the clinic cancels, you receive a full consultation-fee refund regardless of notice, and approved refunds return to the original payment method within seven business days. The support service explains these rules, but clinic staff must make booking changes and approve refunds.
 Collection: practo_sentence
-  1: 02_cancellation_rescheduling distance=0.434497 similarity=0.565503
-     A rescheduled appointment receives a new confirmed time, while a cancelled appointment releases its slot. Reception explains any applicable charge before accepting a late change.
-  2: 02_cancellation_rescheduling distance=0.466710 similarity=0.533290
-     Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund.
-  3: 01_appointment_booking distance=0.678803 similarity=0.321197
-     A requested slot is not reserved until confirmation is issued. Keep the appointment record ID to check its status or request a change without sharing personal details in support chat.
+  1: 02_cancellation_rescheduling distance=0.451656 similarity=0.548344
+     You can cancel or reschedule without a change fee if clinic staff receive your request at least 24 hours before the appointment starts. A cancellation within this window receives a full refund of the consultation fee recorded for the appointment; a later patient cancellation or a No-Show receives no consultation-fee refund.
+  2: 02_cancellation_rescheduling distance=0.515939 similarity=0.484061
+     Rescheduling depends on an available slot, keeps your original paid consultation fee, and is confirmed only when staff mark the appointment Rescheduled. If the clinic cancels, you receive a full consultation-fee refund regardless of notice, and approved refunds return to the original payment method within seven business days.
+  3: 02_cancellation_rescheduling distance=0.586775 similarity=0.413225
+     The support service explains these rules, but clinic staff must make booking changes and approve refunds.

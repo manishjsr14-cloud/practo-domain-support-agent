@@ -1,0 +1,458 @@
+[
+  {
+    "query": "Does a repeat appointment cost less than the original visit?",
+    "answer": "Only one discounted follow-up is allowed for each original completed consultation, and it cannot be combined with another consultation-fee offer. A visit after seven calendar days, with another clinician, or for a different concern costs the standard consultation fee unless staff record a separate adjustment.\n\nFor an existing appointment, the consultation fee recorded in that booking is authoritative and may differ from the standard fee because of a documented adjustment.",
+    "fallback": false,
+    "strategy": "fixed_overlap",
+    "threshold": 0.2930281460285187,
+    "top_similarity": 0.614734411239624,
+    "source_chunks": [
+      "10_follow_up_discount:fixed_overlap:001",
+      "10_follow_up_discount:fixed_overlap:002",
+      "03_consultation_fees:fixed_overlap:001"
+    ],
+    "retrieved_context": [
+      {
+        "chunk_id": "03_consultation_fees:fixed_overlap:001",
+        "parent_id": "03_consultation_fees",
+        "text": "and excludes medicines, laboratory tests, procedures, and home-visit travel charges. For an existing appointment, the consultation fee recorded in that booking is authoritative and may differ from the standard fee because of a documented adjustment. An eligible follow-up receives the discount described in the follow-u",
+        "distance": 0.385265588760376,
+        "similarity": 0.614734411239624,
+        "metadata": {
+          "start": 241,
+          "end": 560,
+          "starts_sentence": false,
+          "strategy": "fixed_overlap",
+          "parent_id": "03_consultation_fees",
+          "index": 1
+        },
+        "question_focus": "Does a repeat appointment cost less than the original visit?",
+        "parent_relevance": 0.5540035031253587,
+        "selection_score": 0.584368881639917,
+        "retrieval_role": "cosine_anchor"
+      },
+      {
+        "chunk_id": "10_follow_up_discount:fixed_overlap:001",
+        "parent_id": "10_follow_up_discount",
+        "text": "costs 80 percent of that specialty's standard new-booking fee; medicines, tests, procedures, and any home-visit travel charge are excluded from the discount. Only one discounted follow-up is allowed for each original completed consultation, and it cannot be combined with another consultation-fee offer. A visit after se",
+        "distance": 0.3978942632675171,
+        "similarity": 0.6021057367324829,
+        "metadata": {
+          "start": 240,
+          "parent_id": "10_follow_up_discount",
+          "strategy": "fixed_overlap",
+          "end": 560,
+          "starts_sentence": false,
+          "index": 1
+        },
+        "question_focus": "Does a repeat appointment cost less than the original visit?",
+        "parent_relevance": 0.6105995162566463,
+        "selection_score": 0.6063525296668699,
+        "retrieval_role": "primary_policy"
+      },
+      {
+        "chunk_id": "10_follow_up_discount:fixed_overlap:002",
+        "parent_id": "10_follow_up_discount",
+        "text": "and it cannot be combined with another consultation-fee offer. A visit after seven calendar days, with another clinician, or for a different concern costs the standard consultation fee unless staff record a separate adjustment. A recommendation for follow-up alone does not establish eligibility; staff must check the c",
+        "distance": 0.41428470611572266,
+        "similarity": 0.5857152938842773,
+        "metadata": {
+          "starts_sentence": false,
+          "start": 481,
+          "index": 2,
+          "strategy": "fixed_overlap",
+          "parent_id": "10_follow_up_discount",
+          "end": 800
+        },
+        "question_focus": "Does a repeat appointment cost less than the original visit?",
+        "parent_relevance": 0.6105995162566463,
+        "selection_score": 0.5981573630411652,
+        "retrieval_role": "supporting_context",
+        "coverage_gain": 0.0003538194917380528
+      }
+    ],
+    "context_sections": [
+      {
+        "parent_id": "10_follow_up_discount",
+        "text": "Only one discounted follow-up is allowed for each original completed consultation, and it cannot be combined with another consultation-fee offer. A visit after seven calendar days, with another clinician, or for a different concern costs the standard consultation fee unless staff record a separate adjustment.",
+        "source_chunks": [
+          "10_follow_up_discount:fixed_overlap:001",
+          "10_follow_up_discount:fixed_overlap:002"
+        ]
+      },
+      {
+        "parent_id": "03_consultation_fees",
+        "text": "For an existing appointment, the consultation fee recorded in that booking is authoritative and may differ from the standard fee because of a documented adjustment.",
+        "source_chunks": [
+          "03_consultation_fees:fixed_overlap:001"
+        ]
+      }
+    ],
+    "coverage": {
+      "policy": "semantic-with-lexical-anchors-v1",
+      "question_focus": "Does a repeat appointment cost less than the original visit?",
+      "primary_parent": "10_follow_up_discount",
+      "selected_parents": [
+        "10_follow_up_discount",
+        "03_consultation_fees"
+      ],
+      "components": [
+        {
+          "component": "repeat appointment cost less",
+          "similarity": 0.5358907817691276,
+          "parent_id": "10_follow_up_discount",
+          "chunk_id": "10_follow_up_discount:fixed_overlap:002",
+          "primary_similarity": 0.5358907817691276,
+          "lexical_anchor": false,
+          "selected": true
+        },
+        {
+          "component": "original visit",
+          "similarity": 0.2644264183567262,
+          "parent_id": "03_consultation_fees",
+          "chunk_id": "03_consultation_fees:fixed_overlap:001",
+          "primary_similarity": 0.26279778176944685,
+          "lexical_anchor": true,
+          "selected": true
+        }
+      ]
+    }
+  },
+  {
+    "query": "May I obtain another specialist's opinion via a video appointment?",
+    "answer": "You can request a second-opinion appointment with a different clinician by stating the specialty and providing any available documents from your previous consultation. Staff acknowledge a complete request within three business days and offer an appointment subject to clinician and slot availability. A second opinion is a separate consultation charged at the receiving specialty's standard fee and does not qualify for the same-clinician follow-up discount. Previous consultation documents are shared with the reviewing clinician only through the clinic's approved process and with your consent. Support can explain the arrangements, but it does not compare diagnoses, decide which clinician is correct, or promise a different clinical conclusion.",
+    "fallback": false,
+    "strategy": "fixed_overlap",
+    "threshold": 0.2930281460285187,
+    "top_similarity": 0.6241145730018616,
+    "source_chunks": [
+      "11_second_opinion:fixed_overlap:000",
+      "11_second_opinion:fixed_overlap:001",
+      "11_second_opinion:fixed_overlap:002"
+    ],
+    "retrieved_context": [
+      {
+        "chunk_id": "11_second_opinion:fixed_overlap:000",
+        "parent_id": "11_second_opinion",
+        "text": "You can request a second-opinion appointment with a different clinician by stating the specialty and providing any available documents from your previous consultation. Staff acknowledge a complete request within three business days and offer an appointment subject to clinician and slot availability. A second opinion is",
+        "distance": 0.3758854269981384,
+        "similarity": 0.6241145730018616,
+        "metadata": {
+          "end": 320,
+          "starts_sentence": true,
+          "start": 0,
+          "strategy": "fixed_overlap",
+          "index": 0,
+          "parent_id": "11_second_opinion"
+        },
+        "question_focus": "May I obtain another specialist's opinion via a video appointment?",
+        "parent_relevance": 0.6267475930737041,
+        "selection_score": 0.6254310716327274,
+        "retrieval_role": "cosine_anchor"
+      },
+      {
+        "chunk_id": "11_second_opinion:fixed_overlap:001",
+        "parent_id": "11_second_opinion",
+        "text": "r an appointment subject to clinician and slot availability. A second opinion is a separate consultation charged at the receiving specialty's standard fee and does not qualify for the same-clinician follow-up discount. Previous consultation documents are shared with the reviewing clinician only through the clinic's app",
+        "distance": 0.47857213020324707,
+        "similarity": 0.5214278697967529,
+        "metadata": {
+          "parent_id": "11_second_opinion",
+          "end": 560,
+          "starts_sentence": false,
+          "strategy": "fixed_overlap",
+          "index": 1,
+          "start": 240
+        },
+        "question_focus": "May I obtain another specialist's opinion via a video appointment?",
+        "parent_relevance": 0.6267475930737041,
+        "selection_score": 0.5740878205159725,
+        "retrieval_role": "supporting_context",
+        "coverage_gain": 0.00046391294956055635
+      },
+      {
+        "chunk_id": "11_second_opinion:fixed_overlap:002",
+        "parent_id": "11_second_opinion",
+        "text": "documents are shared with the reviewing clinician only through the clinic's approved process and with your consent. Support can explain the arrangements, but it does not compare diagnoses, decide which clinician is correct, or promise a different clinical conclusion.",
+        "distance": 0.5029327869415283,
+        "similarity": 0.4970672130584717,
+        "metadata": {
+          "starts_sentence": false,
+          "strategy": "fixed_overlap",
+          "parent_id": "11_second_opinion",
+          "index": 2,
+          "end": 748,
+          "start": 481
+        },
+        "question_focus": "May I obtain another specialist's opinion via a video appointment?",
+        "parent_relevance": 0.6267475930737041,
+        "selection_score": 0.5619073696812785,
+        "retrieval_role": "supporting_context",
+        "coverage_gain": 0.0
+      }
+    ],
+    "context_sections": [
+      {
+        "parent_id": "11_second_opinion",
+        "text": "You can request a second-opinion appointment with a different clinician by stating the specialty and providing any available documents from your previous consultation. Staff acknowledge a complete request within three business days and offer an appointment subject to clinician and slot availability. A second opinion is a separate consultation charged at the receiving specialty's standard fee and does not qualify for the same-clinician follow-up discount. Previous consultation documents are shared with the reviewing clinician only through the clinic's approved process and with your consent. Support can explain the arrangements, but it does not compare diagnoses, decide which clinician is correct, or promise a different clinical conclusion.",
+        "source_chunks": [
+          "11_second_opinion:fixed_overlap:000",
+          "11_second_opinion:fixed_overlap:001",
+          "11_second_opinion:fixed_overlap:002"
+        ]
+      }
+    ],
+    "coverage": {
+      "policy": "semantic-with-lexical-anchors-v1",
+      "question_focus": "May I obtain another specialist's opinion via a video appointment?",
+      "primary_parent": "11_second_opinion",
+      "selected_parents": [
+        "11_second_opinion"
+      ],
+      "components": [
+        {
+          "component": "obtain another specialist's opinion",
+          "similarity": 0.5875397346250077,
+          "parent_id": "11_second_opinion",
+          "chunk_id": "11_second_opinion:fixed_overlap:000",
+          "primary_similarity": 0.5875397346250077,
+          "lexical_anchor": true,
+          "selected": true
+        },
+        {
+          "component": "video appointment",
+          "similarity": 0.38068131395641436,
+          "parent_id": "11_second_opinion",
+          "chunk_id": "11_second_opinion:fixed_overlap:001",
+          "primary_similarity": 0.38068131395641436,
+          "lexical_anchor": true,
+          "selected": true
+        }
+      ]
+    }
+  },
+  {
+    "query": "Does a repeat appointment cost less than the original visit?",
+    "answer": "A follow-up visit receives a 20 percent consultation-fee discount when it takes place within seven calendar days after a completed consultation with the same clinician, in the same specialty, and for the same concern. An eligible follow-up costs 80 percent of that specialty's standard new-booking fee; medicines, tests, procedures, and any home-visit travel charge are excluded from the discount. Only one discounted follow-up is allowed for each original completed consultation, and it cannot be combined with another consultation-fee offer. A visit after seven calendar days, with another clinician, or for a different concern costs the standard consultation fee unless staff record a separate adjustment.",
+    "fallback": false,
+    "strategy": "sentence",
+    "threshold": 0.3193329870700836,
+    "top_similarity": 0.6255456805229187,
+    "source_chunks": [
+      "10_follow_up_discount:sentence:000",
+      "10_follow_up_discount:sentence:001"
+    ],
+    "retrieved_context": [
+      {
+        "chunk_id": "10_follow_up_discount:sentence:001",
+        "parent_id": "10_follow_up_discount",
+        "text": "Only one discounted follow-up is allowed for each original completed consultation, and it cannot be combined with another consultation-fee offer. A visit after seven calendar days, with another clinician, or for a different concern costs the standard consultation fee unless staff record a separate adjustment.",
+        "distance": 0.3744543194770813,
+        "similarity": 0.6255456805229187,
+        "metadata": {
+          "parent_id": "10_follow_up_discount",
+          "strategy": "sentence",
+          "end": 708,
+          "starts_sentence": true,
+          "index": 1,
+          "start": 398
+        },
+        "question_focus": "Does a repeat appointment cost less than the original visit?",
+        "parent_relevance": 0.6105995162566463,
+        "selection_score": 0.6180724717868786,
+        "retrieval_role": "cosine_anchor"
+      },
+      {
+        "chunk_id": "10_follow_up_discount:sentence:000",
+        "parent_id": "10_follow_up_discount",
+        "text": "A follow-up visit receives a 20 percent consultation-fee discount when it takes place within seven calendar days after a completed consultation with the same clinician, in the same specialty, and for the same concern. An eligible follow-up costs 80 percent of that specialty's standard new-booking fee; medicines, tests, procedures, and any home-visit travel charge are excluded from the discount.",
+        "distance": 0.38790786266326904,
+        "similarity": 0.612092137336731,
+        "metadata": {
+          "strategy": "sentence",
+          "index": 0,
+          "start": 0,
+          "parent_id": "10_follow_up_discount",
+          "starts_sentence": true,
+          "end": 397
+        },
+        "question_focus": "Does a repeat appointment cost less than the original visit?",
+        "parent_relevance": 0.6105995162566463,
+        "selection_score": 0.611345747853747,
+        "retrieval_role": "supporting_context",
+        "coverage_gain": 0.001673356465433014
+      },
+      {
+        "chunk_id": "12_home_visits:sentence:001",
+        "parent_id": "12_home_visits",
+        "text": "A standard home visit costs INR 800 in total: INR 500 for the General Medicine consultation plus a separate INR 300 travel surcharge, with any eligible follow-up discount applied only to the consultation fee. The travel surcharge is refunded only when a cancellation qualifies under the cancellation policy and occurs before the clinician is dispatched; consultation-fee refunds follow that policy.",
+        "distance": 0.4013030529022217,
+        "similarity": 0.5986969470977783,
+        "metadata": {
+          "index": 1,
+          "starts_sentence": true,
+          "start": 278,
+          "strategy": "sentence",
+          "end": 676,
+          "parent_id": "12_home_visits"
+        },
+        "question_focus": "Does a repeat appointment cost less than the original visit?",
+        "parent_relevance": 0.587028838223511,
+        "selection_score": 0.5928628843830704,
+        "retrieval_role": "supporting_context",
+        "coverage_gain": 0.0
+      }
+    ],
+    "context_sections": [
+      {
+        "parent_id": "10_follow_up_discount",
+        "text": "A follow-up visit receives a 20 percent consultation-fee discount when it takes place within seven calendar days after a completed consultation with the same clinician, in the same specialty, and for the same concern. An eligible follow-up costs 80 percent of that specialty's standard new-booking fee; medicines, tests, procedures, and any home-visit travel charge are excluded from the discount. Only one discounted follow-up is allowed for each original completed consultation, and it cannot be combined with another consultation-fee offer. A visit after seven calendar days, with another clinician, or for a different concern costs the standard consultation fee unless staff record a separate adjustment.",
+        "source_chunks": [
+          "10_follow_up_discount:sentence:000",
+          "10_follow_up_discount:sentence:001"
+        ]
+      }
+    ],
+    "coverage": {
+      "policy": "semantic-with-lexical-anchors-v1",
+      "question_focus": "Does a repeat appointment cost less than the original visit?",
+      "primary_parent": "10_follow_up_discount",
+      "selected_parents": [
+        "10_follow_up_discount"
+      ],
+      "components": [
+        {
+          "component": "repeat appointment cost less",
+          "similarity": 0.5775847800682623,
+          "parent_id": "10_follow_up_discount",
+          "chunk_id": "10_follow_up_discount:sentence:001",
+          "primary_similarity": 0.5775847800682623,
+          "lexical_anchor": false,
+          "selected": true
+        },
+        {
+          "component": "original visit",
+          "similarity": 0.25249283524250976,
+          "parent_id": "10_follow_up_discount",
+          "chunk_id": "10_follow_up_discount:sentence:000",
+          "primary_similarity": 0.25249283524250976,
+          "lexical_anchor": true,
+          "selected": true
+        }
+      ]
+    }
+  },
+  {
+    "query": "May I obtain another specialist's opinion via a video appointment?",
+    "answer": "You can request a second-opinion appointment with a different clinician by stating the specialty and providing any available documents from your previous consultation. Staff acknowledge a complete request within three business days and offer an appointment subject to clinician and slot availability. A second opinion is a separate consultation charged at the receiving specialty's standard fee and does not qualify for the same-clinician follow-up discount. Previous consultation documents are shared with the reviewing clinician only through the clinic's approved process and with your consent. Support can explain the arrangements, but it does not compare diagnoses, decide which clinician is correct, or promise a different clinical conclusion.",
+    "fallback": false,
+    "strategy": "sentence",
+    "threshold": 0.3193329870700836,
+    "top_similarity": 0.613997220993042,
+    "source_chunks": [
+      "11_second_opinion:sentence:000",
+      "11_second_opinion:sentence:001",
+      "11_second_opinion:sentence:002"
+    ],
+    "retrieved_context": [
+      {
+        "chunk_id": "11_second_opinion:sentence:000",
+        "parent_id": "11_second_opinion",
+        "text": "You can request a second-opinion appointment with a different clinician by stating the specialty and providing any available documents from your previous consultation. Staff acknowledge a complete request within three business days and offer an appointment subject to clinician and slot availability.",
+        "distance": 0.386002779006958,
+        "similarity": 0.613997220993042,
+        "metadata": {
+          "start": 0,
+          "starts_sentence": true,
+          "strategy": "sentence",
+          "index": 0,
+          "end": 300,
+          "parent_id": "11_second_opinion"
+        },
+        "question_focus": "May I obtain another specialist's opinion via a video appointment?",
+        "parent_relevance": 0.6267475930737041,
+        "selection_score": 0.6203724763266866,
+        "retrieval_role": "cosine_anchor"
+      },
+      {
+        "chunk_id": "11_second_opinion:sentence:001",
+        "parent_id": "11_second_opinion",
+        "text": "A second opinion is a separate consultation charged at the receiving specialty's standard fee and does not qualify for the same-clinician follow-up discount. Previous consultation documents are shared with the reviewing clinician only through the clinic's approved process and with your consent.",
+        "distance": 0.43219226598739624,
+        "similarity": 0.5678077340126038,
+        "metadata": {
+          "strategy": "sentence",
+          "start": 301,
+          "parent_id": "11_second_opinion",
+          "starts_sentence": true,
+          "index": 1,
+          "end": 596
+        },
+        "question_focus": "May I obtain another specialist's opinion via a video appointment?",
+        "parent_relevance": 0.6267475930737041,
+        "selection_score": 0.5972777046705486,
+        "retrieval_role": "supporting_context",
+        "coverage_gain": 0.0
+      },
+      {
+        "chunk_id": "11_second_opinion:sentence:002",
+        "parent_id": "11_second_opinion",
+        "text": "Support can explain the arrangements, but it does not compare diagnoses, decide which clinician is correct, or promise a different clinical conclusion.",
+        "distance": 0.5422875881195068,
+        "similarity": 0.45771241188049316,
+        "metadata": {
+          "strategy": "sentence",
+          "end": 748,
+          "index": 2,
+          "starts_sentence": true,
+          "parent_id": "11_second_opinion",
+          "start": 597
+        },
+        "question_focus": "May I obtain another specialist's opinion via a video appointment?",
+        "parent_relevance": 0.6267475930737041,
+        "selection_score": 0.5422300116832495,
+        "retrieval_role": "supporting_context",
+        "coverage_gain": 0.0
+      }
+    ],
+    "context_sections": [
+      {
+        "parent_id": "11_second_opinion",
+        "text": "You can request a second-opinion appointment with a different clinician by stating the specialty and providing any available documents from your previous consultation. Staff acknowledge a complete request within three business days and offer an appointment subject to clinician and slot availability. A second opinion is a separate consultation charged at the receiving specialty's standard fee and does not qualify for the same-clinician follow-up discount. Previous consultation documents are shared with the reviewing clinician only through the clinic's approved process and with your consent. Support can explain the arrangements, but it does not compare diagnoses, decide which clinician is correct, or promise a different clinical conclusion.",
+        "source_chunks": [
+          "11_second_opinion:sentence:000",
+          "11_second_opinion:sentence:001",
+          "11_second_opinion:sentence:002"
+        ]
+      }
+    ],
+    "coverage": {
+      "policy": "semantic-with-lexical-anchors-v1",
+      "question_focus": "May I obtain another specialist's opinion via a video appointment?",
+      "primary_parent": "11_second_opinion",
+      "selected_parents": [
+        "11_second_opinion"
+      ],
+      "components": [
+        {
+          "component": "obtain another specialist's opinion",
+          "similarity": 0.5576193883138053,
+          "parent_id": "11_second_opinion",
+          "chunk_id": "11_second_opinion:sentence:000",
+          "primary_similarity": 0.5576193883138053,
+          "lexical_anchor": true,
+          "selected": true
+        },
+        {
+          "component": "video appointment",
+          "similarity": 0.3953374597108711,
+          "parent_id": "11_second_opinion",
+          "chunk_id": "11_second_opinion:sentence:000",
+          "primary_similarity": 0.3953374597108711,
+          "lexical_anchor": true,
+          "selected": true
+        }
+      ]
+    }
+  }
+]

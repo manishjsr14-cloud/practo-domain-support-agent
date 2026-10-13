@@ -81,7 +81,7 @@ PII handling:
 - `follow_up_required`: Bernoulli with p = 0.20 per record
 - Coverage guarantee: first assign one record to every category and every status, then fill the remainder from the weighted draws.
 - If the follow-up percentage is not within 10-30%, change the seed or weights and regenerate. If the seed changes, update this section and the README.
-- The consultation-fee knowledge-base document must state the same per-specialty ranges.
+- The handwritten consultation-fee KB supersedes the earlier range-based policy: standard new-booking fees are General Medicine 500, Cardiology 1200, Dermatology 800, Pediatrics 600, and Orthopedics 1000 INR. These lie within the unchanged dataset ranges; an existing appointment's recorded fee remains authoritative.
 
 ---
 
@@ -256,7 +256,7 @@ The README must:
 
 | Part | Status | Notes |
 |---|---|---|
-| Part 1 | completed; retrieval and answer coverage fixed | General parent/question-focus ranking restores q07; multi-parent extraction includes q08 pricing/travel and q09 video eligibility limits. Unchanged selection rule now recommends sentence. All 31 tests and fresh offline workflow passed; real evidence is in transcripts/ with pre-fix failures preserved. KB, query labels, chunk sizes, top-k, calibration queries/file unchanged. Sunday-hours and Mumbai-waiting false acceptances remain documented. No later-Part work. Public repository link is in README; model download script remains unexercised because checkpoint was cached. |
+| Part 1 | completed; handwritten KB imported and database rebuilt | Supplied 12 handwritten policy files copied byte-for-byte; old persisted RAG database deleted and both collections rebuilt exclusively from these files. Validator/tests now enforce fixed standard fees and recorded-fee authority. Generic component reservation and complete-sentence evidence preserve paraphrase coverage. Original query labels, chunk sizes, top-k, dataset, calibration queries and selection rule unchanged; calibration/deployment refreshed for new corpus. All 38 tests and serial fresh offline verification passed. Parallel offline attempt hit Chroma segment-reader error; failed output preserved. Near-topic false acceptances remain documented. No later-Part work; cached model used. |
 | Part 2 | not started | |
 | Part 3 | not started | |
 | Part 4 | not started | |

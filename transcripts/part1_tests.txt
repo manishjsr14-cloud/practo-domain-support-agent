@@ -3,7 +3,7 @@ C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\.venv\Lib\site-package
 C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\.venv\Lib\site-packages\chromadb\api\models\CollectionCommon.py:147: DeprecationWarning: legacy embedding function config
   return load_collection_configuration_from_json(self._model.configuration_json)
 test_additional_paraphrases_cite_the_required_policies (test_answer_coverage.AnswerCoverageTests.test_additional_paraphrases_cite_the_required_policies) ... ok
-test_cardiologist_home_visit_includes_fees_and_separate_travel_quote (test_answer_coverage.AnswerCoverageTests.test_cardiologist_home_visit_includes_fees_and_separate_travel_quote) ... ok
+test_cardiologist_home_visit_explains_general_medicine_only_restriction (test_answer_coverage.AnswerCoverageTests.test_cardiologist_home_visit_explains_general_medicine_only_restriction) ... ok
 test_coverage_cannot_override_whole_query_fallback (test_answer_coverage.AnswerCoverageTests.test_coverage_cannot_override_whole_query_fallback) ... ok
 test_follow_up_paraphrase_retrieves_and_cites_discount_policy (test_answer_coverage.AnswerCoverageTests.test_follow_up_paraphrase_retrieves_and_cites_discount_policy) ... ok
 test_grammar_helpers_do_not_need_clinic_topics_or_query_ids (test_answer_coverage.AnswerCoverageTests.test_grammar_helpers_do_not_need_clinic_topics_or_query_ids) ... ok
@@ -31,10 +31,17 @@ test_changed_corpus_is_rejected_until_rebuilt (test_part1.IndexTests.test_change
 test_retrieval_uses_cosine_distance_and_both_find_cancellation_policy (test_part1.IndexTests.test_retrieval_uses_cosine_distance_and_both_find_cancellation_policy) ... ok
 test_separate_cosine_collections_with_parent_metadata_and_stable_upserts (test_part1.IndexTests.test_separate_cosine_collections_with_parent_metadata_and_stable_upserts) ... ok
 test_every_topic_has_a_document_with_valid_sentences_and_fees (test_part1.KnowledgeBaseTests.test_every_topic_has_a_document_with_valid_sentences_and_fees) ... ok
+test_existing_recorded_fee_authority_cannot_be_removed_or_negated (test_part1.KnowledgeBaseTests.test_existing_recorded_fee_authority_cannot_be_removed_or_negated) ... ok
+test_fixed_standard_fees_stay_within_unchanged_dataset_ranges (test_part1.KnowledgeBaseTests.test_fixed_standard_fees_stay_within_unchanged_dataset_ranges) ... ok
+test_in_range_but_incorrect_standard_fee_is_rejected (test_part1.KnowledgeBaseTests.test_in_range_but_incorrect_standard_fee_is_rejected) ... ok
 test_missing_topics_are_rejected (test_part1.KnowledgeBaseTests.test_missing_topics_are_rejected) ... ok
+test_new_booking_and_existing_booking_distinction_is_required (test_part1.KnowledgeBaseTests.test_new_booking_and_existing_booking_distinction_is_required) ... ok
+test_sentence_limits_are_still_enforced (test_part1.KnowledgeBaseTests.test_sentence_limits_are_still_enforced) ... ok
+test_standard_fee_outside_dataset_range_is_rejected (test_part1.KnowledgeBaseTests.test_standard_fee_outside_dataset_range_is_rejected) ... ok
+test_topic_title_cannot_replace_privacy_policy_content (test_part1.KnowledgeBaseTests.test_topic_title_cannot_replace_privacy_policy_content) ... ok
 test_real_cli_reports_both_strategies_without_changing_calibration (test_stress_threshold.StressThresholdTests.test_real_cli_reports_both_strategies_without_changing_calibration) ... ok
 
 ----------------------------------------------------------------------
-Ran 31 tests in 28.775s
+Ran 38 tests in 47.264s
 
 OK

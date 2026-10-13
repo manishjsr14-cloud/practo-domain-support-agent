@@ -32,9 +32,14 @@ class CalibrationTests(unittest.TestCase):
 
 class ExtractionTests(unittest.TestCase):
     def test_fixed_chunk_starting_at_sentence_boundary_is_preserved(self):
-        from rag.chunking import fixed_overlap_chunks, load_documents
-        body = load_documents()["07_telemedicine"]
-        chunk = fixed_overlap_chunks("07_telemedicine", body)[1]
+        from rag.chunking import FIXED_CHUNK_SIZE, FIXED_CHUNK_OVERLAP, fixed_overlap_chunks
+        # Build a sentence boundary at the next window's start independently
+        # of policy wording, which the student owns and may rewrite.
+        stride = FIXED_CHUNK_SIZE - FIXED_CHUNK_OVERLAP
+        sentence = "A complete next sentence."
+        tail = " ".join([sentence] * (FIXED_CHUNK_OVERLAP // len(sentence) + 1))
+        body = "a" * (stride - len(". ")) + ". " + tail
+        chunk = fixed_overlap_chunks("sample", body)[1]
         self.assertTrue(body[:chunk.start].endswith(". "))
         hit = {"parent_id": chunk.parent_id, "text": chunk.text,
                "chunk_id": chunk.id, "similarity": 1.0,

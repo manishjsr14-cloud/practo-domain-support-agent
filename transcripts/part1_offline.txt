@@ -1,105 +1,105 @@
 API-key environment variables cleared; MOCK_LLM=true
 Outbound Python sockets and DNS blocked before framework imports
-Fresh offline build: {'fixed_overlap': 24, 'sentence': 25}
+Fresh offline build: {'fixed_overlap': 39, 'sentence': 36}
 Cosine similarity = 1 - Chroma cosine distance
 
 Collection strategy: fixed_overlap
-in_scope | How can I reserve a clinic appointment? | top1=0.756113172 | parent=01_appointment_booking
-in_scope | How much does a Cardiology consultation cost? | top1=0.744205773 | parent=03_consultation_fees
-in_scope | What documents are needed for an insurance claim? | top1=0.434606612 | parent=04_insurance_claims
-in_scope | Who is allowed to authorize a prescription refill? | top1=0.689840138 | parent=05_prescription_refills
-out_of_scope | How do I repair a punctured bicycle tyre? | top1=0.174819827 | parent=04_insurance_claims
-out_of_scope | What is the orbital period of Neptune? | top1=0.108673513 | parent=02_cancellation_rescheduling
-out_of_scope | Write a sorting algorithm in Rust. | top1=0.047496557 | parent=06_lab_turnaround
-max_out=0.174819827; min_in=0.434606612
-threshold=(max_out + min_in)/2 = 0.304713219
+in_scope | How can I reserve a clinic appointment? | top1=0.734329104 | parent=01_appointment_booking
+in_scope | How much does a Cardiology consultation cost? | top1=0.674873888 | parent=03_consultation_fees
+in_scope | What documents are needed for an insurance claim? | top1=0.440953672 | parent=04_insurance_claims
+in_scope | Who is allowed to authorize a prescription refill? | top1=0.605015993 | parent=05_prescription_refills
+out_of_scope | How do I repair a punctured bicycle tyre? | top1=0.145102620 | parent=11_second_opinion
+out_of_scope | What is the orbital period of Neptune? | top1=0.143519402 | parent=01_appointment_booking
+out_of_scope | Write a sorting algorithm in Rust. | top1=0.075274765 | parent=01_appointment_booking
+max_out=0.145102620; min_in=0.440953672
+threshold=(max_out + min_in)/2 = 0.293028146
 
 Collection strategy: sentence
-in_scope | How can I reserve a clinic appointment? | top1=0.732594550 | parent=01_appointment_booking
-in_scope | How much does a Cardiology consultation cost? | top1=0.904522061 | parent=03_consultation_fees
-in_scope | What documents are needed for an insurance claim? | top1=0.496595979 | parent=04_insurance_claims
-in_scope | Who is allowed to authorize a prescription refill? | top1=0.698915839 | parent=05_prescription_refills
-out_of_scope | How do I repair a punctured bicycle tyre? | top1=0.193964124 | parent=02_cancellation_rescheduling
-out_of_scope | What is the orbital period of Neptune? | top1=0.125301600 | parent=02_cancellation_rescheduling
-out_of_scope | Write a sorting algorithm in Rust. | top1=0.050853133 | parent=06_lab_turnaround
-max_out=0.193964124; min_in=0.496595979
-threshold=(max_out + min_in)/2 = 0.345280051
+in_scope | How can I reserve a clinic appointment? | top1=0.746177197 | parent=01_appointment_booking
+in_scope | How much does a Cardiology consultation cost? | top1=0.708590269 | parent=03_consultation_fees
+in_scope | What documents are needed for an insurance claim? | top1=0.486387312 | parent=04_insurance_claims
+in_scope | Who is allowed to authorize a prescription refill? | top1=0.600208402 | parent=05_prescription_refills
+out_of_scope | How do I repair a punctured bicycle tyre? | top1=0.152278662 | parent=05_prescription_refills
+out_of_scope | What is the orbital period of Neptune? | top1=0.147324979 | parent=01_appointment_booking
+out_of_scope | Write a sorting algorithm in Rust. | top1=0.082972288 | parent=05_prescription_refills
+max_out=0.152278662; min_in=0.486387312
+threshold=(max_out + min_in)/2 = 0.319332987
 
 Saved calibration: calibration.json
 Parent-document evaluation: retrieve chunks, map parents, deduplicate, score
 Queries: 9; top-k chunks: 3
 Single-parent queries: 7; multi-parent queries: 2
 No similarity filtering is applied during evaluation
-Index fingerprint: 3c4da873972cdda4b844f9b5e79abe06acc0201a64418c88835cc0be0141461f
-Retrieval fingerprint: 104118cfa0d9fe6c7ce119fc78313f9cbc619702dbe92eca242ef56ba1c4c9da
+Index fingerprint: 20b708cbde2d997bc9d1eab11304bd12a6c6d73d4a1105ed9d6c1113bf04f812
+Retrieval fingerprint: 26fa037347d761648207b3671ae7341a470dd6ea38f459d73693622311659c0c
 
 | Query | fixed_overlap precision | fixed_overlap recall | sentence precision | sentence recall |
 |---|---|---|---|---|
-| q01 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q02 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q01 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q02 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
 | q03 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
-| q04 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q05 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q06 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q04 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q05 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q06 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
 | q07 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
 | q08 | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |
 | q09 | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |
-| Macro average | 0.611111 | 1.000000 | 0.666667 | 1.000000 |
+| Macro average | 0.888889 | 1.000000 | 0.944444 | 1.000000 |
 
 q01: How do I book an appointment and know that my slot is confirmed?
 Labelled relevant parents: 01_appointment_booking
-fixed_overlap retrieved chunks: 01_appointment_booking:fixed_overlap:000, 01_appointment_booking:fixed_overlap:001, 02_cancellation_rescheduling:fixed_overlap:000
-fixed_overlap deduped parents: 01_appointment_booking, 02_cancellation_rescheduling
-sentence retrieved chunks: 01_appointment_booking:sentence:001, 01_appointment_booking:sentence:000, 02_cancellation_rescheduling:sentence:000
-sentence deduped parents: 01_appointment_booking, 02_cancellation_rescheduling
+fixed_overlap retrieved chunks: 01_appointment_booking:fixed_overlap:001, 01_appointment_booking:fixed_overlap:000, 01_appointment_booking:fixed_overlap:002
+fixed_overlap deduped parents: 01_appointment_booking
+sentence retrieved chunks: 01_appointment_booking:sentence:001, 01_appointment_booking:sentence:000, 01_appointment_booking:sentence:002
+sentence deduped parents: 01_appointment_booking
 
 q02: What is the cancellation and rescheduling window?
 Labelled relevant parents: 02_cancellation_rescheduling
-fixed_overlap retrieved chunks: 02_cancellation_rescheduling:fixed_overlap:000, 02_cancellation_rescheduling:fixed_overlap:001, 01_appointment_booking:fixed_overlap:001
-fixed_overlap deduped parents: 02_cancellation_rescheduling, 01_appointment_booking
-sentence retrieved chunks: 02_cancellation_rescheduling:sentence:001, 02_cancellation_rescheduling:sentence:000, 01_appointment_booking:sentence:001
-sentence deduped parents: 02_cancellation_rescheduling, 01_appointment_booking
+fixed_overlap retrieved chunks: 02_cancellation_rescheduling:fixed_overlap:000, 02_cancellation_rescheduling:fixed_overlap:001, 02_cancellation_rescheduling:fixed_overlap:002
+fixed_overlap deduped parents: 02_cancellation_rescheduling
+sentence retrieved chunks: 02_cancellation_rescheduling:sentence:000, 02_cancellation_rescheduling:sentence:001, 02_cancellation_rescheduling:sentence:002
+sentence deduped parents: 02_cancellation_rescheduling
 
 q03: What are the consultation fees for each specialty?
 Labelled relevant parents: 03_consultation_fees
-fixed_overlap retrieved chunks: 03_consultation_fees:fixed_overlap:001, 03_consultation_fees:fixed_overlap:000, 11_second_opinion:fixed_overlap:000
-fixed_overlap deduped parents: 03_consultation_fees, 11_second_opinion
+fixed_overlap retrieved chunks: 03_consultation_fees:fixed_overlap:000, 03_consultation_fees:fixed_overlap:001, 10_follow_up_discount:fixed_overlap:001
+fixed_overlap deduped parents: 03_consultation_fees, 10_follow_up_discount
 sentence retrieved chunks: 03_consultation_fees:sentence:000, 03_consultation_fees:sentence:001, 03_consultation_fees:sentence:002
 sentence deduped parents: 03_consultation_fees
 
 q04: How long do routine and specialized lab test reports take?
 Labelled relevant parents: 06_lab_turnaround
-fixed_overlap retrieved chunks: 06_lab_turnaround:fixed_overlap:000, 06_lab_turnaround:fixed_overlap:001, 03_consultation_fees:fixed_overlap:001
-fixed_overlap deduped parents: 06_lab_turnaround, 03_consultation_fees
-sentence retrieved chunks: 06_lab_turnaround:sentence:000, 06_lab_turnaround:sentence:001, 10_follow_up_discount:sentence:000
-sentence deduped parents: 06_lab_turnaround, 10_follow_up_discount
+fixed_overlap retrieved chunks: 06_lab_turnaround:fixed_overlap:000, 06_lab_turnaround:fixed_overlap:002, 06_lab_turnaround:fixed_overlap:001
+fixed_overlap deduped parents: 06_lab_turnaround
+sentence retrieved chunks: 06_lab_turnaround:sentence:000, 06_lab_turnaround:sentence:002, 06_lab_turnaround:sentence:001
+sentence deduped parents: 06_lab_turnaround
 
 q05: When does a follow-up visit qualify for a discount?
 Labelled relevant parents: 10_follow_up_discount
-fixed_overlap retrieved chunks: 10_follow_up_discount:fixed_overlap:001, 10_follow_up_discount:fixed_overlap:000, 02_cancellation_rescheduling:fixed_overlap:001
-fixed_overlap deduped parents: 10_follow_up_discount, 02_cancellation_rescheduling
-sentence retrieved chunks: 10_follow_up_discount:sentence:001, 10_follow_up_discount:sentence:000, 02_cancellation_rescheduling:sentence:000
-sentence deduped parents: 10_follow_up_discount, 02_cancellation_rescheduling
+fixed_overlap retrieved chunks: 10_follow_up_discount:fixed_overlap:000, 10_follow_up_discount:fixed_overlap:001, 10_follow_up_discount:fixed_overlap:002
+fixed_overlap deduped parents: 10_follow_up_discount
+sentence retrieved chunks: 10_follow_up_discount:sentence:000, 10_follow_up_discount:sentence:001, 10_follow_up_discount:sentence:002
+sentence deduped parents: 10_follow_up_discount
 
 q06: How do I submit an insurance reimbursement claim?
 Labelled relevant parents: 04_insurance_claims
-fixed_overlap retrieved chunks: 04_insurance_claims:fixed_overlap:000, 04_insurance_claims:fixed_overlap:001, 11_second_opinion:fixed_overlap:001
-fixed_overlap deduped parents: 04_insurance_claims, 11_second_opinion
-sentence retrieved chunks: 04_insurance_claims:sentence:000, 04_insurance_claims:sentence:001, 11_second_opinion:sentence:001
-sentence deduped parents: 04_insurance_claims, 11_second_opinion
+fixed_overlap retrieved chunks: 04_insurance_claims:fixed_overlap:002, 04_insurance_claims:fixed_overlap:000, 04_insurance_claims:fixed_overlap:001
+fixed_overlap deduped parents: 04_insurance_claims
+sentence retrieved chunks: 04_insurance_claims:sentence:000, 04_insurance_claims:sentence:002, 04_insurance_claims:sentence:001
+sentence deduped parents: 04_insurance_claims
 
 q07: My doctor asked me to come back, do I have to pay the full price again?
 Labelled relevant parents: 10_follow_up_discount
-fixed_overlap retrieved chunks: 03_consultation_fees:fixed_overlap:000, 10_follow_up_discount:fixed_overlap:000, 03_consultation_fees:fixed_overlap:001
-fixed_overlap deduped parents: 03_consultation_fees, 10_follow_up_discount
-sentence retrieved chunks: 11_second_opinion:sentence:001, 10_follow_up_discount:sentence:001, 10_follow_up_discount:sentence:000
-sentence deduped parents: 11_second_opinion, 10_follow_up_discount
+fixed_overlap retrieved chunks: 10_follow_up_discount:fixed_overlap:001, 10_follow_up_discount:fixed_overlap:000, 02_cancellation_rescheduling:fixed_overlap:001
+fixed_overlap deduped parents: 10_follow_up_discount, 02_cancellation_rescheduling
+sentence retrieved chunks: 03_consultation_fees:sentence:002, 10_follow_up_discount:sentence:001, 10_follow_up_discount:sentence:000
+sentence deduped parents: 03_consultation_fees, 10_follow_up_discount
 
 q08: What will I pay for a home visit by a cardiologist?
 Labelled relevant parents: 03_consultation_fees, 12_home_visits
-fixed_overlap retrieved chunks: 03_consultation_fees:fixed_overlap:000, 12_home_visits:fixed_overlap:000, 03_consultation_fees:fixed_overlap:001
+fixed_overlap retrieved chunks: 03_consultation_fees:fixed_overlap:000, 12_home_visits:fixed_overlap:000, 12_home_visits:fixed_overlap:001
 fixed_overlap deduped parents: 03_consultation_fees, 12_home_visits
-sentence retrieved chunks: 03_consultation_fees:sentence:001, 12_home_visits:sentence:001, 03_consultation_fees:sentence:002
+sentence retrieved chunks: 03_consultation_fees:sentence:000, 12_home_visits:sentence:001, 12_home_visits:sentence:000
 sentence deduped parents: 03_consultation_fees, 12_home_visits
 
 q09: Can I get a second opinion over a video call?
@@ -112,96 +112,92 @@ sentence deduped parents: 11_second_opinion, 07_telemedicine
 Markdown results table: fixed_overlap
 | Query | Labelled parent documents | Retrieved parent documents (deduped) | Precision arithmetic | Recall arithmetic |
 |---|---|---|---|---|
-| q01 | 01_appointment_booking | 01_appointment_booking, 02_cancellation_rescheduling | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q02 | 02_cancellation_rescheduling | 02_cancellation_rescheduling, 01_appointment_booking | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q03 | 03_consultation_fees | 03_consultation_fees, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q04 | 06_lab_turnaround | 06_lab_turnaround, 03_consultation_fees | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q05 | 10_follow_up_discount | 10_follow_up_discount, 02_cancellation_rescheduling | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q06 | 04_insurance_claims | 04_insurance_claims, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q07 | 10_follow_up_discount | 03_consultation_fees, 10_follow_up_discount | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q01 | 01_appointment_booking | 01_appointment_booking | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q02 | 02_cancellation_rescheduling | 02_cancellation_rescheduling | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q03 | 03_consultation_fees | 03_consultation_fees, 10_follow_up_discount | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q04 | 06_lab_turnaround | 06_lab_turnaround | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q05 | 10_follow_up_discount | 10_follow_up_discount | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q06 | 04_insurance_claims | 04_insurance_claims | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q07 | 10_follow_up_discount | 10_follow_up_discount, 02_cancellation_rescheduling | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
 | q08 | 03_consultation_fees, 12_home_visits | 03_consultation_fees, 12_home_visits | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |
 | q09 | 07_telemedicine, 11_second_opinion | 11_second_opinion, 07_telemedicine | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |
-| Macro average | | | 0.611111 | 1.000000 |
+| Macro average | | | 0.888889 | 1.000000 |
 
 Markdown results table: sentence
 | Query | Labelled parent documents | Retrieved parent documents (deduped) | Precision arithmetic | Recall arithmetic |
 |---|---|---|---|---|
-| q01 | 01_appointment_booking | 01_appointment_booking, 02_cancellation_rescheduling | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q02 | 02_cancellation_rescheduling | 02_cancellation_rescheduling, 01_appointment_booking | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q01 | 01_appointment_booking | 01_appointment_booking | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q02 | 02_cancellation_rescheduling | 02_cancellation_rescheduling | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
 | q03 | 03_consultation_fees | 03_consultation_fees | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
-| q04 | 06_lab_turnaround | 06_lab_turnaround, 10_follow_up_discount | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q05 | 10_follow_up_discount | 10_follow_up_discount, 02_cancellation_rescheduling | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q06 | 04_insurance_claims | 04_insurance_claims, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q07 | 10_follow_up_discount | 11_second_opinion, 10_follow_up_discount | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q04 | 06_lab_turnaround | 06_lab_turnaround | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q05 | 10_follow_up_discount | 10_follow_up_discount | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q06 | 04_insurance_claims | 04_insurance_claims | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q07 | 10_follow_up_discount | 03_consultation_fees, 10_follow_up_discount | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
 | q08 | 03_consultation_fees, 12_home_visits | 03_consultation_fees, 12_home_visits | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |
 | q09 | 07_telemedicine, 11_second_opinion | 11_second_opinion, 07_telemedicine | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |
-| Macro average | | | 0.666667 | 1.000000 |
+| Macro average | | | 0.944444 | 1.000000 |
 
-Recommendation: Across 9 hand-labelled queries, fixed_overlap achieved macro precision 0.611111 and macro recall 1.000000, while sentence achieved macro precision 0.666667 and macro recall 1.000000. Deploy sentence because it has equal macro recall and higher macro precision. This small policy sample supports a local choice and does not establish universal retrieval quality.
+Recommendation: Across 9 hand-labelled queries, fixed_overlap achieved macro precision 0.888889 and macro recall 1.000000, while sentence achieved macro precision 0.944444 and macro recall 1.000000. Deploy sentence because it has equal macro recall and higher macro precision. This small policy sample supports a local choice and does not establish universal retrieval quality.
 MOCK_LLM=true; strategy=sentence; top_k=3
 
 Question: How do I book an appointment and know that my slot is confirmed?
-top1=0.655633628; threshold=0.345280051; fallback=False
-Answer: Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled. A requested slot is not reserved until confirmation is issued. Keep the appointment record ID to check its status or request a change without sharing personal details in support chat.
-
-Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund.
-Sources: 01_appointment_booking:sentence:000, 01_appointment_booking:sentence:001, 02_cancellation_rescheduling:sentence:000
-Policy excerpts: 01_appointment_booking, 02_cancellation_rescheduling
+top1=0.745053649; threshold=0.319332987; fallback=False
+Answer: To request an appointment, provide your patient reference, the specialty, a preferred clinician or a request for any available clinician, and your preferred date and time. Routine appointments can be requested up to 30 calendar days in advance, subject to clinician and slot availability. Your appointment is confirmed only when clinic staff issue an appointment record ID and mark it Scheduled; requesting a slot does not reserve it. Staff quote the standard consultation fee before confirmation and record any appointment-specific adjustment in your booking. The support service can explain these steps and check existing appointment records, while clinic staff handle bookings, slot reservations, and payments.
+Sources: 01_appointment_booking:sentence:000, 01_appointment_booking:sentence:001, 01_appointment_booking:sentence:002
+Policy excerpts: 01_appointment_booking
 
 Question: What is the cancellation and rescheduling window?
-top1=0.565503120; threshold=0.345280051; fallback=False
-Answer: Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund. A rescheduled appointment receives a new confirmed time, while a cancelled appointment releases its slot. Reception explains any applicable charge before accepting a late change.
-Sources: 02_cancellation_rescheduling:sentence:000, 02_cancellation_rescheduling:sentence:001
+top1=0.548343599; threshold=0.319332987; fallback=False
+Answer: You can cancel or reschedule without a change fee if clinic staff receive your request at least 24 hours before the appointment starts. A cancellation within this window receives a full refund of the consultation fee recorded for the appointment; a later patient cancellation or a No-Show receives no consultation-fee refund. Rescheduling depends on an available slot, keeps your original paid consultation fee, and is confirmed only when staff mark the appointment Rescheduled. If the clinic cancels, you receive a full consultation-fee refund regardless of notice, and approved refunds return to the original payment method within seven business days. The support service explains these rules, but clinic staff must make booking changes and approve refunds.
+Sources: 02_cancellation_rescheduling:sentence:000, 02_cancellation_rescheduling:sentence:001, 02_cancellation_rescheduling:sentence:002
 Policy excerpts: 02_cancellation_rescheduling
 
 Question: What are the consultation fees for each specialty?
-top1=0.651339710; threshold=0.345280051; fallback=False
-Answer: General Medicine consultations cost INR 300-600, and Pediatrics consultations cost INR 400-800. Dermatology consultations cost INR 500-1000, and Orthopedics consultations cost INR 600-1200. Cardiology consultations cost INR 800-1500. The exact consultation fee within the specialty range is shown before the appointment is confirmed. Lab tests, procedures, and home-visit travel charges are quoted separately and are not included in the consultation fee.
+top1=0.694779396; threshold=0.319332987; fallback=False
+Answer: Standard consultation fees for new bookings are INR 500 for General Medicine, INR 1200 for Cardiology, INR 800 for Dermatology, INR 600 for Pediatrics, and INR 1000 for Orthopedics. Each fee covers one consultation with the booked clinician and excludes medicines, laboratory tests, procedures, and home-visit travel charges. For an existing appointment, the consultation fee recorded in that booking is authoritative and may differ from the standard fee because of a documented adjustment. An eligible follow-up receives the discount described in the follow-up-discount policy, calculated from the specialty's standard consultation fee. Clinic staff must quote separate charges before confirmation; support must use the listed prices and leave recorded fees unchanged.
 Sources: 03_consultation_fees:sentence:000, 03_consultation_fees:sentence:001, 03_consultation_fees:sentence:002
 Policy excerpts: 03_consultation_fees
 
 Question: How long do routine and specialized lab test reports take?
-top1=0.686623037; threshold=0.345280051; fallback=False
-Answer: Routine blood-test reports are usually available within 1-2 working days after the laboratory accepts the sample. Specialized tests usually take 3-5 working days, and the laboratory gives a test-specific estimate when the sample is accepted. Weekends, holidays, and a request for another sample can extend that estimate. Reception can check whether a report is ready, while a clinician must explain what the results mean.
-Sources: 06_lab_turnaround:sentence:000, 06_lab_turnaround:sentence:001
+top1=0.647959828; threshold=0.319332987; fallback=False
+Answer: Indicative laboratory turnaround times are 24 hours for routine blood tests, 72 hours for culture tests, and five business days for specialized tests. These estimates start when the laboratory receives both a usable sample and a complete test request, rather than when you book an appointment. A repeat sample, an incomplete request, or referral to an outside laboratory may extend the wait, and staff provide a revised estimate when they identify a delay. If the quoted time has passed, ask clinic staff to check your test reference and release status. Support can explain these timings, but laboratory results are not available in appointment records, and support does not interpret results or guarantee a release time.
+Sources: 06_lab_turnaround:sentence:000, 06_lab_turnaround:sentence:001, 06_lab_turnaround:sentence:002
 Policy excerpts: 06_lab_turnaround
 
 Question: When does a follow-up visit qualify for a discount?
-top1=0.691753447; threshold=0.345280051; fallback=False
-Answer: A follow-up consultation within 7 calendar days of a completed visit qualifies for a 20 percent consultation-fee discount when it is with the same specialty for the same issue. Reception checks the original appointment reference and confirms eligibility before booking the follow-up. A record marked follow_up_required indicates that follow-up was requested but does not by itself prove discount eligibility. Lab tests, procedures, and travel charges are excluded from the discount.
-Sources: 10_follow_up_discount:sentence:000, 10_follow_up_discount:sentence:001
+top1=0.728021502; threshold=0.319332987; fallback=False
+Answer: A follow-up visit receives a 20 percent consultation-fee discount when it takes place within seven calendar days after a completed consultation with the same clinician, in the same specialty, and for the same concern. An eligible follow-up costs 80 percent of that specialty's standard new-booking fee; medicines, tests, procedures, and any home-visit travel charge are excluded from the discount. Only one discounted follow-up is allowed for each original completed consultation, and it cannot be combined with another consultation-fee offer. A visit after seven calendar days, with another clinician, or for a different concern costs the standard consultation fee unless staff record a separate adjustment. A recommendation for follow-up alone does not establish eligibility; staff must check the consultation dates, clinician, specialty, and concern.
+Sources: 10_follow_up_discount:sentence:000, 10_follow_up_discount:sentence:001, 10_follow_up_discount:sentence:002
 Policy excerpts: 10_follow_up_discount
 
 Question: How do I submit an insurance reimbursement claim?
-top1=0.687115192; threshold=0.345280051; fallback=False
-Answer: Pay the clinic bill and request an itemized invoice and consultation receipt for an insurance reimbursement claim. Submit those documents with the insurer's claim form through the insurer's own approved channel. Reception can correct billing details after verification but cannot decide coverage or promise claim approval. Direct cashless settlement is not offered by this fictional clinic.
-Sources: 04_insurance_claims:sentence:000, 04_insurance_claims:sentence:001
+top1=0.514510751; threshold=0.319332987; fallback=False
+Answer: Patients pay the clinic directly and can request documents for insurance reimbursement; cashless treatment and direct insurer billing are not offered. To request insurance documents, provide your appointment record ID, payment receipt, and any document checklist from your insurer. After staff verify that the appointment is Completed and paid, they provide an itemized consultation receipt and available clinician-approved visit documents within three business days. Your insurer decides coverage, claim deadlines, approval, and reimbursement amounts, so payment of a claim is not guaranteed. The support service can explain how to request documents; submitting claims, accessing insurer accounts, and deciding insurance eligibility are outside its role.
+Sources: 04_insurance_claims:sentence:000, 04_insurance_claims:sentence:001, 04_insurance_claims:sentence:002
 Policy excerpts: 04_insurance_claims
 
 Question: My doctor asked me to come back, do I have to pay the full price again?
-top1=0.478131831; threshold=0.345280051; fallback=False
-Answer: A follow-up consultation within 7 calendar days of a completed visit qualifies for a 20 percent consultation-fee discount when it is with the same specialty for the same issue. Reception checks the original appointment reference and confirms eligibility before booking the follow-up. A record marked follow_up_required indicates that follow-up was requested but does not by itself prove discount eligibility. Lab tests, procedures, and travel charges are excluded from the discount.
+top1=0.577073753; threshold=0.319332987; fallback=False
+Answer: A follow-up visit receives a 20 percent consultation-fee discount when it takes place within seven calendar days after a completed consultation with the same clinician, in the same specialty, and for the same concern. An eligible follow-up costs 80 percent of that specialty's standard new-booking fee; medicines, tests, procedures, and any home-visit travel charge are excluded from the discount. Only one discounted follow-up is allowed for each original completed consultation, and it cannot be combined with another consultation-fee offer. A visit after seven calendar days, with another clinician, or for a different concern costs the standard consultation fee unless staff record a separate adjustment.
 Sources: 10_follow_up_discount:sentence:000, 10_follow_up_discount:sentence:001
 Policy excerpts: 10_follow_up_discount
 
 Question: What will I pay for a home visit by a cardiologist?
-top1=0.637170434; threshold=0.345280051; fallback=False
-Answer: Cardiology consultations cost INR 800-1500. The exact consultation fee within the specialty range is shown before the appointment is confirmed. Lab tests, procedures, and home-visit travel charges are quoted separately and are not included in the consultation fee.
-
-The consultation fee and any travel charge are quoted before the visit is confirmed. Home visits are scheduled outpatient services and cannot be used for an emergency.
-Sources: 03_consultation_fees:sentence:001, 03_consultation_fees:sentence:002, 12_home_visits:sentence:001
-Policy excerpts: 03_consultation_fees, 12_home_visits
+top1=0.572593331; threshold=0.319332987; fallback=False
+Answer: Non-emergency home visits are available only for General Medicine patients aged 18 years or older with an address within five kilometres of the clinic. Visit slots run from 09:00 to 17:00 local clinic time, and staff must confirm clinician availability and address eligibility. A standard home visit costs INR 800 in total: INR 500 for the General Medicine consultation plus a separate INR 300 travel surcharge, with any eligible follow-up discount applied only to the consultation fee. The travel surcharge is refunded only when a cancellation qualifies under the cancellation policy and occurs before the clinician is dispatched; consultation-fee refunds follow that policy.
+Sources: 12_home_visits:sentence:000, 12_home_visits:sentence:001
+Policy excerpts: 12_home_visits
 
 Question: Can I get a second opinion over a video call?
-top1=0.415153027; threshold=0.345280051; fallback=False
-Answer: Request a second opinion through reception by asking for a different clinician in the relevant specialty. With consent, share previous reports and the consultation summary through the secure clinic portal before the visit. The reviewing clinician makes an independent assessment and may request an in-person consultation. A second opinion is billed at the chosen specialty's standard consultation fee and does not refund the earlier visit.
+top1=0.396036744; threshold=0.319332987; fallback=False
+Answer: You can request a second-opinion appointment with a different clinician by stating the specialty and providing any available documents from your previous consultation. Staff acknowledge a complete request within three business days and offer an appointment subject to clinician and slot availability. A second opinion is a separate consultation charged at the receiving specialty's standard fee and does not qualify for the same-clinician follow-up discount. Previous consultation documents are shared with the reviewing clinician only through the clinic's approved process and with your consent.
 
-Telemedicine appointments are available for routine follow-ups when the clinician confirms that an in-person examination is unnecessary. The patient must consent to a remote consultation and have access to the clinic's secure video service.
+Routine telemedicine consultations are available only for General Medicine and Dermatology patients aged 18 years or older, subject to clinician approval. Before a video consultation, you need a supported video connection, completion of the clinic's identity check, and recorded consent.
 Sources: 11_second_opinion:sentence:000, 11_second_opinion:sentence:001, 07_telemedicine:sentence:000
 Policy excerpts: 11_second_opinion, 07_telemedicine
 
 Question: Give me a recipe for chocolate brownies.
-top1=0.023517489; threshold=0.345280051; fallback=True
+top1=0.054437876; threshold=0.319332987; fallback=True
 Answer: I don't know based on the available clinic-policy context.
 Sources: (none)
 Policy excerpts: (none)
@@ -210,62 +206,64 @@ Demo: PASS (9 in-scope answers; out-of-scope fallback)
 Unsupported near-topic stress test; existing calibration is unchanged
 Top-k chunks: 3
 Deployed strategy: sentence
-Deployed threshold: 0.345280051
+Deployed threshold: 0.319332987
 
 | Query | fixed_overlap top-1 cosine | sentence top-1 cosine | Deployed strategy | Deployed threshold | Deployed decision |
 |---|---|---|---|---|---|
-| Can you diagnose my chest pain? | 0.245835125 | 0.316201031 | sentence | 0.345280051 | FALLBACK |
-| Which medicine should I take for a fever? | 0.228224874 | 0.218418896 | sentence | 0.345280051 | FALLBACK |
-| What are the clinic's opening hours on Sundays? | 0.508999348 | 0.529146969 | sentence | 0.345280051 | ANSWER |
-| Which hospital in Mumbai has the shortest waiting time? | 0.403571725 | 0.416320801 | sentence | 0.345280051 | ANSWER |
+| Can you diagnose my chest pain? | 0.256390333 | 0.263177156 | sentence | 0.319332987 | FALLBACK |
+| Which medicine should I take for a fever? | 0.272614956 | 0.202158451 | sentence | 0.319332987 | FALLBACK |
+| What are the clinic's opening hours on Sundays? | 0.486783445 | 0.524604023 | sentence | 0.319332987 | ANSWER |
+| Which hospital in Mumbai has the shortest waiting time? | 0.421420097 | 0.439948082 | sentence | 0.319332987 | ANSWER |
 
 Question: Can you diagnose my chest pain?
-fixed_overlap: top1=0.245835125; threshold=0.304713219; decision=FALLBACK
+fixed_overlap: top1=0.256390333; threshold=0.293028146; decision=FALLBACK
 Answer: I don't know based on the available clinic-policy context.
 Source chunks: (none)
-sentence: top1=0.316201031; threshold=0.345280051; decision=FALLBACK
+sentence: top1=0.263177156; threshold=0.319332987; decision=FALLBACK
 Answer: I don't know based on the available clinic-policy context.
 Source chunks: (none)
 Deployed answer (FALLBACK): I don't know based on the available clinic-policy context.
 
 Question: Which medicine should I take for a fever?
-fixed_overlap: top1=0.228224874; threshold=0.304713219; decision=FALLBACK
+fixed_overlap: top1=0.272614956; threshold=0.293028146; decision=FALLBACK
 Answer: I don't know based on the available clinic-policy context.
 Source chunks: (none)
-sentence: top1=0.218418896; threshold=0.345280051; decision=FALLBACK
+sentence: top1=0.202158451; threshold=0.319332987; decision=FALLBACK
 Answer: I don't know based on the available clinic-policy context.
 Source chunks: (none)
 Deployed answer (FALLBACK): I don't know based on the available clinic-policy context.
 
 Question: What are the clinic's opening hours on Sundays?
-fixed_overlap: top1=0.508999348; threshold=0.304713219; decision=ANSWER
+fixed_overlap: top1=0.486783445; threshold=0.293028146; decision=ANSWER
 Unsupported acceptance: similarity passed, but this extract does not establish that the question is supported
-Answer: Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled. A requested slot is not reserved until confirmation is issued.
-Source chunks: 01_appointment_booking:fixed_overlap:000
-sentence: top1=0.529146969; threshold=0.345280051; decision=ANSWER
+Answer: To request an appointment, provide your patient reference, the specialty, a preferred clinician or a request for any available clinician, and your preferred date and time. Routine appointments can be requested up to 30 calendar days in advance, subject to clinician and slot availability. Your appointment is confirmed only when clinic staff issue an appointment record ID and mark it Scheduled; requesting a slot does not reserve it. Staff quote the standard consultation fee before confirmation and record any appointment-specific adjustment in your booking.
+Source chunks: 01_appointment_booking:fixed_overlap:000, 01_appointment_booking:fixed_overlap:001
+sentence: top1=0.524604023; threshold=0.319332987; decision=ANSWER
 Unsupported acceptance: similarity passed, but this extract does not establish that the question is supported
-Answer: Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled.
-Source chunks: 01_appointment_booking:sentence:000
-Deployed answer (ANSWER): Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled.
+Answer: To request an appointment, provide your patient reference, the specialty, a preferred clinician or a request for any available clinician, and your preferred date and time. Routine appointments can be requested up to 30 calendar days in advance, subject to clinician and slot availability. The support service can explain these steps and check existing appointment records, while clinic staff handle bookings, slot reservations, and payments.
+Source chunks: 01_appointment_booking:sentence:000, 01_appointment_booking:sentence:002
+Deployed answer (ANSWER): To request an appointment, provide your patient reference, the specialty, a preferred clinician or a request for any available clinician, and your preferred date and time. Routine appointments can be requested up to 30 calendar days in advance, subject to clinician and slot availability. The support service can explain these steps and check existing appointment records, while clinic staff handle bookings, slot reservations, and payments.
 
 Question: Which hospital in Mumbai has the shortest waiting time?
-fixed_overlap: top1=0.403571725; threshold=0.304713219; decision=ANSWER
+fixed_overlap: top1=0.421420097; threshold=0.293028146; decision=ANSWER
 Unsupported acceptance: similarity passed, but this extract does not establish that the question is supported
-Answer: For an emergency, seek help from local emergency services or the nearest emergency department immediately. This outpatient clinic does not operate an emergency department, and its support agent cannot assess symptoms or provide emergency triage. Do not wait for a portal reply or a routine appointment confirmation when emergency help is needed. Reception can help arrange a routine visit only after urgent needs have been handled by an appropriate service.
-Source chunks: 08_emergency_protocol:fixed_overlap:000, 08_emergency_protocol:fixed_overlap:001
-sentence: top1=0.416320801; threshold=0.345280051; decision=ANSWER
+Answer: To request an appointment, provide your patient reference, the specialty, a preferred clinician or a request for any available clinician, and your preferred date and time. Routine appointments can be requested up to 30 calendar days in advance, subject to clinician and slot availability.
+
+A repeat sample, an incomplete request, or referral to an outside laboratory may extend the wait, and staff provide a revised estimate when they identify a delay. If the quoted time has passed, ask clinic staff to check your test reference and release status. Support can explain these timings, but laboratory results are not available in appointment records, and support does not interpret results or guarantee a release time.
+Source chunks: 01_appointment_booking:fixed_overlap:000, 06_lab_turnaround:fixed_overlap:001, 06_lab_turnaround:fixed_overlap:002
+sentence: top1=0.439948082; threshold=0.319332987; decision=ANSWER
 Unsupported acceptance: similarity passed, but this extract does not establish that the question is supported
-Answer: Do not wait for a portal reply or a routine appointment confirmation when emergency help is needed. Reception can help arrange a routine visit only after urgent needs have been handled by an appropriate service.
+Answer: To request an appointment, provide your patient reference, the specialty, a preferred clinician or a request for any available clinician, and your preferred date and time. Routine appointments can be requested up to 30 calendar days in advance, subject to clinician and slot availability.
 
-Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund.
-Source chunks: 08_emergency_protocol:sentence:001, 02_cancellation_rescheduling:sentence:000
-Deployed answer (ANSWER): Do not wait for a portal reply or a routine appointment confirmation when emergency help is needed. Reception can help arrange a routine visit only after urgent needs have been handled by an appropriate service.
+A repeat sample, an incomplete request, or referral to an outside laboratory may extend the wait, and staff provide a revised estimate when they identify a delay. If the quoted time has passed, ask clinic staff to check your test reference and release status.
+Source chunks: 01_appointment_booking:sentence:000, 06_lab_turnaround:sentence:001
+Deployed answer (ANSWER): To request an appointment, provide your patient reference, the specialty, a preferred clinician or a request for any available clinician, and your preferred date and time. Routine appointments can be requested up to 30 calendar days in advance, subject to clinician and slot availability.
 
-Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund.
+A repeat sample, an incomplete request, or referral to an outside laboratory may extend the wait, and staff provide a revised estimate when they identify a delay. If the quoted time has passed, ask clinic staff to check your test reference and release status.
 
 Computed counts: {"deployed": {"accepted": 2, "fallback": 2}, "strategies": {"fixed_overlap": {"accepted": 2, "fallback": 2}, "sentence": {"accepted": 2, "fallback": 2}}}
-Calibration SHA-256 before: f9a538ea914cdfaf7cdfcb58fb887c1c961a2688a0278fe0911b02039a4fe05e
-Calibration SHA-256 after: f9a538ea914cdfaf7cdfcb58fb887c1c961a2688a0278fe0911b02039a4fe05e
+Calibration SHA-256 before: fc8fab2c0b3372f9c472d9aa23fb3294b684ef266fcc20ddb502c5c49692ca70
+Calibration SHA-256 after: fc8fab2c0b3372f9c472d9aa23fb3294b684ef266fcc20ddb502c5c49692ca70
 Calibration bytes unchanged: True
 Accepted unsupported queries are measured limitations of the similarity-only gate
 Outbound Python network attempts: 0

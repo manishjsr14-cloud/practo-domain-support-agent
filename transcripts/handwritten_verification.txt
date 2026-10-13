@@ -1,0 +1,10 @@
+Handwritten source and repository files still match byte-for-byte: 12
+Active database collections: 2; names match only current strategies
+fixed_overlap: 39 current chunks; previous-policy or unexpected chunks: 0
+sentence: 36 current chunks; previous-policy or unexpected chunks: 0
+Fixed demo/evaluation queries and labels unchanged: 9
+Top-k unchanged: 3
+Dataset, chunking, calibration questions, and strategy selection rule unchanged: True
+New handwritten corpus fingerprint: 20b708cbde2d997bc9d1eab11304bd12a6c6d73d4a1105ed9d6c1113bf04f812
+Calibration and deployment refreshed for the new corpus: True
+Handwritten KB and rebuilt database verification: PASS

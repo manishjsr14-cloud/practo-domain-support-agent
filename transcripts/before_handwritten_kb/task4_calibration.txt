@@ -1,0 +1,26 @@
+Cosine similarity = 1 - Chroma cosine distance
+
+Collection strategy: fixed_overlap
+in_scope | How can I reserve a clinic appointment? | top1=0.756113172 | parent=01_appointment_booking
+in_scope | How much does a Cardiology consultation cost? | top1=0.744205773 | parent=03_consultation_fees
+in_scope | What documents are needed for an insurance claim? | top1=0.434606612 | parent=04_insurance_claims
+in_scope | Who is allowed to authorize a prescription refill? | top1=0.689840138 | parent=05_prescription_refills
+out_of_scope | How do I repair a punctured bicycle tyre? | top1=0.174819827 | parent=04_insurance_claims
+out_of_scope | What is the orbital period of Neptune? | top1=0.108673513 | parent=02_cancellation_rescheduling
+out_of_scope | Write a sorting algorithm in Rust. | top1=0.047496557 | parent=06_lab_turnaround
+max_out=0.174819827; min_in=0.434606612
+threshold=(max_out + min_in)/2 = 0.304713219
+
+Collection strategy: sentence
+in_scope | How can I reserve a clinic appointment? | top1=0.732594550 | parent=01_appointment_booking
+in_scope | How much does a Cardiology consultation cost? | top1=0.904522061 | parent=03_consultation_fees
+in_scope | What documents are needed for an insurance claim? | top1=0.496595979 | parent=04_insurance_claims
+in_scope | Who is allowed to authorize a prescription refill? | top1=0.698915839 | parent=05_prescription_refills
+out_of_scope | How do I repair a punctured bicycle tyre? | top1=0.193964124 | parent=02_cancellation_rescheduling
+out_of_scope | What is the orbital period of Neptune? | top1=0.125301600 | parent=02_cancellation_rescheduling
+out_of_scope | Write a sorting algorithm in Rust. | top1=0.050853133 | parent=06_lab_turnaround
+max_out=0.193964124; min_in=0.496595979
+threshold=(max_out + min_in)/2 = 0.345280051
+
+Saved calibration: rechecked_calibration.json
+Existing calibration file and measured values unchanged: True

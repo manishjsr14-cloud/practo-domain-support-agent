@@ -1,6 +1,6 @@
 {
-  "calibration_sha256": "f9a538ea914cdfaf7cdfcb58fb887c1c961a2688a0278fe0911b02039a4fe05e",
-  "calibration_sha256_after": "f9a538ea914cdfaf7cdfcb58fb887c1c961a2688a0278fe0911b02039a4fe05e",
+  "calibration_sha256": "fc8fab2c0b3372f9c472d9aa23fb3294b684ef266fcc20ddb502c5c49692ca70",
+  "calibration_sha256_after": "fc8fab2c0b3372f9c472d9aa23fb3294b684ef266fcc20ddb502c5c49692ca70",
   "calibration_unchanged": true,
   "counts": {
     "deployed": {
@@ -19,8 +19,8 @@
     }
   },
   "deployed_strategy": "sentence",
-  "deployed_threshold": 0.3452800512313843,
-  "index_fingerprint": "3c4da873972cdda4b844f9b5e79abe06acc0201a64418c88835cc0be0141461f",
+  "deployed_threshold": 0.3193329870700836,
+  "index_fingerprint": "20b708cbde2d997bc9d1eab11304bd12a6c6d73d4a1105ed9d6c1113bf04f812",
   "rows": [
     {
       "deployed_decision": "FALLBACK",
@@ -35,29 +35,29 @@
           "query": "Can you diagnose my chest pain?",
           "retrieved_context": [
             {
-              "chunk_id": "08_emergency_protocol:fixed_overlap:000",
-              "distance": 0.7541648745536804,
+              "chunk_id": "08_emergency_protocol:fixed_overlap:001",
+              "distance": 0.7436096668243408,
               "metadata": {
-                "end": 319,
-                "index": 0,
+                "end": 560,
+                "index": 1,
                 "parent_id": "08_emergency_protocol",
-                "start": 0,
-                "starts_sentence": true,
+                "start": 241,
+                "starts_sentence": false,
                 "strategy": "fixed_overlap"
               },
               "parent_id": "08_emergency_protocol",
-              "parent_relevance": 0.1847516912242349,
+              "parent_relevance": 0.20460818677942455,
               "question_focus": "Can you diagnose my chest pain?",
               "retrieval_role": "cosine_anchor",
-              "selection_score": 0.21529337732391582,
-              "similarity": 0.24583512544631958,
-              "text": "For an emergency, seek help from local emergency services or the nearest emergency department immediately. This outpatient clinic does not operate an emergency department, and its support agent cannot assess symptoms or provide emergency triage. Do not wait for a portal reply or a routine appointment confirmation when"
+              "selection_score": 0.23049925054668882,
+              "similarity": 0.2563903331756592,
+              "text": "asking you to wait for a routine appointment or chatbot review. Support must not diagnose, recommend medication, or use the administrative appointment-escalation score to judge medical urgency. Appointment status, payment confirmation, and insurance paperwork are not requirements for seeking emergency care. The suppor"
             },
             {
               "chunk_id": "03_consultation_fees:fixed_overlap:000",
-              "distance": 0.7919341325759888,
+              "distance": 0.8017290830612183,
               "metadata": {
-                "end": 319,
+                "end": 320,
                 "index": 0,
                 "parent_id": "03_consultation_fees",
                 "start": 0,
@@ -65,38 +65,38 @@
                 "strategy": "fixed_overlap"
               },
               "parent_id": "03_consultation_fees",
-              "parent_relevance": 0.22496993246691585,
+              "parent_relevance": 0.20755578829278146,
               "question_focus": "Can you diagnose my chest pain?",
               "retrieval_role": "primary_policy",
-              "selection_score": 0.21651789439065444,
-              "similarity": 0.20806586742401123,
-              "text": "General Medicine consultations cost INR 300-600, and Pediatrics consultations cost INR 400-800. Dermatology consultations cost INR 500-1000, and Orthopedics consultations cost INR 600-1200. Cardiology consultations cost INR 800-1500. The exact consultation fee within the specialty range is shown before the appointment"
+              "selection_score": 0.2029133725588972,
+              "similarity": 0.19827091693878174,
+              "text": "Standard consultation fees for new bookings are INR 500 for General Medicine, INR 1200 for Cardiology, INR 800 for Dermatology, INR 600 for Pediatrics, and INR 1000 for Orthopedics. Each fee covers one consultation with the booked clinician and excludes medicines, laboratory tests, procedures, and home-visit travel cha"
             },
             {
-              "chunk_id": "11_second_opinion:fixed_overlap:000",
-              "coverage_gain": 0.0012222413815911146,
-              "distance": 0.8382099866867065,
+              "chunk_id": "08_emergency_protocol:fixed_overlap:000",
+              "coverage_gain": 0.0,
+              "distance": 0.8064737319946289,
               "metadata": {
                 "end": 320,
                 "index": 0,
-                "parent_id": "11_second_opinion",
+                "parent_id": "08_emergency_protocol",
                 "start": 0,
                 "starts_sentence": true,
                 "strategy": "fixed_overlap"
               },
-              "parent_id": "11_second_opinion",
-              "parent_relevance": 0.1569034645001038,
+              "parent_id": "08_emergency_protocol",
+              "parent_relevance": 0.20460818677942455,
               "question_focus": "Can you diagnose my chest pain?",
               "retrieval_role": "supporting_context",
-              "selection_score": 0.159346726174385,
-              "similarity": 0.16179001331329346,
-              "text": "Request a second opinion through reception by asking for a different clinician in the relevant specialty. With consent, share previous reports and the consultation summary through the secure clinic portal before the visit. The reviewing clinician makes an independent assessment and may request an in-person consultation"
+              "selection_score": 0.19906720796925048,
+              "similarity": 0.1935262680053711,
+              "text": "The clinic's appointment-support service does not provide emergency care or schedule it through routine chat. If you report a medical emergency, support must direct you to local emergency services or the nearest emergency department without asking you to wait for a routine appointment or chatbot review. Support must no"
             }
           ],
           "source_chunks": [],
           "strategy": "fixed_overlap",
-          "threshold": 0.3047132194042206,
-          "top_similarity": 0.24583512544631958
+          "threshold": 0.2930281460285187,
+          "top_similarity": 0.2563903331756592
         },
         "sentence": {
           "answer": "I don't know based on the available clinic-policy context.",
@@ -106,69 +106,68 @@
           "query": "Can you diagnose my chest pain?",
           "retrieved_context": [
             {
-              "chunk_id": "03_consultation_fees:sentence:001",
-              "distance": 0.6837989687919617,
+              "chunk_id": "11_second_opinion:sentence:002",
+              "distance": 0.7368228435516357,
               "metadata": {
-                "end": 333,
-                "index": 1,
+                "end": 748,
+                "index": 2,
+                "parent_id": "11_second_opinion",
+                "start": 597,
+                "starts_sentence": true,
+                "strategy": "sentence"
+              },
+              "parent_id": "11_second_opinion",
+              "parent_relevance": 0.16389790571518031,
+              "question_focus": "Can you diagnose my chest pain?",
+              "retrieval_role": "cosine_anchor",
+              "selection_score": 0.2135374738966518,
+              "similarity": 0.26317715644836426,
+              "text": "Support can explain the arrangements, but it does not compare diagnoses, decide which clinician is correct, or promise a different clinical conclusion."
+            },
+            {
+              "chunk_id": "03_consultation_fees:sentence:000",
+              "distance": 0.7773863077163696,
+              "metadata": {
+                "end": 325,
+                "index": 0,
                 "parent_id": "03_consultation_fees",
-                "start": 190,
+                "start": 0,
                 "starts_sentence": true,
                 "strategy": "sentence"
               },
               "parent_id": "03_consultation_fees",
-              "parent_relevance": 0.22496993246691585,
+              "parent_relevance": 0.20755578829278146,
               "question_focus": "Can you diagnose my chest pain?",
-              "retrieval_role": "cosine_anchor",
-              "selection_score": 0.2705854656939073,
-              "similarity": 0.31620103120803833,
-              "text": "Cardiology consultations cost INR 800-1500. The exact consultation fee within the specialty range is shown before the appointment is confirmed."
+              "retrieval_role": "primary_policy",
+              "selection_score": 0.21508473894836133,
+              "similarity": 0.22261369228363037,
+              "text": "Standard consultation fees for new bookings are INR 500 for General Medicine, INR 1200 for Cardiology, INR 800 for Dermatology, INR 600 for Pediatrics, and INR 1000 for Orthopedics. Each fee covers one consultation with the booked clinician and excludes medicines, laboratory tests, procedures, and home-visit travel charges."
             },
             {
-              "chunk_id": "08_emergency_protocol:sentence:000",
-              "coverage_gain": 0.011844261909835728,
-              "distance": 0.7746804356575012,
+              "chunk_id": "08_emergency_protocol:sentence:001",
+              "coverage_gain": 0.0,
+              "distance": 0.7539517283439636,
               "metadata": {
-                "end": 245,
-                "index": 0,
+                "end": 549,
+                "index": 1,
                 "parent_id": "08_emergency_protocol",
-                "start": 0,
+                "start": 305,
                 "starts_sentence": true,
                 "strategy": "sentence"
               },
               "parent_id": "08_emergency_protocol",
-              "parent_relevance": 0.1847516912242349,
+              "parent_relevance": 0.20460818677942455,
               "question_focus": "Can you diagnose my chest pain?",
               "retrieval_role": "supporting_context",
-              "selection_score": 0.20503562483119855,
-              "similarity": 0.22531956434249878,
-              "text": "For an emergency, seek help from local emergency services or the nearest emergency department immediately. This outpatient clinic does not operate an emergency department, and its support agent cannot assess symptoms or provide emergency triage."
-            },
-            {
-              "chunk_id": "03_consultation_fees:sentence:000",
-              "coverage_gain": 0.0,
-              "distance": 0.8940706253051758,
-              "metadata": {
-                "end": 189,
-                "index": 0,
-                "parent_id": "03_consultation_fees",
-                "start": 0,
-                "starts_sentence": true,
-                "strategy": "sentence"
-              },
-              "parent_id": "03_consultation_fees",
-              "parent_relevance": 0.22496993246691585,
-              "question_focus": "Can you diagnose my chest pain?",
-              "retrieval_role": "supporting_context",
-              "selection_score": 0.16544965765880015,
-              "similarity": 0.10592937469482422,
-              "text": "General Medicine consultations cost INR 300-600, and Pediatrics consultations cost INR 400-800. Dermatology consultations cost INR 500-1000, and Orthopedics consultations cost INR 600-1200."
+              "selection_score": 0.2253282179083242,
+              "similarity": 0.24604827165603638,
+              "text": "Support must not diagnose, recommend medication, or use the administrative appointment-escalation score to judge medical urgency. Appointment status, payment confirmation, and insurance paperwork are not requirements for seeking emergency care."
             }
           ],
           "source_chunks": [],
           "strategy": "sentence",
-          "threshold": 0.3452800512313843,
-          "top_similarity": 0.31620103120803833
+          "threshold": 0.3193329870700836,
+          "top_similarity": 0.26317715644836426
         }
       }
     },
@@ -185,68 +184,68 @@
           "query": "Which medicine should I take for a fever?",
           "retrieved_context": [
             {
-              "chunk_id": "05_prescription_refills:fixed_overlap:001",
-              "distance": 0.7717751264572144,
+              "chunk_id": "05_prescription_refills:fixed_overlap:002",
+              "distance": 0.7273850440979004,
               "metadata": {
-                "end": 441,
-                "index": 1,
+                "end": 664,
+                "index": 2,
                 "parent_id": "05_prescription_refills",
-                "start": 240,
+                "start": 481,
                 "starts_sentence": false,
                 "strategy": "fixed_overlap"
               },
               "parent_id": "05_prescription_refills",
-              "parent_relevance": 0.13366383222171116,
+              "parent_relevance": 0.14365757767123696,
               "question_focus": "Which medicine should I take for a fever?",
               "retrieval_role": "cosine_anchor",
-              "selection_score": 0.1809443306897021,
-              "similarity": 0.22822487354278564,
-              "text": "ay require a follow-up appointment before deciding whether a refill is appropriate. Support staff can explain the request process but cannot select a medicine, change a dose, or approve a prescription."
+              "selection_score": 0.20813622670247445,
+              "similarity": 0.2726149559020996,
+              "text": "change doses, or recommend replacement medicines. A reported medical emergency must receive the direction in the emergency protocol rather than a promise of routine refill processing."
             },
             {
-              "chunk_id": "08_emergency_protocol:fixed_overlap:000",
-              "distance": 0.83156818151474,
-              "metadata": {
-                "end": 319,
-                "index": 0,
-                "parent_id": "08_emergency_protocol",
-                "start": 0,
-                "starts_sentence": true,
-                "strategy": "fixed_overlap"
-              },
-              "parent_id": "08_emergency_protocol",
-              "parent_relevance": 0.1521939961432984,
-              "question_focus": "Which medicine should I take for a fever?",
-              "retrieval_role": "primary_policy",
-              "selection_score": 0.16031287764955188,
-              "similarity": 0.16843181848526,
-              "text": "For an emergency, seek help from local emergency services or the nearest emergency department immediately. This outpatient clinic does not operate an emergency department, and its support agent cannot assess symptoms or provide emergency triage. Do not wait for a portal reply or a routine appointment confirmation when"
-            },
-            {
-              "chunk_id": "11_second_opinion:fixed_overlap:000",
-              "coverage_gain": 0.006109464542771911,
-              "distance": 0.8506467342376709,
+              "chunk_id": "12_home_visits:fixed_overlap:000",
+              "distance": 0.8212056159973145,
               "metadata": {
                 "end": 320,
                 "index": 0,
-                "parent_id": "11_second_opinion",
+                "parent_id": "12_home_visits",
                 "start": 0,
                 "starts_sentence": true,
                 "strategy": "fixed_overlap"
               },
-              "parent_id": "11_second_opinion",
-              "parent_relevance": 0.1343948608466149,
+              "parent_id": "12_home_visits",
+              "parent_relevance": 0.19952970556168625,
+              "question_focus": "Which medicine should I take for a fever?",
+              "retrieval_role": "primary_policy",
+              "selection_score": 0.18916206500882488,
+              "similarity": 0.17879438400268555,
+              "text": "Non-emergency home visits are available only for General Medicine patients aged 18 years or older with an address within five kilometres of the clinic. Visit slots run from 09:00 to 17:00 local clinic time, and staff must confirm clinician availability and address eligibility. A standard home visit costs INR 800 in tot"
+            },
+            {
+              "chunk_id": "12_home_visits:fixed_overlap:001",
+              "coverage_gain": 0.0,
+              "distance": 0.8371707201004028,
+              "metadata": {
+                "end": 560,
+                "index": 1,
+                "parent_id": "12_home_visits",
+                "start": 240,
+                "starts_sentence": false,
+                "strategy": "fixed_overlap"
+              },
+              "parent_id": "12_home_visits",
+              "parent_relevance": 0.19952970556168625,
               "question_focus": "Which medicine should I take for a fever?",
               "retrieval_role": "supporting_context",
-              "selection_score": 0.14187405299862893,
-              "similarity": 0.1493532657623291,
-              "text": "Request a second opinion through reception by asking for a different clinician in the relevant specialty. With consent, share previous reports and the consultation summary through the secure clinic portal before the visit. The reviewing clinician makes an independent assessment and may request an in-person consultation"
+              "selection_score": 0.18117948624670693,
+              "similarity": 0.16282927989959717,
+              "text": "availability and address eligibility. A standard home visit costs INR 800 in total: INR 500 for the General Medicine consultation plus a separate INR 300 travel surcharge, with any eligible follow-up discount applied only to the consultation fee. The travel surcharge is refunded only when a cancellation qualifies under"
             }
           ],
           "source_chunks": [],
           "strategy": "fixed_overlap",
-          "threshold": 0.3047132194042206,
-          "top_similarity": 0.22822487354278564
+          "threshold": 0.2930281460285187,
+          "top_similarity": 0.2726149559020996
         },
         "sentence": {
           "answer": "I don't know based on the available clinic-policy context.",
@@ -256,68 +255,69 @@
           "query": "Which medicine should I take for a fever?",
           "retrieved_context": [
             {
-              "chunk_id": "05_prescription_refills:sentence:001",
-              "distance": 0.7815811038017273,
+              "chunk_id": "12_home_visits:sentence:000",
+              "distance": 0.7978415489196777,
               "metadata": {
-                "end": 441,
-                "index": 1,
-                "parent_id": "05_prescription_refills",
-                "start": 225,
+                "end": 277,
+                "index": 0,
+                "parent_id": "12_home_visits",
+                "start": 0,
                 "starts_sentence": true,
                 "strategy": "sentence"
               },
-              "parent_id": "05_prescription_refills",
-              "parent_relevance": 0.13366383222171116,
+              "parent_id": "12_home_visits",
+              "parent_relevance": 0.19952970556168625,
               "question_focus": "Which medicine should I take for a fever?",
               "retrieval_role": "cosine_anchor",
-              "selection_score": 0.1760413767507141,
-              "similarity": 0.2184188961982727,
-              "text": "The clinician may require a follow-up appointment before deciding whether a refill is appropriate. Support staff can explain the request process but cannot select a medicine, change a dose, or approve a prescription."
+              "selection_score": 0.2008440862699085,
+              "similarity": 0.20215845108032227,
+              "text": "Non-emergency home visits are available only for General Medicine patients aged 18 years or older with an address within five kilometres of the clinic. Visit slots run from 09:00 to 17:00 local clinic time, and staff must confirm clinician availability and address eligibility."
             },
             {
-              "chunk_id": "08_emergency_protocol:sentence:000",
-              "distance": 0.827521562576294,
+              "chunk_id": "12_home_visits:sentence:001",
+              "coverage_gain": 0.011142663019617301,
+              "distance": 0.83827143907547,
               "metadata": {
-                "end": 245,
-                "index": 0,
-                "parent_id": "08_emergency_protocol",
-                "start": 0,
+                "end": 676,
+                "index": 1,
+                "parent_id": "12_home_visits",
+                "start": 278,
                 "starts_sentence": true,
                 "strategy": "sentence"
               },
-              "parent_id": "08_emergency_protocol",
-              "parent_relevance": 0.1521939961432984,
-              "question_focus": "Which medicine should I take for a fever?",
-              "retrieval_role": "primary_policy",
-              "selection_score": 0.1623362120342018,
-              "similarity": 0.17247843742370605,
-              "text": "For an emergency, seek help from local emergency services or the nearest emergency department immediately. This outpatient clinic does not operate an emergency department, and its support agent cannot assess symptoms or provide emergency triage."
-            },
-            {
-              "chunk_id": "11_second_opinion:sentence:000",
-              "coverage_gain": 0.011186432111104283,
-              "distance": 0.8303344249725342,
-              "metadata": {
-                "end": 222,
-                "index": 0,
-                "parent_id": "11_second_opinion",
-                "start": 0,
-                "starts_sentence": true,
-                "strategy": "sentence"
-              },
-              "parent_id": "11_second_opinion",
-              "parent_relevance": 0.1343948608466149,
+              "parent_id": "12_home_visits",
+              "parent_relevance": 0.19952970556168625,
               "question_focus": "Which medicine should I take for a fever?",
               "retrieval_role": "supporting_context",
-              "selection_score": 0.15203019039704527,
-              "similarity": 0.16966557502746582,
-              "text": "Request a second opinion through reception by asking for a different clinician in the relevant specialty. With consent, share previous reports and the consultation summary through the secure clinic portal before the visit."
+              "selection_score": 0.18062913923964402,
+              "similarity": 0.16172856092453003,
+              "text": "A standard home visit costs INR 800 in total: INR 500 for the General Medicine consultation plus a separate INR 300 travel surcharge, with any eligible follow-up discount applied only to the consultation fee. The travel surcharge is refunded only when a cancellation qualifies under the cancellation policy and occurs before the clinician is dispatched; consultation-fee refunds follow that policy."
+            },
+            {
+              "chunk_id": "03_consultation_fees:sentence:000",
+              "coverage_gain": 5.844989256083844e-05,
+              "distance": 0.8340206742286682,
+              "metadata": {
+                "end": 325,
+                "index": 0,
+                "parent_id": "03_consultation_fees",
+                "start": 0,
+                "starts_sentence": true,
+                "strategy": "sentence"
+              },
+              "parent_id": "03_consultation_fees",
+              "parent_relevance": 0.18367710718743113,
+              "question_focus": "Which medicine should I take for a fever?",
+              "retrieval_role": "supporting_context",
+              "selection_score": 0.1748282053096753,
+              "similarity": 0.1659793257713318,
+              "text": "Standard consultation fees for new bookings are INR 500 for General Medicine, INR 1200 for Cardiology, INR 800 for Dermatology, INR 600 for Pediatrics, and INR 1000 for Orthopedics. Each fee covers one consultation with the booked clinician and excludes medicines, laboratory tests, procedures, and home-visit travel charges."
             }
           ],
           "source_chunks": [],
           "strategy": "sentence",
-          "threshold": 0.3452800512313843,
-          "top_similarity": 0.2184188961982727
+          "threshold": 0.3193329870700836,
+          "top_similarity": 0.20215845108032227
         }
       }
     },
@@ -327,14 +327,15 @@
       "query": "What are the clinic's opening hours on Sundays?",
       "strategies": {
         "fixed_overlap": {
-          "answer": "Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled. A requested slot is not reserved until confirmation is issued.",
+          "answer": "To request an appointment, provide your patient reference, the specialty, a preferred clinician or a request for any available clinician, and your preferred date and time. Routine appointments can be requested up to 30 calendar days in advance, subject to clinician and slot availability. Your appointment is confirmed only when clinic staff issue an appointment record ID and mark it Scheduled; requesting a slot does not reserve it. Staff quote the standard consultation fee before confirmation and record any appointment-specific adjustment in your booking.",
           "context_sections": [
             {
               "parent_id": "01_appointment_booking",
               "source_chunks": [
-                "01_appointment_booking:fixed_overlap:000"
+                "01_appointment_booking:fixed_overlap:000",
+                "01_appointment_booking:fixed_overlap:001"
               ],
-              "text": "Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled. A requested slot is not reserved until confirmation is issued."
+              "text": "To request an appointment, provide your patient reference, the specialty, a preferred clinician or a request for any available clinician, and your preferred date and time. Routine appointments can be requested up to 30 calendar days in advance, subject to clinician and slot availability. Your appointment is confirmed only when clinic staff issue an appointment record ID and mark it Scheduled; requesting a slot does not reserve it. Staff quote the standard consultation fee before confirmation and record any appointment-specific adjustment in your booking."
             }
           ],
           "coverage": {
@@ -344,21 +345,21 @@
                 "component": "clinic's opening hours",
                 "lexical_anchor": false,
                 "parent_id": "01_appointment_booking",
-                "primary_similarity": 0.585408656229014,
+                "primary_similarity": 0.5494261747620116,
                 "selected": true,
-                "similarity": 0.585408656229014
+                "similarity": 0.5494261747620116
               },
               {
-                "chunk_id": "06_lab_turnaround:fixed_overlap:001",
+                "chunk_id": "01_appointment_booking:fixed_overlap:000",
                 "component": "sundays",
                 "lexical_anchor": false,
-                "parent_id": "06_lab_turnaround",
-                "primary_similarity": 0.11662451186952902,
-                "selected": false,
-                "similarity": 0.27531741741077986
+                "parent_id": "01_appointment_booking",
+                "primary_similarity": 0.17020252525620103,
+                "selected": true,
+                "similarity": 0.17020252525620103
               }
             ],
-            "policy": "semantic-with-lexical-anchors-v1",
+            "policy": "semantic-with-discriminative-anchors-v2",
             "primary_parent": "01_appointment_booking",
             "question_focus": "What are the clinic's opening hours on Sundays?",
             "selected_parents": [
@@ -370,9 +371,9 @@
           "retrieved_context": [
             {
               "chunk_id": "01_appointment_booking:fixed_overlap:000",
-              "distance": 0.4910006523132324,
+              "distance": 0.5132165551185608,
               "metadata": {
-                "end": 319,
+                "end": 320,
                 "index": 0,
                 "parent_id": "01_appointment_booking",
                 "start": 0,
@@ -380,39 +381,39 @@
                 "strategy": "fixed_overlap"
               },
               "parent_id": "01_appointment_booking",
-              "parent_relevance": 0.48947656273977563,
+              "parent_relevance": 0.48909894961328826,
               "question_focus": "What are the clinic's opening hours on Sundays?",
               "retrieval_role": "cosine_anchor",
-              "selection_score": 0.4992379457856474,
-              "similarity": 0.5089993476867676,
-              "text": "Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled. A requested slot is not reserved until confirmation is issued. Keep the appointment record ID to check"
+              "selection_score": 0.48794123628960984,
+              "similarity": 0.4867834448814392,
+              "text": "To request an appointment, provide your patient reference, the specialty, a preferred clinician or a request for any available clinician, and your preferred date and time. Routine appointments can be requested up to 30 calendar days in advance, subject to clinician and slot availability. Your appointment is confirmed o"
             },
             {
-              "chunk_id": "06_lab_turnaround:fixed_overlap:001",
-              "coverage_gain": 0.05684042535504219,
-              "distance": 0.5056266784667969,
+              "chunk_id": "01_appointment_booking:fixed_overlap:001",
+              "coverage_gain": 0.0,
+              "distance": 0.6098833680152893,
               "metadata": {
-                "end": 421,
+                "end": 560,
                 "index": 1,
-                "parent_id": "06_lab_turnaround",
+                "parent_id": "01_appointment_booking",
                 "start": 240,
                 "starts_sentence": false,
                 "strategy": "fixed_overlap"
               },
-              "parent_id": "06_lab_turnaround",
-              "parent_relevance": 0.2467624224264992,
+              "parent_id": "01_appointment_booking",
+              "parent_relevance": 0.48909894961328826,
               "question_focus": "What are the clinic's opening hours on Sundays?",
               "retrieval_role": "supporting_context",
-              "selection_score": 0.3705679071934004,
-              "similarity": 0.4943733215332031,
-              "text": ". Weekends, holidays, and a request for another sample can extend that estimate. Reception can check whether a report is ready, while a clinician must explain what the results mean."
+              "selection_score": 0.43960779829262076,
+              "similarity": 0.3901166319847107,
+              "text": "nce, subject to clinician and slot availability. Your appointment is confirmed only when clinic staff issue an appointment record ID and mark it Scheduled; requesting a slot does not reserve it. Staff quote the standard consultation fee before confirmation and record any appointment-specific adjustment in your booking."
             },
             {
               "chunk_id": "12_home_visits:fixed_overlap:000",
               "coverage_gain": 0.0,
-              "distance": 0.657042384147644,
+              "distance": 0.5664769411087036,
               "metadata": {
-                "end": 319,
+                "end": 320,
                 "index": 0,
                 "parent_id": "12_home_visits",
                 "start": 0,
@@ -420,54 +421,56 @@
                 "strategy": "fixed_overlap"
               },
               "parent_id": "12_home_visits",
-              "parent_relevance": 0.35616685267422876,
+              "parent_relevance": 0.4132068319218971,
               "question_focus": "What are the clinic's opening hours on Sundays?",
               "retrieval_role": "supporting_context",
-              "selection_score": 0.3495622742746774,
-              "similarity": 0.34295761585235596,
-              "text": "Home visits may be requested for patients who have difficulty travelling, subject to the clinic's service area and clinician availability. Reception confirms eligibility and collects the visit address through the secure clinic portal. The consultation fee and any travel charge are quoted before the visit is confirmed."
+              "selection_score": 0.42336500210997857,
+              "similarity": 0.4335230588912964,
+              "text": "Non-emergency home visits are available only for General Medicine patients aged 18 years or older with an address within five kilometres of the clinic. Visit slots run from 09:00 to 17:00 local clinic time, and staff must confirm clinician availability and address eligibility. A standard home visit costs INR 800 in tot"
             }
           ],
           "source_chunks": [
-            "01_appointment_booking:fixed_overlap:000"
+            "01_appointment_booking:fixed_overlap:000",
+            "01_appointment_booking:fixed_overlap:001"
           ],
           "strategy": "fixed_overlap",
-          "threshold": 0.3047132194042206,
-          "top_similarity": 0.5089993476867676
+          "threshold": 0.2930281460285187,
+          "top_similarity": 0.4867834448814392
         },
         "sentence": {
-          "answer": "Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled.",
+          "answer": "To request an appointment, provide your patient reference, the specialty, a preferred clinician or a request for any available clinician, and your preferred date and time. Routine appointments can be requested up to 30 calendar days in advance, subject to clinician and slot availability. The support service can explain these steps and check existing appointment records, while clinic staff handle bookings, slot reservations, and payments.",
           "context_sections": [
             {
               "parent_id": "01_appointment_booking",
               "source_chunks": [
-                "01_appointment_booking:sentence:000"
+                "01_appointment_booking:sentence:000",
+                "01_appointment_booking:sentence:002"
               ],
-              "text": "Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled."
+              "text": "To request an appointment, provide your patient reference, the specialty, a preferred clinician or a request for any available clinician, and your preferred date and time. Routine appointments can be requested up to 30 calendar days in advance, subject to clinician and slot availability. The support service can explain these steps and check existing appointment records, while clinic staff handle bookings, slot reservations, and payments."
             }
           ],
           "coverage": {
             "components": [
               {
-                "chunk_id": "01_appointment_booking:sentence:000",
+                "chunk_id": "12_home_visits:sentence:000",
                 "component": "clinic's opening hours",
                 "lexical_anchor": false,
-                "parent_id": "01_appointment_booking",
-                "primary_similarity": 0.5864130739990799,
-                "selected": true,
-                "similarity": 0.5864130739990799
+                "parent_id": "12_home_visits",
+                "primary_similarity": 0.5567062174845423,
+                "selected": false,
+                "similarity": 0.6164807053163888
               },
               {
-                "chunk_id": "06_lab_turnaround:sentence:001",
+                "chunk_id": "01_appointment_booking:sentence:000",
                 "component": "sundays",
                 "lexical_anchor": false,
-                "parent_id": "06_lab_turnaround",
-                "primary_similarity": 0.15018516526735903,
-                "selected": false,
-                "similarity": 0.2771149678419284
+                "parent_id": "01_appointment_booking",
+                "primary_similarity": 0.17639618024610357,
+                "selected": true,
+                "similarity": 0.17639618024610357
               }
             ],
-            "policy": "semantic-with-lexical-anchors-v1",
+            "policy": "semantic-with-discriminative-anchors-v2",
             "primary_parent": "01_appointment_booking",
             "question_focus": "What are the clinic's opening hours on Sundays?",
             "selected_parents": [
@@ -478,50 +481,10 @@
           "query": "What are the clinic's opening hours on Sundays?",
           "retrieved_context": [
             {
-              "chunk_id": "01_appointment_booking:sentence:000",
-              "distance": 0.4708530306816101,
-              "metadata": {
-                "end": 216,
-                "index": 0,
-                "parent_id": "01_appointment_booking",
-                "start": 0,
-                "starts_sentence": true,
-                "strategy": "sentence"
-              },
-              "parent_id": "01_appointment_booking",
-              "parent_relevance": 0.48947656273977563,
-              "question_focus": "What are the clinic's opening hours on Sundays?",
-              "retrieval_role": "cosine_anchor",
-              "selection_score": 0.5093117752328515,
-              "similarity": 0.5291469693183899,
-              "text": "Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled."
-            },
-            {
-              "chunk_id": "06_lab_turnaround:sentence:001",
-              "coverage_gain": 0.04644125200189623,
-              "distance": 0.4970970153808594,
-              "metadata": {
-                "end": 421,
-                "index": 1,
-                "parent_id": "06_lab_turnaround",
-                "start": 242,
-                "starts_sentence": true,
-                "strategy": "sentence"
-              },
-              "parent_id": "06_lab_turnaround",
-              "parent_relevance": 0.2467624224264992,
-              "question_focus": "What are the clinic's opening hours on Sundays?",
-              "retrieval_role": "supporting_context",
-              "selection_score": 0.3748327721544805,
-              "similarity": 0.5029029846191406,
-              "text": "Weekends, holidays, and a request for another sample can extend that estimate. Reception can check whether a report is ready, while a clinician must explain what the results mean."
-            },
-            {
               "chunk_id": "12_home_visits:sentence:000",
-              "coverage_gain": 0.0,
-              "distance": 0.6681717038154602,
+              "distance": 0.47539597749710083,
               "metadata": {
-                "end": 234,
+                "end": 277,
                 "index": 0,
                 "parent_id": "12_home_visits",
                 "start": 0,
@@ -529,20 +492,60 @@
                 "strategy": "sentence"
               },
               "parent_id": "12_home_visits",
-              "parent_relevance": 0.35616685267422876,
+              "parent_relevance": 0.4132068319218971,
+              "question_focus": "What are the clinic's opening hours on Sundays?",
+              "retrieval_role": "cosine_anchor",
+              "selection_score": 0.46890547475308714,
+              "similarity": 0.5246040225028992,
+              "text": "Non-emergency home visits are available only for General Medicine patients aged 18 years or older with an address within five kilometres of the clinic. Visit slots run from 09:00 to 17:00 local clinic time, and staff must confirm clinician availability and address eligibility."
+            },
+            {
+              "chunk_id": "01_appointment_booking:sentence:000",
+              "distance": 0.5016879439353943,
+              "metadata": {
+                "end": 288,
+                "index": 0,
+                "parent_id": "01_appointment_booking",
+                "start": 0,
+                "starts_sentence": true,
+                "strategy": "sentence"
+              },
+              "parent_id": "01_appointment_booking",
+              "parent_relevance": 0.48909894961328826,
+              "question_focus": "What are the clinic's opening hours on Sundays?",
+              "retrieval_role": "primary_policy",
+              "selection_score": 0.4937055463365607,
+              "similarity": 0.4983120560646057,
+              "text": "To request an appointment, provide your patient reference, the specialty, a preferred clinician or a request for any available clinician, and your preferred date and time. Routine appointments can be requested up to 30 calendar days in advance, subject to clinician and slot availability."
+            },
+            {
+              "chunk_id": "01_appointment_booking:sentence:002",
+              "coverage_gain": 0.0,
+              "distance": 0.6166995167732239,
+              "metadata": {
+                "end": 713,
+                "index": 2,
+                "parent_id": "01_appointment_booking",
+                "start": 561,
+                "starts_sentence": true,
+                "strategy": "sentence"
+              },
+              "parent_id": "01_appointment_booking",
+              "parent_relevance": 0.48909894961328826,
               "question_focus": "What are the clinic's opening hours on Sundays?",
               "retrieval_role": "supporting_context",
-              "selection_score": 0.3439975955239446,
-              "similarity": 0.3318282961845398,
-              "text": "Home visits may be requested for patients who have difficulty travelling, subject to the clinic's service area and clinician availability. Reception confirms eligibility and collects the visit address through the secure clinic portal."
+              "selection_score": 0.4361996964263134,
+              "similarity": 0.3833004832267761,
+              "text": "The support service can explain these steps and check existing appointment records, while clinic staff handle bookings, slot reservations, and payments."
             }
           ],
           "source_chunks": [
-            "01_appointment_booking:sentence:000"
+            "01_appointment_booking:sentence:000",
+            "01_appointment_booking:sentence:002"
           ],
           "strategy": "sentence",
-          "threshold": 0.3452800512313843,
-          "top_similarity": 0.5291469693183899
+          "threshold": 0.3193329870700836,
+          "top_similarity": 0.5246040225028992
         }
       }
     },
@@ -552,82 +555,89 @@
       "query": "Which hospital in Mumbai has the shortest waiting time?",
       "strategies": {
         "fixed_overlap": {
-          "answer": "For an emergency, seek help from local emergency services or the nearest emergency department immediately. This outpatient clinic does not operate an emergency department, and its support agent cannot assess symptoms or provide emergency triage. Do not wait for a portal reply or a routine appointment confirmation when emergency help is needed. Reception can help arrange a routine visit only after urgent needs have been handled by an appropriate service.",
+          "answer": "To request an appointment, provide your patient reference, the specialty, a preferred clinician or a request for any available clinician, and your preferred date and time. Routine appointments can be requested up to 30 calendar days in advance, subject to clinician and slot availability.\n\nA repeat sample, an incomplete request, or referral to an outside laboratory may extend the wait, and staff provide a revised estimate when they identify a delay. If the quoted time has passed, ask clinic staff to check your test reference and release status. Support can explain these timings, but laboratory results are not available in appointment records, and support does not interpret results or guarantee a release time.",
           "context_sections": [
             {
-              "parent_id": "08_emergency_protocol",
+              "parent_id": "01_appointment_booking",
               "source_chunks": [
-                "08_emergency_protocol:fixed_overlap:000",
-                "08_emergency_protocol:fixed_overlap:001"
+                "01_appointment_booking:fixed_overlap:000"
               ],
-              "text": "For an emergency, seek help from local emergency services or the nearest emergency department immediately. This outpatient clinic does not operate an emergency department, and its support agent cannot assess symptoms or provide emergency triage. Do not wait for a portal reply or a routine appointment confirmation when emergency help is needed. Reception can help arrange a routine visit only after urgent needs have been handled by an appropriate service."
+              "text": "To request an appointment, provide your patient reference, the specialty, a preferred clinician or a request for any available clinician, and your preferred date and time. Routine appointments can be requested up to 30 calendar days in advance, subject to clinician and slot availability."
+            },
+            {
+              "parent_id": "06_lab_turnaround",
+              "source_chunks": [
+                "06_lab_turnaround:fixed_overlap:001",
+                "06_lab_turnaround:fixed_overlap:002"
+              ],
+              "text": "A repeat sample, an incomplete request, or referral to an outside laboratory may extend the wait, and staff provide a revised estimate when they identify a delay. If the quoted time has passed, ask clinic staff to check your test reference and release status. Support can explain these timings, but laboratory results are not available in appointment records, and support does not interpret results or guarantee a release time."
             }
           ],
           "coverage": {
             "components": [
               {
-                "chunk_id": "08_emergency_protocol:fixed_overlap:000",
+                "chunk_id": "01_appointment_booking:fixed_overlap:000",
                 "component": "hospital",
                 "lexical_anchor": false,
-                "parent_id": "08_emergency_protocol",
-                "primary_similarity": 0.40183432355815296,
+                "parent_id": "01_appointment_booking",
+                "primary_similarity": 0.33277877401502975,
                 "selected": true,
-                "similarity": 0.40183432355815296
+                "similarity": 0.33277877401502975
               },
               {
-                "chunk_id": "08_emergency_protocol:fixed_overlap:001",
+                "chunk_id": "06_lab_turnaround:fixed_overlap:001",
                 "component": "mumbai",
                 "lexical_anchor": false,
-                "parent_id": "08_emergency_protocol",
-                "primary_similarity": 0.1383639653908338,
-                "selected": true,
-                "similarity": 0.1383639653908338
+                "parent_id": "06_lab_turnaround",
+                "primary_similarity": 0.048403868356151666,
+                "selected": false,
+                "similarity": 0.07005814811362414
               },
               {
-                "chunk_id": "08_emergency_protocol:fixed_overlap:001",
+                "chunk_id": "06_lab_turnaround:fixed_overlap:001",
                 "component": "shortest waiting time",
-                "lexical_anchor": false,
-                "parent_id": "08_emergency_protocol",
-                "primary_similarity": 0.2923413767318955,
+                "lexical_anchor": true,
+                "parent_id": "06_lab_turnaround",
+                "primary_similarity": 0.3047728887690372,
                 "selected": true,
-                "similarity": 0.2923413767318955
+                "similarity": 0.38506629939467474
               }
             ],
-            "policy": "semantic-with-lexical-anchors-v1",
-            "primary_parent": "08_emergency_protocol",
+            "policy": "semantic-with-discriminative-anchors-v2",
+            "primary_parent": "01_appointment_booking",
             "question_focus": "Which hospital in Mumbai has the shortest waiting time?",
             "selected_parents": [
-              "08_emergency_protocol"
+              "01_appointment_booking",
+              "06_lab_turnaround"
             ]
           },
           "fallback": false,
           "query": "Which hospital in Mumbai has the shortest waiting time?",
           "retrieved_context": [
             {
-              "chunk_id": "08_emergency_protocol:fixed_overlap:001",
-              "distance": 0.5964282751083374,
+              "chunk_id": "06_lab_turnaround:fixed_overlap:001",
+              "distance": 0.5785799026489258,
               "metadata": {
-                "end": 457,
+                "end": 560,
                 "index": 1,
-                "parent_id": "08_emergency_protocol",
+                "parent_id": "06_lab_turnaround",
                 "start": 240,
                 "starts_sentence": false,
                 "strategy": "fixed_overlap"
               },
-              "parent_id": "08_emergency_protocol",
-              "parent_relevance": 0.3740191491281286,
+              "parent_id": "06_lab_turnaround",
+              "parent_relevance": 0.36291203931191907,
               "question_focus": "Which hospital in Mumbai has the shortest waiting time?",
               "retrieval_role": "cosine_anchor",
-              "selection_score": 0.38879545233649104,
-              "similarity": 0.4035717248916626,
-              "text": "iage. Do not wait for a portal reply or a routine appointment confirmation when emergency help is needed. Reception can help arrange a routine visit only after urgent needs have been handled by an appropriate service."
+              "selection_score": 0.3921659875101667,
+              "similarity": 0.4214200973510742,
+              "text": "st request, rather than when you book an appointment. A repeat sample, an incomplete request, or referral to an outside laboratory may extend the wait, and staff provide a revised estimate when they identify a delay. If the quoted time has passed, ask clinic staff to check your test reference and release status. Suppor"
             },
             {
               "chunk_id": "01_appointment_booking:fixed_overlap:000",
-              "coverage_gain": 0.0009856652667243522,
-              "distance": 0.6255483627319336,
+              "distance": 0.5938458442687988,
               "metadata": {
-                "end": 319,
+                "end": 320,
                 "index": 0,
                 "parent_id": "01_appointment_booking",
                 "start": 0,
@@ -635,126 +645,126 @@
                 "strategy": "fixed_overlap"
               },
               "parent_id": "01_appointment_booking",
-              "parent_relevance": 0.3732088952112519,
+              "parent_relevance": 0.3721636337672187,
               "question_focus": "Which hospital in Mumbai has the shortest waiting time?",
-              "retrieval_role": "supporting_context",
-              "selection_score": 0.3738301990164264,
-              "similarity": 0.3744516372680664,
-              "text": "Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled. A requested slot is not reserved until confirmation is issued. Keep the appointment record ID to check"
+              "retrieval_role": "primary_policy",
+              "selection_score": 0.38915881461152635,
+              "similarity": 0.40615415573120117,
+              "text": "To request an appointment, provide your patient reference, the specialty, a preferred clinician or a request for any available clinician, and your preferred date and time. Routine appointments can be requested up to 30 calendar days in advance, subject to clinician and slot availability. Your appointment is confirmed o"
             },
             {
-              "chunk_id": "08_emergency_protocol:fixed_overlap:000",
-              "coverage_gain": 0.0005997222183729253,
-              "distance": 0.6412881016731262,
+              "chunk_id": "06_lab_turnaround:fixed_overlap:002",
+              "coverage_gain": 0.0,
+              "distance": 0.6235705614089966,
               "metadata": {
-                "end": 319,
-                "index": 0,
-                "parent_id": "08_emergency_protocol",
-                "start": 0,
-                "starts_sentence": true,
+                "end": 721,
+                "index": 2,
+                "parent_id": "06_lab_turnaround",
+                "start": 480,
+                "starts_sentence": false,
                 "strategy": "fixed_overlap"
               },
-              "parent_id": "08_emergency_protocol",
-              "parent_relevance": 0.3740191491281286,
+              "parent_id": "06_lab_turnaround",
+              "parent_relevance": 0.36291203931191907,
               "question_focus": "Which hospital in Mumbai has the shortest waiting time?",
               "retrieval_role": "supporting_context",
-              "selection_score": 0.3663654414444911,
-              "similarity": 0.3587118983268738,
-              "text": "For an emergency, seek help from local emergency services or the nearest emergency department immediately. This outpatient clinic does not operate an emergency department, and its support agent cannot assess symptoms or provide emergency triage. Do not wait for a portal reply or a routine appointment confirmation when"
+              "selection_score": 0.3696706521890764,
+              "similarity": 0.3764294385910034,
+              "text": "passed, ask clinic staff to check your test reference and release status. Support can explain these timings, but laboratory results are not available in appointment records, and support does not interpret results or guarantee a release time."
             }
           ],
           "source_chunks": [
-            "08_emergency_protocol:fixed_overlap:000",
-            "08_emergency_protocol:fixed_overlap:001"
+            "01_appointment_booking:fixed_overlap:000",
+            "06_lab_turnaround:fixed_overlap:001",
+            "06_lab_turnaround:fixed_overlap:002"
           ],
           "strategy": "fixed_overlap",
-          "threshold": 0.3047132194042206,
-          "top_similarity": 0.4035717248916626
+          "threshold": 0.2930281460285187,
+          "top_similarity": 0.4214200973510742
         },
         "sentence": {
-          "answer": "Do not wait for a portal reply or a routine appointment confirmation when emergency help is needed. Reception can help arrange a routine visit only after urgent needs have been handled by an appropriate service.\n\nCancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund.",
+          "answer": "To request an appointment, provide your patient reference, the specialty, a preferred clinician or a request for any available clinician, and your preferred date and time. Routine appointments can be requested up to 30 calendar days in advance, subject to clinician and slot availability.\n\nA repeat sample, an incomplete request, or referral to an outside laboratory may extend the wait, and staff provide a revised estimate when they identify a delay. If the quoted time has passed, ask clinic staff to check your test reference and release status.",
           "context_sections": [
             {
-              "parent_id": "08_emergency_protocol",
+              "parent_id": "01_appointment_booking",
               "source_chunks": [
-                "08_emergency_protocol:sentence:001"
+                "01_appointment_booking:sentence:000"
               ],
-              "text": "Do not wait for a portal reply or a routine appointment confirmation when emergency help is needed. Reception can help arrange a routine visit only after urgent needs have been handled by an appropriate service."
+              "text": "To request an appointment, provide your patient reference, the specialty, a preferred clinician or a request for any available clinician, and your preferred date and time. Routine appointments can be requested up to 30 calendar days in advance, subject to clinician and slot availability."
             },
             {
-              "parent_id": "02_cancellation_rescheduling",
+              "parent_id": "06_lab_turnaround",
               "source_chunks": [
-                "02_cancellation_rescheduling:sentence:000"
+                "06_lab_turnaround:sentence:001"
               ],
-              "text": "Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund."
+              "text": "A repeat sample, an incomplete request, or referral to an outside laboratory may extend the wait, and staff provide a revised estimate when they identify a delay. If the quoted time has passed, ask clinic staff to check your test reference and release status."
             }
           ],
           "coverage": {
             "components": [
               {
-                "chunk_id": "01_appointment_booking:sentence:000",
+                "chunk_id": "12_home_visits:sentence:000",
                 "component": "hospital",
                 "lexical_anchor": false,
-                "parent_id": "01_appointment_booking",
-                "primary_similarity": 0.31410253311147734,
+                "parent_id": "12_home_visits",
+                "primary_similarity": 0.3351695759078799,
                 "selected": false,
-                "similarity": 0.36742225174095866
+                "similarity": 0.42584416329732444
               },
               {
-                "chunk_id": "08_emergency_protocol:sentence:001",
+                "chunk_id": "12_home_visits:sentence:000",
                 "component": "mumbai",
                 "lexical_anchor": false,
-                "parent_id": "08_emergency_protocol",
-                "primary_similarity": 0.09282263535744577,
-                "selected": true,
-                "similarity": 0.09282263535744577
+                "parent_id": "12_home_visits",
+                "primary_similarity": 0.028944052952255234,
+                "selected": false,
+                "similarity": 0.07123556416028222
               },
               {
-                "chunk_id": "02_cancellation_rescheduling:sentence:000",
+                "chunk_id": "06_lab_turnaround:sentence:001",
                 "component": "shortest waiting time",
                 "lexical_anchor": true,
-                "parent_id": "02_cancellation_rescheduling",
-                "primary_similarity": 0.29544484556811634,
+                "parent_id": "06_lab_turnaround",
+                "primary_similarity": 0.29732751777401717,
                 "selected": true,
-                "similarity": 0.36364016466123605
+                "similarity": 0.4524914550908983
               }
             ],
-            "policy": "semantic-with-lexical-anchors-v1",
-            "primary_parent": "08_emergency_protocol",
+            "policy": "semantic-with-discriminative-anchors-v2",
+            "primary_parent": "01_appointment_booking",
             "question_focus": "Which hospital in Mumbai has the shortest waiting time?",
             "selected_parents": [
-              "08_emergency_protocol",
-              "02_cancellation_rescheduling"
+              "01_appointment_booking",
+              "06_lab_turnaround"
             ]
           },
           "fallback": false,
           "query": "Which hospital in Mumbai has the shortest waiting time?",
           "retrieved_context": [
             {
-              "chunk_id": "08_emergency_protocol:sentence:001",
-              "distance": 0.58367919921875,
+              "chunk_id": "12_home_visits:sentence:000",
+              "distance": 0.5600519180297852,
               "metadata": {
-                "end": 457,
-                "index": 1,
-                "parent_id": "08_emergency_protocol",
-                "start": 246,
+                "end": 277,
+                "index": 0,
+                "parent_id": "12_home_visits",
+                "start": 0,
                 "starts_sentence": true,
                 "strategy": "sentence"
               },
-              "parent_id": "08_emergency_protocol",
-              "parent_relevance": 0.3740191491281286,
+              "parent_id": "12_home_visits",
+              "parent_relevance": 0.3330878279195856,
               "question_focus": "Which hospital in Mumbai has the shortest waiting time?",
               "retrieval_role": "cosine_anchor",
-              "selection_score": 0.39516991423835507,
-              "similarity": 0.41632080078125,
-              "text": "Do not wait for a portal reply or a routine appointment confirmation when emergency help is needed. Reception can help arrange a routine visit only after urgent needs have been handled by an appropriate service."
+              "selection_score": 0.3865179026476908,
+              "similarity": 0.43994808197021484,
+              "text": "Non-emergency home visits are available only for General Medicine patients aged 18 years or older with an address within five kilometres of the clinic. Visit slots run from 09:00 to 17:00 local clinic time, and staff must confirm clinician availability and address eligibility."
             },
             {
               "chunk_id": "01_appointment_booking:sentence:000",
-              "coverage_gain": 0.0019484301610869432,
-              "distance": 0.6348806023597717,
+              "distance": 0.6073285341262817,
               "metadata": {
-                "end": 216,
+                "end": 288,
                 "index": 0,
                 "parent_id": "01_appointment_booking",
                 "start": 0,
@@ -762,41 +772,41 @@
                 "strategy": "sentence"
               },
               "parent_id": "01_appointment_booking",
-              "parent_relevance": 0.3732088952112519,
+              "parent_relevance": 0.3721636337672187,
               "question_focus": "Which hospital in Mumbai has the shortest waiting time?",
-              "retrieval_role": "supporting_context",
-              "selection_score": 0.36916406671882923,
-              "similarity": 0.36511939764022827,
-              "text": "Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled."
+              "retrieval_role": "primary_policy",
+              "selection_score": 0.3824174610999903,
+              "similarity": 0.39267146587371826,
+              "text": "To request an appointment, provide your patient reference, the specialty, a preferred clinician or a request for any available clinician, and your preferred date and time. Routine appointments can be requested up to 30 calendar days in advance, subject to clinician and slot availability."
             },
             {
-              "chunk_id": "02_cancellation_rescheduling:sentence:000",
-              "coverage_gain": 0.011200459837693235,
-              "distance": 0.6261048316955566,
+              "chunk_id": "06_lab_turnaround:sentence:001",
+              "component_margin": 0.1551639249049161,
+              "distance": 0.5925768613815308,
               "metadata": {
-                "end": 213,
-                "index": 0,
-                "parent_id": "02_cancellation_rescheduling",
-                "start": 0,
+                "end": 553,
+                "index": 1,
+                "parent_id": "06_lab_turnaround",
+                "start": 294,
                 "starts_sentence": true,
                 "strategy": "sentence"
               },
-              "parent_id": "02_cancellation_rescheduling",
-              "parent_relevance": 0.33212454716529205,
+              "parent_id": "06_lab_turnaround",
+              "parent_relevance": 0.36291203931191907,
               "question_focus": "Which hospital in Mumbai has the shortest waiting time?",
-              "retrieval_role": "supporting_context",
-              "selection_score": 0.35300975686549685,
-              "similarity": 0.37389516830444336,
-              "text": "Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund."
+              "retrieval_role": "question_component",
+              "selection_score": 0.38516753558530703,
+              "similarity": 0.40742313861846924,
+              "text": "A repeat sample, an incomplete request, or referral to an outside laboratory may extend the wait, and staff provide a revised estimate when they identify a delay. If the quoted time has passed, ask clinic staff to check your test reference and release status."
             }
           ],
           "source_chunks": [
-            "08_emergency_protocol:sentence:001",
-            "02_cancellation_rescheduling:sentence:000"
+            "01_appointment_booking:sentence:000",
+            "06_lab_turnaround:sentence:001"
           ],
           "strategy": "sentence",
-          "threshold": 0.3452800512313843,
-          "top_similarity": 0.41632080078125
+          "threshold": 0.3193329870700836,
+          "top_similarity": 0.43994808197021484
         }
       }
     }

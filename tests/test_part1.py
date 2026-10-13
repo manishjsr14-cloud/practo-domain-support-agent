@@ -11,7 +11,7 @@ from dataset import (
     APPOINTMENTS, CATEGORY_WEIGHTS, FEE_RANGES, RECORD_COUNT, STATUS_WEIGHTS,
     generate_appointments, validate_appointments,
 )
-from scripts.validate_kb import TOPICS, validate_kb
+from scripts.validate_kb import STANDARD_FEES, TOPICS, validate_fee_policy, validate_kb
 from rag.chunking import (
     FIXED_CHUNK_OVERLAP, FIXED_CHUNK_SIZE, chunk_documents,
     fixed_overlap_chunks, load_documents, sentence_chunks,
@@ -55,6 +55,16 @@ class DatasetTests(unittest.TestCase):
 
 
 class KnowledgeBaseTests(unittest.TestCase):
+    @staticmethod
+    def fee_policy() -> str:
+        schedule = ", ".join(f"INR {fee} for {specialty}"
+                             for specialty, fee in STANDARD_FEES.items())
+        return (
+            f"New bookings use these standard consultation fees: {schedule}. "
+            "The recorded consultation fee in an existing booking is authoritative "
+            "and may differ from the standard consultation fee because of an adjustment."
+        )
+
     def test_every_topic_has_a_document_with_valid_sentences_and_fees(self):
         results = validate_kb()
         self.assertEqual({name for name, count in results}, set(TOPICS))
@@ -64,6 +74,63 @@ class KnowledgeBaseTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             with self.assertRaisesRegex(ValueError, "topic files"):
                 validate_kb(Path(directory))
+
+    def test_fixed_standard_fees_stay_within_unchanged_dataset_ranges(self):
+        self.assertEqual(STANDARD_FEES, {
+            "General Medicine": 500, "Cardiology": 1200, "Dermatology": 800,
+            "Pediatrics": 600, "Orthopedics": 1000,
+        })
+        self.assertEqual(validate_fee_policy(self.fee_policy()), STANDARD_FEES)
+        for specialty, fee in STANDARD_FEES.items():
+            low, high = FEE_RANGES[specialty]
+            self.assertTrue(low <= fee <= high)
+
+    def test_in_range_but_incorrect_standard_fee_is_rejected(self):
+        policy = self.fee_policy().replace("INR 500 for General Medicine",
+                                          "INR 550 for General Medicine")
+        with self.assertRaisesRegex(ValueError, "standard fee mismatch.*General Medicine"):
+            validate_fee_policy(policy)
+
+    def test_standard_fee_outside_dataset_range_is_rejected(self):
+        policy = self.fee_policy().replace("INR 500 for General Medicine",
+                                          "INR 650 for General Medicine")
+        with self.assertRaisesRegex(ValueError, "outside dataset fee range.*General Medicine"):
+            validate_fee_policy(policy)
+
+    def test_existing_recorded_fee_authority_cannot_be_removed_or_negated(self):
+        for replacement in ("illustrative", "not authoritative"):
+            with self.subTest(replacement=replacement):
+                policy = self.fee_policy().replace("is authoritative", "is " + replacement)
+                with self.assertRaisesRegex(ValueError, "recorded-fee authority"):
+                    validate_fee_policy(policy)
+
+    def test_new_booking_and_existing_booking_distinction_is_required(self):
+        for original, replacement in (("New bookings", "Bookings"),
+                                      ("existing booking", "booking")):
+            with self.subTest(original=original):
+                policy = self.fee_policy().replace(original, replacement)
+                with self.assertRaises(ValueError):
+                    validate_fee_policy(policy)
+
+    def test_topic_title_cannot_replace_privacy_policy_content(self):
+        with tempfile.TemporaryDirectory() as directory:
+            copied = Path(directory) / "kb"
+            shutil.copytree(Path(__file__).resolve().parents[1] / "kb", copied)
+            (copied / "09_patient_privacy.md").write_text(
+                "# Patient privacy - fictional clinic\n\n"
+                "Patients can book appointments. Staff confirm a time.\n", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "missing required topic content"):
+                validate_kb(copied)
+
+    def test_sentence_limits_are_still_enforced(self):
+        with tempfile.TemporaryDirectory() as directory:
+            copied = Path(directory) / "kb"
+            shutil.copytree(Path(__file__).resolve().parents[1] / "kb", copied)
+            (copied / "01_appointment_booking.md").write_text(
+                "# Appointment booking - fictional clinic\n\n"
+                "Book an appointment through staff.\n", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "sentence count outside required range"):
+                validate_kb(copied)
 
 
 class ChunkingTests(unittest.TestCase):
