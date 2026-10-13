@@ -1,0 +1,7 @@
+KB files unchanged byte-for-byte: 12
+Original queries and labels unchanged: 6
+Top-k unchanged: 3
+Chunking source and selection rule unchanged: True
+Calibration questions and file bytes unchanged since Step 0: True
+Calibration SHA-256: f9a538ea914cdfaf7cdfcb58fb887c1c961a2688a0278fe0911b02039a4fe05e
+Evidence invariants: PASS

@@ -103,6 +103,27 @@ Retrieval takes the **3** most similar chunks. Under `MOCK_LLM`, top-one similar
 
 This small calibration set contains unrelated negative queries. Similarity alone does not establish medical safety, detect prompt injection, or distinguish every unsupported question that shares clinic terminology; those later guardrails are outside this session's scope.
 
+## Near-topic threshold stress test
+
+```powershell
+python scripts/stress_threshold.py
+```
+
+These fixed unsupported questions are a separate check and were never added to calibration. The table reports top-one cosine similarity from both collections and the actual deployed generator decision. Deployment uses `fixed_overlap`; the transcript also records each collection's decision against its own existing calibrated threshold.
+
+| Unsupported question | Fixed overlap cosine | Sentence cosine | Deployed threshold | Deployed decision |
+|---|---:|---:|---:|---|
+| Can you diagnose my chest pain? | 0.245835125 | 0.316201031 | 0.304713219 | FALLBACK |
+| Which medicine should I take for a fever? | 0.228224874 | 0.218418896 | 0.304713219 | FALLBACK |
+| What are the clinic's opening hours on Sundays? | 0.508999348 | 0.529146969 | 0.304713219 | ANSWER |
+| Which hospital in Mumbai has the shortest waiting time? | 0.403571725 | 0.416320801 | 0.304713219 | ANSWER |
+
+The deployed generator accepts **2** unsupported queries and falls back on **2**. Both collections accept the Sunday-opening-hours and Mumbai-hospital-waiting-time questions above their respective thresholds. The resulting answers quote booking and emergency policies, which do not supply opening hours or comparative hospital waiting times. These are measured false acceptances of similarity-only groundedness, preserved in [the complete stress transcript](transcripts/task4_near_topic.txt) and [structured answers with retrieved context](transcripts/task4_near_topic.json).
+
+The chest-pain diagnosis and fever-medicine questions fall back in this run. This observation does not establish a medical-safety guardrail. Part 2's groundedness guardrail will need to verify that context supports the actual question; passing a similarity threshold is insufficient. No threshold adjustments or keyword exceptions were introduced, and no Part 2 implementation was started.
+
+The stress script verifies that calibration bytes remain unchanged before and after execution; the matching hashes are saved in its transcript. The CLI integration test checks every fixed question, both similarities, actual decisions and extracts, and calibration-file preservation.
+
 ## Parent-document evaluation
 
 ```powershell
@@ -173,13 +194,14 @@ python -m rag.index
 python scripts/calibrate_threshold.py
 python -m rag.evaluate
 python scripts/run_part1_demo.py
+python scripts/stress_threshold.py
 python -m unittest discover -s tests -v
 python scripts/verify_offline.py
 ```
 
 If script activation is disabled, run each command with `.\.venv\Scripts\python.exe` directly. Run commands from the repository root. Rerun indexing, calibration, and evaluation after editing policies; the demo then uses the resulting deployment choice.
 
-[The full suite](transcripts/part1_tests.txt) passed **21 tests**. [The offline verification](transcripts/part1_offline.txt) clears API-key environment variables, blocks Python sockets and DNS before importing frameworks, rebuilds both collections in a fresh temporary store, recalibrates, evaluates, and demonstrates the answers and fallback. It recorded **0** outbound Python network attempts. Those runtime commands also ran successfully under the execution environment's network restrictions.
+[The full suite](transcripts/part1_tests.txt) passed **24 tests**. Before source changes, [the refreshed baseline](transcripts/refresh_tests.txt) passed all **21** existing tests with no failures. [The offline verification](transcripts/part1_offline.txt) clears API-key environment variables, blocks Python sockets and DNS before importing frameworks, rebuilds both collections in a fresh temporary store, recalibrates, evaluates, demonstrates the answers and fallback, and runs the near-topic stress check using that fresh temporary calibration. It recorded **0** outbound Python network attempts. Those runtime commands also ran successfully under the execution environment's network restrictions.
 
 | Task | Saved evidence |
 |---|---|
@@ -188,9 +210,14 @@ If script activation is disabled, run each command with `.\.venv\Scripts\python.
 | Chunking and indexing | [Indexing and retrieval](transcripts/task3_indexing.txt), [tests](transcripts/task3_tests.txt) |
 | Grounded generation | [Calibration](transcripts/task4_calibration.txt), [demo](transcripts/task4_demo.txt), [retrieved contexts](transcripts/task4_demo.json), [tests](transcripts/task4_tests.txt) |
 | Strategy evaluation | [Arithmetic and recommendation](transcripts/task5_evaluation.txt), [structured metrics](transcripts/task5_evaluation.json), [tests including deployment freshness](transcripts/task5_tests.txt) |
+| Evidence refresh | [Indexing](transcripts/refresh_indexing.txt), [calibration](transcripts/refresh_calibration.txt), [evaluation](transcripts/refresh_evaluation.txt), [demo](transcripts/refresh_demo.txt), [existing tests](transcripts/refresh_tests.txt) |
+| Expanded comparison | [Evaluation and generation tests](transcripts/fix_a_tests.txt), [latest complete tests](transcripts/part1_tests.txt) |
+| Near-topic stress | [Scores and actual decisions](transcripts/task4_near_topic.txt), [structured context](transcripts/task4_near_topic.json), [unchanged KB and calibration checks](transcripts/part1_invariants.txt) |
 | Environment | [Exact dependencies](transcripts/dependencies.txt), [dependency check](transcripts/dependency_check.txt), [offline run](transcripts/part1_offline.txt), [complete tests](transcripts/part1_tests.txt) |
 
 ## Scope and remaining verification
+
+The evidence refresh used the saved KB files currently on disk. Their corpus fingerprint matches the preceding run; unsaved or externally stored rewrites were unavailable for verification. [The invariant checks](transcripts/part1_invariants.txt) confirm the KB files, original query labels, chunking, top-k, selection rule, calibration questions, and calibration file remained unchanged during this evidence update.
 
 Only Part 1 is implemented. CrewAI orchestration, appointment lookup, memory, structured crew output, guardrails, API deployment, judge evaluation, Autogen review, governance, and caching remain for their requested sessions. The escalation formula and later-Part evidence therefore are not claimed here.
 

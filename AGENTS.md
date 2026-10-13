@@ -256,7 +256,7 @@ The README must:
 
 | Part | Status | Notes |
 |---|---|---|
-| Part 1 | completed; evidence refresh in progress | Baseline pipeline refreshed and existing tests passed. Fixed q07-q09 labels added; unchanged selection rule now recommends fixed overlap. Calibration and demo rerun; expanded evaluation/generation tests pass. Near-topic stress evidence and final offline checks pending. No KB edits or later-Part work. Public repository link is in README; model download script remains unexercised because checkpoint was cached. |
+| Part 1 | completed; evidence improved | Baseline refresh passed all existing tests. Fixed q07-q09 labels expanded demo/evaluation; unchanged rule selected fixed overlap. Near-topic stress recorded unsupported acceptances for Sunday hours and Mumbai waiting times without changing calibration. Full tests and fresh offline workflow including stress passed; see transcripts/. KB bytes and original constraints remain unchanged; current saved corpus matches the previous fingerprint. No later-Part work. Public repository link is in README; model download script remains unexercised because checkpoint was cached. |
 | Part 2 | not started | |
 | Part 3 | not started | |
 | Part 4 | not started | |
