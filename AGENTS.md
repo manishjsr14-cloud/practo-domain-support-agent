@@ -256,7 +256,7 @@ The README must:
 
 | Part | Status | Notes |
 |---|---|---|
-| Part 1 | completed | Tasks 1-5 verified; sentence chunks selected after tied metrics; tests and fresh offline workflow pass. All real evidence is in transcripts/. Local repository only; model download script not exercised because checkpoint was cached. |
+| Part 1 | completed | Tasks 1-5 verified; sentence chunks selected after tied metrics; tests and fresh offline workflow pass. All real evidence is in transcripts/. Public GitHub repository created; see README for the link. Model download script not exercised because checkpoint was cached. |
 | Part 2 | not started | |
 | Part 3 | not started | |
 | Part 4 | not started | |

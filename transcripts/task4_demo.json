@@ -18,12 +18,12 @@
         "distance": 0.3443663716316223,
         "similarity": 0.6556336283683777,
         "metadata": {
-          "starts_sentence": true,
-          "start": 217,
-          "strategy": "sentence",
-          "parent_id": "01_appointment_booking",
           "index": 1,
-          "end": 400
+          "strategy": "sentence",
+          "end": 400,
+          "starts_sentence": true,
+          "parent_id": "01_appointment_booking",
+          "start": 217
         }
       },
       {
@@ -33,12 +33,12 @@
         "distance": 0.4083474278450012,
         "similarity": 0.5916525721549988,
         "metadata": {
-          "parent_id": "01_appointment_booking",
-          "starts_sentence": true,
-          "end": 216,
-          "index": 0,
           "strategy": "sentence",
-          "start": 0
+          "end": 216,
+          "start": 0,
+          "index": 0,
+          "starts_sentence": true,
+          "parent_id": "01_appointment_booking"
         }
       },
       {
@@ -49,10 +49,10 @@
         "similarity": 0.4791027307510376,
         "metadata": {
           "index": 0,
-          "strategy": "sentence",
+          "starts_sentence": true,
           "start": 0,
           "end": 213,
-          "starts_sentence": true,
+          "strategy": "sentence",
           "parent_id": "02_cancellation_rescheduling"
         }
       }
@@ -79,9 +79,9 @@
         "metadata": {
           "starts_sentence": true,
           "strategy": "sentence",
-          "index": 1,
-          "end": 392,
           "parent_id": "02_cancellation_rescheduling",
+          "end": 392,
+          "index": 1,
           "start": 214
         }
       },
@@ -92,12 +92,12 @@
         "distance": 0.46670979261398315,
         "similarity": 0.5332902073860168,
         "metadata": {
-          "parent_id": "02_cancellation_rescheduling",
+          "strategy": "sentence",
           "end": 213,
-          "start": 0,
           "index": 0,
           "starts_sentence": true,
-          "strategy": "sentence"
+          "start": 0,
+          "parent_id": "02_cancellation_rescheduling"
         }
       },
       {
@@ -107,11 +107,11 @@
         "distance": 0.6788033246994019,
         "similarity": 0.32119667530059814,
         "metadata": {
-          "parent_id": "01_appointment_booking",
           "strategy": "sentence",
-          "start": 217,
-          "end": 400,
           "index": 1,
+          "end": 400,
+          "start": 217,
+          "parent_id": "01_appointment_booking",
           "starts_sentence": true
         }
       }
@@ -136,11 +136,11 @@
         "distance": 0.34866029024124146,
         "similarity": 0.6513397097587585,
         "metadata": {
-          "starts_sentence": true,
-          "start": 0,
           "index": 0,
-          "parent_id": "03_consultation_fees",
           "end": 189,
+          "start": 0,
+          "starts_sentence": true,
+          "parent_id": "03_consultation_fees",
           "strategy": "sentence"
         }
       },
@@ -151,12 +151,12 @@
         "distance": 0.36611407995224,
         "similarity": 0.63388592004776,
         "metadata": {
-          "starts_sentence": true,
           "end": 333,
-          "start": 190,
           "index": 1,
+          "starts_sentence": true,
           "parent_id": "03_consultation_fees",
-          "strategy": "sentence"
+          "strategy": "sentence",
+          "start": 190
         }
       },
       {
@@ -166,12 +166,12 @@
         "distance": 0.4003748297691345,
         "similarity": 0.5996251702308655,
         "metadata": {
-          "starts_sentence": true,
-          "start": 223,
-          "strategy": "sentence",
+          "end": 439,
           "parent_id": "11_second_opinion",
           "index": 1,
-          "end": 439
+          "strategy": "sentence",
+          "start": 223,
+          "starts_sentence": true
         }
       }
     ]
@@ -195,11 +195,11 @@
         "distance": 0.3133769631385803,
         "similarity": 0.6866230368614197,
         "metadata": {
-          "index": 0,
-          "parent_id": "06_lab_turnaround",
           "end": 241,
-          "strategy": "sentence",
+          "index": 0,
           "start": 0,
+          "parent_id": "06_lab_turnaround",
+          "strategy": "sentence",
           "starts_sentence": true
         }
       },
@@ -211,9 +211,9 @@
         "similarity": 0.4559178948402405,
         "metadata": {
           "starts_sentence": true,
-          "start": 242,
           "strategy": "sentence",
           "index": 1,
+          "start": 242,
           "parent_id": "06_lab_turnaround",
           "end": 421
         }
@@ -225,12 +225,12 @@
         "distance": 0.7464346885681152,
         "similarity": 0.25356531143188477,
         "metadata": {
-          "index": 1,
           "starts_sentence": true,
-          "strategy": "sentence",
-          "start": 223,
           "parent_id": "11_second_opinion",
-          "end": 439
+          "start": 223,
+          "strategy": "sentence",
+          "end": 439,
+          "index": 1
         }
       }
     ]
@@ -254,12 +254,12 @@
         "distance": 0.30824655294418335,
         "similarity": 0.6917534470558167,
         "metadata": {
-          "index": 1,
-          "end": 482,
-          "strategy": "sentence",
-          "start": 284,
           "starts_sentence": true,
-          "parent_id": "10_follow_up_discount"
+          "parent_id": "10_follow_up_discount",
+          "start": 284,
+          "strategy": "sentence",
+          "index": 1,
+          "end": 482
         }
       },
       {
@@ -270,11 +270,11 @@
         "similarity": 0.6423953771591187,
         "metadata": {
           "parent_id": "10_follow_up_discount",
+          "starts_sentence": true,
           "start": 0,
-          "index": 0,
-          "end": 283,
           "strategy": "sentence",
-          "starts_sentence": true
+          "index": 0,
+          "end": 283
         }
       },
       {
@@ -285,11 +285,11 @@
         "similarity": 0.35255998373031616,
         "metadata": {
           "parent_id": "12_home_visits",
+          "start": 235,
+          "strategy": "sentence",
           "index": 1,
           "end": 402,
-          "start": 235,
-          "starts_sentence": true,
-          "strategy": "sentence"
+          "starts_sentence": true
         }
       }
     ]
@@ -313,12 +313,12 @@
         "distance": 0.3128848075866699,
         "similarity": 0.6871151924133301,
         "metadata": {
-          "start": 0,
-          "end": 211,
-          "starts_sentence": true,
-          "index": 0,
           "parent_id": "04_insurance_claims",
-          "strategy": "sentence"
+          "index": 0,
+          "start": 0,
+          "strategy": "sentence",
+          "end": 211,
+          "starts_sentence": true
         }
       },
       {
@@ -328,12 +328,12 @@
         "distance": 0.6422649025917053,
         "similarity": 0.3577350974082947,
         "metadata": {
-          "strategy": "sentence",
-          "index": 1,
+          "starts_sentence": true,
           "end": 390,
-          "parent_id": "04_insurance_claims",
           "start": 212,
-          "starts_sentence": true
+          "index": 1,
+          "strategy": "sentence",
+          "parent_id": "04_insurance_claims"
         }
       },
       {
@@ -343,11 +343,11 @@
         "distance": 0.6798030138015747,
         "similarity": 0.3201969861984253,
         "metadata": {
-          "start": 223,
-          "starts_sentence": true,
           "end": 439,
           "index": 1,
           "strategy": "sentence",
+          "start": 223,
+          "starts_sentence": true,
           "parent_id": "11_second_opinion"
         }
       }
@@ -369,12 +369,12 @@
         "distance": 0.9764825105667114,
         "similarity": 0.023517489433288574,
         "metadata": {
+          "strategy": "sentence",
+          "parent_id": "09_patient_privacy",
           "start": 229,
           "end": 504,
           "index": 1,
-          "starts_sentence": true,
-          "parent_id": "09_patient_privacy",
-          "strategy": "sentence"
+          "starts_sentence": true
         }
       },
       {
@@ -384,12 +384,12 @@
         "distance": 0.9808891415596008,
         "similarity": 0.01911085844039917,
         "metadata": {
-          "index": 1,
+          "start": 242,
+          "starts_sentence": true,
           "parent_id": "06_lab_turnaround",
           "strategy": "sentence",
-          "starts_sentence": true,
-          "start": 242,
-          "end": 421
+          "end": 421,
+          "index": 1
         }
       },
       {
@@ -399,12 +399,12 @@
         "distance": 0.9902008771896362,
         "similarity": 0.00979912281036377,
         "metadata": {
-          "parent_id": "02_cancellation_rescheduling",
-          "start": 0,
           "strategy": "sentence",
-          "index": 0,
           "starts_sentence": true,
-          "end": 213
+          "end": 213,
+          "index": 0,
+          "start": 0,
+          "parent_id": "02_cancellation_rescheduling"
         }
       }
     ]
