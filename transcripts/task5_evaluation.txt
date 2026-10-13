@@ -3,19 +3,20 @@ Queries: 9; top-k chunks: 3
 Single-parent queries: 7; multi-parent queries: 2
 No similarity filtering is applied during evaluation
 Index fingerprint: 3c4da873972cdda4b844f9b5e79abe06acc0201a64418c88835cc0be0141461f
+Retrieval fingerprint: 104118cfa0d9fe6c7ce119fc78313f9cbc619702dbe92eca242ef56ba1c4c9da
 
 | Query | fixed_overlap precision | fixed_overlap recall | sentence precision | sentence recall |
 |---|---|---|---|---|
 | q01 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
 | q02 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q03 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q03 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
 | q04 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
 | q05 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
 | q06 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q07 | 0 relevant of 2 retrieved = 0.000000 | 0 retrieved of 1 relevant = 0.000000 | 0 relevant of 3 retrieved = 0.000000 | 0 retrieved of 1 relevant = 0.000000 |
-| q08 | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 | 2 relevant of 3 retrieved = 0.666667 | 2 retrieved of 2 relevant = 1.000000 |
+| q07 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q08 | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |
 | q09 | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |
-| Macro average | 0.555556 | 0.888889 | 0.518519 | 0.888889 |
+| Macro average | 0.611111 | 1.000000 | 0.666667 | 1.000000 |
 
 q01: How do I book an appointment and know that my slot is confirmed?
 Labelled relevant parents: 01_appointment_booking
@@ -33,24 +34,24 @@ sentence deduped parents: 02_cancellation_rescheduling, 01_appointment_booking
 
 q03: What are the consultation fees for each specialty?
 Labelled relevant parents: 03_consultation_fees
-fixed_overlap retrieved chunks: 03_consultation_fees:fixed_overlap:001, 03_consultation_fees:fixed_overlap:000, 11_second_opinion:fixed_overlap:001
+fixed_overlap retrieved chunks: 03_consultation_fees:fixed_overlap:001, 03_consultation_fees:fixed_overlap:000, 11_second_opinion:fixed_overlap:000
 fixed_overlap deduped parents: 03_consultation_fees, 11_second_opinion
-sentence retrieved chunks: 03_consultation_fees:sentence:000, 03_consultation_fees:sentence:001, 11_second_opinion:sentence:001
-sentence deduped parents: 03_consultation_fees, 11_second_opinion
+sentence retrieved chunks: 03_consultation_fees:sentence:000, 03_consultation_fees:sentence:001, 03_consultation_fees:sentence:002
+sentence deduped parents: 03_consultation_fees
 
 q04: How long do routine and specialized lab test reports take?
 Labelled relevant parents: 06_lab_turnaround
 fixed_overlap retrieved chunks: 06_lab_turnaround:fixed_overlap:000, 06_lab_turnaround:fixed_overlap:001, 03_consultation_fees:fixed_overlap:001
 fixed_overlap deduped parents: 06_lab_turnaround, 03_consultation_fees
-sentence retrieved chunks: 06_lab_turnaround:sentence:000, 06_lab_turnaround:sentence:001, 11_second_opinion:sentence:001
-sentence deduped parents: 06_lab_turnaround, 11_second_opinion
+sentence retrieved chunks: 06_lab_turnaround:sentence:000, 06_lab_turnaround:sentence:001, 10_follow_up_discount:sentence:000
+sentence deduped parents: 06_lab_turnaround, 10_follow_up_discount
 
 q05: When does a follow-up visit qualify for a discount?
 Labelled relevant parents: 10_follow_up_discount
 fixed_overlap retrieved chunks: 10_follow_up_discount:fixed_overlap:001, 10_follow_up_discount:fixed_overlap:000, 02_cancellation_rescheduling:fixed_overlap:001
 fixed_overlap deduped parents: 10_follow_up_discount, 02_cancellation_rescheduling
-sentence retrieved chunks: 10_follow_up_discount:sentence:001, 10_follow_up_discount:sentence:000, 12_home_visits:sentence:001
-sentence deduped parents: 10_follow_up_discount, 12_home_visits
+sentence retrieved chunks: 10_follow_up_discount:sentence:001, 10_follow_up_discount:sentence:000, 02_cancellation_rescheduling:sentence:000
+sentence deduped parents: 10_follow_up_discount, 02_cancellation_rescheduling
 
 q06: How do I submit an insurance reimbursement claim?
 Labelled relevant parents: 04_insurance_claims
@@ -61,23 +62,23 @@ sentence deduped parents: 04_insurance_claims, 11_second_opinion
 
 q07: My doctor asked me to come back, do I have to pay the full price again?
 Labelled relevant parents: 10_follow_up_discount
-fixed_overlap retrieved chunks: 03_consultation_fees:fixed_overlap:000, 03_consultation_fees:fixed_overlap:001, 11_second_opinion:fixed_overlap:001
-fixed_overlap deduped parents: 03_consultation_fees, 11_second_opinion
-sentence retrieved chunks: 11_second_opinion:sentence:001, 05_prescription_refills:sentence:001, 03_consultation_fees:sentence:001
-sentence deduped parents: 11_second_opinion, 05_prescription_refills, 03_consultation_fees
+fixed_overlap retrieved chunks: 03_consultation_fees:fixed_overlap:000, 10_follow_up_discount:fixed_overlap:000, 03_consultation_fees:fixed_overlap:001
+fixed_overlap deduped parents: 03_consultation_fees, 10_follow_up_discount
+sentence retrieved chunks: 11_second_opinion:sentence:001, 10_follow_up_discount:sentence:001, 10_follow_up_discount:sentence:000
+sentence deduped parents: 11_second_opinion, 10_follow_up_discount
 
 q08: What will I pay for a home visit by a cardiologist?
 Labelled relevant parents: 03_consultation_fees, 12_home_visits
-fixed_overlap retrieved chunks: 03_consultation_fees:fixed_overlap:000, 12_home_visits:fixed_overlap:000, 12_home_visits:fixed_overlap:001
+fixed_overlap retrieved chunks: 03_consultation_fees:fixed_overlap:000, 12_home_visits:fixed_overlap:000, 03_consultation_fees:fixed_overlap:001
 fixed_overlap deduped parents: 03_consultation_fees, 12_home_visits
-sentence retrieved chunks: 03_consultation_fees:sentence:001, 12_home_visits:sentence:001, 01_appointment_booking:sentence:000
-sentence deduped parents: 03_consultation_fees, 12_home_visits, 01_appointment_booking
+sentence retrieved chunks: 03_consultation_fees:sentence:001, 12_home_visits:sentence:001, 03_consultation_fees:sentence:002
+sentence deduped parents: 03_consultation_fees, 12_home_visits
 
 q09: Can I get a second opinion over a video call?
 Labelled relevant parents: 07_telemedicine, 11_second_opinion
-fixed_overlap retrieved chunks: 11_second_opinion:fixed_overlap:000, 11_second_opinion:fixed_overlap:001, 07_telemedicine:fixed_overlap:000
+fixed_overlap retrieved chunks: 11_second_opinion:fixed_overlap:000, 07_telemedicine:fixed_overlap:000, 11_second_opinion:fixed_overlap:001
 fixed_overlap deduped parents: 11_second_opinion, 07_telemedicine
-sentence retrieved chunks: 11_second_opinion:sentence:001, 11_second_opinion:sentence:000, 07_telemedicine:sentence:000
+sentence retrieved chunks: 11_second_opinion:sentence:001, 07_telemedicine:sentence:000, 11_second_opinion:sentence:000
 sentence deduped parents: 11_second_opinion, 07_telemedicine
 
 Markdown results table: fixed_overlap
@@ -89,26 +90,26 @@ Markdown results table: fixed_overlap
 | q04 | 06_lab_turnaround | 06_lab_turnaround, 03_consultation_fees | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
 | q05 | 10_follow_up_discount | 10_follow_up_discount, 02_cancellation_rescheduling | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
 | q06 | 04_insurance_claims | 04_insurance_claims, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q07 | 10_follow_up_discount | 03_consultation_fees, 11_second_opinion | 0 relevant of 2 retrieved = 0.000000 | 0 retrieved of 1 relevant = 0.000000 |
+| q07 | 10_follow_up_discount | 03_consultation_fees, 10_follow_up_discount | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
 | q08 | 03_consultation_fees, 12_home_visits | 03_consultation_fees, 12_home_visits | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |
 | q09 | 07_telemedicine, 11_second_opinion | 11_second_opinion, 07_telemedicine | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |
-| Macro average | | | 0.555556 | 0.888889 |
+| Macro average | | | 0.611111 | 1.000000 |
 
 Markdown results table: sentence
 | Query | Labelled parent documents | Retrieved parent documents (deduped) | Precision arithmetic | Recall arithmetic |
 |---|---|---|---|---|
 | q01 | 01_appointment_booking | 01_appointment_booking, 02_cancellation_rescheduling | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
 | q02 | 02_cancellation_rescheduling | 02_cancellation_rescheduling, 01_appointment_booking | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q03 | 03_consultation_fees | 03_consultation_fees, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q04 | 06_lab_turnaround | 06_lab_turnaround, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q05 | 10_follow_up_discount | 10_follow_up_discount, 12_home_visits | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q03 | 03_consultation_fees | 03_consultation_fees | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q04 | 06_lab_turnaround | 06_lab_turnaround, 10_follow_up_discount | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q05 | 10_follow_up_discount | 10_follow_up_discount, 02_cancellation_rescheduling | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
 | q06 | 04_insurance_claims | 04_insurance_claims, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q07 | 10_follow_up_discount | 11_second_opinion, 05_prescription_refills, 03_consultation_fees | 0 relevant of 3 retrieved = 0.000000 | 0 retrieved of 1 relevant = 0.000000 |
-| q08 | 03_consultation_fees, 12_home_visits | 03_consultation_fees, 12_home_visits, 01_appointment_booking | 2 relevant of 3 retrieved = 0.666667 | 2 retrieved of 2 relevant = 1.000000 |
+| q07 | 10_follow_up_discount | 11_second_opinion, 10_follow_up_discount | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q08 | 03_consultation_fees, 12_home_visits | 03_consultation_fees, 12_home_visits | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |
 | q09 | 07_telemedicine, 11_second_opinion | 11_second_opinion, 07_telemedicine | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |
-| Macro average | | | 0.518519 | 0.888889 |
+| Macro average | | | 0.666667 | 1.000000 |
 
-Recommendation: Across 9 hand-labelled queries, fixed_overlap achieved macro precision 0.555556 and macro recall 0.888889, while sentence achieved macro precision 0.518519 and macro recall 0.888889. Deploy fixed_overlap because it has equal macro recall and higher macro precision. This small policy sample supports a local choice and does not establish universal retrieval quality.
+Recommendation: Across 9 hand-labelled queries, fixed_overlap achieved macro precision 0.611111 and macro recall 1.000000, while sentence achieved macro precision 0.666667 and macro recall 1.000000. Deploy sentence because it has equal macro recall and higher macro precision. This small policy sample supports a local choice and does not establish universal retrieval quality.
 
 Saved evaluation report: transcripts\task5_evaluation.json
 Saved deployment choice: rag\deployment.json

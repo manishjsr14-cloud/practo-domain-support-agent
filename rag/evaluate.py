@@ -79,6 +79,7 @@ def _print_report(report: dict) -> None:
           f"multi-parent queries: {report['multi_parent_query_count']}")
     print("No similarity filtering is applied during evaluation")
     print(f"Index fingerprint: {report['fingerprint']}")
+    print(f"Retrieval fingerprint: {report['retrieval_fingerprint']}")
     print("\n| Query | fixed_overlap precision | fixed_overlap recall "
           "| sentence precision | sentence recall |")
     print("|---|---|---|---|---|")
@@ -105,6 +106,7 @@ def _print_report(report: dict) -> None:
 def run_evaluation(index: RAGIndex, persist: bool = True) -> dict:
     """Measure both collections on the shared demo queries and optionally save."""
     fingerprint = index.corpus_fingerprint
+    retrieval_fingerprint = index.retrieval_fingerprint
     rows = []
     for labelled_query in DEMO_QUERIES:
         row = {
@@ -120,7 +122,8 @@ def run_evaluation(index: RAGIndex, persist: bool = True) -> dict:
             metrics["retrieved_chunk_ids"] = [hit["chunk_id"] for hit in hits]
             row["strategies"][strategy] = metrics
         rows.append(row)
-    if index.corpus_fingerprint != fingerprint:
+    if (index.corpus_fingerprint != fingerprint
+            or index.retrieval_fingerprint != retrieval_fingerprint):
         raise RuntimeError("Knowledge base changed during evaluation; rerun the evaluation")
     averages = {
         strategy: {
@@ -142,6 +145,7 @@ def run_evaluation(index: RAGIndex, persist: bool = True) -> dict:
     )
     report = {
         "fingerprint": fingerprint,
+        "retrieval_fingerprint": retrieval_fingerprint,
         "top_k_chunks": TOP_K,
         "query_count": len(rows),
         "single_parent_query_count": sum(len(row["relevant_parents"]) == 1 for row in rows),
@@ -164,6 +168,7 @@ def run_evaluation(index: RAGIndex, persist: bool = True) -> dict:
         deployment = {
             "strategy": selected,
             "fingerprint": fingerprint,
+            "retrieval_fingerprint": retrieval_fingerprint,
             "metrics": averages,
             "selection_reason": reason,
             "top_k_chunks": TOP_K,

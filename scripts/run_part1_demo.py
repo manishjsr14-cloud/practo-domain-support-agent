@@ -27,6 +27,8 @@ def run_demo(index: RAGIndex, strategy: str | None = None,
               f"fallback={result['fallback']}")
         print(f"Answer: {result['answer']}")
         print(f"Sources: {', '.join(result['source_chunks']) or '(none)'}")
+        print("Policy excerpts: " + (", ".join(section["parent_id"]
+              for section in result["context_sections"]) or "(none)"))
     if any(result["fallback"] for result in results[:-1]):
         raise AssertionError("An in-scope demonstration unexpectedly fell back")
     if not results[-1]["fallback"]:

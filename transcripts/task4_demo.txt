@@ -1,54 +1,70 @@
-MOCK_LLM=true; strategy=fixed_overlap; top_k=3
+MOCK_LLM=true; strategy=sentence; top_k=3
 
 Question: How do I book an appointment and know that my slot is confirmed?
-top1=0.677705944; threshold=0.304713219; fallback=False
+top1=0.655633628; threshold=0.345280051; fallback=False
 Answer: Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled. A requested slot is not reserved until confirmation is issued. Keep the appointment record ID to check its status or request a change without sharing personal details in support chat.
-Sources: 01_appointment_booking:fixed_overlap:000, 01_appointment_booking:fixed_overlap:001
+
+Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund.
+Sources: 01_appointment_booking:sentence:000, 01_appointment_booking:sentence:001, 02_cancellation_rescheduling:sentence:000
+Policy excerpts: 01_appointment_booking, 02_cancellation_rescheduling
 
 Question: What is the cancellation and rescheduling window?
-top1=0.604042053; threshold=0.304713219; fallback=False
+top1=0.565503120; threshold=0.345280051; fallback=False
 Answer: Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund. A rescheduled appointment receives a new confirmed time, while a cancelled appointment releases its slot. Reception explains any applicable charge before accepting a late change.
-Sources: 02_cancellation_rescheduling:fixed_overlap:000, 02_cancellation_rescheduling:fixed_overlap:001
+Sources: 02_cancellation_rescheduling:sentence:000, 02_cancellation_rescheduling:sentence:001
+Policy excerpts: 02_cancellation_rescheduling
 
 Question: What are the consultation fees for each specialty?
-top1=0.699686170; threshold=0.304713219; fallback=False
+top1=0.651339710; threshold=0.345280051; fallback=False
 Answer: General Medicine consultations cost INR 300-600, and Pediatrics consultations cost INR 400-800. Dermatology consultations cost INR 500-1000, and Orthopedics consultations cost INR 600-1200. Cardiology consultations cost INR 800-1500. The exact consultation fee within the specialty range is shown before the appointment is confirmed. Lab tests, procedures, and home-visit travel charges are quoted separately and are not included in the consultation fee.
-Sources: 03_consultation_fees:fixed_overlap:000, 03_consultation_fees:fixed_overlap:001
+Sources: 03_consultation_fees:sentence:000, 03_consultation_fees:sentence:001, 03_consultation_fees:sentence:002
+Policy excerpts: 03_consultation_fees
 
 Question: How long do routine and specialized lab test reports take?
-top1=0.687533259; threshold=0.304713219; fallback=False
+top1=0.686623037; threshold=0.345280051; fallback=False
 Answer: Routine blood-test reports are usually available within 1-2 working days after the laboratory accepts the sample. Specialized tests usually take 3-5 working days, and the laboratory gives a test-specific estimate when the sample is accepted. Weekends, holidays, and a request for another sample can extend that estimate. Reception can check whether a report is ready, while a clinician must explain what the results mean.
-Sources: 06_lab_turnaround:fixed_overlap:000, 06_lab_turnaround:fixed_overlap:001
+Sources: 06_lab_turnaround:sentence:000, 06_lab_turnaround:sentence:001
+Policy excerpts: 06_lab_turnaround
 
 Question: When does a follow-up visit qualify for a discount?
-top1=0.693366587; threshold=0.304713219; fallback=False
+top1=0.691753447; threshold=0.345280051; fallback=False
 Answer: A follow-up consultation within 7 calendar days of a completed visit qualifies for a 20 percent consultation-fee discount when it is with the same specialty for the same issue. Reception checks the original appointment reference and confirms eligibility before booking the follow-up. A record marked follow_up_required indicates that follow-up was requested but does not by itself prove discount eligibility. Lab tests, procedures, and travel charges are excluded from the discount.
-Sources: 10_follow_up_discount:fixed_overlap:000, 10_follow_up_discount:fixed_overlap:001
+Sources: 10_follow_up_discount:sentence:000, 10_follow_up_discount:sentence:001
+Policy excerpts: 10_follow_up_discount
 
 Question: How do I submit an insurance reimbursement claim?
-top1=0.627223551; threshold=0.304713219; fallback=False
+top1=0.687115192; threshold=0.345280051; fallback=False
 Answer: Pay the clinic bill and request an itemized invoice and consultation receipt for an insurance reimbursement claim. Submit those documents with the insurer's claim form through the insurer's own approved channel. Reception can correct billing details after verification but cannot decide coverage or promise claim approval. Direct cashless settlement is not offered by this fictional clinic.
-Sources: 04_insurance_claims:fixed_overlap:000, 04_insurance_claims:fixed_overlap:001
+Sources: 04_insurance_claims:sentence:000, 04_insurance_claims:sentence:001
+Policy excerpts: 04_insurance_claims
 
 Question: My doctor asked me to come back, do I have to pay the full price again?
-top1=0.476593375; threshold=0.304713219; fallback=False
-Answer: General Medicine consultations cost INR 300-600, and Pediatrics consultations cost INR 400-800. Dermatology consultations cost INR 500-1000, and Orthopedics consultations cost INR 600-1200. Cardiology consultations cost INR 800-1500. The exact consultation fee within the specialty range is shown before the appointment is confirmed. Lab tests, procedures, and home-visit travel charges are quoted separately and are not included in the consultation fee.
-Sources: 03_consultation_fees:fixed_overlap:000, 03_consultation_fees:fixed_overlap:001
+top1=0.478131831; threshold=0.345280051; fallback=False
+Answer: A follow-up consultation within 7 calendar days of a completed visit qualifies for a 20 percent consultation-fee discount when it is with the same specialty for the same issue. Reception checks the original appointment reference and confirms eligibility before booking the follow-up. A record marked follow_up_required indicates that follow-up was requested but does not by itself prove discount eligibility. Lab tests, procedures, and travel charges are excluded from the discount.
+Sources: 10_follow_up_discount:sentence:000, 10_follow_up_discount:sentence:001
+Policy excerpts: 10_follow_up_discount
 
 Question: What will I pay for a home visit by a cardiologist?
-top1=0.553981662; threshold=0.304713219; fallback=False
-Answer: General Medicine consultations cost INR 300-600, and Pediatrics consultations cost INR 400-800. Dermatology consultations cost INR 500-1000, and Orthopedics consultations cost INR 600-1200. Cardiology consultations cost INR 800-1500.
-Sources: 03_consultation_fees:fixed_overlap:000
+top1=0.637170434; threshold=0.345280051; fallback=False
+Answer: Cardiology consultations cost INR 800-1500. The exact consultation fee within the specialty range is shown before the appointment is confirmed. Lab tests, procedures, and home-visit travel charges are quoted separately and are not included in the consultation fee.
+
+The consultation fee and any travel charge are quoted before the visit is confirmed. Home visits are scheduled outpatient services and cannot be used for an emergency.
+Sources: 03_consultation_fees:sentence:001, 03_consultation_fees:sentence:002, 12_home_visits:sentence:001
+Policy excerpts: 03_consultation_fees, 12_home_visits
 
 Question: Can I get a second opinion over a video call?
-top1=0.353425443; threshold=0.304713219; fallback=False
+top1=0.415153027; threshold=0.345280051; fallback=False
 Answer: Request a second opinion through reception by asking for a different clinician in the relevant specialty. With consent, share previous reports and the consultation summary through the secure clinic portal before the visit. The reviewing clinician makes an independent assessment and may request an in-person consultation. A second opinion is billed at the chosen specialty's standard consultation fee and does not refund the earlier visit.
-Sources: 11_second_opinion:fixed_overlap:000, 11_second_opinion:fixed_overlap:001
+
+Telemedicine appointments are available for routine follow-ups when the clinician confirms that an in-person examination is unnecessary. The patient must consent to a remote consultation and have access to the clinic's secure video service.
+Sources: 11_second_opinion:sentence:000, 11_second_opinion:sentence:001, 07_telemedicine:sentence:000
+Policy excerpts: 11_second_opinion, 07_telemedicine
 
 Question: Give me a recipe for chocolate brownies.
-top1=0.021441579; threshold=0.304713219; fallback=True
+top1=0.023517489; threshold=0.345280051; fallback=True
 Answer: I don't know based on the available clinic-policy context.
 Sources: (none)
+Policy excerpts: (none)
 
 Demo: PASS (9 in-scope answers; out-of-scope fallback)
 Saved answers and original retrieved contexts: task4_demo.json

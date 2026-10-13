@@ -1,0 +1,8 @@
+KB files unchanged byte-for-byte since answer-fix baseline: 12
+All fixed demo/evaluation queries and labels unchanged: 9
+Top-k chunks unchanged: 3
+Chunking source and calibration file unchanged: True
+README evaluation rows, recommendation, and local links match saved evidence: True
+Full test suite passed: 31 tests
+Outbound Python network attempts: 0
+Answer-fix evidence checks: PASS

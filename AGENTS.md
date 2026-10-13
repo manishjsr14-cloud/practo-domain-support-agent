@@ -256,7 +256,7 @@ The README must:
 
 | Part | Status | Notes |
 |---|---|---|
-| Part 1 | completed; evidence improved | Baseline refresh passed all existing tests. Fixed q07-q09 labels expanded demo/evaluation; unchanged rule selected fixed overlap. Near-topic stress recorded unsupported acceptances for Sunday hours and Mumbai waiting times without changing calibration. Full tests and fresh offline workflow including stress passed; see transcripts/. KB bytes and original constraints remain unchanged; current saved corpus matches the previous fingerprint. No later-Part work. Public repository link is in README; model download script remains unexercised because checkpoint was cached. |
+| Part 1 | completed; retrieval and answer coverage fixed | General parent/question-focus ranking restores q07; multi-parent extraction includes q08 pricing/travel and q09 video eligibility limits. Unchanged selection rule now recommends sentence. All 31 tests and fresh offline workflow passed; real evidence is in transcripts/ with pre-fix failures preserved. KB, query labels, chunk sizes, top-k, calibration queries/file unchanged. Sunday-hours and Mumbai-waiting false acceptances remain documented. No later-Part work. Public repository link is in README; model download script remains unexercised because checkpoint was cached. |
 | Part 2 | not started | |
 | Part 3 | not started | |
 | Part 4 | not started | |

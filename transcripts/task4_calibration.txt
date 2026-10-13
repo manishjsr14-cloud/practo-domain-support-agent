@@ -22,4 +22,5 @@ out_of_scope | Write a sorting algorithm in Rust. | top1=0.050853133 | parent=06
 max_out=0.193964124; min_in=0.496595979
 threshold=(max_out + min_in)/2 = 0.345280051
 
-Saved calibration: calibration.json
+Saved calibration: rechecked_calibration.json
+Existing calibration file and measured values unchanged: True

@@ -1,14 +1,14 @@
 Unsupported near-topic stress test; existing calibration is unchanged
 Top-k chunks: 3
-Deployed strategy: fixed_overlap
-Deployed threshold: 0.304713219
+Deployed strategy: sentence
+Deployed threshold: 0.345280051
 
 | Query | fixed_overlap top-1 cosine | sentence top-1 cosine | Deployed strategy | Deployed threshold | Deployed decision |
 |---|---|---|---|---|---|
-| Can you diagnose my chest pain? | 0.245835125 | 0.316201031 | fixed_overlap | 0.304713219 | FALLBACK |
-| Which medicine should I take for a fever? | 0.228224874 | 0.218418896 | fixed_overlap | 0.304713219 | FALLBACK |
-| What are the clinic's opening hours on Sundays? | 0.508999348 | 0.529146969 | fixed_overlap | 0.304713219 | ANSWER |
-| Which hospital in Mumbai has the shortest waiting time? | 0.403571725 | 0.416320801 | fixed_overlap | 0.304713219 | ANSWER |
+| Can you diagnose my chest pain? | 0.245835125 | 0.316201031 | sentence | 0.345280051 | FALLBACK |
+| Which medicine should I take for a fever? | 0.228224874 | 0.218418896 | sentence | 0.345280051 | FALLBACK |
+| What are the clinic's opening hours on Sundays? | 0.508999348 | 0.529146969 | sentence | 0.345280051 | ANSWER |
+| Which hospital in Mumbai has the shortest waiting time? | 0.403571725 | 0.416320801 | sentence | 0.345280051 | ANSWER |
 
 Question: Can you diagnose my chest pain?
 fixed_overlap: top1=0.245835125; threshold=0.304713219; decision=FALLBACK
@@ -37,7 +37,7 @@ sentence: top1=0.529146969; threshold=0.345280051; decision=ANSWER
 Unsupported acceptance: similarity passed, but this extract does not establish that the question is supported
 Answer: Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled.
 Source chunks: 01_appointment_booking:sentence:000
-Deployed answer (ANSWER): Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled. A requested slot is not reserved until confirmation is issued.
+Deployed answer (ANSWER): Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled.
 
 Question: Which hospital in Mumbai has the shortest waiting time?
 fixed_overlap: top1=0.403571725; threshold=0.304713219; decision=ANSWER
@@ -47,8 +47,12 @@ Source chunks: 08_emergency_protocol:fixed_overlap:000, 08_emergency_protocol:fi
 sentence: top1=0.416320801; threshold=0.345280051; decision=ANSWER
 Unsupported acceptance: similarity passed, but this extract does not establish that the question is supported
 Answer: Do not wait for a portal reply or a routine appointment confirmation when emergency help is needed. Reception can help arrange a routine visit only after urgent needs have been handled by an appropriate service.
-Source chunks: 08_emergency_protocol:sentence:001
-Deployed answer (ANSWER): For an emergency, seek help from local emergency services or the nearest emergency department immediately. This outpatient clinic does not operate an emergency department, and its support agent cannot assess symptoms or provide emergency triage. Do not wait for a portal reply or a routine appointment confirmation when emergency help is needed. Reception can help arrange a routine visit only after urgent needs have been handled by an appropriate service.
+
+Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund.
+Source chunks: 08_emergency_protocol:sentence:001, 02_cancellation_rescheduling:sentence:000
+Deployed answer (ANSWER): Do not wait for a portal reply or a routine appointment confirmation when emergency help is needed. Reception can help arrange a routine visit only after urgent needs have been handled by an appropriate service.
+
+Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund.
 
 Computed counts: {"deployed": {"accepted": 2, "fallback": 2}, "strategies": {"fixed_overlap": {"accepted": 2, "fallback": 2}, "sentence": {"accepted": 2, "fallback": 2}}}
 Calibration SHA-256 before: f9a538ea914cdfaf7cdfcb58fb887c1c961a2688a0278fe0911b02039a4fe05e

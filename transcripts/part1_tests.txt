@@ -1,12 +1,19 @@
+C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\.venv\Lib\site-packages\chromadb\api\models\CollectionCommon.py:147: DeprecationWarning: legacy embedding function config
+  return load_collection_configuration_from_json(self._model.configuration_json)
+C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\.venv\Lib\site-packages\chromadb\api\models\CollectionCommon.py:147: DeprecationWarning: legacy embedding function config
+  return load_collection_configuration_from_json(self._model.configuration_json)
+test_additional_paraphrases_cite_the_required_policies (test_answer_coverage.AnswerCoverageTests.test_additional_paraphrases_cite_the_required_policies) ... ok
+test_cardiologist_home_visit_includes_fees_and_separate_travel_quote (test_answer_coverage.AnswerCoverageTests.test_cardiologist_home_visit_includes_fees_and_separate_travel_quote) ... ok
+test_coverage_cannot_override_whole_query_fallback (test_answer_coverage.AnswerCoverageTests.test_coverage_cannot_override_whole_query_fallback) ... ok
+test_follow_up_paraphrase_retrieves_and_cites_discount_policy (test_answer_coverage.AnswerCoverageTests.test_follow_up_paraphrase_retrieves_and_cites_discount_policy) ... ok
+test_grammar_helpers_do_not_need_clinic_topics_or_query_ids (test_answer_coverage.AnswerCoverageTests.test_grammar_helpers_do_not_need_clinic_topics_or_query_ids) ... ok
+test_original_cosine_anchor_is_independent_of_context_ranking (test_answer_coverage.AnswerCoverageTests.test_original_cosine_anchor_is_independent_of_context_ranking) ... ok
+test_video_second_opinion_includes_process_and_telemedicine_limits (test_answer_coverage.AnswerCoverageTests.test_video_second_opinion_includes_process_and_telemedicine_limits) ... ok
 test_deployment_choice_must_match_current_corpus (test_evaluation.EvaluationTests.test_deployment_choice_must_match_current_corpus) ... ok
 test_duplicate_parents_do_not_inflate_precision_or_recall (test_evaluation.EvaluationTests.test_duplicate_parents_do_not_inflate_precision_or_recall) ... ok
 test_fixed_demo_queries_and_labels_are_preserved (test_evaluation.EvaluationTests.test_fixed_demo_queries_and_labels_are_preserved) ... ok
 test_multi_parent_recall_counts_each_relevant_parent_once (test_evaluation.EvaluationTests.test_multi_parent_recall_counts_each_relevant_parent_once) ... ok
-test_real_report_uses_exact_shared_queries_and_document_denominators (test_evaluation.EvaluationTests.test_real_report_uses_exact_shared_queries_and_document_denominators) ... C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\.venv\Lib\site-packages\chromadb\api\models\CollectionCommon.py:147: DeprecationWarning: legacy embedding function config
-  return load_collection_configuration_from_json(self._model.configuration_json)
-C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\.venv\Lib\site-packages\chromadb\api\models\CollectionCommon.py:147: DeprecationWarning: legacy embedding function config
-  return load_collection_configuration_from_json(self._model.configuration_json)
-ok
+test_real_report_uses_exact_shared_queries_and_document_denominators (test_evaluation.EvaluationTests.test_real_report_uses_exact_shared_queries_and_document_denominators) ... ok
 test_selection_prefers_recall_then_precision_then_sentence_tie (test_evaluation.EvaluationTests.test_selection_prefers_recall_then_precision_then_sentence_tie) ... ok
 test_midpoint_separates_observed_clusters_and_overlap_fails (test_generation.CalibrationTests.test_midpoint_separates_observed_clusters_and_overlap_fails) ... ok
 test_stale_calibration_fails_before_generation (test_generation.CalibrationTests.test_stale_calibration_fails_before_generation) ... ok
@@ -28,6 +35,6 @@ test_missing_topics_are_rejected (test_part1.KnowledgeBaseTests.test_missing_top
 test_real_cli_reports_both_strategies_without_changing_calibration (test_stress_threshold.StressThresholdTests.test_real_cli_reports_both_strategies_without_changing_calibration) ... ok
 
 ----------------------------------------------------------------------
-Ran 24 tests in 26.366s
+Ran 31 tests in 28.775s
 
 OK

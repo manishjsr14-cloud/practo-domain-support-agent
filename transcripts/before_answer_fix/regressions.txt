@@ -1,0 +1,84 @@
+C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\.venv\Lib\site-packages\chromadb\api\models\CollectionCommon.py:147: DeprecationWarning: legacy embedding function config
+  return load_collection_configuration_from_json(self._model.configuration_json)
+C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\.venv\Lib\site-packages\chromadb\api\models\CollectionCommon.py:147: DeprecationWarning: legacy embedding function config
+  return load_collection_configuration_from_json(self._model.configuration_json)
+test_cardiologist_home_visit_includes_fees_and_separate_travel_quote (tests.test_answer_coverage.AnswerCoverageTests.test_cardiologist_home_visit_includes_fees_and_separate_travel_quote) ... 
+  test_cardiologist_home_visit_includes_fees_and_separate_travel_quote (tests.test_answer_coverage.AnswerCoverageTests.test_cardiologist_home_visit_includes_fees_and_separate_travel_quote) (strategy='fixed_overlap') ... FAIL
+  test_cardiologist_home_visit_includes_fees_and_separate_travel_quote (tests.test_answer_coverage.AnswerCoverageTests.test_cardiologist_home_visit_includes_fees_and_separate_travel_quote) (strategy='sentence') ... FAIL
+test_follow_up_paraphrase_retrieves_and_cites_discount_policy (tests.test_answer_coverage.AnswerCoverageTests.test_follow_up_paraphrase_retrieves_and_cites_discount_policy) ... 
+  test_follow_up_paraphrase_retrieves_and_cites_discount_policy (tests.test_answer_coverage.AnswerCoverageTests.test_follow_up_paraphrase_retrieves_and_cites_discount_policy) (strategy='fixed_overlap') ... FAIL
+  test_follow_up_paraphrase_retrieves_and_cites_discount_policy (tests.test_answer_coverage.AnswerCoverageTests.test_follow_up_paraphrase_retrieves_and_cites_discount_policy) (strategy='sentence') ... FAIL
+test_video_second_opinion_includes_process_and_telemedicine_limits (tests.test_answer_coverage.AnswerCoverageTests.test_video_second_opinion_includes_process_and_telemedicine_limits) ... 
+  test_video_second_opinion_includes_process_and_telemedicine_limits (tests.test_answer_coverage.AnswerCoverageTests.test_video_second_opinion_includes_process_and_telemedicine_limits) (strategy='fixed_overlap') ... FAIL
+  test_video_second_opinion_includes_process_and_telemedicine_limits (tests.test_answer_coverage.AnswerCoverageTests.test_video_second_opinion_includes_process_and_telemedicine_limits) (strategy='sentence') ... FAIL
+
+======================================================================
+FAIL: test_cardiologist_home_visit_includes_fees_and_separate_travel_quote (tests.test_answer_coverage.AnswerCoverageTests.test_cardiologist_home_visit_includes_fees_and_separate_travel_quote) (strategy='fixed_overlap')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\tests\test_answer_coverage.py", line 38, in test_cardiologist_home_visit_includes_fees_and_separate_travel_quote
+    response = self._response("q08", strategy)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\tests\test_answer_coverage.py", line 24, in _response
+    self.assertTrue(set(query["relevant_parents"]) <= cited_parents)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_cardiologist_home_visit_includes_fees_and_separate_travel_quote (tests.test_answer_coverage.AnswerCoverageTests.test_cardiologist_home_visit_includes_fees_and_separate_travel_quote) (strategy='sentence')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\tests\test_answer_coverage.py", line 38, in test_cardiologist_home_visit_includes_fees_and_separate_travel_quote
+    response = self._response("q08", strategy)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\tests\test_answer_coverage.py", line 24, in _response
+    self.assertTrue(set(query["relevant_parents"]) <= cited_parents)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_follow_up_paraphrase_retrieves_and_cites_discount_policy (tests.test_answer_coverage.AnswerCoverageTests.test_follow_up_paraphrase_retrieves_and_cites_discount_policy) (strategy='fixed_overlap')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\tests\test_answer_coverage.py", line 31, in test_follow_up_paraphrase_retrieves_and_cites_discount_policy
+    response = self._response("q07", strategy)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\tests\test_answer_coverage.py", line 21, in _response
+    self.assertTrue(set(query["relevant_parents"]) <= retrieved_parents)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_follow_up_paraphrase_retrieves_and_cites_discount_policy (tests.test_answer_coverage.AnswerCoverageTests.test_follow_up_paraphrase_retrieves_and_cites_discount_policy) (strategy='sentence')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\tests\test_answer_coverage.py", line 31, in test_follow_up_paraphrase_retrieves_and_cites_discount_policy
+    response = self._response("q07", strategy)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\tests\test_answer_coverage.py", line 21, in _response
+    self.assertTrue(set(query["relevant_parents"]) <= retrieved_parents)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_video_second_opinion_includes_process_and_telemedicine_limits (tests.test_answer_coverage.AnswerCoverageTests.test_video_second_opinion_includes_process_and_telemedicine_limits) (strategy='fixed_overlap')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\tests\test_answer_coverage.py", line 45, in test_video_second_opinion_includes_process_and_telemedicine_limits
+    response = self._response("q09", strategy)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\tests\test_answer_coverage.py", line 24, in _response
+    self.assertTrue(set(query["relevant_parents"]) <= cited_parents)
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_video_second_opinion_includes_process_and_telemedicine_limits (tests.test_answer_coverage.AnswerCoverageTests.test_video_second_opinion_includes_process_and_telemedicine_limits) (strategy='sentence')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\tests\test_answer_coverage.py", line 45, in test_video_second_opinion_includes_process_and_telemedicine_limits
+    response = self._response("q09", strategy)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\tests\test_answer_coverage.py", line 24, in _response
+    self.assertTrue(set(query["relevant_parents"]) <= cited_parents)
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 3 tests in 31.791s
+
+FAILED (failures=6)

@@ -40,7 +40,7 @@ class ExtractionTests(unittest.TestCase):
                "chunk_id": chunk.id, "similarity": 1.0,
                "metadata": {"strategy": chunk.strategy, "start": chunk.start,
                             "end": chunk.end, "starts_sentence": True}}
-        answer, sources = extract_answer([hit], threshold=0.0)
+        answer, sources = extract_answer([hit])
         self.assertEqual(answer, chunk.text)
         self.assertEqual(sources, [chunk.id])
 
@@ -53,7 +53,7 @@ class ExtractionTests(unittest.TestCase):
                 dict(common, text=text[20:], chunk_id="b", metadata={
                     "strategy": "fixed_overlap", "start": 20, "end": len(text),
                     "starts_sentence": False})]
-        answer, sources = extract_answer(hits, threshold=0.0)
+        answer, sources = extract_answer(hits)
         self.assertEqual(answer, text)
 
 
@@ -70,18 +70,23 @@ class GenerationIntegrationTests(unittest.TestCase):
                 response = generator.answer(item["query"])
                 self.assertFalse(response["fallback"], item["query"])
                 self.assertTrue(response["source_chunks"])
+                self.assertEqual(response["answer"], "\n\n".join(
+                    section["text"] for section in response["context_sections"]))
+                self.assertEqual(response["source_chunks"], [source
+                    for section in response["context_sections"] for source in section["source_chunks"]])
                 # Every answer sentence must be covered by retrieved source spans.
                 from rag.chunking import SENTENCE_SPLIT_PATTERN
                 import re
-                parent_id = response["retrieved_context"][0]["parent_id"]
-                body = self.index.documents[parent_id]
-                for sentence in re.split(SENTENCE_SPLIT_PATTERN, response["answer"]):
-                    self.assertIn(sentence, body)
-                    start = body.index(sentence)
-                    for position in range(start, start + len(sentence)):
-                        self.assertTrue(any(hit["parent_id"] == parent_id and
-                                            hit["metadata"]["start"] <= position < hit["metadata"]["end"]
-                                            for hit in response["retrieved_context"]), sentence)
+                for section in response["context_sections"]:
+                    parent_id = section["parent_id"]
+                    body = self.index.documents[parent_id]
+                    for sentence in re.split(SENTENCE_SPLIT_PATTERN, section["text"]):
+                        self.assertIn(sentence, body)
+                        start = body.index(sentence)
+                        for position in range(start, start + len(sentence)):
+                            self.assertTrue(any(hit["parent_id"] == parent_id and
+                                                hit["metadata"]["start"] <= position < hit["metadata"]["end"]
+                                                for hit in response["retrieved_context"]), sentence)
             fallback = generator.answer(DEMO_OUT_OF_SCOPE)
             self.assertTrue(fallback["fallback"])
             self.assertEqual(fallback["answer"], FALLBACK)

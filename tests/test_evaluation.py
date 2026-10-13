@@ -46,6 +46,12 @@ class EvaluationTests(unittest.TestCase):
             path.write_text(json.dumps({"fingerprint": "obsolete", "strategy": "sentence"}), encoding="utf-8")
             with self.assertRaisesRegex(RuntimeError, "Stale deployment"):
                 deployed_strategy(RAGIndex(), path)
+            index = RAGIndex()
+            path.write_text(json.dumps({"fingerprint": index.corpus_fingerprint,
+                                        "strategy": "sentence", "retrieval_fingerprint": "obsolete"}),
+                            encoding="utf-8")
+            with self.assertRaisesRegex(RuntimeError, "Stale retrieval"):
+                deployed_strategy(index, path)
 
     def test_duplicate_parents_do_not_inflate_precision_or_recall(self):
         metrics = document_metrics(["a", "a", "b"], ["a", "c"])

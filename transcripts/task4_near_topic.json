@@ -18,8 +18,8 @@
       }
     }
   },
-  "deployed_strategy": "fixed_overlap",
-  "deployed_threshold": 0.3047132194042206,
+  "deployed_strategy": "sentence",
+  "deployed_threshold": 0.3452800512313843,
   "index_fingerprint": "3c4da873972cdda4b844f9b5e79abe06acc0201a64418c88835cc0be0141461f",
   "rows": [
     {
@@ -29,6 +29,8 @@
       "strategies": {
         "fixed_overlap": {
           "answer": "I don't know based on the available clinic-policy context.",
+          "context_sections": [],
+          "coverage": null,
           "fallback": true,
           "query": "Can you diagnose my chest pain?",
           "retrieved_context": [
@@ -44,6 +46,10 @@
                 "strategy": "fixed_overlap"
               },
               "parent_id": "08_emergency_protocol",
+              "parent_relevance": 0.1847516912242349,
+              "question_focus": "Can you diagnose my chest pain?",
+              "retrieval_role": "cosine_anchor",
+              "selection_score": 0.21529337732391582,
               "similarity": 0.24583512544631958,
               "text": "For an emergency, seek help from local emergency services or the nearest emergency department immediately. This outpatient clinic does not operate an emergency department, and its support agent cannot assess symptoms or provide emergency triage. Do not wait for a portal reply or a routine appointment confirmation when"
             },
@@ -59,23 +65,32 @@
                 "strategy": "fixed_overlap"
               },
               "parent_id": "03_consultation_fees",
+              "parent_relevance": 0.22496993246691585,
+              "question_focus": "Can you diagnose my chest pain?",
+              "retrieval_role": "primary_policy",
+              "selection_score": 0.21651789439065444,
               "similarity": 0.20806586742401123,
               "text": "General Medicine consultations cost INR 300-600, and Pediatrics consultations cost INR 400-800. Dermatology consultations cost INR 500-1000, and Orthopedics consultations cost INR 600-1200. Cardiology consultations cost INR 800-1500. The exact consultation fee within the specialty range is shown before the appointment"
             },
             {
-              "chunk_id": "06_lab_turnaround:fixed_overlap:001",
-              "distance": 0.8275560140609741,
+              "chunk_id": "11_second_opinion:fixed_overlap:000",
+              "coverage_gain": 0.0012222413815911146,
+              "distance": 0.8382099866867065,
               "metadata": {
-                "end": 421,
-                "index": 1,
-                "parent_id": "06_lab_turnaround",
-                "start": 240,
-                "starts_sentence": false,
+                "end": 320,
+                "index": 0,
+                "parent_id": "11_second_opinion",
+                "start": 0,
+                "starts_sentence": true,
                 "strategy": "fixed_overlap"
               },
-              "parent_id": "06_lab_turnaround",
-              "similarity": 0.17244398593902588,
-              "text": ". Weekends, holidays, and a request for another sample can extend that estimate. Reception can check whether a report is ready, while a clinician must explain what the results mean."
+              "parent_id": "11_second_opinion",
+              "parent_relevance": 0.1569034645001038,
+              "question_focus": "Can you diagnose my chest pain?",
+              "retrieval_role": "supporting_context",
+              "selection_score": 0.159346726174385,
+              "similarity": 0.16179001331329346,
+              "text": "Request a second opinion through reception by asking for a different clinician in the relevant specialty. With consent, share previous reports and the consultation summary through the secure clinic portal before the visit. The reviewing clinician makes an independent assessment and may request an in-person consultation"
             }
           ],
           "source_chunks": [],
@@ -85,6 +100,8 @@
         },
         "sentence": {
           "answer": "I don't know based on the available clinic-policy context.",
+          "context_sections": [],
+          "coverage": null,
           "fallback": true,
           "query": "Can you diagnose my chest pain?",
           "retrieved_context": [
@@ -100,11 +117,16 @@
                 "strategy": "sentence"
               },
               "parent_id": "03_consultation_fees",
+              "parent_relevance": 0.22496993246691585,
+              "question_focus": "Can you diagnose my chest pain?",
+              "retrieval_role": "cosine_anchor",
+              "selection_score": 0.2705854656939073,
               "similarity": 0.31620103120803833,
               "text": "Cardiology consultations cost INR 800-1500. The exact consultation fee within the specialty range is shown before the appointment is confirmed."
             },
             {
               "chunk_id": "08_emergency_protocol:sentence:000",
+              "coverage_gain": 0.011844261909835728,
               "distance": 0.7746804356575012,
               "metadata": {
                 "end": 245,
@@ -115,23 +137,32 @@
                 "strategy": "sentence"
               },
               "parent_id": "08_emergency_protocol",
+              "parent_relevance": 0.1847516912242349,
+              "question_focus": "Can you diagnose my chest pain?",
+              "retrieval_role": "supporting_context",
+              "selection_score": 0.20503562483119855,
               "similarity": 0.22531956434249878,
               "text": "For an emergency, seek help from local emergency services or the nearest emergency department immediately. This outpatient clinic does not operate an emergency department, and its support agent cannot assess symptoms or provide emergency triage."
             },
             {
-              "chunk_id": "06_lab_turnaround:sentence:001",
-              "distance": 0.8239251375198364,
+              "chunk_id": "03_consultation_fees:sentence:000",
+              "coverage_gain": 0.0,
+              "distance": 0.8940706253051758,
               "metadata": {
-                "end": 421,
-                "index": 1,
-                "parent_id": "06_lab_turnaround",
-                "start": 242,
+                "end": 189,
+                "index": 0,
+                "parent_id": "03_consultation_fees",
+                "start": 0,
                 "starts_sentence": true,
                 "strategy": "sentence"
               },
-              "parent_id": "06_lab_turnaround",
-              "similarity": 0.17607486248016357,
-              "text": "Weekends, holidays, and a request for another sample can extend that estimate. Reception can check whether a report is ready, while a clinician must explain what the results mean."
+              "parent_id": "03_consultation_fees",
+              "parent_relevance": 0.22496993246691585,
+              "question_focus": "Can you diagnose my chest pain?",
+              "retrieval_role": "supporting_context",
+              "selection_score": 0.16544965765880015,
+              "similarity": 0.10592937469482422,
+              "text": "General Medicine consultations cost INR 300-600, and Pediatrics consultations cost INR 400-800. Dermatology consultations cost INR 500-1000, and Orthopedics consultations cost INR 600-1200."
             }
           ],
           "source_chunks": [],
@@ -148,6 +179,8 @@
       "strategies": {
         "fixed_overlap": {
           "answer": "I don't know based on the available clinic-policy context.",
+          "context_sections": [],
+          "coverage": null,
           "fallback": true,
           "query": "Which medicine should I take for a fever?",
           "retrieved_context": [
@@ -163,6 +196,10 @@
                 "strategy": "fixed_overlap"
               },
               "parent_id": "05_prescription_refills",
+              "parent_relevance": 0.13366383222171116,
+              "question_focus": "Which medicine should I take for a fever?",
+              "retrieval_role": "cosine_anchor",
+              "selection_score": 0.1809443306897021,
               "similarity": 0.22822487354278564,
               "text": "ay require a follow-up appointment before deciding whether a refill is appropriate. Support staff can explain the request process but cannot select a medicine, change a dose, or approve a prescription."
             },
@@ -178,11 +215,16 @@
                 "strategy": "fixed_overlap"
               },
               "parent_id": "08_emergency_protocol",
+              "parent_relevance": 0.1521939961432984,
+              "question_focus": "Which medicine should I take for a fever?",
+              "retrieval_role": "primary_policy",
+              "selection_score": 0.16031287764955188,
               "similarity": 0.16843181848526,
               "text": "For an emergency, seek help from local emergency services or the nearest emergency department immediately. This outpatient clinic does not operate an emergency department, and its support agent cannot assess symptoms or provide emergency triage. Do not wait for a portal reply or a routine appointment confirmation when"
             },
             {
               "chunk_id": "11_second_opinion:fixed_overlap:000",
+              "coverage_gain": 0.006109464542771911,
               "distance": 0.8506467342376709,
               "metadata": {
                 "end": 320,
@@ -193,6 +235,10 @@
                 "strategy": "fixed_overlap"
               },
               "parent_id": "11_second_opinion",
+              "parent_relevance": 0.1343948608466149,
+              "question_focus": "Which medicine should I take for a fever?",
+              "retrieval_role": "supporting_context",
+              "selection_score": 0.14187405299862893,
               "similarity": 0.1493532657623291,
               "text": "Request a second opinion through reception by asking for a different clinician in the relevant specialty. With consent, share previous reports and the consultation summary through the secure clinic portal before the visit. The reviewing clinician makes an independent assessment and may request an in-person consultation"
             }
@@ -204,6 +250,8 @@
         },
         "sentence": {
           "answer": "I don't know based on the available clinic-policy context.",
+          "context_sections": [],
+          "coverage": null,
           "fallback": true,
           "query": "Which medicine should I take for a fever?",
           "retrieved_context": [
@@ -219,6 +267,10 @@
                 "strategy": "sentence"
               },
               "parent_id": "05_prescription_refills",
+              "parent_relevance": 0.13366383222171116,
+              "question_focus": "Which medicine should I take for a fever?",
+              "retrieval_role": "cosine_anchor",
+              "selection_score": 0.1760413767507141,
               "similarity": 0.2184188961982727,
               "text": "The clinician may require a follow-up appointment before deciding whether a refill is appropriate. Support staff can explain the request process but cannot select a medicine, change a dose, or approve a prescription."
             },
@@ -234,11 +286,16 @@
                 "strategy": "sentence"
               },
               "parent_id": "08_emergency_protocol",
+              "parent_relevance": 0.1521939961432984,
+              "question_focus": "Which medicine should I take for a fever?",
+              "retrieval_role": "primary_policy",
+              "selection_score": 0.1623362120342018,
               "similarity": 0.17247843742370605,
               "text": "For an emergency, seek help from local emergency services or the nearest emergency department immediately. This outpatient clinic does not operate an emergency department, and its support agent cannot assess symptoms or provide emergency triage."
             },
             {
               "chunk_id": "11_second_opinion:sentence:000",
+              "coverage_gain": 0.011186432111104283,
               "distance": 0.8303344249725342,
               "metadata": {
                 "end": 222,
@@ -249,6 +306,10 @@
                 "strategy": "sentence"
               },
               "parent_id": "11_second_opinion",
+              "parent_relevance": 0.1343948608466149,
+              "question_focus": "Which medicine should I take for a fever?",
+              "retrieval_role": "supporting_context",
+              "selection_score": 0.15203019039704527,
               "similarity": 0.16966557502746582,
               "text": "Request a second opinion through reception by asking for a different clinician in the relevant specialty. With consent, share previous reports and the consultation summary through the secure clinic portal before the visit."
             }
@@ -267,6 +328,43 @@
       "strategies": {
         "fixed_overlap": {
           "answer": "Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled. A requested slot is not reserved until confirmation is issued.",
+          "context_sections": [
+            {
+              "parent_id": "01_appointment_booking",
+              "source_chunks": [
+                "01_appointment_booking:fixed_overlap:000"
+              ],
+              "text": "Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled. A requested slot is not reserved until confirmation is issued."
+            }
+          ],
+          "coverage": {
+            "components": [
+              {
+                "chunk_id": "01_appointment_booking:fixed_overlap:000",
+                "component": "clinic's opening hours",
+                "lexical_anchor": false,
+                "parent_id": "01_appointment_booking",
+                "primary_similarity": 0.585408656229014,
+                "selected": true,
+                "similarity": 0.585408656229014
+              },
+              {
+                "chunk_id": "06_lab_turnaround:fixed_overlap:001",
+                "component": "sundays",
+                "lexical_anchor": false,
+                "parent_id": "06_lab_turnaround",
+                "primary_similarity": 0.11662451186952902,
+                "selected": false,
+                "similarity": 0.27531741741077986
+              }
+            ],
+            "policy": "semantic-with-lexical-anchors-v1",
+            "primary_parent": "01_appointment_booking",
+            "question_focus": "What are the clinic's opening hours on Sundays?",
+            "selected_parents": [
+              "01_appointment_booking"
+            ]
+          },
           "fallback": false,
           "query": "What are the clinic's opening hours on Sundays?",
           "retrieved_context": [
@@ -282,11 +380,16 @@
                 "strategy": "fixed_overlap"
               },
               "parent_id": "01_appointment_booking",
+              "parent_relevance": 0.48947656273977563,
+              "question_focus": "What are the clinic's opening hours on Sundays?",
+              "retrieval_role": "cosine_anchor",
+              "selection_score": 0.4992379457856474,
               "similarity": 0.5089993476867676,
               "text": "Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled. A requested slot is not reserved until confirmation is issued. Keep the appointment record ID to check"
             },
             {
               "chunk_id": "06_lab_turnaround:fixed_overlap:001",
+              "coverage_gain": 0.05684042535504219,
               "distance": 0.5056266784667969,
               "metadata": {
                 "end": 421,
@@ -297,11 +400,16 @@
                 "strategy": "fixed_overlap"
               },
               "parent_id": "06_lab_turnaround",
+              "parent_relevance": 0.2467624224264992,
+              "question_focus": "What are the clinic's opening hours on Sundays?",
+              "retrieval_role": "supporting_context",
+              "selection_score": 0.3705679071934004,
               "similarity": 0.4943733215332031,
               "text": ". Weekends, holidays, and a request for another sample can extend that estimate. Reception can check whether a report is ready, while a clinician must explain what the results mean."
             },
             {
               "chunk_id": "12_home_visits:fixed_overlap:000",
+              "coverage_gain": 0.0,
               "distance": 0.657042384147644,
               "metadata": {
                 "end": 319,
@@ -312,6 +420,10 @@
                 "strategy": "fixed_overlap"
               },
               "parent_id": "12_home_visits",
+              "parent_relevance": 0.35616685267422876,
+              "question_focus": "What are the clinic's opening hours on Sundays?",
+              "retrieval_role": "supporting_context",
+              "selection_score": 0.3495622742746774,
               "similarity": 0.34295761585235596,
               "text": "Home visits may be requested for patients who have difficulty travelling, subject to the clinic's service area and clinician availability. Reception confirms eligibility and collects the visit address through the secure clinic portal. The consultation fee and any travel charge are quoted before the visit is confirmed."
             }
@@ -325,6 +437,43 @@
         },
         "sentence": {
           "answer": "Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled.",
+          "context_sections": [
+            {
+              "parent_id": "01_appointment_booking",
+              "source_chunks": [
+                "01_appointment_booking:sentence:000"
+              ],
+              "text": "Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled."
+            }
+          ],
+          "coverage": {
+            "components": [
+              {
+                "chunk_id": "01_appointment_booking:sentence:000",
+                "component": "clinic's opening hours",
+                "lexical_anchor": false,
+                "parent_id": "01_appointment_booking",
+                "primary_similarity": 0.5864130739990799,
+                "selected": true,
+                "similarity": 0.5864130739990799
+              },
+              {
+                "chunk_id": "06_lab_turnaround:sentence:001",
+                "component": "sundays",
+                "lexical_anchor": false,
+                "parent_id": "06_lab_turnaround",
+                "primary_similarity": 0.15018516526735903,
+                "selected": false,
+                "similarity": 0.2771149678419284
+              }
+            ],
+            "policy": "semantic-with-lexical-anchors-v1",
+            "primary_parent": "01_appointment_booking",
+            "question_focus": "What are the clinic's opening hours on Sundays?",
+            "selected_parents": [
+              "01_appointment_booking"
+            ]
+          },
           "fallback": false,
           "query": "What are the clinic's opening hours on Sundays?",
           "retrieved_context": [
@@ -340,11 +489,16 @@
                 "strategy": "sentence"
               },
               "parent_id": "01_appointment_booking",
+              "parent_relevance": 0.48947656273977563,
+              "question_focus": "What are the clinic's opening hours on Sundays?",
+              "retrieval_role": "cosine_anchor",
+              "selection_score": 0.5093117752328515,
               "similarity": 0.5291469693183899,
               "text": "Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled."
             },
             {
               "chunk_id": "06_lab_turnaround:sentence:001",
+              "coverage_gain": 0.04644125200189623,
               "distance": 0.4970970153808594,
               "metadata": {
                 "end": 421,
@@ -355,11 +509,16 @@
                 "strategy": "sentence"
               },
               "parent_id": "06_lab_turnaround",
+              "parent_relevance": 0.2467624224264992,
+              "question_focus": "What are the clinic's opening hours on Sundays?",
+              "retrieval_role": "supporting_context",
+              "selection_score": 0.3748327721544805,
               "similarity": 0.5029029846191406,
               "text": "Weekends, holidays, and a request for another sample can extend that estimate. Reception can check whether a report is ready, while a clinician must explain what the results mean."
             },
             {
               "chunk_id": "12_home_visits:sentence:000",
+              "coverage_gain": 0.0,
               "distance": 0.6681717038154602,
               "metadata": {
                 "end": 234,
@@ -370,6 +529,10 @@
                 "strategy": "sentence"
               },
               "parent_id": "12_home_visits",
+              "parent_relevance": 0.35616685267422876,
+              "question_focus": "What are the clinic's opening hours on Sundays?",
+              "retrieval_role": "supporting_context",
+              "selection_score": 0.3439975955239446,
               "similarity": 0.3318282961845398,
               "text": "Home visits may be requested for patients who have difficulty travelling, subject to the clinic's service area and clinician availability. Reception confirms eligibility and collects the visit address through the secure clinic portal."
             }
@@ -390,6 +553,53 @@
       "strategies": {
         "fixed_overlap": {
           "answer": "For an emergency, seek help from local emergency services or the nearest emergency department immediately. This outpatient clinic does not operate an emergency department, and its support agent cannot assess symptoms or provide emergency triage. Do not wait for a portal reply or a routine appointment confirmation when emergency help is needed. Reception can help arrange a routine visit only after urgent needs have been handled by an appropriate service.",
+          "context_sections": [
+            {
+              "parent_id": "08_emergency_protocol",
+              "source_chunks": [
+                "08_emergency_protocol:fixed_overlap:000",
+                "08_emergency_protocol:fixed_overlap:001"
+              ],
+              "text": "For an emergency, seek help from local emergency services or the nearest emergency department immediately. This outpatient clinic does not operate an emergency department, and its support agent cannot assess symptoms or provide emergency triage. Do not wait for a portal reply or a routine appointment confirmation when emergency help is needed. Reception can help arrange a routine visit only after urgent needs have been handled by an appropriate service."
+            }
+          ],
+          "coverage": {
+            "components": [
+              {
+                "chunk_id": "08_emergency_protocol:fixed_overlap:000",
+                "component": "hospital",
+                "lexical_anchor": false,
+                "parent_id": "08_emergency_protocol",
+                "primary_similarity": 0.40183432355815296,
+                "selected": true,
+                "similarity": 0.40183432355815296
+              },
+              {
+                "chunk_id": "08_emergency_protocol:fixed_overlap:001",
+                "component": "mumbai",
+                "lexical_anchor": false,
+                "parent_id": "08_emergency_protocol",
+                "primary_similarity": 0.1383639653908338,
+                "selected": true,
+                "similarity": 0.1383639653908338
+              },
+              {
+                "chunk_id": "08_emergency_protocol:fixed_overlap:001",
+                "component": "shortest waiting time",
+                "lexical_anchor": false,
+                "parent_id": "08_emergency_protocol",
+                "primary_similarity": 0.2923413767318955,
+                "selected": true,
+                "similarity": 0.2923413767318955
+              }
+            ],
+            "policy": "semantic-with-lexical-anchors-v1",
+            "primary_parent": "08_emergency_protocol",
+            "question_focus": "Which hospital in Mumbai has the shortest waiting time?",
+            "selected_parents": [
+              "08_emergency_protocol"
+            ]
+          },
           "fallback": false,
           "query": "Which hospital in Mumbai has the shortest waiting time?",
           "retrieved_context": [
@@ -405,11 +615,16 @@
                 "strategy": "fixed_overlap"
               },
               "parent_id": "08_emergency_protocol",
+              "parent_relevance": 0.3740191491281286,
+              "question_focus": "Which hospital in Mumbai has the shortest waiting time?",
+              "retrieval_role": "cosine_anchor",
+              "selection_score": 0.38879545233649104,
               "similarity": 0.4035717248916626,
               "text": "iage. Do not wait for a portal reply or a routine appointment confirmation when emergency help is needed. Reception can help arrange a routine visit only after urgent needs have been handled by an appropriate service."
             },
             {
               "chunk_id": "01_appointment_booking:fixed_overlap:000",
+              "coverage_gain": 0.0009856652667243522,
               "distance": 0.6255483627319336,
               "metadata": {
                 "end": 319,
@@ -420,11 +635,16 @@
                 "strategy": "fixed_overlap"
               },
               "parent_id": "01_appointment_booking",
+              "parent_relevance": 0.3732088952112519,
+              "question_focus": "Which hospital in Mumbai has the shortest waiting time?",
+              "retrieval_role": "supporting_context",
+              "selection_score": 0.3738301990164264,
               "similarity": 0.3744516372680664,
               "text": "Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled. A requested slot is not reserved until confirmation is issued. Keep the appointment record ID to check"
             },
             {
               "chunk_id": "08_emergency_protocol:fixed_overlap:000",
+              "coverage_gain": 0.0005997222183729253,
               "distance": 0.6412881016731262,
               "metadata": {
                 "end": 319,
@@ -435,6 +655,10 @@
                 "strategy": "fixed_overlap"
               },
               "parent_id": "08_emergency_protocol",
+              "parent_relevance": 0.3740191491281286,
+              "question_focus": "Which hospital in Mumbai has the shortest waiting time?",
+              "retrieval_role": "supporting_context",
+              "selection_score": 0.3663654414444911,
               "similarity": 0.3587118983268738,
               "text": "For an emergency, seek help from local emergency services or the nearest emergency department immediately. This outpatient clinic does not operate an emergency department, and its support agent cannot assess symptoms or provide emergency triage. Do not wait for a portal reply or a routine appointment confirmation when"
             }
@@ -448,7 +672,61 @@
           "top_similarity": 0.4035717248916626
         },
         "sentence": {
-          "answer": "Do not wait for a portal reply or a routine appointment confirmation when emergency help is needed. Reception can help arrange a routine visit only after urgent needs have been handled by an appropriate service.",
+          "answer": "Do not wait for a portal reply or a routine appointment confirmation when emergency help is needed. Reception can help arrange a routine visit only after urgent needs have been handled by an appropriate service.\n\nCancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund.",
+          "context_sections": [
+            {
+              "parent_id": "08_emergency_protocol",
+              "source_chunks": [
+                "08_emergency_protocol:sentence:001"
+              ],
+              "text": "Do not wait for a portal reply or a routine appointment confirmation when emergency help is needed. Reception can help arrange a routine visit only after urgent needs have been handled by an appropriate service."
+            },
+            {
+              "parent_id": "02_cancellation_rescheduling",
+              "source_chunks": [
+                "02_cancellation_rescheduling:sentence:000"
+              ],
+              "text": "Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund."
+            }
+          ],
+          "coverage": {
+            "components": [
+              {
+                "chunk_id": "01_appointment_booking:sentence:000",
+                "component": "hospital",
+                "lexical_anchor": false,
+                "parent_id": "01_appointment_booking",
+                "primary_similarity": 0.31410253311147734,
+                "selected": false,
+                "similarity": 0.36742225174095866
+              },
+              {
+                "chunk_id": "08_emergency_protocol:sentence:001",
+                "component": "mumbai",
+                "lexical_anchor": false,
+                "parent_id": "08_emergency_protocol",
+                "primary_similarity": 0.09282263535744577,
+                "selected": true,
+                "similarity": 0.09282263535744577
+              },
+              {
+                "chunk_id": "02_cancellation_rescheduling:sentence:000",
+                "component": "shortest waiting time",
+                "lexical_anchor": true,
+                "parent_id": "02_cancellation_rescheduling",
+                "primary_similarity": 0.29544484556811634,
+                "selected": true,
+                "similarity": 0.36364016466123605
+              }
+            ],
+            "policy": "semantic-with-lexical-anchors-v1",
+            "primary_parent": "08_emergency_protocol",
+            "question_focus": "Which hospital in Mumbai has the shortest waiting time?",
+            "selected_parents": [
+              "08_emergency_protocol",
+              "02_cancellation_rescheduling"
+            ]
+          },
           "fallback": false,
           "query": "Which hospital in Mumbai has the shortest waiting time?",
           "retrieved_context": [
@@ -464,26 +742,16 @@
                 "strategy": "sentence"
               },
               "parent_id": "08_emergency_protocol",
+              "parent_relevance": 0.3740191491281286,
+              "question_focus": "Which hospital in Mumbai has the shortest waiting time?",
+              "retrieval_role": "cosine_anchor",
+              "selection_score": 0.39516991423835507,
               "similarity": 0.41632080078125,
               "text": "Do not wait for a portal reply or a routine appointment confirmation when emergency help is needed. Reception can help arrange a routine visit only after urgent needs have been handled by an appropriate service."
             },
             {
-              "chunk_id": "02_cancellation_rescheduling:sentence:000",
-              "distance": 0.6261048316955566,
-              "metadata": {
-                "end": 213,
-                "index": 0,
-                "parent_id": "02_cancellation_rescheduling",
-                "start": 0,
-                "starts_sentence": true,
-                "strategy": "sentence"
-              },
-              "parent_id": "02_cancellation_rescheduling",
-              "similarity": 0.37389516830444336,
-              "text": "Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund."
-            },
-            {
               "chunk_id": "01_appointment_booking:sentence:000",
+              "coverage_gain": 0.0019484301610869432,
               "distance": 0.6348806023597717,
               "metadata": {
                 "end": 216,
@@ -494,12 +762,37 @@
                 "strategy": "sentence"
               },
               "parent_id": "01_appointment_booking",
+              "parent_relevance": 0.3732088952112519,
+              "question_focus": "Which hospital in Mumbai has the shortest waiting time?",
+              "retrieval_role": "supporting_context",
+              "selection_score": 0.36916406671882923,
               "similarity": 0.36511939764022827,
               "text": "Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled."
+            },
+            {
+              "chunk_id": "02_cancellation_rescheduling:sentence:000",
+              "coverage_gain": 0.011200459837693235,
+              "distance": 0.6261048316955566,
+              "metadata": {
+                "end": 213,
+                "index": 0,
+                "parent_id": "02_cancellation_rescheduling",
+                "start": 0,
+                "starts_sentence": true,
+                "strategy": "sentence"
+              },
+              "parent_id": "02_cancellation_rescheduling",
+              "parent_relevance": 0.33212454716529205,
+              "question_focus": "Which hospital in Mumbai has the shortest waiting time?",
+              "retrieval_role": "supporting_context",
+              "selection_score": 0.35300975686549685,
+              "similarity": 0.37389516830444336,
+              "text": "Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund."
             }
           ],
           "source_chunks": [
-            "08_emergency_protocol:sentence:001"
+            "08_emergency_protocol:sentence:001",
+            "02_cancellation_rescheduling:sentence:000"
           ],
           "strategy": "sentence",
           "threshold": 0.3452800512313843,

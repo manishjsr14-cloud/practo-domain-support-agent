@@ -8,6 +8,7 @@ from functools import lru_cache
 from pathlib import Path
 
 from rag import RUNTIME_ENVIRONMENT
+from rag.retrieval import RETRIEVAL_POLICY, question_focus, question_components
 from rag.chunking import (
     FIXED_CHUNK_OVERLAP, FIXED_CHUNK_SIZE, ROOT, SENTENCES_PER_CHUNK,
     SENTENCE_SPLIT_PATTERN, STRATEGIES, chunk_documents, load_documents,
@@ -59,6 +60,7 @@ class RAGIndex:
         self.kb_dir = Path(kb_dir)
         self._client = None
         self._model = None
+        self._parent_vectors = None
 
     @property
     def documents(self) -> dict[str, str]:
@@ -89,6 +91,12 @@ class RAGIndex:
     def config_fingerprint(self) -> str:
         """Calibration identity includes the corpus, model, and chunk settings."""
         return self.corpus_fingerprint
+
+    @property
+    def retrieval_fingerprint(self) -> str:
+        """Evidence selection has its own identity; the cosine gate is unchanged."""
+        return _fingerprint({"corpus_fingerprint": self.corpus_fingerprint,
+                             "retrieval_policy": RETRIEVAL_POLICY})
 
     @staticmethod
     def _strategy_fingerprint(corpus_fingerprint: str, strategy: str) -> str:
@@ -189,7 +197,13 @@ class RAGIndex:
     def retrieve(
         self, query: str, strategy: str = "sentence", top_k: int = 3,
     ) -> list[dict]:
-        """Retrieve chunks; cosine similarity is explicitly one minus distance."""
+        """Keep the original cosine anchor, then rank the remaining evidence.
+
+        The first result is always the original whole-question cosine winner.
+        Calibration therefore continues to measure exactly the same signal.
+        Supporting chunks use parent and question-focus semantics, with their
+        ranking scores kept separate from the original cosine similarities.
+        """
         if not query.strip():
             raise ValueError("Query must not be blank")
         if not isinstance(top_k, int) or isinstance(top_k, bool) or top_k <= 0:
@@ -208,8 +222,8 @@ class RAGIndex:
             )
         result = collection.query(
             query_embeddings=self._embed([query]),
-            n_results=min(top_k, collection.count()),
-            include=["documents", "metadatas", "distances"],
+            n_results=collection.count() if top_k > 1 else 1,
+            include=["documents", "metadatas", "distances", "embeddings"],
         )
         hits = []
         for chunk_id, text, metadata, distance in zip(
@@ -221,7 +235,77 @@ class RAGIndex:
                 "text": text, "distance": float(distance),
                 "similarity": 1.0 - float(distance), "metadata": metadata,
             })
-        return hits
+        if top_k == 1:
+            return hits
+        self._rank_evidence(query, hits, result["embeddings"][0], documents)
+        return self._select_context(query, hits, result["embeddings"][0], top_k)
+
+    def _rank_evidence(self, query, hits, chunk_vectors, documents):
+        import numpy as np
+
+        focus = question_focus(query)
+        questions = [query] if focus == query else [query, focus]
+        question_vectors = np.asarray(self._embed(questions))
+        fingerprint = self._corpus_fingerprint(documents)
+        if self._parent_vectors is None or self._parent_vectors[0] != fingerprint:
+            parent_ids = list(documents)
+            vectors = np.asarray(self._embed(list(documents.values())))
+            self._parent_vectors = (fingerprint, parent_ids, vectors)
+        _, parent_ids, parent_vectors = self._parent_vectors
+        parent_relevance = dict(zip(parent_ids,
+                                   (parent_vectors @ question_vectors.T).mean(axis=1)))
+        chunk_relevance = (np.asarray(chunk_vectors) @ question_vectors.T).mean(axis=1)
+        for hit, chunk_score in zip(hits, chunk_relevance):
+            parent_score = float(parent_relevance[hit["parent_id"]])
+            hit.update({
+                "question_focus": focus,
+                "parent_relevance": parent_score,
+                "selection_score": (parent_score + float(chunk_score)) / 2,
+                "retrieval_role": "supporting_context",
+            })
+
+    def _select_context(self, query, hits, chunk_vectors, top_k):
+        """Cover distinct question components without filling slots with repeats."""
+        import numpy as np
+
+        selected = [0]
+        hits[0]["retrieval_role"] = "cosine_anchor"
+        primary = max(hits, key=lambda hit: hit["parent_relevance"])["parent_id"]
+        if primary != hits[0]["parent_id"] and top_k > 1:
+            best_primary = max((i for i, hit in enumerate(hits) if hit["parent_id"] == primary),
+                               key=lambda i: hits[i]["selection_score"])
+            selected.append(best_primary)
+            hits[best_primary]["retrieval_role"] = "primary_policy"
+        components = question_components(query)
+        if components:
+            scores = np.asarray(self._embed(components)) @ np.asarray(chunk_vectors).T
+            # A phrase with a clear parent winner carries more evidence than a
+            # phrase equally similar to many policies. These are ranking weights,
+            # computed from the candidates, never a replacement acceptance gate.
+            parent_ids = list(dict.fromkeys(hit["parent_id"] for hit in hits))
+            parent_best = np.stack([scores[:, [i for i, hit in enumerate(hits)
+                                               if hit["parent_id"] == parent]].max(axis=1)
+                                    for parent in parent_ids], axis=1)
+            ordered = np.sort(parent_best, axis=1)
+            margins = ordered[:, -1] - ordered[:, -2] if len(parent_ids) > 1 else np.ones(len(components))
+            # Normalize only the coverage objective within each phrase's own
+            # candidate distribution, so a clear but lower-scoring aspect can
+            # compete with an already covered, high-scoring topic.
+            minimum = scores.min(axis=1, keepdims=True)
+            spread = scores.max(axis=1, keepdims=True) - minimum
+            scores = np.divide(scores - minimum, spread, out=np.zeros_like(scores), where=spread > 0)
+            covered = scores[:, selected].max(axis=1)
+        while len(selected) < min(top_k, len(hits)):
+            candidates = [i for i in range(len(hits)) if i not in selected]
+            gains = {i: float((np.maximum(scores[:, i] - covered, 0) * margins).sum())
+                     if components else 0.0 for i in candidates}
+            best = max(candidates, key=lambda i: (hits[i]["selection_score"] + gains[i],
+                                                  hits[i]["selection_score"], -i))
+            hits[best]["coverage_gain"] = gains[best]
+            selected.append(best)
+            if components:
+                covered = np.maximum(covered, scores[:, best])
+        return [hits[i] for i in selected]
 
 
 def main() -> None:
@@ -235,6 +319,8 @@ def main() -> None:
     print(f"Sentence chunk size: {SENTENCES_PER_CHUNK} sentences")
     print(f"Parent document count: {len(index.documents)}")
     print(f"Corpus fingerprint: {index.corpus_fingerprint}")
+    print(f"Retrieval policy: {RETRIEVAL_POLICY}")
+    print(f"Retrieval fingerprint: {index.retrieval_fingerprint}")
     first_counts = index.build()
     print("First build counts: " + json.dumps(first_counts, sort_keys=True))
     repeat_counts = index.build()

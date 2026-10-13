@@ -64,6 +64,8 @@ Fixed chunks use **320 characters** with **80 characters** of overlap; sentence 
 
 Chroma cosine distance is converted as **similarity = 1 − distance**. Similarity is not a probability. [The sample retrieval and indexing evidence](transcripts/task3_indexing.txt) shows both strategies retrieving the cancellation policy, and [integration tests](transcripts/task3_tests.txt) check cosine arithmetic, parent metadata, idempotence, and stale-index rejection.
 
+Retrieval retains the original whole-query cosine winner as its first chunk. It scans each collection's candidates, ranks supporting evidence using both parent-document and chunk semantics, and gives additional weight to coverage of grammatical content phrases that are not already covered. For a question preceded by a narrative clause, it also embeds the explicit question clause; no query IDs, labelled parents, or clinic-topic routing are used. The final context remains **3 chunks**, and ranking scores are recorded separately from cosine similarities. A separate retrieval-policy fingerprint invalidates the deployment recommendation when evidence selection changes, without altering calibration identity.
+
 `rag/__init__.py` enforces `HF_HUB_OFFLINE=1`, `TRANSFORMERS_OFFLINE=1`, `ANONYMIZED_TELEMETRY=False`, `CREWAI_DISABLE_TELEMETRY=true`, and `OTEL_SDK_DISABLED=true` before framework imports. No crew or kickoff call exists in this Part; telemetry is already disabled for later integration. Model weights, the virtual environment, and regenerated binary Chroma files are ignored under `.venv/` and `.runtime/`, keeping repository deliverables code and text.
 
 API references: [local SentenceTransformer loading and encoding](https://www.sbert.net/docs/package_reference/sentence_transformer/model.html), [Chroma persistent client](https://docs.trychroma.com/reference/python).
@@ -97,9 +99,11 @@ The calibration queries below were declared separately from the demonstration qu
 
 The threshold is computed as `(max_out + min_in) / 2` from full-precision observations and saved in [calibration.json](rag/calibration.json). Calibration fails if the observed clusters overlap; there is no untested default. Corpus/model/chunk fingerprints prevent silently reusing stale calibration.
 
-Retrieval takes the **3** most similar chunks. Under `MOCK_LLM`, top-one similarity is the only groundedness signal: below the strategy's calibrated threshold, the generator returns “I don't know based on the available clinic-policy context.” Otherwise it extracts only retrieved text from the most similar parent, merges overlapping spans, and cites the chunk IDs. It calls no remote LLM and uses no API keys or paid accounts.
+Under `MOCK_LLM`, the original whole-query top-one cosine similarity remains the only acceptance signal: below the strategy's calibrated threshold, the generator returns “I don't know based on the available clinic-policy context.” Once accepted, it selects a primary parent semantically and includes a supporting parent when that parent best matches a question component and has a textual anchor for that component. This generic coverage heuristic selects excerpts; it is not a groundedness guardrail. The generator merges overlaps within each selected parent, extracts only retrieved text, and cites the contributing chunk IDs. Supporting excerpts are not individually rejected against the whole-query threshold, which was calibrated for the initial acceptance decision. It calls no remote LLM and uses no API keys or paid accounts.
 
-[The demonstration](transcripts/task4_demo.txt) produces responses for **9** in-scope questions about booking, cancellation, specialty fees, laboratory reports, follow-up discounts, insurance claims, a follow-up paraphrase, cardiologist home visits, and video second opinions. Its separate brownie-recipe query scores **0.021441579** with fixed-overlap chunks and triggers the fallback. Producing a response establishes that the similarity gate accepts it; it does not establish that the response answers the question correctly. [Structured answers and original retrieved context](transcripts/task4_demo.json) allow the extraction to be audited; [generation tests](transcripts/task4_tests.txt) check both strategies, the fallback, extraction boundaries, and stale calibration.
+[The demonstration](transcripts/task4_demo.txt) produces responses for **9** in-scope questions about booking, cancellation, specialty fees, laboratory reports, follow-up discounts, insurance claims, a follow-up paraphrase, cardiologist home visits, and video second opinions. Its separate brownie-recipe query scores **0.023517489** with the deployed sentence strategy and triggers the fallback. Producing a response establishes that the similarity gate accepts it; it does not establish that the response answers the question correctly. [Structured answers and original retrieved context](transcripts/task4_demo.json) record each selected parent excerpt and its contributing sources, and the answer is exactly the joined excerpts. [The original generation tests](transcripts/task4_tests.txt) and [current coverage and generation tests](transcripts/answer_coverage_tests.txt) check both strategies, the fallback, extraction boundaries, source spans, and stale calibration.
+
+The reported failures are fixed in the current demo. q07 now cites the follow-up policy, including the **20 percent** discount within **7 calendar days** and the same-specialty/same-issue conditions. q08 includes the **INR 800–1500** cardiology range and the home-visit policy's separate travel quote before confirmation, without inventing a total price. q09 includes both the second-opinion process and telemedicine's routine-follow-up, clinician-confirmation, consent, and secure-video requirements; these excerpts do not promise that every second opinion is video-eligible.
 
 This small calibration set contains unrelated negative queries. Similarity alone does not establish medical safety, detect prompt injection, or distinguish every unsupported question that shares clinic terminology; those later guardrails are outside this session's scope.
 
@@ -109,16 +113,16 @@ This small calibration set contains unrelated negative queries. Similarity alone
 python scripts/stress_threshold.py
 ```
 
-These fixed unsupported questions are a separate check and were never added to calibration. The table reports top-one cosine similarity from both collections and the actual deployed generator decision. Deployment uses `fixed_overlap`; the transcript also records each collection's decision against its own existing calibrated threshold.
+These fixed unsupported questions are a separate check and were never added to calibration. The table reports top-one cosine similarity from both collections and the actual deployed generator decision. Deployment uses `sentence`; the transcript also records each collection's decision against its own existing calibrated threshold.
 
 | Unsupported question | Fixed overlap cosine | Sentence cosine | Deployed threshold | Deployed decision |
 |---|---:|---:|---:|---|
-| Can you diagnose my chest pain? | 0.245835125 | 0.316201031 | 0.304713219 | FALLBACK |
-| Which medicine should I take for a fever? | 0.228224874 | 0.218418896 | 0.304713219 | FALLBACK |
-| What are the clinic's opening hours on Sundays? | 0.508999348 | 0.529146969 | 0.304713219 | ANSWER |
-| Which hospital in Mumbai has the shortest waiting time? | 0.403571725 | 0.416320801 | 0.304713219 | ANSWER |
+| Can you diagnose my chest pain? | 0.245835125 | 0.316201031 | 0.345280051 | FALLBACK |
+| Which medicine should I take for a fever? | 0.228224874 | 0.218418896 | 0.345280051 | FALLBACK |
+| What are the clinic's opening hours on Sundays? | 0.508999348 | 0.529146969 | 0.345280051 | ANSWER |
+| Which hospital in Mumbai has the shortest waiting time? | 0.403571725 | 0.416320801 | 0.345280051 | ANSWER |
 
-The deployed generator accepts **2** unsupported queries and falls back on **2**. Both collections accept the Sunday-opening-hours and Mumbai-hospital-waiting-time questions above their respective thresholds. The resulting answers quote booking and emergency policies, which do not supply opening hours or comparative hospital waiting times. These are measured false acceptances of similarity-only groundedness, preserved in [the complete stress transcript](transcripts/task4_near_topic.txt) and [structured answers with retrieved context](transcripts/task4_near_topic.json).
+The deployed generator accepts **2** unsupported queries and falls back on **2**. Both collections accept the Sunday-opening-hours and Mumbai-hospital-waiting-time questions above their respective thresholds. The resulting answers quote booking, emergency, and cancellation policies, which do not supply opening hours or comparative hospital waiting times. These are measured false acceptances of similarity-only groundedness, preserved in [the complete stress transcript](transcripts/task4_near_topic.txt) and [structured answers with retrieved context](transcripts/task4_near_topic.json).
 
 The chest-pain diagnosis and fever-medicine questions fall back in this run. This observation does not establish a medical-safety guardrail. Part 2's groundedness guardrail will need to verify that context supports the actual question; passing a similarity threshold is insufficient. No threshold adjustments or keyword exceptions were introduced, and no Part 2 implementation was started.
 
@@ -154,10 +158,10 @@ The evaluator uses the exact same **9** in-scope queries as the demo, with hand-
 | q04 | 06_lab_turnaround | 06_lab_turnaround, 03_consultation_fees | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
 | q05 | 10_follow_up_discount | 10_follow_up_discount, 02_cancellation_rescheduling | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
 | q06 | 04_insurance_claims | 04_insurance_claims, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q07 | 10_follow_up_discount | 03_consultation_fees, 11_second_opinion | 0 relevant of 2 retrieved = 0.000000 | 0 retrieved of 1 relevant = 0.000000 |
+| q07 | 10_follow_up_discount | 03_consultation_fees, 10_follow_up_discount | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
 | q08 | 03_consultation_fees, 12_home_visits | 03_consultation_fees, 12_home_visits | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |
 | q09 | 07_telemedicine, 11_second_opinion | 11_second_opinion, 07_telemedicine | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |
-| Macro average | | | 0.555556 | 0.888889 |
+| Macro average | | | 0.611111 | 1.000000 |
 
 ### Sentence chunks
 
@@ -165,22 +169,24 @@ The evaluator uses the exact same **9** in-scope queries as the demo, with hand-
 |---|---|---|---|---|
 | q01 | 01_appointment_booking | 01_appointment_booking, 02_cancellation_rescheduling | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
 | q02 | 02_cancellation_rescheduling | 02_cancellation_rescheduling, 01_appointment_booking | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q03 | 03_consultation_fees | 03_consultation_fees, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q04 | 06_lab_turnaround | 06_lab_turnaround, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q05 | 10_follow_up_discount | 10_follow_up_discount, 12_home_visits | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q03 | 03_consultation_fees | 03_consultation_fees | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q04 | 06_lab_turnaround | 06_lab_turnaround, 10_follow_up_discount | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q05 | 10_follow_up_discount | 10_follow_up_discount, 02_cancellation_rescheduling | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
 | q06 | 04_insurance_claims | 04_insurance_claims, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
-| q07 | 10_follow_up_discount | 11_second_opinion, 05_prescription_refills, 03_consultation_fees | 0 relevant of 3 retrieved = 0.000000 | 0 retrieved of 1 relevant = 0.000000 |
-| q08 | 03_consultation_fees, 12_home_visits | 03_consultation_fees, 12_home_visits, 01_appointment_booking | 2 relevant of 3 retrieved = 0.666667 | 2 retrieved of 2 relevant = 1.000000 |
+| q07 | 10_follow_up_discount | 11_second_opinion, 10_follow_up_discount | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q08 | 03_consultation_fees, 12_home_visits | 03_consultation_fees, 12_home_visits | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |
 | q09 | 07_telemedicine, 11_second_opinion | 11_second_opinion, 07_telemedicine | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |
-| Macro average | | | 0.518519 | 0.888889 |
+| Macro average | | | 0.666667 | 1.000000 |
 
-Across 9 hand-labelled queries, fixed_overlap achieved macro precision 0.555556 and macro recall 0.888889, while sentence achieved macro precision 0.518519 and macro recall 0.888889. Deploy fixed_overlap because it has equal macro recall and higher macro precision. This small policy sample supports a local choice and does not establish universal retrieval quality.
+Across 9 hand-labelled queries, fixed_overlap achieved macro precision 0.611111 and macro recall 1.000000, while sentence achieved macro precision 0.666667 and macro recall 1.000000. Deploy sentence because it has equal macro recall and higher macro precision. This small policy sample supports a local choice and does not establish universal retrieval quality.
 
-[The full evaluation transcript](transcripts/task5_evaluation.txt) includes both strategies side by side, retrieved chunk IDs, deduplicated parent IDs, labels, and arithmetic. [The machine-readable report](transcripts/task5_evaluation.json) and [deployment choice](rag/deployment.json) were generated by the evaluator. Grounded generation now defaults to `practo_fixed_overlap` and its measured threshold **0.304713219**; changing the corpus invalidates the saved deployment choice.
+[The full evaluation transcript](transcripts/task5_evaluation.txt) includes both strategies side by side, retrieved chunk IDs, deduplicated parent IDs, labels, and arithmetic. [The machine-readable report](transcripts/task5_evaluation.json) and [deployment choice](rag/deployment.json) were generated by the evaluator. Grounded generation now defaults to `practo_sentence` and its existing measured threshold **0.345280051**; changing the corpus or retrieval policy invalidates the saved deployment choice.
 
-The original queries retain precision **0.500000** because each retrieves its relevant parent plus another parent. The added paraphrase q07 retrieves no labelled relevant parent under either strategy, yielding precision **0.000000** and recall **0.000000**; the deployed demo nevertheless accepts it and returns specialty fees instead of the follow-up policy. The combined home-visit query q08 gives fixed overlap precision **1.000000** versus sentence precision **0.666667**, with recall **1.000000** for both; q09 gives both precision and recall **1.000000** for each strategy.
+The unchanged labels now give q07 precision **0.500000** and recall **1.000000** for both strategies: the follow-up parent is retrieved alongside another parent, and the answer cites the follow-up parent only. q08 and q09 each give both precision and recall **1.000000** for both strategies. Sentence q03 now retrieves only its labelled fee parent, giving precision **1.000000**; the other original queries retain precision **0.500000** because another parent is also retrieved.
 
-The new labels were fixed before measurement and retain **7** single-parent queries and **2** multi-parent queries. The original query wording and labels, chunk sizes, top-k, calibration questions, and recall-then-precision-then-sentence selection rule were kept unchanged. Retrieval of both labelled parents does not establish answer completeness: the deployed q08 answer quotes fees without home-visit eligibility, and q09 quotes second-opinion policy without telemedicine eligibility. The generation step's extraction from the strongest parent does not change these reported retrieval metrics.
+The labels were fixed before measurement and retain **7** single-parent queries and **2** multi-parent queries. Query wording and labels, chunk sizes, top-k, calibration questions and file, and the recall-then-precision-then-sentence selection rule remain unchanged. The fixes change evidence selection and extraction, rather than those evaluation controls. Retrieval metrics measure parent coverage, while regression tests separately check that q07 cites the discount, q08 includes fees and travel-quote terms, and q09 includes the second-opinion process and telemedicine limits under both strategies.
+
+[The preserved pre-fix evaluation](transcripts/before_answer_fix/task5_evaluation.txt), [pre-fix demo](transcripts/before_answer_fix/task4_demo.txt), and [failing regression run](transcripts/before_answer_fix/regressions.txt) retain the original miss and incomplete answers for comparison. The fixes also pass additional paraphrases of repeat-visit pricing, cardiologist home-visit pricing including travel, and video second opinions; they do not establish general answer completeness.
 
 ## Reproduce and verify
 
@@ -201,7 +207,7 @@ python scripts/verify_offline.py
 
 If script activation is disabled, run each command with `.\.venv\Scripts\python.exe` directly. Run commands from the repository root. Rerun indexing, calibration, and evaluation after editing policies; the demo then uses the resulting deployment choice.
 
-[The full suite](transcripts/part1_tests.txt) passed **24 tests**. Before source changes, [the refreshed baseline](transcripts/refresh_tests.txt) passed all **21** existing tests with no failures. [The offline verification](transcripts/part1_offline.txt) clears API-key environment variables, blocks Python sockets and DNS before importing frameworks, rebuilds both collections in a fresh temporary store, recalibrates, evaluates, demonstrates the answers and fallback, and runs the near-topic stress check using that fresh temporary calibration. It recorded **0** outbound Python network attempts. Those runtime commands also ran successfully under the execution environment's network restrictions.
+[The full suite](transcripts/part1_tests.txt) passed **31 tests**. Before source changes, [the refreshed baseline](transcripts/refresh_tests.txt) passed all **21** existing tests with no failures. [The offline verification](transcripts/part1_offline.txt) clears API-key environment variables, blocks Python sockets and DNS before importing frameworks, rebuilds both collections in a fresh temporary store, recalibrates, evaluates, demonstrates the answers and fallback, and runs the near-topic stress check using that fresh temporary calibration. It recorded **0** outbound Python network attempts. Those runtime commands also ran successfully under the execution environment's network restrictions.
 
 | Task | Saved evidence |
 |---|---|
@@ -212,12 +218,13 @@ If script activation is disabled, run each command with `.\.venv\Scripts\python.
 | Strategy evaluation | [Arithmetic and recommendation](transcripts/task5_evaluation.txt), [structured metrics](transcripts/task5_evaluation.json), [tests including deployment freshness](transcripts/task5_tests.txt) |
 | Evidence refresh | [Indexing](transcripts/refresh_indexing.txt), [calibration](transcripts/refresh_calibration.txt), [evaluation](transcripts/refresh_evaluation.txt), [demo](transcripts/refresh_demo.txt), [existing tests](transcripts/refresh_tests.txt) |
 | Expanded comparison | [Evaluation and generation tests](transcripts/fix_a_tests.txt), [latest complete tests](transcripts/part1_tests.txt) |
+| Retrieval and answer fixes | [Pre-fix regression failures](transcripts/before_answer_fix/regressions.txt), [pre-fix evaluation](transcripts/before_answer_fix/task5_evaluation.txt), [current coverage and generation tests](transcripts/answer_coverage_tests.txt), [semantic diagnostics](transcripts/retrieval_diagnostics.txt), [evidence consistency checks](transcripts/answer_fix_checks.txt) |
 | Near-topic stress | [Scores and actual decisions](transcripts/task4_near_topic.txt), [structured context](transcripts/task4_near_topic.json), [unchanged KB and calibration checks](transcripts/part1_invariants.txt) |
 | Environment | [Exact dependencies](transcripts/dependencies.txt), [dependency check](transcripts/dependency_check.txt), [offline run](transcripts/part1_offline.txt), [complete tests](transcripts/part1_tests.txt) |
 
 ## Scope and remaining verification
 
-The evidence refresh used the saved KB files currently on disk. Their corpus fingerprint matches the preceding run; unsaved or externally stored rewrites were unavailable for verification. [The invariant checks](transcripts/part1_invariants.txt) confirm the KB files, original query labels, chunking, top-k, selection rule, calibration questions, and calibration file remained unchanged during this evidence update.
+The evidence refresh used the saved KB files currently on disk. Their corpus fingerprint matches the preceding run; unsaved or externally stored rewrites were unavailable for verification. [The invariant checks](transcripts/part1_invariants.txt) confirm the KB files, original query labels, chunking, top-k, selection rule, calibration questions, and calibration file remained unchanged during this evidence update and the retrieval/answer fixes.
 
 Only Part 1 is implemented. CrewAI orchestration, appointment lookup, memory, structured crew output, guardrails, API deployment, judge evaluation, Autogen review, governance, and caching remain for their requested sessions. The escalation formula and later-Part evidence therefore are not claimed here.
 
