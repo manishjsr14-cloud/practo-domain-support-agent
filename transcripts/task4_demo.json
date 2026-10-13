@@ -3,57 +3,57 @@
     "query": "How do I book an appointment and know that my slot is confirmed?",
     "answer": "Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled. A requested slot is not reserved until confirmation is issued. Keep the appointment record ID to check its status or request a change without sharing personal details in support chat.",
     "fallback": false,
-    "strategy": "sentence",
-    "threshold": 0.3452800512313843,
-    "top_similarity": 0.6556336283683777,
+    "strategy": "fixed_overlap",
+    "threshold": 0.3047132194042206,
+    "top_similarity": 0.6777059435844421,
     "source_chunks": [
-      "01_appointment_booking:sentence:000",
-      "01_appointment_booking:sentence:001"
+      "01_appointment_booking:fixed_overlap:000",
+      "01_appointment_booking:fixed_overlap:001"
     ],
     "retrieved_context": [
       {
-        "chunk_id": "01_appointment_booking:sentence:001",
+        "chunk_id": "01_appointment_booking:fixed_overlap:000",
         "parent_id": "01_appointment_booking",
-        "text": "A requested slot is not reserved until confirmation is issued. Keep the appointment record ID to check its status or request a change without sharing personal details in support chat.",
-        "distance": 0.3443663716316223,
-        "similarity": 0.6556336283683777,
+        "text": "Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled. A requested slot is not reserved until confirmation is issued. Keep the appointment record ID to check",
+        "distance": 0.32229405641555786,
+        "similarity": 0.6777059435844421,
         "metadata": {
-          "index": 1,
-          "strategy": "sentence",
-          "end": 400,
-          "starts_sentence": true,
+          "index": 0,
           "parent_id": "01_appointment_booking",
-          "start": 217
+          "strategy": "fixed_overlap",
+          "starts_sentence": true,
+          "end": 319,
+          "start": 0
         }
       },
       {
-        "chunk_id": "01_appointment_booking:sentence:000",
+        "chunk_id": "01_appointment_booking:fixed_overlap:001",
         "parent_id": "01_appointment_booking",
-        "text": "Book an appointment through the clinic portal or reception by choosing a specialty and a preferred day. Reception confirms the clinician, available time, and consultation fee before the appointment becomes Scheduled.",
-        "distance": 0.4083474278450012,
-        "similarity": 0.5916525721549988,
+        "text": "reserved until confirmation is issued. Keep the appointment record ID to check its status or request a change without sharing personal details in support chat.",
+        "distance": 0.44828784465789795,
+        "similarity": 0.551712155342102,
         "metadata": {
-          "strategy": "sentence",
-          "end": 216,
-          "start": 0,
-          "index": 0,
-          "starts_sentence": true,
-          "parent_id": "01_appointment_booking"
+          "parent_id": "01_appointment_booking",
+          "start": 241,
+          "strategy": "fixed_overlap",
+          "index": 1,
+          "end": 400,
+          "starts_sentence": false
         }
       },
       {
-        "chunk_id": "02_cancellation_rescheduling:sentence:000",
+        "chunk_id": "02_cancellation_rescheduling:fixed_overlap:000",
         "parent_id": "02_cancellation_rescheduling",
-        "text": "Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund.",
-        "distance": 0.5208972692489624,
-        "similarity": 0.4791027307510376,
+        "text": "Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund. A rescheduled appointment receives a new confirmed time, while a cancelled appointment releases its slot.",
+        "distance": 0.4885895252227783,
+        "similarity": 0.5114104747772217,
         "metadata": {
-          "index": 0,
-          "starts_sentence": true,
           "start": 0,
-          "end": 213,
-          "strategy": "sentence",
-          "parent_id": "02_cancellation_rescheduling"
+          "index": 0,
+          "parent_id": "02_cancellation_rescheduling",
+          "strategy": "fixed_overlap",
+          "end": 319,
+          "starts_sentence": true
         }
       }
     ]
@@ -62,116 +62,116 @@
     "query": "What is the cancellation and rescheduling window?",
     "answer": "Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund. A rescheduled appointment receives a new confirmed time, while a cancelled appointment releases its slot. Reception explains any applicable charge before accepting a late change.",
     "fallback": false,
-    "strategy": "sentence",
-    "threshold": 0.3452800512313843,
-    "top_similarity": 0.5655031204223633,
+    "strategy": "fixed_overlap",
+    "threshold": 0.3047132194042206,
+    "top_similarity": 0.6040420532226562,
     "source_chunks": [
-      "02_cancellation_rescheduling:sentence:000",
-      "02_cancellation_rescheduling:sentence:001"
+      "02_cancellation_rescheduling:fixed_overlap:000",
+      "02_cancellation_rescheduling:fixed_overlap:001"
     ],
     "retrieved_context": [
       {
-        "chunk_id": "02_cancellation_rescheduling:sentence:001",
+        "chunk_id": "02_cancellation_rescheduling:fixed_overlap:000",
         "parent_id": "02_cancellation_rescheduling",
-        "text": "A rescheduled appointment receives a new confirmed time, while a cancelled appointment releases its slot. Reception explains any applicable charge before accepting a late change.",
-        "distance": 0.4344968795776367,
-        "similarity": 0.5655031204223633,
+        "text": "Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund. A rescheduled appointment receives a new confirmed time, while a cancelled appointment releases its slot.",
+        "distance": 0.39595794677734375,
+        "similarity": 0.6040420532226562,
         "metadata": {
-          "starts_sentence": true,
-          "strategy": "sentence",
           "parent_id": "02_cancellation_rescheduling",
-          "end": 392,
-          "index": 1,
-          "start": 214
+          "start": 0,
+          "starts_sentence": true,
+          "strategy": "fixed_overlap",
+          "end": 319,
+          "index": 0
         }
       },
       {
-        "chunk_id": "02_cancellation_rescheduling:sentence:000",
+        "chunk_id": "02_cancellation_rescheduling:fixed_overlap:001",
         "parent_id": "02_cancellation_rescheduling",
-        "text": "Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund.",
-        "distance": 0.46670979261398315,
-        "similarity": 0.5332902073860168,
+        "text": "receives a new confirmed time, while a cancelled appointment releases its slot. Reception explains any applicable charge before accepting a late change.",
+        "distance": 0.4799829125404358,
+        "similarity": 0.5200170874595642,
         "metadata": {
-          "strategy": "sentence",
-          "end": 213,
-          "index": 0,
-          "starts_sentence": true,
-          "start": 0,
+          "end": 392,
+          "strategy": "fixed_overlap",
+          "starts_sentence": false,
+          "start": 240,
+          "index": 1,
           "parent_id": "02_cancellation_rescheduling"
         }
       },
       {
-        "chunk_id": "01_appointment_booking:sentence:001",
+        "chunk_id": "01_appointment_booking:fixed_overlap:001",
         "parent_id": "01_appointment_booking",
-        "text": "A requested slot is not reserved until confirmation is issued. Keep the appointment record ID to check its status or request a change without sharing personal details in support chat.",
-        "distance": 0.6788033246994019,
-        "similarity": 0.32119667530059814,
+        "text": "reserved until confirmation is issued. Keep the appointment record ID to check its status or request a change without sharing personal details in support chat.",
+        "distance": 0.6423592567443848,
+        "similarity": 0.35764074325561523,
         "metadata": {
-          "strategy": "sentence",
-          "index": 1,
           "end": 400,
-          "start": 217,
+          "strategy": "fixed_overlap",
+          "start": 241,
+          "index": 1,
           "parent_id": "01_appointment_booking",
-          "starts_sentence": true
+          "starts_sentence": false
         }
       }
     ]
   },
   {
     "query": "What are the consultation fees for each specialty?",
-    "answer": "General Medicine consultations cost INR 300-600, and Pediatrics consultations cost INR 400-800. Dermatology consultations cost INR 500-1000, and Orthopedics consultations cost INR 600-1200. Cardiology consultations cost INR 800-1500. The exact consultation fee within the specialty range is shown before the appointment is confirmed.",
+    "answer": "General Medicine consultations cost INR 300-600, and Pediatrics consultations cost INR 400-800. Dermatology consultations cost INR 500-1000, and Orthopedics consultations cost INR 600-1200. Cardiology consultations cost INR 800-1500. The exact consultation fee within the specialty range is shown before the appointment is confirmed. Lab tests, procedures, and home-visit travel charges are quoted separately and are not included in the consultation fee.",
     "fallback": false,
-    "strategy": "sentence",
-    "threshold": 0.3452800512313843,
-    "top_similarity": 0.6513397097587585,
+    "strategy": "fixed_overlap",
+    "threshold": 0.3047132194042206,
+    "top_similarity": 0.6996861696243286,
     "source_chunks": [
-      "03_consultation_fees:sentence:000",
-      "03_consultation_fees:sentence:001"
+      "03_consultation_fees:fixed_overlap:000",
+      "03_consultation_fees:fixed_overlap:001"
     ],
     "retrieved_context": [
       {
-        "chunk_id": "03_consultation_fees:sentence:000",
+        "chunk_id": "03_consultation_fees:fixed_overlap:001",
         "parent_id": "03_consultation_fees",
-        "text": "General Medicine consultations cost INR 300-600, and Pediatrics consultations cost INR 400-800. Dermatology consultations cost INR 500-1000, and Orthopedics consultations cost INR 600-1200.",
-        "distance": 0.34866029024124146,
-        "similarity": 0.6513397097587585,
+        "text": "act consultation fee within the specialty range is shown before the appointment is confirmed. Lab tests, procedures, and home-visit travel charges are quoted separately and are not included in the consultation fee.",
+        "distance": 0.3003138303756714,
+        "similarity": 0.6996861696243286,
+        "metadata": {
+          "parent_id": "03_consultation_fees",
+          "strategy": "fixed_overlap",
+          "end": 454,
+          "starts_sentence": false,
+          "index": 1,
+          "start": 240
+        }
+      },
+      {
+        "chunk_id": "03_consultation_fees:fixed_overlap:000",
+        "parent_id": "03_consultation_fees",
+        "text": "General Medicine consultations cost INR 300-600, and Pediatrics consultations cost INR 400-800. Dermatology consultations cost INR 500-1000, and Orthopedics consultations cost INR 600-1200. Cardiology consultations cost INR 800-1500. The exact consultation fee within the specialty range is shown before the appointment",
+        "distance": 0.3234449625015259,
+        "similarity": 0.6765550374984741,
         "metadata": {
           "index": 0,
-          "end": 189,
-          "start": 0,
-          "starts_sentence": true,
           "parent_id": "03_consultation_fees",
-          "strategy": "sentence"
+          "strategy": "fixed_overlap",
+          "starts_sentence": true,
+          "end": 319,
+          "start": 0
         }
       },
       {
-        "chunk_id": "03_consultation_fees:sentence:001",
-        "parent_id": "03_consultation_fees",
-        "text": "Cardiology consultations cost INR 800-1500. The exact consultation fee within the specialty range is shown before the appointment is confirmed.",
-        "distance": 0.36611407995224,
-        "similarity": 0.63388592004776,
-        "metadata": {
-          "end": 333,
-          "index": 1,
-          "starts_sentence": true,
-          "parent_id": "03_consultation_fees",
-          "strategy": "sentence",
-          "start": 190
-        }
-      },
-      {
-        "chunk_id": "11_second_opinion:sentence:001",
+        "chunk_id": "11_second_opinion:fixed_overlap:001",
         "parent_id": "11_second_opinion",
-        "text": "The reviewing clinician makes an independent assessment and may request an in-person consultation. A second opinion is billed at the chosen specialty's standard consultation fee and does not refund the earlier visit.",
-        "distance": 0.4003748297691345,
-        "similarity": 0.5996251702308655,
+        "text": "nician makes an independent assessment and may request an in-person consultation. A second opinion is billed at the chosen specialty's standard consultation fee and does not refund the earlier visit.",
+        "distance": 0.4505149722099304,
+        "similarity": 0.5494850277900696,
         "metadata": {
           "end": 439,
-          "parent_id": "11_second_opinion",
           "index": 1,
-          "strategy": "sentence",
-          "start": 223,
-          "starts_sentence": true
+          "starts_sentence": false,
+          "start": 240,
+          "strategy": "fixed_overlap",
+          "parent_id": "11_second_opinion"
         }
       }
     ]
@@ -180,57 +180,57 @@
     "query": "How long do routine and specialized lab test reports take?",
     "answer": "Routine blood-test reports are usually available within 1-2 working days after the laboratory accepts the sample. Specialized tests usually take 3-5 working days, and the laboratory gives a test-specific estimate when the sample is accepted. Weekends, holidays, and a request for another sample can extend that estimate. Reception can check whether a report is ready, while a clinician must explain what the results mean.",
     "fallback": false,
-    "strategy": "sentence",
-    "threshold": 0.3452800512313843,
-    "top_similarity": 0.6866230368614197,
+    "strategy": "fixed_overlap",
+    "threshold": 0.3047132194042206,
+    "top_similarity": 0.6875332593917847,
     "source_chunks": [
-      "06_lab_turnaround:sentence:000",
-      "06_lab_turnaround:sentence:001"
+      "06_lab_turnaround:fixed_overlap:000",
+      "06_lab_turnaround:fixed_overlap:001"
     ],
     "retrieved_context": [
       {
-        "chunk_id": "06_lab_turnaround:sentence:000",
+        "chunk_id": "06_lab_turnaround:fixed_overlap:000",
         "parent_id": "06_lab_turnaround",
-        "text": "Routine blood-test reports are usually available within 1-2 working days after the laboratory accepts the sample. Specialized tests usually take 3-5 working days, and the laboratory gives a test-specific estimate when the sample is accepted.",
-        "distance": 0.3133769631385803,
-        "similarity": 0.6866230368614197,
+        "text": "Routine blood-test reports are usually available within 1-2 working days after the laboratory accepts the sample. Specialized tests usually take 3-5 working days, and the laboratory gives a test-specific estimate when the sample is accepted. Weekends, holidays, and a request for another sample can extend that estimate.",
+        "distance": 0.31246674060821533,
+        "similarity": 0.6875332593917847,
         "metadata": {
-          "end": 241,
-          "index": 0,
           "start": 0,
+          "index": 0,
           "parent_id": "06_lab_turnaround",
-          "strategy": "sentence",
-          "starts_sentence": true
+          "starts_sentence": true,
+          "end": 320,
+          "strategy": "fixed_overlap"
         }
       },
       {
-        "chunk_id": "06_lab_turnaround:sentence:001",
+        "chunk_id": "06_lab_turnaround:fixed_overlap:001",
         "parent_id": "06_lab_turnaround",
-        "text": "Weekends, holidays, and a request for another sample can extend that estimate. Reception can check whether a report is ready, while a clinician must explain what the results mean.",
-        "distance": 0.5440821051597595,
-        "similarity": 0.4559178948402405,
+        "text": ". Weekends, holidays, and a request for another sample can extend that estimate. Reception can check whether a report is ready, while a clinician must explain what the results mean.",
+        "distance": 0.5626927614212036,
+        "similarity": 0.4373072385787964,
         "metadata": {
-          "starts_sentence": true,
-          "strategy": "sentence",
-          "index": 1,
-          "start": 242,
           "parent_id": "06_lab_turnaround",
-          "end": 421
+          "index": 1,
+          "end": 421,
+          "starts_sentence": false,
+          "strategy": "fixed_overlap",
+          "start": 240
         }
       },
       {
-        "chunk_id": "11_second_opinion:sentence:001",
-        "parent_id": "11_second_opinion",
-        "text": "The reviewing clinician makes an independent assessment and may request an in-person consultation. A second opinion is billed at the chosen specialty's standard consultation fee and does not refund the earlier visit.",
-        "distance": 0.7464346885681152,
-        "similarity": 0.25356531143188477,
+        "chunk_id": "03_consultation_fees:fixed_overlap:001",
+        "parent_id": "03_consultation_fees",
+        "text": "act consultation fee within the specialty range is shown before the appointment is confirmed. Lab tests, procedures, and home-visit travel charges are quoted separately and are not included in the consultation fee.",
+        "distance": 0.7200754880905151,
+        "similarity": 0.27992451190948486,
         "metadata": {
-          "starts_sentence": true,
-          "parent_id": "11_second_opinion",
-          "start": 223,
-          "strategy": "sentence",
-          "end": 439,
-          "index": 1
+          "index": 1,
+          "end": 454,
+          "parent_id": "03_consultation_fees",
+          "starts_sentence": false,
+          "start": 240,
+          "strategy": "fixed_overlap"
         }
       }
     ]
@@ -239,57 +239,57 @@
     "query": "When does a follow-up visit qualify for a discount?",
     "answer": "A follow-up consultation within 7 calendar days of a completed visit qualifies for a 20 percent consultation-fee discount when it is with the same specialty for the same issue. Reception checks the original appointment reference and confirms eligibility before booking the follow-up. A record marked follow_up_required indicates that follow-up was requested but does not by itself prove discount eligibility. Lab tests, procedures, and travel charges are excluded from the discount.",
     "fallback": false,
-    "strategy": "sentence",
-    "threshold": 0.3452800512313843,
-    "top_similarity": 0.6917534470558167,
+    "strategy": "fixed_overlap",
+    "threshold": 0.3047132194042206,
+    "top_similarity": 0.6933665871620178,
     "source_chunks": [
-      "10_follow_up_discount:sentence:000",
-      "10_follow_up_discount:sentence:001"
+      "10_follow_up_discount:fixed_overlap:000",
+      "10_follow_up_discount:fixed_overlap:001"
     ],
     "retrieved_context": [
       {
-        "chunk_id": "10_follow_up_discount:sentence:001",
+        "chunk_id": "10_follow_up_discount:fixed_overlap:001",
         "parent_id": "10_follow_up_discount",
-        "text": "A record marked follow_up_required indicates that follow-up was requested but does not by itself prove discount eligibility. Lab tests, procedures, and travel charges are excluded from the discount.",
-        "distance": 0.30824655294418335,
-        "similarity": 0.6917534470558167,
+        "text": "s eligibility before booking the follow-up. A record marked follow_up_required indicates that follow-up was requested but does not by itself prove discount eligibility. Lab tests, procedures, and travel charges are excluded from the discount.",
+        "distance": 0.3066334128379822,
+        "similarity": 0.6933665871620178,
         "metadata": {
-          "starts_sentence": true,
+          "start": 240,
+          "end": 482,
+          "starts_sentence": false,
+          "strategy": "fixed_overlap",
           "parent_id": "10_follow_up_discount",
-          "start": 284,
-          "strategy": "sentence",
-          "index": 1,
-          "end": 482
+          "index": 1
         }
       },
       {
-        "chunk_id": "10_follow_up_discount:sentence:000",
+        "chunk_id": "10_follow_up_discount:fixed_overlap:000",
         "parent_id": "10_follow_up_discount",
-        "text": "A follow-up consultation within 7 calendar days of a completed visit qualifies for a 20 percent consultation-fee discount when it is with the same specialty for the same issue. Reception checks the original appointment reference and confirms eligibility before booking the follow-up.",
-        "distance": 0.35760462284088135,
-        "similarity": 0.6423953771591187,
+        "text": "A follow-up consultation within 7 calendar days of a completed visit qualifies for a 20 percent consultation-fee discount when it is with the same specialty for the same issue. Reception checks the original appointment reference and confirms eligibility before booking the follow-up. A record marked follow_up_required i",
+        "distance": 0.3321515917778015,
+        "similarity": 0.6678484082221985,
         "metadata": {
-          "parent_id": "10_follow_up_discount",
-          "starts_sentence": true,
           "start": 0,
-          "strategy": "sentence",
+          "parent_id": "10_follow_up_discount",
+          "strategy": "fixed_overlap",
           "index": 0,
-          "end": 283
+          "starts_sentence": true,
+          "end": 320
         }
       },
       {
-        "chunk_id": "12_home_visits:sentence:001",
-        "parent_id": "12_home_visits",
-        "text": "The consultation fee and any travel charge are quoted before the visit is confirmed. Home visits are scheduled outpatient services and cannot be used for an emergency.",
-        "distance": 0.6474400162696838,
-        "similarity": 0.35255998373031616,
+        "chunk_id": "02_cancellation_rescheduling:fixed_overlap:001",
+        "parent_id": "02_cancellation_rescheduling",
+        "text": "receives a new confirmed time, while a cancelled appointment releases its slot. Reception explains any applicable charge before accepting a late change.",
+        "distance": 0.6558389663696289,
+        "similarity": 0.3441610336303711,
         "metadata": {
-          "parent_id": "12_home_visits",
-          "start": 235,
-          "strategy": "sentence",
+          "starts_sentence": false,
+          "parent_id": "02_cancellation_rescheduling",
+          "start": 240,
+          "end": 392,
           "index": 1,
-          "end": 402,
-          "starts_sentence": true
+          "strategy": "fixed_overlap"
         }
       }
     ]
@@ -298,57 +298,233 @@
     "query": "How do I submit an insurance reimbursement claim?",
     "answer": "Pay the clinic bill and request an itemized invoice and consultation receipt for an insurance reimbursement claim. Submit those documents with the insurer's claim form through the insurer's own approved channel. Reception can correct billing details after verification but cannot decide coverage or promise claim approval. Direct cashless settlement is not offered by this fictional clinic.",
     "fallback": false,
-    "strategy": "sentence",
-    "threshold": 0.3452800512313843,
-    "top_similarity": 0.6871151924133301,
+    "strategy": "fixed_overlap",
+    "threshold": 0.3047132194042206,
+    "top_similarity": 0.627223551273346,
     "source_chunks": [
-      "04_insurance_claims:sentence:000",
-      "04_insurance_claims:sentence:001"
+      "04_insurance_claims:fixed_overlap:000",
+      "04_insurance_claims:fixed_overlap:001"
     ],
     "retrieved_context": [
       {
-        "chunk_id": "04_insurance_claims:sentence:000",
+        "chunk_id": "04_insurance_claims:fixed_overlap:000",
         "parent_id": "04_insurance_claims",
-        "text": "Pay the clinic bill and request an itemized invoice and consultation receipt for an insurance reimbursement claim. Submit those documents with the insurer's claim form through the insurer's own approved channel.",
-        "distance": 0.3128848075866699,
-        "similarity": 0.6871151924133301,
+        "text": "Pay the clinic bill and request an itemized invoice and consultation receipt for an insurance reimbursement claim. Submit those documents with the insurer's claim form through the insurer's own approved channel. Reception can correct billing details after verification but cannot decide coverage or promise claim approva",
+        "distance": 0.37277644872665405,
+        "similarity": 0.627223551273346,
         "metadata": {
-          "parent_id": "04_insurance_claims",
-          "index": 0,
+          "starts_sentence": true,
           "start": 0,
-          "strategy": "sentence",
-          "end": 211,
-          "starts_sentence": true
+          "index": 0,
+          "parent_id": "04_insurance_claims",
+          "strategy": "fixed_overlap",
+          "end": 320
         }
       },
       {
-        "chunk_id": "04_insurance_claims:sentence:001",
+        "chunk_id": "04_insurance_claims:fixed_overlap:001",
         "parent_id": "04_insurance_claims",
-        "text": "Reception can correct billing details after verification but cannot decide coverage or promise claim approval. Direct cashless settlement is not offered by this fictional clinic.",
-        "distance": 0.6422649025917053,
-        "similarity": 0.3577350974082947,
+        "text": "g details after verification but cannot decide coverage or promise claim approval. Direct cashless settlement is not offered by this fictional clinic.",
+        "distance": 0.6165604591369629,
+        "similarity": 0.3834395408630371,
         "metadata": {
-          "starts_sentence": true,
+          "starts_sentence": false,
           "end": 390,
-          "start": 212,
+          "parent_id": "04_insurance_claims",
           "index": 1,
-          "strategy": "sentence",
-          "parent_id": "04_insurance_claims"
+          "strategy": "fixed_overlap",
+          "start": 240
         }
       },
       {
-        "chunk_id": "11_second_opinion:sentence:001",
+        "chunk_id": "11_second_opinion:fixed_overlap:001",
         "parent_id": "11_second_opinion",
-        "text": "The reviewing clinician makes an independent assessment and may request an in-person consultation. A second opinion is billed at the chosen specialty's standard consultation fee and does not refund the earlier visit.",
-        "distance": 0.6798030138015747,
-        "similarity": 0.3201969861984253,
+        "text": "nician makes an independent assessment and may request an in-person consultation. A second opinion is billed at the chosen specialty's standard consultation fee and does not refund the earlier visit.",
+        "distance": 0.6229641437530518,
+        "similarity": 0.37703585624694824,
         "metadata": {
-          "end": 439,
           "index": 1,
-          "strategy": "sentence",
-          "start": 223,
+          "strategy": "fixed_overlap",
+          "end": 439,
+          "start": 240,
+          "parent_id": "11_second_opinion",
+          "starts_sentence": false
+        }
+      }
+    ]
+  },
+  {
+    "query": "My doctor asked me to come back, do I have to pay the full price again?",
+    "answer": "General Medicine consultations cost INR 300-600, and Pediatrics consultations cost INR 400-800. Dermatology consultations cost INR 500-1000, and Orthopedics consultations cost INR 600-1200. Cardiology consultations cost INR 800-1500. The exact consultation fee within the specialty range is shown before the appointment is confirmed. Lab tests, procedures, and home-visit travel charges are quoted separately and are not included in the consultation fee.",
+    "fallback": false,
+    "strategy": "fixed_overlap",
+    "threshold": 0.3047132194042206,
+    "top_similarity": 0.47659337520599365,
+    "source_chunks": [
+      "03_consultation_fees:fixed_overlap:000",
+      "03_consultation_fees:fixed_overlap:001"
+    ],
+    "retrieved_context": [
+      {
+        "chunk_id": "03_consultation_fees:fixed_overlap:000",
+        "parent_id": "03_consultation_fees",
+        "text": "General Medicine consultations cost INR 300-600, and Pediatrics consultations cost INR 400-800. Dermatology consultations cost INR 500-1000, and Orthopedics consultations cost INR 600-1200. Cardiology consultations cost INR 800-1500. The exact consultation fee within the specialty range is shown before the appointment",
+        "distance": 0.5234066247940063,
+        "similarity": 0.47659337520599365,
+        "metadata": {
+          "index": 0,
+          "strategy": "fixed_overlap",
+          "parent_id": "03_consultation_fees",
+          "end": 319,
           "starts_sentence": true,
+          "start": 0
+        }
+      },
+      {
+        "chunk_id": "03_consultation_fees:fixed_overlap:001",
+        "parent_id": "03_consultation_fees",
+        "text": "act consultation fee within the specialty range is shown before the appointment is confirmed. Lab tests, procedures, and home-visit travel charges are quoted separately and are not included in the consultation fee.",
+        "distance": 0.5830204486846924,
+        "similarity": 0.4169795513153076,
+        "metadata": {
+          "starts_sentence": false,
+          "strategy": "fixed_overlap",
+          "parent_id": "03_consultation_fees",
+          "end": 454,
+          "start": 240,
+          "index": 1
+        }
+      },
+      {
+        "chunk_id": "11_second_opinion:fixed_overlap:001",
+        "parent_id": "11_second_opinion",
+        "text": "nician makes an independent assessment and may request an in-person consultation. A second opinion is billed at the chosen specialty's standard consultation fee and does not refund the earlier visit.",
+        "distance": 0.5833255648612976,
+        "similarity": 0.4166744351387024,
+        "metadata": {
+          "starts_sentence": false,
+          "index": 1,
+          "strategy": "fixed_overlap",
+          "end": 439,
+          "parent_id": "11_second_opinion",
+          "start": 240
+        }
+      }
+    ]
+  },
+  {
+    "query": "What will I pay for a home visit by a cardiologist?",
+    "answer": "General Medicine consultations cost INR 300-600, and Pediatrics consultations cost INR 400-800. Dermatology consultations cost INR 500-1000, and Orthopedics consultations cost INR 600-1200. Cardiology consultations cost INR 800-1500.",
+    "fallback": false,
+    "strategy": "fixed_overlap",
+    "threshold": 0.3047132194042206,
+    "top_similarity": 0.5539816617965698,
+    "source_chunks": [
+      "03_consultation_fees:fixed_overlap:000"
+    ],
+    "retrieved_context": [
+      {
+        "chunk_id": "03_consultation_fees:fixed_overlap:000",
+        "parent_id": "03_consultation_fees",
+        "text": "General Medicine consultations cost INR 300-600, and Pediatrics consultations cost INR 400-800. Dermatology consultations cost INR 500-1000, and Orthopedics consultations cost INR 600-1200. Cardiology consultations cost INR 800-1500. The exact consultation fee within the specialty range is shown before the appointment",
+        "distance": 0.4460183382034302,
+        "similarity": 0.5539816617965698,
+        "metadata": {
+          "parent_id": "03_consultation_fees",
+          "index": 0,
+          "starts_sentence": true,
+          "end": 319,
+          "strategy": "fixed_overlap",
+          "start": 0
+        }
+      },
+      {
+        "chunk_id": "12_home_visits:fixed_overlap:000",
+        "parent_id": "12_home_visits",
+        "text": "Home visits may be requested for patients who have difficulty travelling, subject to the clinic's service area and clinician availability. Reception confirms eligibility and collects the visit address through the secure clinic portal. The consultation fee and any travel charge are quoted before the visit is confirmed.",
+        "distance": 0.500440239906311,
+        "similarity": 0.49955976009368896,
+        "metadata": {
+          "strategy": "fixed_overlap",
+          "end": 319,
+          "index": 0,
+          "starts_sentence": true,
+          "start": 0,
+          "parent_id": "12_home_visits"
+        }
+      },
+      {
+        "chunk_id": "12_home_visits:fixed_overlap:001",
+        "parent_id": "12_home_visits",
+        "text": "onsultation fee and any travel charge are quoted before the visit is confirmed. Home visits are scheduled outpatient services and cannot be used for an emergency.",
+        "distance": 0.5538233518600464,
+        "similarity": 0.4461766481399536,
+        "metadata": {
+          "start": 240,
+          "starts_sentence": false,
+          "parent_id": "12_home_visits",
+          "end": 402,
+          "strategy": "fixed_overlap",
+          "index": 1
+        }
+      }
+    ]
+  },
+  {
+    "query": "Can I get a second opinion over a video call?",
+    "answer": "Request a second opinion through reception by asking for a different clinician in the relevant specialty. With consent, share previous reports and the consultation summary through the secure clinic portal before the visit. The reviewing clinician makes an independent assessment and may request an in-person consultation. A second opinion is billed at the chosen specialty's standard consultation fee and does not refund the earlier visit.",
+    "fallback": false,
+    "strategy": "fixed_overlap",
+    "threshold": 0.3047132194042206,
+    "top_similarity": 0.35342544317245483,
+    "source_chunks": [
+      "11_second_opinion:fixed_overlap:000",
+      "11_second_opinion:fixed_overlap:001"
+    ],
+    "retrieved_context": [
+      {
+        "chunk_id": "11_second_opinion:fixed_overlap:000",
+        "parent_id": "11_second_opinion",
+        "text": "Request a second opinion through reception by asking for a different clinician in the relevant specialty. With consent, share previous reports and the consultation summary through the secure clinic portal before the visit. The reviewing clinician makes an independent assessment and may request an in-person consultation",
+        "distance": 0.6465745568275452,
+        "similarity": 0.35342544317245483,
+        "metadata": {
+          "starts_sentence": true,
+          "start": 0,
+          "index": 0,
+          "end": 320,
+          "parent_id": "11_second_opinion",
+          "strategy": "fixed_overlap"
+        }
+      },
+      {
+        "chunk_id": "11_second_opinion:fixed_overlap:001",
+        "parent_id": "11_second_opinion",
+        "text": "nician makes an independent assessment and may request an in-person consultation. A second opinion is billed at the chosen specialty's standard consultation fee and does not refund the earlier visit.",
+        "distance": 0.6484029293060303,
+        "similarity": 0.3515970706939697,
+        "metadata": {
+          "start": 240,
+          "strategy": "fixed_overlap",
+          "index": 1,
+          "starts_sentence": false,
+          "end": 439,
           "parent_id": "11_second_opinion"
+        }
+      },
+      {
+        "chunk_id": "07_telemedicine:fixed_overlap:000",
+        "parent_id": "07_telemedicine",
+        "text": "Telemedicine appointments are available for routine follow-ups when the clinician confirms that an in-person examination is unnecessary. The patient must consent to a remote consultation and have access to the clinic's secure video service. A clinician may move the appointment to an in-person visit if remote assessment",
+        "distance": 0.671177089214325,
+        "similarity": 0.32882291078567505,
+        "metadata": {
+          "parent_id": "07_telemedicine",
+          "end": 320,
+          "strategy": "fixed_overlap",
+          "starts_sentence": true,
+          "index": 0,
+          "start": 0
         }
       }
     ]
@@ -357,54 +533,54 @@
     "query": "Give me a recipe for chocolate brownies.",
     "answer": "I don't know based on the available clinic-policy context.",
     "fallback": true,
-    "strategy": "sentence",
-    "threshold": 0.3452800512313843,
-    "top_similarity": 0.023517489433288574,
+    "strategy": "fixed_overlap",
+    "threshold": 0.3047132194042206,
+    "top_similarity": 0.02144157886505127,
     "source_chunks": [],
     "retrieved_context": [
       {
-        "chunk_id": "09_patient_privacy:sentence:001",
+        "chunk_id": "09_patient_privacy:fixed_overlap:001",
         "parent_id": "09_patient_privacy",
-        "text": "Requests to correct or delete records go to the privacy desk, which verifies the requester's authority before acting. This educational prototype accepts fabricated examples only, so do not submit real patient names, contact numbers, insurance identifiers, or medical records.",
-        "distance": 0.9764825105667114,
-        "similarity": 0.023517489433288574,
+        "text": "correct or delete records go to the privacy desk, which verifies the requester's authority before acting. This educational prototype accepts fabricated examples only, so do not submit real patient names, contact numbers, insurance identifiers, or medical records.",
+        "distance": 0.9785584211349487,
+        "similarity": 0.02144157886505127,
         "metadata": {
-          "strategy": "sentence",
-          "parent_id": "09_patient_privacy",
-          "start": 229,
-          "end": 504,
           "index": 1,
-          "starts_sentence": true
+          "strategy": "fixed_overlap",
+          "parent_id": "09_patient_privacy",
+          "end": 504,
+          "start": 241,
+          "starts_sentence": false
         }
       },
       {
-        "chunk_id": "06_lab_turnaround:sentence:001",
+        "chunk_id": "06_lab_turnaround:fixed_overlap:001",
         "parent_id": "06_lab_turnaround",
-        "text": "Weekends, holidays, and a request for another sample can extend that estimate. Reception can check whether a report is ready, while a clinician must explain what the results mean.",
-        "distance": 0.9808891415596008,
-        "similarity": 0.01911085844039917,
+        "text": ". Weekends, holidays, and a request for another sample can extend that estimate. Reception can check whether a report is ready, while a clinician must explain what the results mean.",
+        "distance": 0.9840121269226074,
+        "similarity": 0.015987873077392578,
         "metadata": {
-          "start": 242,
-          "starts_sentence": true,
           "parent_id": "06_lab_turnaround",
-          "strategy": "sentence",
+          "starts_sentence": false,
+          "start": 240,
           "end": 421,
-          "index": 1
+          "index": 1,
+          "strategy": "fixed_overlap"
         }
       },
       {
-        "chunk_id": "02_cancellation_rescheduling:sentence:000",
+        "chunk_id": "02_cancellation_rescheduling:fixed_overlap:000",
         "parent_id": "02_cancellation_rescheduling",
-        "text": "Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund.",
-        "distance": 0.9902008771896362,
-        "similarity": 0.00979912281036377,
+        "text": "Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund. A rescheduled appointment receives a new confirmed time, while a cancelled appointment releases its slot.",
+        "distance": 0.9890539646148682,
+        "similarity": 0.010946035385131836,
         "metadata": {
-          "strategy": "sentence",
-          "starts_sentence": true,
-          "end": 213,
           "index": 0,
           "start": 0,
-          "parent_id": "02_cancellation_rescheduling"
+          "strategy": "fixed_overlap",
+          "starts_sentence": true,
+          "parent_id": "02_cancellation_rescheduling",
+          "end": 319
         }
       }
     ]

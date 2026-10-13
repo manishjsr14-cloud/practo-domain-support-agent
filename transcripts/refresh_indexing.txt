@@ -1,0 +1,27 @@
+Model: sentence-transformers/all-MiniLM-L6-v2
+Model revision: c9745ed1d9f207416be6d2e6f8de32d1f16199bf
+Runtime environment: {"ANONYMIZED_TELEMETRY": "False", "CREWAI_DISABLE_TELEMETRY": "true", "HF_HUB_OFFLINE": "1", "OTEL_SDK_DISABLED": "true", "TRANSFORMERS_OFFLINE": "1"}
+Fixed chunk size: 320 characters
+Fixed overlap: 80 characters
+Sentence chunk size: 2 sentences
+Parent document count: 12
+Corpus fingerprint: 3c4da873972cdda4b844f9b5e79abe06acc0201a64418c88835cc0be0141461f
+First build counts: {"fixed_overlap": 24, "sentence": 25}
+Repeated upsert counts: {"fixed_overlap": 24, "sentence": 25}
+Repeated upsert preserved collection sizes: True
+Cosine similarity = 1 - cosine distance
+Sample query: What is the cancellation and rescheduling window?
+Collection: practo_fixed_overlap
+  1: 02_cancellation_rescheduling distance=0.395958 similarity=0.604042
+     Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund. A rescheduled appointment receives a new confirmed time, while a cancelled appointment releases its slot.
+  2: 02_cancellation_rescheduling distance=0.479983 similarity=0.520017
+     receives a new confirmed time, while a cancelled appointment releases its slot. Reception explains any applicable charge before accepting a late change.
+  3: 01_appointment_booking distance=0.642359 similarity=0.357641
+     reserved until confirmation is issued. Keep the appointment record ID to check its status or request a change without sharing personal details in support chat.
+Collection: practo_sentence
+  1: 02_cancellation_rescheduling distance=0.434497 similarity=0.565503
+     A rescheduled appointment receives a new confirmed time, while a cancelled appointment releases its slot. Reception explains any applicable charge before accepting a late change.
+  2: 02_cancellation_rescheduling distance=0.466710 similarity=0.533290
+     Cancel or reschedule an appointment at least 24 hours before its confirmed start time through the portal or reception. After that window, contact reception because the portal cannot guarantee a change or a refund.
+  3: 01_appointment_booking distance=0.678803 similarity=0.321197
+     A requested slot is not reserved until confirmation is issued. Keep the appointment record ID to check its status or request a change without sharing personal details in support chat.

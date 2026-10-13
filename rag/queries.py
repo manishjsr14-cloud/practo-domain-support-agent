@@ -13,6 +13,12 @@ DEMO_QUERIES = [
      "relevant_parents": ["10_follow_up_discount"]},
     {"id": "q06", "query": "How do I submit an insurance reimbursement claim?",
      "relevant_parents": ["04_insurance_claims"]},
+    {"id": "q07", "query": "My doctor asked me to come back, do I have to pay the full price again?",
+     "relevant_parents": ["10_follow_up_discount"]},
+    {"id": "q08", "query": "What will I pay for a home visit by a cardiologist?",
+     "relevant_parents": ["12_home_visits", "03_consultation_fees"]},
+    {"id": "q09", "query": "Can I get a second opinion over a video call?",
+     "relevant_parents": ["11_second_opinion", "07_telemedicine"]},
 ]
 
 CALIBRATION_IN_SCOPE = [

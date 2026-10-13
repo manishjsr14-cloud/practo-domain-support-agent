@@ -1,19 +1,20 @@
 {
   "averages": {
     "fixed_overlap": {
-      "precision": 0.5,
-      "recall": 1.0
+      "precision": 0.5555555555555556,
+      "recall": 0.8888888888888888
     },
     "sentence": {
-      "precision": 0.5,
-      "recall": 1.0
+      "precision": 0.5185185185185185,
+      "recall": 0.8888888888888888
     }
   },
   "fingerprint": "3c4da873972cdda4b844f9b5e79abe06acc0201a64418c88835cc0be0141461f",
   "markdown_tables": {
-    "fixed_overlap": "| Query | Labelled parent documents | Retrieved parent documents (deduped) | Precision arithmetic | Recall arithmetic |\n|---|---|---|---|---|\n| q01 | 01_appointment_booking | 01_appointment_booking, 02_cancellation_rescheduling | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |\n| q02 | 02_cancellation_rescheduling | 02_cancellation_rescheduling, 01_appointment_booking | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |\n| q03 | 03_consultation_fees | 03_consultation_fees, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |\n| q04 | 06_lab_turnaround | 06_lab_turnaround, 03_consultation_fees | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |\n| q05 | 10_follow_up_discount | 10_follow_up_discount, 02_cancellation_rescheduling | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |\n| q06 | 04_insurance_claims | 04_insurance_claims, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |\n| Macro average | | | 0.500000 | 1.000000 |",
-    "sentence": "| Query | Labelled parent documents | Retrieved parent documents (deduped) | Precision arithmetic | Recall arithmetic |\n|---|---|---|---|---|\n| q01 | 01_appointment_booking | 01_appointment_booking, 02_cancellation_rescheduling | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |\n| q02 | 02_cancellation_rescheduling | 02_cancellation_rescheduling, 01_appointment_booking | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |\n| q03 | 03_consultation_fees | 03_consultation_fees, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |\n| q04 | 06_lab_turnaround | 06_lab_turnaround, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |\n| q05 | 10_follow_up_discount | 10_follow_up_discount, 12_home_visits | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |\n| q06 | 04_insurance_claims | 04_insurance_claims, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |\n| Macro average | | | 0.500000 | 1.000000 |"
+    "fixed_overlap": "| Query | Labelled parent documents | Retrieved parent documents (deduped) | Precision arithmetic | Recall arithmetic |\n|---|---|---|---|---|\n| q01 | 01_appointment_booking | 01_appointment_booking, 02_cancellation_rescheduling | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |\n| q02 | 02_cancellation_rescheduling | 02_cancellation_rescheduling, 01_appointment_booking | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |\n| q03 | 03_consultation_fees | 03_consultation_fees, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |\n| q04 | 06_lab_turnaround | 06_lab_turnaround, 03_consultation_fees | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |\n| q05 | 10_follow_up_discount | 10_follow_up_discount, 02_cancellation_rescheduling | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |\n| q06 | 04_insurance_claims | 04_insurance_claims, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |\n| q07 | 10_follow_up_discount | 03_consultation_fees, 11_second_opinion | 0 relevant of 2 retrieved = 0.000000 | 0 retrieved of 1 relevant = 0.000000 |\n| q08 | 03_consultation_fees, 12_home_visits | 03_consultation_fees, 12_home_visits | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |\n| q09 | 07_telemedicine, 11_second_opinion | 11_second_opinion, 07_telemedicine | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |\n| Macro average | | | 0.555556 | 0.888889 |",
+    "sentence": "| Query | Labelled parent documents | Retrieved parent documents (deduped) | Precision arithmetic | Recall arithmetic |\n|---|---|---|---|---|\n| q01 | 01_appointment_booking | 01_appointment_booking, 02_cancellation_rescheduling | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |\n| q02 | 02_cancellation_rescheduling | 02_cancellation_rescheduling, 01_appointment_booking | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |\n| q03 | 03_consultation_fees | 03_consultation_fees, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |\n| q04 | 06_lab_turnaround | 06_lab_turnaround, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |\n| q05 | 10_follow_up_discount | 10_follow_up_discount, 12_home_visits | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |\n| q06 | 04_insurance_claims | 04_insurance_claims, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |\n| q07 | 10_follow_up_discount | 11_second_opinion, 05_prescription_refills, 03_consultation_fees | 0 relevant of 3 retrieved = 0.000000 | 0 retrieved of 1 relevant = 0.000000 |\n| q08 | 03_consultation_fees, 12_home_visits | 03_consultation_fees, 12_home_visits, 01_appointment_booking | 2 relevant of 3 retrieved = 0.666667 | 2 retrieved of 2 relevant = 1.000000 |\n| q09 | 07_telemedicine, 11_second_opinion | 11_second_opinion, 07_telemedicine | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |\n| Macro average | | | 0.518519 | 0.888889 |"
   },
+  "multi_parent_query_count": 2,
   "queries": [
     {
       "id": "q01",
@@ -356,11 +357,191 @@
           ]
         }
       }
+    },
+    {
+      "id": "q07",
+      "query": "My doctor asked me to come back, do I have to pay the full price again?",
+      "relevant_parents": [
+        "10_follow_up_discount"
+      ],
+      "strategies": {
+        "fixed_overlap": {
+          "numerator": 0,
+          "precision": 0.0,
+          "precision_arithmetic": "0 relevant of 2 retrieved = 0.000000",
+          "precision_denominator": 2,
+          "recall": 0.0,
+          "recall_arithmetic": "0 retrieved of 1 relevant = 0.000000",
+          "recall_denominator": 1,
+          "relevant_parents": [
+            "10_follow_up_discount"
+          ],
+          "relevant_retrieved_parents": [],
+          "retrieved_chunk_ids": [
+            "03_consultation_fees:fixed_overlap:000",
+            "03_consultation_fees:fixed_overlap:001",
+            "11_second_opinion:fixed_overlap:001"
+          ],
+          "retrieved_parents": [
+            "03_consultation_fees",
+            "11_second_opinion"
+          ]
+        },
+        "sentence": {
+          "numerator": 0,
+          "precision": 0.0,
+          "precision_arithmetic": "0 relevant of 3 retrieved = 0.000000",
+          "precision_denominator": 3,
+          "recall": 0.0,
+          "recall_arithmetic": "0 retrieved of 1 relevant = 0.000000",
+          "recall_denominator": 1,
+          "relevant_parents": [
+            "10_follow_up_discount"
+          ],
+          "relevant_retrieved_parents": [],
+          "retrieved_chunk_ids": [
+            "11_second_opinion:sentence:001",
+            "05_prescription_refills:sentence:001",
+            "03_consultation_fees:sentence:001"
+          ],
+          "retrieved_parents": [
+            "11_second_opinion",
+            "05_prescription_refills",
+            "03_consultation_fees"
+          ]
+        }
+      }
+    },
+    {
+      "id": "q08",
+      "query": "What will I pay for a home visit by a cardiologist?",
+      "relevant_parents": [
+        "03_consultation_fees",
+        "12_home_visits"
+      ],
+      "strategies": {
+        "fixed_overlap": {
+          "numerator": 2,
+          "precision": 1.0,
+          "precision_arithmetic": "2 relevant of 2 retrieved = 1.000000",
+          "precision_denominator": 2,
+          "recall": 1.0,
+          "recall_arithmetic": "2 retrieved of 2 relevant = 1.000000",
+          "recall_denominator": 2,
+          "relevant_parents": [
+            "03_consultation_fees",
+            "12_home_visits"
+          ],
+          "relevant_retrieved_parents": [
+            "03_consultation_fees",
+            "12_home_visits"
+          ],
+          "retrieved_chunk_ids": [
+            "03_consultation_fees:fixed_overlap:000",
+            "12_home_visits:fixed_overlap:000",
+            "12_home_visits:fixed_overlap:001"
+          ],
+          "retrieved_parents": [
+            "03_consultation_fees",
+            "12_home_visits"
+          ]
+        },
+        "sentence": {
+          "numerator": 2,
+          "precision": 0.6666666666666666,
+          "precision_arithmetic": "2 relevant of 3 retrieved = 0.666667",
+          "precision_denominator": 3,
+          "recall": 1.0,
+          "recall_arithmetic": "2 retrieved of 2 relevant = 1.000000",
+          "recall_denominator": 2,
+          "relevant_parents": [
+            "03_consultation_fees",
+            "12_home_visits"
+          ],
+          "relevant_retrieved_parents": [
+            "03_consultation_fees",
+            "12_home_visits"
+          ],
+          "retrieved_chunk_ids": [
+            "03_consultation_fees:sentence:001",
+            "12_home_visits:sentence:001",
+            "01_appointment_booking:sentence:000"
+          ],
+          "retrieved_parents": [
+            "03_consultation_fees",
+            "12_home_visits",
+            "01_appointment_booking"
+          ]
+        }
+      }
+    },
+    {
+      "id": "q09",
+      "query": "Can I get a second opinion over a video call?",
+      "relevant_parents": [
+        "07_telemedicine",
+        "11_second_opinion"
+      ],
+      "strategies": {
+        "fixed_overlap": {
+          "numerator": 2,
+          "precision": 1.0,
+          "precision_arithmetic": "2 relevant of 2 retrieved = 1.000000",
+          "precision_denominator": 2,
+          "recall": 1.0,
+          "recall_arithmetic": "2 retrieved of 2 relevant = 1.000000",
+          "recall_denominator": 2,
+          "relevant_parents": [
+            "07_telemedicine",
+            "11_second_opinion"
+          ],
+          "relevant_retrieved_parents": [
+            "07_telemedicine",
+            "11_second_opinion"
+          ],
+          "retrieved_chunk_ids": [
+            "11_second_opinion:fixed_overlap:000",
+            "11_second_opinion:fixed_overlap:001",
+            "07_telemedicine:fixed_overlap:000"
+          ],
+          "retrieved_parents": [
+            "11_second_opinion",
+            "07_telemedicine"
+          ]
+        },
+        "sentence": {
+          "numerator": 2,
+          "precision": 1.0,
+          "precision_arithmetic": "2 relevant of 2 retrieved = 1.000000",
+          "precision_denominator": 2,
+          "recall": 1.0,
+          "recall_arithmetic": "2 retrieved of 2 relevant = 1.000000",
+          "recall_denominator": 2,
+          "relevant_parents": [
+            "07_telemedicine",
+            "11_second_opinion"
+          ],
+          "relevant_retrieved_parents": [
+            "07_telemedicine",
+            "11_second_opinion"
+          ],
+          "retrieved_chunk_ids": [
+            "11_second_opinion:sentence:001",
+            "11_second_opinion:sentence:000",
+            "07_telemedicine:sentence:000"
+          ],
+          "retrieved_parents": [
+            "11_second_opinion",
+            "07_telemedicine"
+          ]
+        }
+      }
     }
   ],
-  "query_count": 6,
-  "recommendation": "Across 6 hand-labelled queries, fixed_overlap achieved macro precision 0.500000 and macro recall 1.000000, while sentence achieved macro precision 0.500000 and macro recall 1.000000. Deploy sentence because it has equal macro recall and precision, with complete-sentence boundaries. This small policy sample supports a local choice and does not establish universal retrieval quality.",
-  "recommended_strategy": "sentence",
-  "selection_reason": "equal macro recall and precision, with complete-sentence boundaries",
+  "query_count": 9,
+  "recommendation": "Across 9 hand-labelled queries, fixed_overlap achieved macro precision 0.555556 and macro recall 0.888889, while sentence achieved macro precision 0.518519 and macro recall 0.888889. Deploy fixed_overlap because it has equal macro recall and higher macro precision. This small policy sample supports a local choice and does not establish universal retrieval quality.",
+  "recommended_strategy": "fixed_overlap",
+  "selection_reason": "equal macro recall and higher macro precision",
+  "single_parent_query_count": 7,
   "top_k_chunks": 3
 }

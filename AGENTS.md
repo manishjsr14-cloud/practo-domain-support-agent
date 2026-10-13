@@ -256,7 +256,7 @@ The README must:
 
 | Part | Status | Notes |
 |---|---|---|
-| Part 1 | completed | Tasks 1-5 verified; sentence chunks selected after tied metrics; tests and fresh offline workflow pass. All real evidence is in transcripts/. Public GitHub repository created; see README for the link. Model download script not exercised because checkpoint was cached. |
+| Part 1 | completed; evidence refresh in progress | Baseline pipeline refreshed and existing tests passed. Fixed q07-q09 labels added; unchanged selection rule now recommends fixed overlap. Calibration and demo rerun; expanded evaluation/generation tests pass. Near-topic stress evidence and final offline checks pending. No KB edits or later-Part work. Public repository link is in README; model download script remains unexercised because checkpoint was cached. |
 | Part 2 | not started | |
 | Part 3 | not started | |
 | Part 4 | not started | |

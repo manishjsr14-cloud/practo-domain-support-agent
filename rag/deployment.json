@@ -2,16 +2,16 @@
   "fingerprint": "3c4da873972cdda4b844f9b5e79abe06acc0201a64418c88835cc0be0141461f",
   "metrics": {
     "fixed_overlap": {
-      "precision": 0.5,
-      "recall": 1.0
+      "precision": 0.5555555555555556,
+      "recall": 0.8888888888888888
     },
     "sentence": {
-      "precision": 0.5,
-      "recall": 1.0
+      "precision": 0.5185185185185185,
+      "recall": 0.8888888888888888
     }
   },
-  "query_count": 6,
-  "selection_reason": "equal macro recall and precision, with complete-sentence boundaries",
-  "strategy": "sentence",
+  "query_count": 9,
+  "selection_reason": "equal macro recall and higher macro precision",
+  "strategy": "fixed_overlap",
   "top_k_chunks": 3
 }

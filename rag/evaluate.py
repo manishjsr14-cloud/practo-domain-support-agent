@@ -75,6 +75,8 @@ def _markdown_table(rows: list[dict], strategy: str, averages: dict) -> str:
 def _print_report(report: dict) -> None:
     print("Parent-document evaluation: retrieve chunks, map parents, deduplicate, score")
     print(f"Queries: {report['query_count']}; top-k chunks: {report['top_k_chunks']}")
+    print(f"Single-parent queries: {report['single_parent_query_count']}; "
+          f"multi-parent queries: {report['multi_parent_query_count']}")
     print("No similarity filtering is applied during evaluation")
     print(f"Index fingerprint: {report['fingerprint']}")
     print("\n| Query | fixed_overlap precision | fixed_overlap recall "
@@ -142,6 +144,8 @@ def run_evaluation(index: RAGIndex, persist: bool = True) -> dict:
         "fingerprint": fingerprint,
         "top_k_chunks": TOP_K,
         "query_count": len(rows),
+        "single_parent_query_count": sum(len(row["relevant_parents"]) == 1 for row in rows),
+        "multi_parent_query_count": sum(len(row["relevant_parents"]) > 1 for row in rows),
         "queries": rows,
         "averages": averages,
         "recommended_strategy": selected,

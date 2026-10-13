@@ -1,0 +1,83 @@
+Parent-document evaluation: retrieve chunks, map parents, deduplicate, score
+Queries: 6; top-k chunks: 3
+No similarity filtering is applied during evaluation
+Index fingerprint: 3c4da873972cdda4b844f9b5e79abe06acc0201a64418c88835cc0be0141461f
+
+| Query | fixed_overlap precision | fixed_overlap recall | sentence precision | sentence recall |
+|---|---|---|---|---|
+| q01 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q02 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q03 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q04 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q05 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q06 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| Macro average | 0.500000 | 1.000000 | 0.500000 | 1.000000 |
+
+q01: How do I book an appointment and know that my slot is confirmed?
+Labelled relevant parents: 01_appointment_booking
+fixed_overlap retrieved chunks: 01_appointment_booking:fixed_overlap:000, 01_appointment_booking:fixed_overlap:001, 02_cancellation_rescheduling:fixed_overlap:000
+fixed_overlap deduped parents: 01_appointment_booking, 02_cancellation_rescheduling
+sentence retrieved chunks: 01_appointment_booking:sentence:001, 01_appointment_booking:sentence:000, 02_cancellation_rescheduling:sentence:000
+sentence deduped parents: 01_appointment_booking, 02_cancellation_rescheduling
+
+q02: What is the cancellation and rescheduling window?
+Labelled relevant parents: 02_cancellation_rescheduling
+fixed_overlap retrieved chunks: 02_cancellation_rescheduling:fixed_overlap:000, 02_cancellation_rescheduling:fixed_overlap:001, 01_appointment_booking:fixed_overlap:001
+fixed_overlap deduped parents: 02_cancellation_rescheduling, 01_appointment_booking
+sentence retrieved chunks: 02_cancellation_rescheduling:sentence:001, 02_cancellation_rescheduling:sentence:000, 01_appointment_booking:sentence:001
+sentence deduped parents: 02_cancellation_rescheduling, 01_appointment_booking
+
+q03: What are the consultation fees for each specialty?
+Labelled relevant parents: 03_consultation_fees
+fixed_overlap retrieved chunks: 03_consultation_fees:fixed_overlap:001, 03_consultation_fees:fixed_overlap:000, 11_second_opinion:fixed_overlap:001
+fixed_overlap deduped parents: 03_consultation_fees, 11_second_opinion
+sentence retrieved chunks: 03_consultation_fees:sentence:000, 03_consultation_fees:sentence:001, 11_second_opinion:sentence:001
+sentence deduped parents: 03_consultation_fees, 11_second_opinion
+
+q04: How long do routine and specialized lab test reports take?
+Labelled relevant parents: 06_lab_turnaround
+fixed_overlap retrieved chunks: 06_lab_turnaround:fixed_overlap:000, 06_lab_turnaround:fixed_overlap:001, 03_consultation_fees:fixed_overlap:001
+fixed_overlap deduped parents: 06_lab_turnaround, 03_consultation_fees
+sentence retrieved chunks: 06_lab_turnaround:sentence:000, 06_lab_turnaround:sentence:001, 11_second_opinion:sentence:001
+sentence deduped parents: 06_lab_turnaround, 11_second_opinion
+
+q05: When does a follow-up visit qualify for a discount?
+Labelled relevant parents: 10_follow_up_discount
+fixed_overlap retrieved chunks: 10_follow_up_discount:fixed_overlap:001, 10_follow_up_discount:fixed_overlap:000, 02_cancellation_rescheduling:fixed_overlap:001
+fixed_overlap deduped parents: 10_follow_up_discount, 02_cancellation_rescheduling
+sentence retrieved chunks: 10_follow_up_discount:sentence:001, 10_follow_up_discount:sentence:000, 12_home_visits:sentence:001
+sentence deduped parents: 10_follow_up_discount, 12_home_visits
+
+q06: How do I submit an insurance reimbursement claim?
+Labelled relevant parents: 04_insurance_claims
+fixed_overlap retrieved chunks: 04_insurance_claims:fixed_overlap:000, 04_insurance_claims:fixed_overlap:001, 11_second_opinion:fixed_overlap:001
+fixed_overlap deduped parents: 04_insurance_claims, 11_second_opinion
+sentence retrieved chunks: 04_insurance_claims:sentence:000, 04_insurance_claims:sentence:001, 11_second_opinion:sentence:001
+sentence deduped parents: 04_insurance_claims, 11_second_opinion
+
+Markdown results table: fixed_overlap
+| Query | Labelled parent documents | Retrieved parent documents (deduped) | Precision arithmetic | Recall arithmetic |
+|---|---|---|---|---|
+| q01 | 01_appointment_booking | 01_appointment_booking, 02_cancellation_rescheduling | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q02 | 02_cancellation_rescheduling | 02_cancellation_rescheduling, 01_appointment_booking | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q03 | 03_consultation_fees | 03_consultation_fees, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q04 | 06_lab_turnaround | 06_lab_turnaround, 03_consultation_fees | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q05 | 10_follow_up_discount | 10_follow_up_discount, 02_cancellation_rescheduling | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q06 | 04_insurance_claims | 04_insurance_claims, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| Macro average | | | 0.500000 | 1.000000 |
+
+Markdown results table: sentence
+| Query | Labelled parent documents | Retrieved parent documents (deduped) | Precision arithmetic | Recall arithmetic |
+|---|---|---|---|---|
+| q01 | 01_appointment_booking | 01_appointment_booking, 02_cancellation_rescheduling | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q02 | 02_cancellation_rescheduling | 02_cancellation_rescheduling, 01_appointment_booking | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q03 | 03_consultation_fees | 03_consultation_fees, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q04 | 06_lab_turnaround | 06_lab_turnaround, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q05 | 10_follow_up_discount | 10_follow_up_discount, 12_home_visits | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q06 | 04_insurance_claims | 04_insurance_claims, 11_second_opinion | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| Macro average | | | 0.500000 | 1.000000 |
+
+Recommendation: Across 6 hand-labelled queries, fixed_overlap achieved macro precision 0.500000 and macro recall 1.000000, while sentence achieved macro precision 0.500000 and macro recall 1.000000. Deploy sentence because it has equal macro recall and precision, with complete-sentence boundaries. This small policy sample supports a local choice and does not establish universal retrieval quality.
+
+Saved evaluation report: transcripts\task5_evaluation.json
+Saved deployment choice: rag\deployment.json
