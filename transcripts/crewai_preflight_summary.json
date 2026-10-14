@@ -1,0 +1,16 @@
+{
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "crewai_version": "1.15.28",
+  "release_source": "https://pypi.org/pypi/crewai/json",
+  "environment_directory": ".runtime\\crewai-preflight-20261014",
+  "combined_install_exit_code": 1,
+  "standalone_install_exit_code": 0,
+  "pip_check_exit_code": 0,
+  "freeze_exit_code": 0,
+  "import_exit_code": 0,
+  "requirements_sha256": "7c0d276b81b9417d6cfe308071b310103bb1cdf2260fea6273ccf9a868620b46",
+  "requirements_unchanged": true,
+  "part2_implemented": false,
+  "llm_requests_or_kickoff_performed": false,
+  "combined_install_is_distinct_from_standalone_check": true
+}

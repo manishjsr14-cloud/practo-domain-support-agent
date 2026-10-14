@@ -1,0 +1,22 @@
+[
+  {
+    "id": "ho01",
+    "query": "My refill request has been submitted; does that mean I am guaranteed the same medicine?",
+    "relevant_parents": ["05_prescription_refills"]
+  },
+  {
+    "id": "ho02",
+    "query": "The clinic cancelled my appointment with hardly any notice. What refund can I expect, and when?",
+    "relevant_parents": ["02_cancellation_rescheduling"]
+  },
+  {
+    "id": "ho03",
+    "query": "Can a child use the video service from home instead of visiting the clinic?",
+    "relevant_parents": ["07_telemedicine"]
+  },
+  {
+    "id": "ho04",
+    "query": "Can I arrange a home appointment and use my discounted return visit for its travel charge?",
+    "relevant_parents": ["12_home_visits", "10_follow_up_discount"]
+  }
+]

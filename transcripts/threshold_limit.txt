@@ -1,0 +1,17 @@
+Current-corpus threshold separation check
+fixed_overlap
+Weakest calibrated in-scope query: What documents are needed for an insurance claim?
+In-scope cosine: 0.440953672
+Unsupported query: What are the clinic's opening hours on Sundays?
+Unsupported cosine: 0.486783445
+Unsupported exceeds weakest in-scope: True
+Separating threshold: Calibration clusters overlap; no separating threshold exists
+sentence
+Weakest calibrated in-scope query: What documents are needed for an insurance claim?
+In-scope cosine: 0.486387312
+Unsupported query: What are the clinic's opening hours on Sundays?
+Unsupported cosine: 0.524604023
+Unsupported exceeds weakest in-scope: True
+Separating threshold: Calibration clusters overlap; no separating threshold exists
+A threshold that rejects the unsupported Sunday query must also reject the weaker insurance query.
+Calibration file unchanged: True

@@ -39,9 +39,16 @@ test_new_booking_and_existing_booking_distinction_is_required (test_part1.Knowle
 test_sentence_limits_are_still_enforced (test_part1.KnowledgeBaseTests.test_sentence_limits_are_still_enforced) ... ok
 test_standard_fee_outside_dataset_range_is_rejected (test_part1.KnowledgeBaseTests.test_standard_fee_outside_dataset_range_is_rejected) ... ok
 test_topic_title_cannot_replace_privacy_policy_content (test_part1.KnowledgeBaseTests.test_topic_title_cannot_replace_privacy_policy_content) ... ok
+test_group_aggregation_deduplicates_parents_before_macro_averages (test_retrieval_comparison.ComparisonTests.test_group_aggregation_deduplicates_parents_before_macro_averages) ... ok
+test_nonpersisting_comparison_returns_and_prints_without_writing_reports (test_retrieval_comparison.ComparisonTests.test_nonpersisting_comparison_returns_and_prints_without_writing_reports) ... ok
+test_output_cannot_overwrite_calibration_before_measuring (test_retrieval_comparison.ComparisonTests.test_output_cannot_overwrite_calibration_before_measuring) ... ok
+test_plain_baseline_equals_direct_chroma_and_preserves_anchor (test_retrieval_comparison.ComparisonTests.test_plain_baseline_equals_direct_chroma_and_preserves_anchor) ... ok
+test_saved_report_schema_and_arithmetic_do_not_require_target_scores (test_retrieval_comparison.ComparisonTests.test_saved_report_schema_and_arithmetic_do_not_require_target_scores) ... ok
+test_exact_frozen_questions_and_labels_are_isolated (test_retrieval_comparison.HeldoutTests.test_exact_frozen_questions_and_labels_are_isolated) ... ok
+test_frozen_input_changes_are_rejected (test_retrieval_comparison.HeldoutTests.test_frozen_input_changes_are_rejected) ... ok
 test_real_cli_reports_both_strategies_without_changing_calibration (test_stress_threshold.StressThresholdTests.test_real_cli_reports_both_strategies_without_changing_calibration) ... ok
 
 ----------------------------------------------------------------------
-Ran 38 tests in 47.264s
+Ran 45 tests in 41.451s
 
 OK

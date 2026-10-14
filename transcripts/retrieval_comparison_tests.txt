@@ -1,0 +1,16 @@
+test_group_aggregation_deduplicates_parents_before_macro_averages (tests.test_retrieval_comparison.ComparisonTests.test_group_aggregation_deduplicates_parents_before_macro_averages) ... ok
+test_nonpersisting_comparison_returns_and_prints_without_writing_reports (tests.test_retrieval_comparison.ComparisonTests.test_nonpersisting_comparison_returns_and_prints_without_writing_reports) ... ok
+test_output_cannot_overwrite_calibration_before_measuring (tests.test_retrieval_comparison.ComparisonTests.test_output_cannot_overwrite_calibration_before_measuring) ... ok
+test_plain_baseline_equals_direct_chroma_and_preserves_anchor (tests.test_retrieval_comparison.ComparisonTests.test_plain_baseline_equals_direct_chroma_and_preserves_anchor) ... C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\.venv\Lib\site-packages\chromadb\api\models\CollectionCommon.py:147: DeprecationWarning: legacy embedding function config
+  return load_collection_configuration_from_json(self._model.configuration_json)
+C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\.venv\Lib\site-packages\chromadb\api\models\CollectionCommon.py:147: DeprecationWarning: legacy embedding function config
+  return load_collection_configuration_from_json(self._model.configuration_json)
+ok
+test_saved_report_schema_and_arithmetic_do_not_require_target_scores (tests.test_retrieval_comparison.ComparisonTests.test_saved_report_schema_and_arithmetic_do_not_require_target_scores) ... ok
+test_exact_frozen_questions_and_labels_are_isolated (tests.test_retrieval_comparison.HeldoutTests.test_exact_frozen_questions_and_labels_are_isolated) ... ok
+test_frozen_input_changes_are_rejected (tests.test_retrieval_comparison.HeldoutTests.test_frozen_input_changes_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 12.570s
+
+OK

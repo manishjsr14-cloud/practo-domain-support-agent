@@ -1,0 +1,26 @@
+frozen before first comparison measurement
+Labels reviewed against the unchanged knowledge base before measurement
+Corpus fingerprint: 20b708cbde2d997bc9d1eab11304bd12a6c6d73d4a1105ed9d6c1113bf04f812
+Retrieval fingerprint: 26fa037347d761648207b3671ae7341a470dd6ea38f459d73693622311659c0c
+rag/index.py: 11cf56dff0eae0a1a83185cf117d74f32d50c4d5f6d8b8fe7c39e96aefe6315f
+rag/retrieval.py: 6b1c58e6bd9ca6300331d51a33dc9ca850b5ca809965c6de96225187dec77968
+rag/generate.py: 2ab400123eb244a52f3cb83378f4d24c4e8a367d63ba8f78d6273ede48d9e5a7
+rag/chunking.py: f49b73198883ee05242eb4418144584b18d80a4428ff7bc93b39ccdb8ee22078
+rag/queries.py: 0256e1e0a27c0f0731e73f135091fd2b4133750bc13e1f64bf336a0d5ea3ae8b
+rag/heldout_queries.json: 9420ec6119f044c71e88b4fb790fd15b53396855bad3b433523a8f138d0d6829
+kb/01_appointment_booking.md: cdf0b9516dac0b404fc84cd5b2ce21d7d5c405d7157fd94d7527f36896ada9d4
+kb/02_cancellation_rescheduling.md: 806e8c9f735f5dc509fa18a2acbb874feda04412452c92d74a7aa3ed62be831f
+kb/03_consultation_fees.md: d9d7d28f69ceedf55b0d8972ce78fb7d25d3ba71a494aeba7feceb1bca8f68a4
+kb/04_insurance_claims.md: 2e909033e739497f1f83ea2645ae0cc1689a64da669b22a447b74a0f94d2913b
+kb/05_prescription_refills.md: 4e860c608b9f82b624c462742fba181c5f806e1410ad47a7b587475d35647ead
+kb/06_lab_turnaround.md: 071eb77dddd7903de75b2e12066ae6738b4dfc5212b723866d05262a6a9729c3
+kb/07_telemedicine.md: d82647ff68a714966263c1c3a0345555f9ed89a8c732b9cb6718fe87892143dd
+kb/08_emergency_protocol.md: cc78b9f97943d1587275f8b41e7b46f58bda71386dfd6ef6b6e373478a1ed112
+kb/09_patient_privacy.md: 8cba6f4df04339435c4d5dcc161c51f8db390170530dfc5e91567d00f4acb997
+kb/10_follow_up_discount.md: b0b8f80203b34bcd932688e8709f9989a509a4345dcf3347ae9928c53fe77aa5
+kb/11_second_opinion.md: ee5fdbef6637e96e489c06801341079e4f16b16c8e7e0ebb040b7eca27d1382b
+kb/12_home_visits.md: 7b969d00bfa9e4d88ed7607c73eaff34ee4b8ae0899be010c6e9abdd131d5fe4
+ho01: My refill request has been submitted; does that mean I am guaranteed the same medicine? | labels=['05_prescription_refills']
+ho02: The clinic cancelled my appointment with hardly any notice. What refund can I expect, and when? | labels=['02_cancellation_rescheduling']
+ho03: Can a child use the video service from home instead of visiting the clinic? | labels=['07_telemedicine']
+ho04: Can I arrange a home appointment and use my discounted return visit for its travel charge? | labels=['12_home_visits', '10_follow_up_discount']

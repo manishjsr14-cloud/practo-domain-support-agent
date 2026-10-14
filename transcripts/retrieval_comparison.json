@@ -1,0 +1,2580 @@
+{
+  "collections": {
+    "fixed_overlap": "practo_fixed_overlap",
+    "sentence": "practo_sentence"
+  },
+  "corpus_fingerprint": "20b708cbde2d997bc9d1eab11304bd12a6c6d73d4a1105ed9d6c1113bf04f812",
+  "freeze_manifest": "transcripts/retrieval_comparison_freeze.json",
+  "groups": {
+    "demo": {
+      "averages": {
+        "fixed_overlap": {
+          "custom": {
+            "precision": 0.8888888888888888,
+            "recall": 1.0
+          },
+          "raw_cosine": {
+            "precision": 0.7037037037037037,
+            "recall": 1.0
+          }
+        },
+        "sentence": {
+          "custom": {
+            "precision": 0.9444444444444444,
+            "recall": 1.0
+          },
+          "raw_cosine": {
+            "precision": 0.7592592592592593,
+            "recall": 1.0
+          }
+        }
+      },
+      "comparison": {
+        "fixed_overlap": {
+          "custom_minus_raw": {
+            "precision": 0.18518518518518512,
+            "recall": 0.0
+          },
+          "outcome": "custom higher on at least one metric and no lower on the other"
+        },
+        "sentence": {
+          "custom_minus_raw": {
+            "precision": 0.18518518518518512,
+            "recall": 0.0
+          },
+          "outcome": "custom higher on at least one metric and no lower on the other"
+        }
+      },
+      "queries": [
+        {
+          "id": "q01",
+          "query": "How do I book an appointment and know that my slot is confirmed?",
+          "relevant_parents": [
+            "01_appointment_booking"
+          ],
+          "strategies": {
+            "fixed_overlap": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "01_appointment_booking:fixed_overlap:001",
+                    "distance": 0.33566683530807495,
+                    "parent_id": "01_appointment_booking",
+                    "similarity": 0.664333164691925
+                  },
+                  {
+                    "chunk_id": "01_appointment_booking:fixed_overlap:000",
+                    "distance": 0.3648015260696411,
+                    "parent_id": "01_appointment_booking",
+                    "similarity": 0.6351984739303589
+                  },
+                  {
+                    "chunk_id": "01_appointment_booking:fixed_overlap:002",
+                    "distance": 0.35755670070648193,
+                    "parent_id": "01_appointment_booking",
+                    "similarity": 0.6424432992935181
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "01_appointment_booking"
+                ],
+                "relevant_retrieved_parents": [
+                  "01_appointment_booking"
+                ],
+                "retrieved_chunk_ids": [
+                  "01_appointment_booking:fixed_overlap:001",
+                  "01_appointment_booking:fixed_overlap:000",
+                  "01_appointment_booking:fixed_overlap:002"
+                ],
+                "retrieved_parents": [
+                  "01_appointment_booking"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "01_appointment_booking:fixed_overlap:001",
+                    "distance": 0.33566683530807495,
+                    "parent_id": "01_appointment_booking",
+                    "similarity": 0.664333164691925
+                  },
+                  {
+                    "chunk_id": "01_appointment_booking:fixed_overlap:002",
+                    "distance": 0.35755670070648193,
+                    "parent_id": "01_appointment_booking",
+                    "similarity": 0.6424432992935181
+                  },
+                  {
+                    "chunk_id": "01_appointment_booking:fixed_overlap:000",
+                    "distance": 0.3648015260696411,
+                    "parent_id": "01_appointment_booking",
+                    "similarity": 0.6351984739303589
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "01_appointment_booking"
+                ],
+                "relevant_retrieved_parents": [
+                  "01_appointment_booking"
+                ],
+                "retrieved_chunk_ids": [
+                  "01_appointment_booking:fixed_overlap:001",
+                  "01_appointment_booking:fixed_overlap:002",
+                  "01_appointment_booking:fixed_overlap:000"
+                ],
+                "retrieved_parents": [
+                  "01_appointment_booking"
+                ]
+              }
+            },
+            "sentence": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "01_appointment_booking:sentence:001",
+                    "distance": 0.25494635105133057,
+                    "parent_id": "01_appointment_booking",
+                    "similarity": 0.7450536489486694
+                  },
+                  {
+                    "chunk_id": "01_appointment_booking:sentence:000",
+                    "distance": 0.3889375925064087,
+                    "parent_id": "01_appointment_booking",
+                    "similarity": 0.6110624074935913
+                  },
+                  {
+                    "chunk_id": "01_appointment_booking:sentence:002",
+                    "distance": 0.39106088876724243,
+                    "parent_id": "01_appointment_booking",
+                    "similarity": 0.6089391112327576
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "01_appointment_booking"
+                ],
+                "relevant_retrieved_parents": [
+                  "01_appointment_booking"
+                ],
+                "retrieved_chunk_ids": [
+                  "01_appointment_booking:sentence:001",
+                  "01_appointment_booking:sentence:000",
+                  "01_appointment_booking:sentence:002"
+                ],
+                "retrieved_parents": [
+                  "01_appointment_booking"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "01_appointment_booking:sentence:001",
+                    "distance": 0.25494635105133057,
+                    "parent_id": "01_appointment_booking",
+                    "similarity": 0.7450536489486694
+                  },
+                  {
+                    "chunk_id": "01_appointment_booking:sentence:000",
+                    "distance": 0.3889375925064087,
+                    "parent_id": "01_appointment_booking",
+                    "similarity": 0.6110624074935913
+                  },
+                  {
+                    "chunk_id": "01_appointment_booking:sentence:002",
+                    "distance": 0.39106088876724243,
+                    "parent_id": "01_appointment_booking",
+                    "similarity": 0.6089391112327576
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "01_appointment_booking"
+                ],
+                "relevant_retrieved_parents": [
+                  "01_appointment_booking"
+                ],
+                "retrieved_chunk_ids": [
+                  "01_appointment_booking:sentence:001",
+                  "01_appointment_booking:sentence:000",
+                  "01_appointment_booking:sentence:002"
+                ],
+                "retrieved_parents": [
+                  "01_appointment_booking"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "q02",
+          "query": "What is the cancellation and rescheduling window?",
+          "relevant_parents": [
+            "02_cancellation_rescheduling"
+          ],
+          "strategies": {
+            "fixed_overlap": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "02_cancellation_rescheduling:fixed_overlap:000",
+                    "distance": 0.4246687889099121,
+                    "parent_id": "02_cancellation_rescheduling",
+                    "similarity": 0.5753312110900879
+                  },
+                  {
+                    "chunk_id": "02_cancellation_rescheduling:fixed_overlap:001",
+                    "distance": 0.44416022300720215,
+                    "parent_id": "02_cancellation_rescheduling",
+                    "similarity": 0.5558397769927979
+                  },
+                  {
+                    "chunk_id": "02_cancellation_rescheduling:fixed_overlap:002",
+                    "distance": 0.599129319190979,
+                    "parent_id": "02_cancellation_rescheduling",
+                    "similarity": 0.400870680809021
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "02_cancellation_rescheduling"
+                ],
+                "relevant_retrieved_parents": [
+                  "02_cancellation_rescheduling"
+                ],
+                "retrieved_chunk_ids": [
+                  "02_cancellation_rescheduling:fixed_overlap:000",
+                  "02_cancellation_rescheduling:fixed_overlap:001",
+                  "02_cancellation_rescheduling:fixed_overlap:002"
+                ],
+                "retrieved_parents": [
+                  "02_cancellation_rescheduling"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "02_cancellation_rescheduling:fixed_overlap:000",
+                    "distance": 0.4246687889099121,
+                    "parent_id": "02_cancellation_rescheduling",
+                    "similarity": 0.5753312110900879
+                  },
+                  {
+                    "chunk_id": "02_cancellation_rescheduling:fixed_overlap:001",
+                    "distance": 0.44416022300720215,
+                    "parent_id": "02_cancellation_rescheduling",
+                    "similarity": 0.5558397769927979
+                  },
+                  {
+                    "chunk_id": "12_home_visits:fixed_overlap:002",
+                    "distance": 0.5896481871604919,
+                    "parent_id": "12_home_visits",
+                    "similarity": 0.41035181283950806
+                  }
+                ],
+                "numerator": 1,
+                "precision": 0.5,
+                "precision_arithmetic": "1 relevant of 2 retrieved = 0.500000",
+                "precision_denominator": 2,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "02_cancellation_rescheduling"
+                ],
+                "relevant_retrieved_parents": [
+                  "02_cancellation_rescheduling"
+                ],
+                "retrieved_chunk_ids": [
+                  "02_cancellation_rescheduling:fixed_overlap:000",
+                  "02_cancellation_rescheduling:fixed_overlap:001",
+                  "12_home_visits:fixed_overlap:002"
+                ],
+                "retrieved_parents": [
+                  "02_cancellation_rescheduling",
+                  "12_home_visits"
+                ]
+              }
+            },
+            "sentence": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "02_cancellation_rescheduling:sentence:000",
+                    "distance": 0.45165640115737915,
+                    "parent_id": "02_cancellation_rescheduling",
+                    "similarity": 0.5483435988426208
+                  },
+                  {
+                    "chunk_id": "02_cancellation_rescheduling:sentence:001",
+                    "distance": 0.5159393548965454,
+                    "parent_id": "02_cancellation_rescheduling",
+                    "similarity": 0.4840606451034546
+                  },
+                  {
+                    "chunk_id": "02_cancellation_rescheduling:sentence:002",
+                    "distance": 0.5867748260498047,
+                    "parent_id": "02_cancellation_rescheduling",
+                    "similarity": 0.4132251739501953
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "02_cancellation_rescheduling"
+                ],
+                "relevant_retrieved_parents": [
+                  "02_cancellation_rescheduling"
+                ],
+                "retrieved_chunk_ids": [
+                  "02_cancellation_rescheduling:sentence:000",
+                  "02_cancellation_rescheduling:sentence:001",
+                  "02_cancellation_rescheduling:sentence:002"
+                ],
+                "retrieved_parents": [
+                  "02_cancellation_rescheduling"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "02_cancellation_rescheduling:sentence:000",
+                    "distance": 0.45165640115737915,
+                    "parent_id": "02_cancellation_rescheduling",
+                    "similarity": 0.5483435988426208
+                  },
+                  {
+                    "chunk_id": "02_cancellation_rescheduling:sentence:001",
+                    "distance": 0.5159393548965454,
+                    "parent_id": "02_cancellation_rescheduling",
+                    "similarity": 0.4840606451034546
+                  },
+                  {
+                    "chunk_id": "02_cancellation_rescheduling:sentence:002",
+                    "distance": 0.5867748260498047,
+                    "parent_id": "02_cancellation_rescheduling",
+                    "similarity": 0.4132251739501953
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "02_cancellation_rescheduling"
+                ],
+                "relevant_retrieved_parents": [
+                  "02_cancellation_rescheduling"
+                ],
+                "retrieved_chunk_ids": [
+                  "02_cancellation_rescheduling:sentence:000",
+                  "02_cancellation_rescheduling:sentence:001",
+                  "02_cancellation_rescheduling:sentence:002"
+                ],
+                "retrieved_parents": [
+                  "02_cancellation_rescheduling"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "q03",
+          "query": "What are the consultation fees for each specialty?",
+          "relevant_parents": [
+            "03_consultation_fees"
+          ],
+          "strategies": {
+            "fixed_overlap": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "03_consultation_fees:fixed_overlap:000",
+                    "distance": 0.30751800537109375,
+                    "parent_id": "03_consultation_fees",
+                    "similarity": 0.6924819946289062
+                  },
+                  {
+                    "chunk_id": "03_consultation_fees:fixed_overlap:001",
+                    "distance": 0.40180766582489014,
+                    "parent_id": "03_consultation_fees",
+                    "similarity": 0.5981923341751099
+                  },
+                  {
+                    "chunk_id": "10_follow_up_discount:fixed_overlap:001",
+                    "distance": 0.3335641622543335,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.6664358377456665
+                  }
+                ],
+                "numerator": 1,
+                "precision": 0.5,
+                "precision_arithmetic": "1 relevant of 2 retrieved = 0.500000",
+                "precision_denominator": 2,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "03_consultation_fees"
+                ],
+                "relevant_retrieved_parents": [
+                  "03_consultation_fees"
+                ],
+                "retrieved_chunk_ids": [
+                  "03_consultation_fees:fixed_overlap:000",
+                  "03_consultation_fees:fixed_overlap:001",
+                  "10_follow_up_discount:fixed_overlap:001"
+                ],
+                "retrieved_parents": [
+                  "03_consultation_fees",
+                  "10_follow_up_discount"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "03_consultation_fees:fixed_overlap:000",
+                    "distance": 0.30751800537109375,
+                    "parent_id": "03_consultation_fees",
+                    "similarity": 0.6924819946289062
+                  },
+                  {
+                    "chunk_id": "10_follow_up_discount:fixed_overlap:001",
+                    "distance": 0.3335641622543335,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.6664358377456665
+                  },
+                  {
+                    "chunk_id": "07_telemedicine:fixed_overlap:001",
+                    "distance": 0.37162619829177856,
+                    "parent_id": "07_telemedicine",
+                    "similarity": 0.6283738017082214
+                  }
+                ],
+                "numerator": 1,
+                "precision": 0.3333333333333333,
+                "precision_arithmetic": "1 relevant of 3 retrieved = 0.333333",
+                "precision_denominator": 3,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "03_consultation_fees"
+                ],
+                "relevant_retrieved_parents": [
+                  "03_consultation_fees"
+                ],
+                "retrieved_chunk_ids": [
+                  "03_consultation_fees:fixed_overlap:000",
+                  "10_follow_up_discount:fixed_overlap:001",
+                  "07_telemedicine:fixed_overlap:001"
+                ],
+                "retrieved_parents": [
+                  "03_consultation_fees",
+                  "10_follow_up_discount",
+                  "07_telemedicine"
+                ]
+              }
+            },
+            "sentence": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "03_consultation_fees:sentence:000",
+                    "distance": 0.3052206039428711,
+                    "parent_id": "03_consultation_fees",
+                    "similarity": 0.6947793960571289
+                  },
+                  {
+                    "chunk_id": "03_consultation_fees:sentence:001",
+                    "distance": 0.4070596694946289,
+                    "parent_id": "03_consultation_fees",
+                    "similarity": 0.5929403305053711
+                  },
+                  {
+                    "chunk_id": "03_consultation_fees:sentence:002",
+                    "distance": 0.44691038131713867,
+                    "parent_id": "03_consultation_fees",
+                    "similarity": 0.5530896186828613
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "03_consultation_fees"
+                ],
+                "relevant_retrieved_parents": [
+                  "03_consultation_fees"
+                ],
+                "retrieved_chunk_ids": [
+                  "03_consultation_fees:sentence:000",
+                  "03_consultation_fees:sentence:001",
+                  "03_consultation_fees:sentence:002"
+                ],
+                "retrieved_parents": [
+                  "03_consultation_fees"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "03_consultation_fees:sentence:000",
+                    "distance": 0.3052206039428711,
+                    "parent_id": "03_consultation_fees",
+                    "similarity": 0.6947793960571289
+                  },
+                  {
+                    "chunk_id": "07_telemedicine:sentence:001",
+                    "distance": 0.34510236978530884,
+                    "parent_id": "07_telemedicine",
+                    "similarity": 0.6548976302146912
+                  },
+                  {
+                    "chunk_id": "10_follow_up_discount:sentence:001",
+                    "distance": 0.4026370644569397,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.5973629355430603
+                  }
+                ],
+                "numerator": 1,
+                "precision": 0.3333333333333333,
+                "precision_arithmetic": "1 relevant of 3 retrieved = 0.333333",
+                "precision_denominator": 3,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "03_consultation_fees"
+                ],
+                "relevant_retrieved_parents": [
+                  "03_consultation_fees"
+                ],
+                "retrieved_chunk_ids": [
+                  "03_consultation_fees:sentence:000",
+                  "07_telemedicine:sentence:001",
+                  "10_follow_up_discount:sentence:001"
+                ],
+                "retrieved_parents": [
+                  "03_consultation_fees",
+                  "07_telemedicine",
+                  "10_follow_up_discount"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "q04",
+          "query": "How long do routine and specialized lab test reports take?",
+          "relevant_parents": [
+            "06_lab_turnaround"
+          ],
+          "strategies": {
+            "fixed_overlap": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "06_lab_turnaround:fixed_overlap:000",
+                    "distance": 0.3491320013999939,
+                    "parent_id": "06_lab_turnaround",
+                    "similarity": 0.6508679986000061
+                  },
+                  {
+                    "chunk_id": "06_lab_turnaround:fixed_overlap:002",
+                    "distance": 0.49200236797332764,
+                    "parent_id": "06_lab_turnaround",
+                    "similarity": 0.5079976320266724
+                  },
+                  {
+                    "chunk_id": "06_lab_turnaround:fixed_overlap:001",
+                    "distance": 0.5979838967323303,
+                    "parent_id": "06_lab_turnaround",
+                    "similarity": 0.4020161032676697
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "06_lab_turnaround"
+                ],
+                "relevant_retrieved_parents": [
+                  "06_lab_turnaround"
+                ],
+                "retrieved_chunk_ids": [
+                  "06_lab_turnaround:fixed_overlap:000",
+                  "06_lab_turnaround:fixed_overlap:002",
+                  "06_lab_turnaround:fixed_overlap:001"
+                ],
+                "retrieved_parents": [
+                  "06_lab_turnaround"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "06_lab_turnaround:fixed_overlap:000",
+                    "distance": 0.3491320013999939,
+                    "parent_id": "06_lab_turnaround",
+                    "similarity": 0.6508679986000061
+                  },
+                  {
+                    "chunk_id": "06_lab_turnaround:fixed_overlap:002",
+                    "distance": 0.49200236797332764,
+                    "parent_id": "06_lab_turnaround",
+                    "similarity": 0.5079976320266724
+                  },
+                  {
+                    "chunk_id": "04_insurance_claims:fixed_overlap:001",
+                    "distance": 0.5620570182800293,
+                    "parent_id": "04_insurance_claims",
+                    "similarity": 0.4379429817199707
+                  }
+                ],
+                "numerator": 1,
+                "precision": 0.5,
+                "precision_arithmetic": "1 relevant of 2 retrieved = 0.500000",
+                "precision_denominator": 2,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "06_lab_turnaround"
+                ],
+                "relevant_retrieved_parents": [
+                  "06_lab_turnaround"
+                ],
+                "retrieved_chunk_ids": [
+                  "06_lab_turnaround:fixed_overlap:000",
+                  "06_lab_turnaround:fixed_overlap:002",
+                  "04_insurance_claims:fixed_overlap:001"
+                ],
+                "retrieved_parents": [
+                  "06_lab_turnaround",
+                  "04_insurance_claims"
+                ]
+              }
+            },
+            "sentence": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "06_lab_turnaround:sentence:000",
+                    "distance": 0.35204017162323,
+                    "parent_id": "06_lab_turnaround",
+                    "similarity": 0.64795982837677
+                  },
+                  {
+                    "chunk_id": "06_lab_turnaround:sentence:002",
+                    "distance": 0.5273895263671875,
+                    "parent_id": "06_lab_turnaround",
+                    "similarity": 0.4726104736328125
+                  },
+                  {
+                    "chunk_id": "06_lab_turnaround:sentence:001",
+                    "distance": 0.5428163409233093,
+                    "parent_id": "06_lab_turnaround",
+                    "similarity": 0.4571836590766907
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "06_lab_turnaround"
+                ],
+                "relevant_retrieved_parents": [
+                  "06_lab_turnaround"
+                ],
+                "retrieved_chunk_ids": [
+                  "06_lab_turnaround:sentence:000",
+                  "06_lab_turnaround:sentence:002",
+                  "06_lab_turnaround:sentence:001"
+                ],
+                "retrieved_parents": [
+                  "06_lab_turnaround"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "06_lab_turnaround:sentence:000",
+                    "distance": 0.35204017162323,
+                    "parent_id": "06_lab_turnaround",
+                    "similarity": 0.64795982837677
+                  },
+                  {
+                    "chunk_id": "06_lab_turnaround:sentence:002",
+                    "distance": 0.5273895263671875,
+                    "parent_id": "06_lab_turnaround",
+                    "similarity": 0.4726104736328125
+                  },
+                  {
+                    "chunk_id": "06_lab_turnaround:sentence:001",
+                    "distance": 0.5428163409233093,
+                    "parent_id": "06_lab_turnaround",
+                    "similarity": 0.4571836590766907
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "06_lab_turnaround"
+                ],
+                "relevant_retrieved_parents": [
+                  "06_lab_turnaround"
+                ],
+                "retrieved_chunk_ids": [
+                  "06_lab_turnaround:sentence:000",
+                  "06_lab_turnaround:sentence:002",
+                  "06_lab_turnaround:sentence:001"
+                ],
+                "retrieved_parents": [
+                  "06_lab_turnaround"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "q05",
+          "query": "When does a follow-up visit qualify for a discount?",
+          "relevant_parents": [
+            "10_follow_up_discount"
+          ],
+          "strategies": {
+            "fixed_overlap": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "10_follow_up_discount:fixed_overlap:000",
+                    "distance": 0.3163648843765259,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.6836351156234741
+                  },
+                  {
+                    "chunk_id": "10_follow_up_discount:fixed_overlap:001",
+                    "distance": 0.4775012731552124,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.5224987268447876
+                  },
+                  {
+                    "chunk_id": "10_follow_up_discount:fixed_overlap:002",
+                    "distance": 0.5303257703781128,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.4696742296218872
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "10_follow_up_discount"
+                ],
+                "relevant_retrieved_parents": [
+                  "10_follow_up_discount"
+                ],
+                "retrieved_chunk_ids": [
+                  "10_follow_up_discount:fixed_overlap:000",
+                  "10_follow_up_discount:fixed_overlap:001",
+                  "10_follow_up_discount:fixed_overlap:002"
+                ],
+                "retrieved_parents": [
+                  "10_follow_up_discount"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "10_follow_up_discount:fixed_overlap:000",
+                    "distance": 0.3163648843765259,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.6836351156234741
+                  },
+                  {
+                    "chunk_id": "03_consultation_fees:fixed_overlap:002",
+                    "distance": 0.40016698837280273,
+                    "parent_id": "03_consultation_fees",
+                    "similarity": 0.5998330116271973
+                  },
+                  {
+                    "chunk_id": "03_consultation_fees:fixed_overlap:001",
+                    "distance": 0.40663713216781616,
+                    "parent_id": "03_consultation_fees",
+                    "similarity": 0.5933628678321838
+                  }
+                ],
+                "numerator": 1,
+                "precision": 0.5,
+                "precision_arithmetic": "1 relevant of 2 retrieved = 0.500000",
+                "precision_denominator": 2,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "10_follow_up_discount"
+                ],
+                "relevant_retrieved_parents": [
+                  "10_follow_up_discount"
+                ],
+                "retrieved_chunk_ids": [
+                  "10_follow_up_discount:fixed_overlap:000",
+                  "03_consultation_fees:fixed_overlap:002",
+                  "03_consultation_fees:fixed_overlap:001"
+                ],
+                "retrieved_parents": [
+                  "10_follow_up_discount",
+                  "03_consultation_fees"
+                ]
+              }
+            },
+            "sentence": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "10_follow_up_discount:sentence:000",
+                    "distance": 0.271978497505188,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.728021502494812
+                  },
+                  {
+                    "chunk_id": "10_follow_up_discount:sentence:001",
+                    "distance": 0.40829455852508545,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.5917054414749146
+                  },
+                  {
+                    "chunk_id": "10_follow_up_discount:sentence:002",
+                    "distance": 0.5635133981704712,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.4364866018295288
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "10_follow_up_discount"
+                ],
+                "relevant_retrieved_parents": [
+                  "10_follow_up_discount"
+                ],
+                "retrieved_chunk_ids": [
+                  "10_follow_up_discount:sentence:000",
+                  "10_follow_up_discount:sentence:001",
+                  "10_follow_up_discount:sentence:002"
+                ],
+                "retrieved_parents": [
+                  "10_follow_up_discount"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "10_follow_up_discount:sentence:000",
+                    "distance": 0.271978497505188,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.728021502494812
+                  },
+                  {
+                    "chunk_id": "10_follow_up_discount:sentence:001",
+                    "distance": 0.40829455852508545,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.5917054414749146
+                  },
+                  {
+                    "chunk_id": "03_consultation_fees:sentence:001",
+                    "distance": 0.4372469186782837,
+                    "parent_id": "03_consultation_fees",
+                    "similarity": 0.5627530813217163
+                  }
+                ],
+                "numerator": 1,
+                "precision": 0.5,
+                "precision_arithmetic": "1 relevant of 2 retrieved = 0.500000",
+                "precision_denominator": 2,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "10_follow_up_discount"
+                ],
+                "relevant_retrieved_parents": [
+                  "10_follow_up_discount"
+                ],
+                "retrieved_chunk_ids": [
+                  "10_follow_up_discount:sentence:000",
+                  "10_follow_up_discount:sentence:001",
+                  "03_consultation_fees:sentence:001"
+                ],
+                "retrieved_parents": [
+                  "10_follow_up_discount",
+                  "03_consultation_fees"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "q06",
+          "query": "How do I submit an insurance reimbursement claim?",
+          "relevant_parents": [
+            "04_insurance_claims"
+          ],
+          "strategies": {
+            "fixed_overlap": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "04_insurance_claims:fixed_overlap:002",
+                    "distance": 0.4605146646499634,
+                    "parent_id": "04_insurance_claims",
+                    "similarity": 0.5394853353500366
+                  },
+                  {
+                    "chunk_id": "04_insurance_claims:fixed_overlap:000",
+                    "distance": 0.47799932956695557,
+                    "parent_id": "04_insurance_claims",
+                    "similarity": 0.5220006704330444
+                  },
+                  {
+                    "chunk_id": "04_insurance_claims:fixed_overlap:001",
+                    "distance": 0.56243896484375,
+                    "parent_id": "04_insurance_claims",
+                    "similarity": 0.43756103515625
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "04_insurance_claims"
+                ],
+                "relevant_retrieved_parents": [
+                  "04_insurance_claims"
+                ],
+                "retrieved_chunk_ids": [
+                  "04_insurance_claims:fixed_overlap:002",
+                  "04_insurance_claims:fixed_overlap:000",
+                  "04_insurance_claims:fixed_overlap:001"
+                ],
+                "retrieved_parents": [
+                  "04_insurance_claims"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "04_insurance_claims:fixed_overlap:002",
+                    "distance": 0.4605146646499634,
+                    "parent_id": "04_insurance_claims",
+                    "similarity": 0.5394853353500366
+                  },
+                  {
+                    "chunk_id": "04_insurance_claims:fixed_overlap:000",
+                    "distance": 0.47799932956695557,
+                    "parent_id": "04_insurance_claims",
+                    "similarity": 0.5220006704330444
+                  },
+                  {
+                    "chunk_id": "04_insurance_claims:fixed_overlap:001",
+                    "distance": 0.56243896484375,
+                    "parent_id": "04_insurance_claims",
+                    "similarity": 0.43756103515625
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "04_insurance_claims"
+                ],
+                "relevant_retrieved_parents": [
+                  "04_insurance_claims"
+                ],
+                "retrieved_chunk_ids": [
+                  "04_insurance_claims:fixed_overlap:002",
+                  "04_insurance_claims:fixed_overlap:000",
+                  "04_insurance_claims:fixed_overlap:001"
+                ],
+                "retrieved_parents": [
+                  "04_insurance_claims"
+                ]
+              }
+            },
+            "sentence": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "04_insurance_claims:sentence:000",
+                    "distance": 0.48548924922943115,
+                    "parent_id": "04_insurance_claims",
+                    "similarity": 0.5145107507705688
+                  },
+                  {
+                    "chunk_id": "04_insurance_claims:sentence:002",
+                    "distance": 0.5434189438819885,
+                    "parent_id": "04_insurance_claims",
+                    "similarity": 0.4565810561180115
+                  },
+                  {
+                    "chunk_id": "04_insurance_claims:sentence:001",
+                    "distance": 0.5071560144424438,
+                    "parent_id": "04_insurance_claims",
+                    "similarity": 0.49284398555755615
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "04_insurance_claims"
+                ],
+                "relevant_retrieved_parents": [
+                  "04_insurance_claims"
+                ],
+                "retrieved_chunk_ids": [
+                  "04_insurance_claims:sentence:000",
+                  "04_insurance_claims:sentence:002",
+                  "04_insurance_claims:sentence:001"
+                ],
+                "retrieved_parents": [
+                  "04_insurance_claims"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "04_insurance_claims:sentence:000",
+                    "distance": 0.48548924922943115,
+                    "parent_id": "04_insurance_claims",
+                    "similarity": 0.5145107507705688
+                  },
+                  {
+                    "chunk_id": "04_insurance_claims:sentence:001",
+                    "distance": 0.5071560144424438,
+                    "parent_id": "04_insurance_claims",
+                    "similarity": 0.49284398555755615
+                  },
+                  {
+                    "chunk_id": "04_insurance_claims:sentence:002",
+                    "distance": 0.5434189438819885,
+                    "parent_id": "04_insurance_claims",
+                    "similarity": 0.4565810561180115
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "04_insurance_claims"
+                ],
+                "relevant_retrieved_parents": [
+                  "04_insurance_claims"
+                ],
+                "retrieved_chunk_ids": [
+                  "04_insurance_claims:sentence:000",
+                  "04_insurance_claims:sentence:001",
+                  "04_insurance_claims:sentence:002"
+                ],
+                "retrieved_parents": [
+                  "04_insurance_claims"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "q07",
+          "query": "My doctor asked me to come back, do I have to pay the full price again?",
+          "relevant_parents": [
+            "10_follow_up_discount"
+          ],
+          "strategies": {
+            "fixed_overlap": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "10_follow_up_discount:fixed_overlap:001",
+                    "distance": 0.4496661424636841,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.5503338575363159
+                  },
+                  {
+                    "chunk_id": "10_follow_up_discount:fixed_overlap:000",
+                    "distance": 0.4749338626861572,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.5250661373138428
+                  },
+                  {
+                    "chunk_id": "02_cancellation_rescheduling:fixed_overlap:001",
+                    "distance": 0.4818378686904907,
+                    "parent_id": "02_cancellation_rescheduling",
+                    "similarity": 0.5181621313095093
+                  }
+                ],
+                "numerator": 1,
+                "precision": 0.5,
+                "precision_arithmetic": "1 relevant of 2 retrieved = 0.500000",
+                "precision_denominator": 2,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "10_follow_up_discount"
+                ],
+                "relevant_retrieved_parents": [
+                  "10_follow_up_discount"
+                ],
+                "retrieved_chunk_ids": [
+                  "10_follow_up_discount:fixed_overlap:001",
+                  "10_follow_up_discount:fixed_overlap:000",
+                  "02_cancellation_rescheduling:fixed_overlap:001"
+                ],
+                "retrieved_parents": [
+                  "10_follow_up_discount",
+                  "02_cancellation_rescheduling"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "10_follow_up_discount:fixed_overlap:001",
+                    "distance": 0.4496661424636841,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.5503338575363159
+                  },
+                  {
+                    "chunk_id": "02_cancellation_rescheduling:fixed_overlap:002",
+                    "distance": 0.4698828458786011,
+                    "parent_id": "02_cancellation_rescheduling",
+                    "similarity": 0.5301171541213989
+                  },
+                  {
+                    "chunk_id": "10_follow_up_discount:fixed_overlap:000",
+                    "distance": 0.4749338626861572,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.5250661373138428
+                  }
+                ],
+                "numerator": 1,
+                "precision": 0.5,
+                "precision_arithmetic": "1 relevant of 2 retrieved = 0.500000",
+                "precision_denominator": 2,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "10_follow_up_discount"
+                ],
+                "relevant_retrieved_parents": [
+                  "10_follow_up_discount"
+                ],
+                "retrieved_chunk_ids": [
+                  "10_follow_up_discount:fixed_overlap:001",
+                  "02_cancellation_rescheduling:fixed_overlap:002",
+                  "10_follow_up_discount:fixed_overlap:000"
+                ],
+                "retrieved_parents": [
+                  "10_follow_up_discount",
+                  "02_cancellation_rescheduling"
+                ]
+              }
+            },
+            "sentence": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "03_consultation_fees:sentence:002",
+                    "distance": 0.42292624711990356,
+                    "parent_id": "03_consultation_fees",
+                    "similarity": 0.5770737528800964
+                  },
+                  {
+                    "chunk_id": "10_follow_up_discount:sentence:001",
+                    "distance": 0.4253960847854614,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.5746039152145386
+                  },
+                  {
+                    "chunk_id": "10_follow_up_discount:sentence:000",
+                    "distance": 0.4711505174636841,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.5288494825363159
+                  }
+                ],
+                "numerator": 1,
+                "precision": 0.5,
+                "precision_arithmetic": "1 relevant of 2 retrieved = 0.500000",
+                "precision_denominator": 2,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "10_follow_up_discount"
+                ],
+                "relevant_retrieved_parents": [
+                  "10_follow_up_discount"
+                ],
+                "retrieved_chunk_ids": [
+                  "03_consultation_fees:sentence:002",
+                  "10_follow_up_discount:sentence:001",
+                  "10_follow_up_discount:sentence:000"
+                ],
+                "retrieved_parents": [
+                  "03_consultation_fees",
+                  "10_follow_up_discount"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "03_consultation_fees:sentence:002",
+                    "distance": 0.42292624711990356,
+                    "parent_id": "03_consultation_fees",
+                    "similarity": 0.5770737528800964
+                  },
+                  {
+                    "chunk_id": "10_follow_up_discount:sentence:001",
+                    "distance": 0.4253960847854614,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.5746039152145386
+                  },
+                  {
+                    "chunk_id": "12_home_visits:sentence:001",
+                    "distance": 0.4667195677757263,
+                    "parent_id": "12_home_visits",
+                    "similarity": 0.5332804322242737
+                  }
+                ],
+                "numerator": 1,
+                "precision": 0.3333333333333333,
+                "precision_arithmetic": "1 relevant of 3 retrieved = 0.333333",
+                "precision_denominator": 3,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "10_follow_up_discount"
+                ],
+                "relevant_retrieved_parents": [
+                  "10_follow_up_discount"
+                ],
+                "retrieved_chunk_ids": [
+                  "03_consultation_fees:sentence:002",
+                  "10_follow_up_discount:sentence:001",
+                  "12_home_visits:sentence:001"
+                ],
+                "retrieved_parents": [
+                  "03_consultation_fees",
+                  "10_follow_up_discount",
+                  "12_home_visits"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "q08",
+          "query": "What will I pay for a home visit by a cardiologist?",
+          "relevant_parents": [
+            "03_consultation_fees",
+            "12_home_visits"
+          ],
+          "strategies": {
+            "fixed_overlap": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "03_consultation_fees:fixed_overlap:000",
+                    "distance": 0.4511626958847046,
+                    "parent_id": "03_consultation_fees",
+                    "similarity": 0.5488373041152954
+                  },
+                  {
+                    "chunk_id": "12_home_visits:fixed_overlap:000",
+                    "distance": 0.47136056423187256,
+                    "parent_id": "12_home_visits",
+                    "similarity": 0.5286394357681274
+                  },
+                  {
+                    "chunk_id": "12_home_visits:fixed_overlap:001",
+                    "distance": 0.4834488034248352,
+                    "parent_id": "12_home_visits",
+                    "similarity": 0.5165511965751648
+                  }
+                ],
+                "numerator": 2,
+                "precision": 1.0,
+                "precision_arithmetic": "2 relevant of 2 retrieved = 1.000000",
+                "precision_denominator": 2,
+                "recall": 1.0,
+                "recall_arithmetic": "2 retrieved of 2 relevant = 1.000000",
+                "recall_denominator": 2,
+                "relevant_parents": [
+                  "03_consultation_fees",
+                  "12_home_visits"
+                ],
+                "relevant_retrieved_parents": [
+                  "03_consultation_fees",
+                  "12_home_visits"
+                ],
+                "retrieved_chunk_ids": [
+                  "03_consultation_fees:fixed_overlap:000",
+                  "12_home_visits:fixed_overlap:000",
+                  "12_home_visits:fixed_overlap:001"
+                ],
+                "retrieved_parents": [
+                  "03_consultation_fees",
+                  "12_home_visits"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "03_consultation_fees:fixed_overlap:000",
+                    "distance": 0.4511626958847046,
+                    "parent_id": "03_consultation_fees",
+                    "similarity": 0.5488373041152954
+                  },
+                  {
+                    "chunk_id": "12_home_visits:fixed_overlap:000",
+                    "distance": 0.47136056423187256,
+                    "parent_id": "12_home_visits",
+                    "similarity": 0.5286394357681274
+                  },
+                  {
+                    "chunk_id": "12_home_visits:fixed_overlap:001",
+                    "distance": 0.4834488034248352,
+                    "parent_id": "12_home_visits",
+                    "similarity": 0.5165511965751648
+                  }
+                ],
+                "numerator": 2,
+                "precision": 1.0,
+                "precision_arithmetic": "2 relevant of 2 retrieved = 1.000000",
+                "precision_denominator": 2,
+                "recall": 1.0,
+                "recall_arithmetic": "2 retrieved of 2 relevant = 1.000000",
+                "recall_denominator": 2,
+                "relevant_parents": [
+                  "03_consultation_fees",
+                  "12_home_visits"
+                ],
+                "relevant_retrieved_parents": [
+                  "03_consultation_fees",
+                  "12_home_visits"
+                ],
+                "retrieved_chunk_ids": [
+                  "03_consultation_fees:fixed_overlap:000",
+                  "12_home_visits:fixed_overlap:000",
+                  "12_home_visits:fixed_overlap:001"
+                ],
+                "retrieved_parents": [
+                  "03_consultation_fees",
+                  "12_home_visits"
+                ]
+              }
+            },
+            "sentence": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "03_consultation_fees:sentence:000",
+                    "distance": 0.4274066686630249,
+                    "parent_id": "03_consultation_fees",
+                    "similarity": 0.5725933313369751
+                  },
+                  {
+                    "chunk_id": "12_home_visits:sentence:001",
+                    "distance": 0.4866718053817749,
+                    "parent_id": "12_home_visits",
+                    "similarity": 0.5133281946182251
+                  },
+                  {
+                    "chunk_id": "12_home_visits:sentence:000",
+                    "distance": 0.5395296812057495,
+                    "parent_id": "12_home_visits",
+                    "similarity": 0.4604703187942505
+                  }
+                ],
+                "numerator": 2,
+                "precision": 1.0,
+                "precision_arithmetic": "2 relevant of 2 retrieved = 1.000000",
+                "precision_denominator": 2,
+                "recall": 1.0,
+                "recall_arithmetic": "2 retrieved of 2 relevant = 1.000000",
+                "recall_denominator": 2,
+                "relevant_parents": [
+                  "03_consultation_fees",
+                  "12_home_visits"
+                ],
+                "relevant_retrieved_parents": [
+                  "03_consultation_fees",
+                  "12_home_visits"
+                ],
+                "retrieved_chunk_ids": [
+                  "03_consultation_fees:sentence:000",
+                  "12_home_visits:sentence:001",
+                  "12_home_visits:sentence:000"
+                ],
+                "retrieved_parents": [
+                  "03_consultation_fees",
+                  "12_home_visits"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "03_consultation_fees:sentence:000",
+                    "distance": 0.4274066686630249,
+                    "parent_id": "03_consultation_fees",
+                    "similarity": 0.5725933313369751
+                  },
+                  {
+                    "chunk_id": "12_home_visits:sentence:001",
+                    "distance": 0.4866718053817749,
+                    "parent_id": "12_home_visits",
+                    "similarity": 0.5133281946182251
+                  },
+                  {
+                    "chunk_id": "04_insurance_claims:sentence:000",
+                    "distance": 0.5347593426704407,
+                    "parent_id": "04_insurance_claims",
+                    "similarity": 0.4652406573295593
+                  }
+                ],
+                "numerator": 2,
+                "precision": 0.6666666666666666,
+                "precision_arithmetic": "2 relevant of 3 retrieved = 0.666667",
+                "precision_denominator": 3,
+                "recall": 1.0,
+                "recall_arithmetic": "2 retrieved of 2 relevant = 1.000000",
+                "recall_denominator": 2,
+                "relevant_parents": [
+                  "03_consultation_fees",
+                  "12_home_visits"
+                ],
+                "relevant_retrieved_parents": [
+                  "03_consultation_fees",
+                  "12_home_visits"
+                ],
+                "retrieved_chunk_ids": [
+                  "03_consultation_fees:sentence:000",
+                  "12_home_visits:sentence:001",
+                  "04_insurance_claims:sentence:000"
+                ],
+                "retrieved_parents": [
+                  "03_consultation_fees",
+                  "12_home_visits",
+                  "04_insurance_claims"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "q09",
+          "query": "Can I get a second opinion over a video call?",
+          "relevant_parents": [
+            "07_telemedicine",
+            "11_second_opinion"
+          ],
+          "strategies": {
+            "fixed_overlap": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "11_second_opinion:fixed_overlap:000",
+                    "distance": 0.671036958694458,
+                    "parent_id": "11_second_opinion",
+                    "similarity": 0.328963041305542
+                  },
+                  {
+                    "chunk_id": "07_telemedicine:fixed_overlap:000",
+                    "distance": 0.6868188977241516,
+                    "parent_id": "07_telemedicine",
+                    "similarity": 0.3131811022758484
+                  },
+                  {
+                    "chunk_id": "11_second_opinion:fixed_overlap:001",
+                    "distance": 0.6750860214233398,
+                    "parent_id": "11_second_opinion",
+                    "similarity": 0.32491397857666016
+                  }
+                ],
+                "numerator": 2,
+                "precision": 1.0,
+                "precision_arithmetic": "2 relevant of 2 retrieved = 1.000000",
+                "precision_denominator": 2,
+                "recall": 1.0,
+                "recall_arithmetic": "2 retrieved of 2 relevant = 1.000000",
+                "recall_denominator": 2,
+                "relevant_parents": [
+                  "07_telemedicine",
+                  "11_second_opinion"
+                ],
+                "relevant_retrieved_parents": [
+                  "07_telemedicine",
+                  "11_second_opinion"
+                ],
+                "retrieved_chunk_ids": [
+                  "11_second_opinion:fixed_overlap:000",
+                  "07_telemedicine:fixed_overlap:000",
+                  "11_second_opinion:fixed_overlap:001"
+                ],
+                "retrieved_parents": [
+                  "11_second_opinion",
+                  "07_telemedicine"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "11_second_opinion:fixed_overlap:000",
+                    "distance": 0.671036958694458,
+                    "parent_id": "11_second_opinion",
+                    "similarity": 0.328963041305542
+                  },
+                  {
+                    "chunk_id": "11_second_opinion:fixed_overlap:001",
+                    "distance": 0.6750860214233398,
+                    "parent_id": "11_second_opinion",
+                    "similarity": 0.32491397857666016
+                  },
+                  {
+                    "chunk_id": "07_telemedicine:fixed_overlap:000",
+                    "distance": 0.6868188977241516,
+                    "parent_id": "07_telemedicine",
+                    "similarity": 0.3131811022758484
+                  }
+                ],
+                "numerator": 2,
+                "precision": 1.0,
+                "precision_arithmetic": "2 relevant of 2 retrieved = 1.000000",
+                "precision_denominator": 2,
+                "recall": 1.0,
+                "recall_arithmetic": "2 retrieved of 2 relevant = 1.000000",
+                "recall_denominator": 2,
+                "relevant_parents": [
+                  "07_telemedicine",
+                  "11_second_opinion"
+                ],
+                "relevant_retrieved_parents": [
+                  "07_telemedicine",
+                  "11_second_opinion"
+                ],
+                "retrieved_chunk_ids": [
+                  "11_second_opinion:fixed_overlap:000",
+                  "11_second_opinion:fixed_overlap:001",
+                  "07_telemedicine:fixed_overlap:000"
+                ],
+                "retrieved_parents": [
+                  "11_second_opinion",
+                  "07_telemedicine"
+                ]
+              }
+            },
+            "sentence": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "11_second_opinion:sentence:001",
+                    "distance": 0.6039632558822632,
+                    "parent_id": "11_second_opinion",
+                    "similarity": 0.3960367441177368
+                  },
+                  {
+                    "chunk_id": "07_telemedicine:sentence:000",
+                    "distance": 0.6830918788909912,
+                    "parent_id": "07_telemedicine",
+                    "similarity": 0.3169081211090088
+                  },
+                  {
+                    "chunk_id": "11_second_opinion:sentence:000",
+                    "distance": 0.7009593844413757,
+                    "parent_id": "11_second_opinion",
+                    "similarity": 0.29904061555862427
+                  }
+                ],
+                "numerator": 2,
+                "precision": 1.0,
+                "precision_arithmetic": "2 relevant of 2 retrieved = 1.000000",
+                "precision_denominator": 2,
+                "recall": 1.0,
+                "recall_arithmetic": "2 retrieved of 2 relevant = 1.000000",
+                "recall_denominator": 2,
+                "relevant_parents": [
+                  "07_telemedicine",
+                  "11_second_opinion"
+                ],
+                "relevant_retrieved_parents": [
+                  "07_telemedicine",
+                  "11_second_opinion"
+                ],
+                "retrieved_chunk_ids": [
+                  "11_second_opinion:sentence:001",
+                  "07_telemedicine:sentence:000",
+                  "11_second_opinion:sentence:000"
+                ],
+                "retrieved_parents": [
+                  "11_second_opinion",
+                  "07_telemedicine"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "11_second_opinion:sentence:001",
+                    "distance": 0.6039632558822632,
+                    "parent_id": "11_second_opinion",
+                    "similarity": 0.3960367441177368
+                  },
+                  {
+                    "chunk_id": "07_telemedicine:sentence:000",
+                    "distance": 0.6830918788909912,
+                    "parent_id": "07_telemedicine",
+                    "similarity": 0.3169081211090088
+                  },
+                  {
+                    "chunk_id": "11_second_opinion:sentence:000",
+                    "distance": 0.7009593844413757,
+                    "parent_id": "11_second_opinion",
+                    "similarity": 0.29904061555862427
+                  }
+                ],
+                "numerator": 2,
+                "precision": 1.0,
+                "precision_arithmetic": "2 relevant of 2 retrieved = 1.000000",
+                "precision_denominator": 2,
+                "recall": 1.0,
+                "recall_arithmetic": "2 retrieved of 2 relevant = 1.000000",
+                "recall_denominator": 2,
+                "relevant_parents": [
+                  "07_telemedicine",
+                  "11_second_opinion"
+                ],
+                "relevant_retrieved_parents": [
+                  "07_telemedicine",
+                  "11_second_opinion"
+                ],
+                "retrieved_chunk_ids": [
+                  "11_second_opinion:sentence:001",
+                  "07_telemedicine:sentence:000",
+                  "11_second_opinion:sentence:000"
+                ],
+                "retrieved_parents": [
+                  "11_second_opinion",
+                  "07_telemedicine"
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "query_count": 9
+    },
+    "heldout": {
+      "averages": {
+        "fixed_overlap": {
+          "custom": {
+            "precision": 0.875,
+            "recall": 1.0
+          },
+          "raw_cosine": {
+            "precision": 0.9166666666666666,
+            "recall": 1.0
+          }
+        },
+        "sentence": {
+          "custom": {
+            "precision": 0.875,
+            "recall": 1.0
+          },
+          "raw_cosine": {
+            "precision": 0.75,
+            "recall": 1.0
+          }
+        }
+      },
+      "comparison": {
+        "fixed_overlap": {
+          "custom_minus_raw": {
+            "precision": -0.04166666666666663,
+            "recall": 0.0
+          },
+          "outcome": "raw cosine higher on at least one metric and no lower on the other"
+        },
+        "sentence": {
+          "custom_minus_raw": {
+            "precision": 0.125,
+            "recall": 0.0
+          },
+          "outcome": "custom higher on at least one metric and no lower on the other"
+        }
+      },
+      "queries": [
+        {
+          "id": "ho01",
+          "query": "My refill request has been submitted; does that mean I am guaranteed the same medicine?",
+          "relevant_parents": [
+            "05_prescription_refills"
+          ],
+          "strategies": {
+            "fixed_overlap": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "05_prescription_refills:fixed_overlap:001",
+                    "distance": 0.27468693256378174,
+                    "parent_id": "05_prescription_refills",
+                    "similarity": 0.7253130674362183
+                  },
+                  {
+                    "chunk_id": "05_prescription_refills:fixed_overlap:000",
+                    "distance": 0.29960012435913086,
+                    "parent_id": "05_prescription_refills",
+                    "similarity": 0.7003998756408691
+                  },
+                  {
+                    "chunk_id": "05_prescription_refills:fixed_overlap:002",
+                    "distance": 0.3683798909187317,
+                    "parent_id": "05_prescription_refills",
+                    "similarity": 0.6316201090812683
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "05_prescription_refills"
+                ],
+                "relevant_retrieved_parents": [
+                  "05_prescription_refills"
+                ],
+                "retrieved_chunk_ids": [
+                  "05_prescription_refills:fixed_overlap:001",
+                  "05_prescription_refills:fixed_overlap:000",
+                  "05_prescription_refills:fixed_overlap:002"
+                ],
+                "retrieved_parents": [
+                  "05_prescription_refills"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "05_prescription_refills:fixed_overlap:001",
+                    "distance": 0.27468693256378174,
+                    "parent_id": "05_prescription_refills",
+                    "similarity": 0.7253130674362183
+                  },
+                  {
+                    "chunk_id": "05_prescription_refills:fixed_overlap:000",
+                    "distance": 0.29960012435913086,
+                    "parent_id": "05_prescription_refills",
+                    "similarity": 0.7003998756408691
+                  },
+                  {
+                    "chunk_id": "05_prescription_refills:fixed_overlap:002",
+                    "distance": 0.3683798909187317,
+                    "parent_id": "05_prescription_refills",
+                    "similarity": 0.6316201090812683
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "05_prescription_refills"
+                ],
+                "relevant_retrieved_parents": [
+                  "05_prescription_refills"
+                ],
+                "retrieved_chunk_ids": [
+                  "05_prescription_refills:fixed_overlap:001",
+                  "05_prescription_refills:fixed_overlap:000",
+                  "05_prescription_refills:fixed_overlap:002"
+                ],
+                "retrieved_parents": [
+                  "05_prescription_refills"
+                ]
+              }
+            },
+            "sentence": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "05_prescription_refills:sentence:001",
+                    "distance": 0.1813645362854004,
+                    "parent_id": "05_prescription_refills",
+                    "similarity": 0.8186354637145996
+                  },
+                  {
+                    "chunk_id": "05_prescription_refills:sentence:000",
+                    "distance": 0.3363898992538452,
+                    "parent_id": "05_prescription_refills",
+                    "similarity": 0.6636101007461548
+                  },
+                  {
+                    "chunk_id": "05_prescription_refills:sentence:002",
+                    "distance": 0.4789438843727112,
+                    "parent_id": "05_prescription_refills",
+                    "similarity": 0.5210561156272888
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "05_prescription_refills"
+                ],
+                "relevant_retrieved_parents": [
+                  "05_prescription_refills"
+                ],
+                "retrieved_chunk_ids": [
+                  "05_prescription_refills:sentence:001",
+                  "05_prescription_refills:sentence:000",
+                  "05_prescription_refills:sentence:002"
+                ],
+                "retrieved_parents": [
+                  "05_prescription_refills"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "05_prescription_refills:sentence:001",
+                    "distance": 0.1813645362854004,
+                    "parent_id": "05_prescription_refills",
+                    "similarity": 0.8186354637145996
+                  },
+                  {
+                    "chunk_id": "05_prescription_refills:sentence:000",
+                    "distance": 0.3363898992538452,
+                    "parent_id": "05_prescription_refills",
+                    "similarity": 0.6636101007461548
+                  },
+                  {
+                    "chunk_id": "05_prescription_refills:sentence:002",
+                    "distance": 0.4789438843727112,
+                    "parent_id": "05_prescription_refills",
+                    "similarity": 0.5210561156272888
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "05_prescription_refills"
+                ],
+                "relevant_retrieved_parents": [
+                  "05_prescription_refills"
+                ],
+                "retrieved_chunk_ids": [
+                  "05_prescription_refills:sentence:001",
+                  "05_prescription_refills:sentence:000",
+                  "05_prescription_refills:sentence:002"
+                ],
+                "retrieved_parents": [
+                  "05_prescription_refills"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "ho02",
+          "query": "The clinic cancelled my appointment with hardly any notice. What refund can I expect, and when?",
+          "relevant_parents": [
+            "02_cancellation_rescheduling"
+          ],
+          "strategies": {
+            "fixed_overlap": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "02_cancellation_rescheduling:fixed_overlap:002",
+                    "distance": 0.21731603145599365,
+                    "parent_id": "02_cancellation_rescheduling",
+                    "similarity": 0.7826839685440063
+                  },
+                  {
+                    "chunk_id": "02_cancellation_rescheduling:fixed_overlap:000",
+                    "distance": 0.3119693994522095,
+                    "parent_id": "02_cancellation_rescheduling",
+                    "similarity": 0.6880306005477905
+                  },
+                  {
+                    "chunk_id": "02_cancellation_rescheduling:fixed_overlap:001",
+                    "distance": 0.33232051134109497,
+                    "parent_id": "02_cancellation_rescheduling",
+                    "similarity": 0.667679488658905
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "02_cancellation_rescheduling"
+                ],
+                "relevant_retrieved_parents": [
+                  "02_cancellation_rescheduling"
+                ],
+                "retrieved_chunk_ids": [
+                  "02_cancellation_rescheduling:fixed_overlap:002",
+                  "02_cancellation_rescheduling:fixed_overlap:000",
+                  "02_cancellation_rescheduling:fixed_overlap:001"
+                ],
+                "retrieved_parents": [
+                  "02_cancellation_rescheduling"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "02_cancellation_rescheduling:fixed_overlap:002",
+                    "distance": 0.21731603145599365,
+                    "parent_id": "02_cancellation_rescheduling",
+                    "similarity": 0.7826839685440063
+                  },
+                  {
+                    "chunk_id": "02_cancellation_rescheduling:fixed_overlap:000",
+                    "distance": 0.3119693994522095,
+                    "parent_id": "02_cancellation_rescheduling",
+                    "similarity": 0.6880306005477905
+                  },
+                  {
+                    "chunk_id": "02_cancellation_rescheduling:fixed_overlap:001",
+                    "distance": 0.33232051134109497,
+                    "parent_id": "02_cancellation_rescheduling",
+                    "similarity": 0.667679488658905
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "02_cancellation_rescheduling"
+                ],
+                "relevant_retrieved_parents": [
+                  "02_cancellation_rescheduling"
+                ],
+                "retrieved_chunk_ids": [
+                  "02_cancellation_rescheduling:fixed_overlap:002",
+                  "02_cancellation_rescheduling:fixed_overlap:000",
+                  "02_cancellation_rescheduling:fixed_overlap:001"
+                ],
+                "retrieved_parents": [
+                  "02_cancellation_rescheduling"
+                ]
+              }
+            },
+            "sentence": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "02_cancellation_rescheduling:sentence:001",
+                    "distance": 0.24382776021957397,
+                    "parent_id": "02_cancellation_rescheduling",
+                    "similarity": 0.756172239780426
+                  },
+                  {
+                    "chunk_id": "02_cancellation_rescheduling:sentence:000",
+                    "distance": 0.28764861822128296,
+                    "parent_id": "02_cancellation_rescheduling",
+                    "similarity": 0.712351381778717
+                  },
+                  {
+                    "chunk_id": "02_cancellation_rescheduling:sentence:002",
+                    "distance": 0.4180554151535034,
+                    "parent_id": "02_cancellation_rescheduling",
+                    "similarity": 0.5819445848464966
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "02_cancellation_rescheduling"
+                ],
+                "relevant_retrieved_parents": [
+                  "02_cancellation_rescheduling"
+                ],
+                "retrieved_chunk_ids": [
+                  "02_cancellation_rescheduling:sentence:001",
+                  "02_cancellation_rescheduling:sentence:000",
+                  "02_cancellation_rescheduling:sentence:002"
+                ],
+                "retrieved_parents": [
+                  "02_cancellation_rescheduling"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "02_cancellation_rescheduling:sentence:001",
+                    "distance": 0.24382776021957397,
+                    "parent_id": "02_cancellation_rescheduling",
+                    "similarity": 0.756172239780426
+                  },
+                  {
+                    "chunk_id": "02_cancellation_rescheduling:sentence:000",
+                    "distance": 0.28764861822128296,
+                    "parent_id": "02_cancellation_rescheduling",
+                    "similarity": 0.712351381778717
+                  },
+                  {
+                    "chunk_id": "04_insurance_claims:sentence:001",
+                    "distance": 0.364327609539032,
+                    "parent_id": "04_insurance_claims",
+                    "similarity": 0.635672390460968
+                  }
+                ],
+                "numerator": 1,
+                "precision": 0.5,
+                "precision_arithmetic": "1 relevant of 2 retrieved = 0.500000",
+                "precision_denominator": 2,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "02_cancellation_rescheduling"
+                ],
+                "relevant_retrieved_parents": [
+                  "02_cancellation_rescheduling"
+                ],
+                "retrieved_chunk_ids": [
+                  "02_cancellation_rescheduling:sentence:001",
+                  "02_cancellation_rescheduling:sentence:000",
+                  "04_insurance_claims:sentence:001"
+                ],
+                "retrieved_parents": [
+                  "02_cancellation_rescheduling",
+                  "04_insurance_claims"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "ho03",
+          "query": "Can a child use the video service from home instead of visiting the clinic?",
+          "relevant_parents": [
+            "07_telemedicine"
+          ],
+          "strategies": {
+            "fixed_overlap": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "07_telemedicine:fixed_overlap:000",
+                    "distance": 0.41892266273498535,
+                    "parent_id": "07_telemedicine",
+                    "similarity": 0.5810773372650146
+                  },
+                  {
+                    "chunk_id": "12_home_visits:fixed_overlap:000",
+                    "distance": 0.6055079102516174,
+                    "parent_id": "12_home_visits",
+                    "similarity": 0.39449208974838257
+                  },
+                  {
+                    "chunk_id": "07_telemedicine:fixed_overlap:001",
+                    "distance": 0.5738027691841125,
+                    "parent_id": "07_telemedicine",
+                    "similarity": 0.42619723081588745
+                  }
+                ],
+                "numerator": 1,
+                "precision": 0.5,
+                "precision_arithmetic": "1 relevant of 2 retrieved = 0.500000",
+                "precision_denominator": 2,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "07_telemedicine"
+                ],
+                "relevant_retrieved_parents": [
+                  "07_telemedicine"
+                ],
+                "retrieved_chunk_ids": [
+                  "07_telemedicine:fixed_overlap:000",
+                  "12_home_visits:fixed_overlap:000",
+                  "07_telemedicine:fixed_overlap:001"
+                ],
+                "retrieved_parents": [
+                  "07_telemedicine",
+                  "12_home_visits"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "07_telemedicine:fixed_overlap:000",
+                    "distance": 0.41892266273498535,
+                    "parent_id": "07_telemedicine",
+                    "similarity": 0.5810773372650146
+                  },
+                  {
+                    "chunk_id": "07_telemedicine:fixed_overlap:001",
+                    "distance": 0.5738027691841125,
+                    "parent_id": "07_telemedicine",
+                    "similarity": 0.42619723081588745
+                  },
+                  {
+                    "chunk_id": "07_telemedicine:fixed_overlap:002",
+                    "distance": 0.6009393930435181,
+                    "parent_id": "07_telemedicine",
+                    "similarity": 0.39906060695648193
+                  }
+                ],
+                "numerator": 1,
+                "precision": 1.0,
+                "precision_arithmetic": "1 relevant of 1 retrieved = 1.000000",
+                "precision_denominator": 1,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "07_telemedicine"
+                ],
+                "relevant_retrieved_parents": [
+                  "07_telemedicine"
+                ],
+                "retrieved_chunk_ids": [
+                  "07_telemedicine:fixed_overlap:000",
+                  "07_telemedicine:fixed_overlap:001",
+                  "07_telemedicine:fixed_overlap:002"
+                ],
+                "retrieved_parents": [
+                  "07_telemedicine"
+                ]
+              }
+            },
+            "sentence": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "07_telemedicine:sentence:000",
+                    "distance": 0.4311133027076721,
+                    "parent_id": "07_telemedicine",
+                    "similarity": 0.5688866972923279
+                  },
+                  {
+                    "chunk_id": "12_home_visits:sentence:000",
+                    "distance": 0.5483502745628357,
+                    "parent_id": "12_home_visits",
+                    "similarity": 0.4516497254371643
+                  },
+                  {
+                    "chunk_id": "07_telemedicine:sentence:002",
+                    "distance": 0.5728517174720764,
+                    "parent_id": "07_telemedicine",
+                    "similarity": 0.4271482825279236
+                  }
+                ],
+                "numerator": 1,
+                "precision": 0.5,
+                "precision_arithmetic": "1 relevant of 2 retrieved = 0.500000",
+                "precision_denominator": 2,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "07_telemedicine"
+                ],
+                "relevant_retrieved_parents": [
+                  "07_telemedicine"
+                ],
+                "retrieved_chunk_ids": [
+                  "07_telemedicine:sentence:000",
+                  "12_home_visits:sentence:000",
+                  "07_telemedicine:sentence:002"
+                ],
+                "retrieved_parents": [
+                  "07_telemedicine",
+                  "12_home_visits"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "07_telemedicine:sentence:000",
+                    "distance": 0.4311133027076721,
+                    "parent_id": "07_telemedicine",
+                    "similarity": 0.5688866972923279
+                  },
+                  {
+                    "chunk_id": "12_home_visits:sentence:000",
+                    "distance": 0.5483502745628357,
+                    "parent_id": "12_home_visits",
+                    "similarity": 0.4516497254371643
+                  },
+                  {
+                    "chunk_id": "07_telemedicine:sentence:002",
+                    "distance": 0.5728517174720764,
+                    "parent_id": "07_telemedicine",
+                    "similarity": 0.4271482825279236
+                  }
+                ],
+                "numerator": 1,
+                "precision": 0.5,
+                "precision_arithmetic": "1 relevant of 2 retrieved = 0.500000",
+                "precision_denominator": 2,
+                "recall": 1.0,
+                "recall_arithmetic": "1 retrieved of 1 relevant = 1.000000",
+                "recall_denominator": 1,
+                "relevant_parents": [
+                  "07_telemedicine"
+                ],
+                "relevant_retrieved_parents": [
+                  "07_telemedicine"
+                ],
+                "retrieved_chunk_ids": [
+                  "07_telemedicine:sentence:000",
+                  "12_home_visits:sentence:000",
+                  "07_telemedicine:sentence:002"
+                ],
+                "retrieved_parents": [
+                  "07_telemedicine",
+                  "12_home_visits"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "id": "ho04",
+          "query": "Can I arrange a home appointment and use my discounted return visit for its travel charge?",
+          "relevant_parents": [
+            "10_follow_up_discount",
+            "12_home_visits"
+          ],
+          "strategies": {
+            "fixed_overlap": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "10_follow_up_discount:fixed_overlap:001",
+                    "distance": 0.4101325273513794,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.5898674726486206
+                  },
+                  {
+                    "chunk_id": "12_home_visits:fixed_overlap:000",
+                    "distance": 0.5589483976364136,
+                    "parent_id": "12_home_visits",
+                    "similarity": 0.4410516023635864
+                  },
+                  {
+                    "chunk_id": "12_home_visits:fixed_overlap:001",
+                    "distance": 0.44826894998550415,
+                    "parent_id": "12_home_visits",
+                    "similarity": 0.5517310500144958
+                  }
+                ],
+                "numerator": 2,
+                "precision": 1.0,
+                "precision_arithmetic": "2 relevant of 2 retrieved = 1.000000",
+                "precision_denominator": 2,
+                "recall": 1.0,
+                "recall_arithmetic": "2 retrieved of 2 relevant = 1.000000",
+                "recall_denominator": 2,
+                "relevant_parents": [
+                  "10_follow_up_discount",
+                  "12_home_visits"
+                ],
+                "relevant_retrieved_parents": [
+                  "10_follow_up_discount",
+                  "12_home_visits"
+                ],
+                "retrieved_chunk_ids": [
+                  "10_follow_up_discount:fixed_overlap:001",
+                  "12_home_visits:fixed_overlap:000",
+                  "12_home_visits:fixed_overlap:001"
+                ],
+                "retrieved_parents": [
+                  "10_follow_up_discount",
+                  "12_home_visits"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "10_follow_up_discount:fixed_overlap:001",
+                    "distance": 0.4101325273513794,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.5898674726486206
+                  },
+                  {
+                    "chunk_id": "03_consultation_fees:fixed_overlap:001",
+                    "distance": 0.44355905055999756,
+                    "parent_id": "03_consultation_fees",
+                    "similarity": 0.5564409494400024
+                  },
+                  {
+                    "chunk_id": "12_home_visits:fixed_overlap:001",
+                    "distance": 0.44826894998550415,
+                    "parent_id": "12_home_visits",
+                    "similarity": 0.5517310500144958
+                  }
+                ],
+                "numerator": 2,
+                "precision": 0.6666666666666666,
+                "precision_arithmetic": "2 relevant of 3 retrieved = 0.666667",
+                "precision_denominator": 3,
+                "recall": 1.0,
+                "recall_arithmetic": "2 retrieved of 2 relevant = 1.000000",
+                "recall_denominator": 2,
+                "relevant_parents": [
+                  "10_follow_up_discount",
+                  "12_home_visits"
+                ],
+                "relevant_retrieved_parents": [
+                  "10_follow_up_discount",
+                  "12_home_visits"
+                ],
+                "retrieved_chunk_ids": [
+                  "10_follow_up_discount:fixed_overlap:001",
+                  "03_consultation_fees:fixed_overlap:001",
+                  "12_home_visits:fixed_overlap:001"
+                ],
+                "retrieved_parents": [
+                  "10_follow_up_discount",
+                  "03_consultation_fees",
+                  "12_home_visits"
+                ]
+              }
+            },
+            "sentence": {
+              "custom": {
+                "hits": [
+                  {
+                    "chunk_id": "12_home_visits:sentence:001",
+                    "distance": 0.4547702670097351,
+                    "parent_id": "12_home_visits",
+                    "similarity": 0.5452297329902649
+                  },
+                  {
+                    "chunk_id": "10_follow_up_discount:sentence:000",
+                    "distance": 0.4976317286491394,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.5023682713508606
+                  },
+                  {
+                    "chunk_id": "10_follow_up_discount:sentence:001",
+                    "distance": 0.49629461765289307,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.5037053823471069
+                  }
+                ],
+                "numerator": 2,
+                "precision": 1.0,
+                "precision_arithmetic": "2 relevant of 2 retrieved = 1.000000",
+                "precision_denominator": 2,
+                "recall": 1.0,
+                "recall_arithmetic": "2 retrieved of 2 relevant = 1.000000",
+                "recall_denominator": 2,
+                "relevant_parents": [
+                  "10_follow_up_discount",
+                  "12_home_visits"
+                ],
+                "relevant_retrieved_parents": [
+                  "10_follow_up_discount",
+                  "12_home_visits"
+                ],
+                "retrieved_chunk_ids": [
+                  "12_home_visits:sentence:001",
+                  "10_follow_up_discount:sentence:000",
+                  "10_follow_up_discount:sentence:001"
+                ],
+                "retrieved_parents": [
+                  "12_home_visits",
+                  "10_follow_up_discount"
+                ]
+              },
+              "raw_cosine": {
+                "hits": [
+                  {
+                    "chunk_id": "12_home_visits:sentence:001",
+                    "distance": 0.4547702670097351,
+                    "parent_id": "12_home_visits",
+                    "similarity": 0.5452297329902649
+                  },
+                  {
+                    "chunk_id": "10_follow_up_discount:sentence:001",
+                    "distance": 0.49629461765289307,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.5037053823471069
+                  },
+                  {
+                    "chunk_id": "10_follow_up_discount:sentence:000",
+                    "distance": 0.4976317286491394,
+                    "parent_id": "10_follow_up_discount",
+                    "similarity": 0.5023682713508606
+                  }
+                ],
+                "numerator": 2,
+                "precision": 1.0,
+                "precision_arithmetic": "2 relevant of 2 retrieved = 1.000000",
+                "precision_denominator": 2,
+                "recall": 1.0,
+                "recall_arithmetic": "2 retrieved of 2 relevant = 1.000000",
+                "recall_denominator": 2,
+                "relevant_parents": [
+                  "10_follow_up_discount",
+                  "12_home_visits"
+                ],
+                "relevant_retrieved_parents": [
+                  "10_follow_up_discount",
+                  "12_home_visits"
+                ],
+                "retrieved_chunk_ids": [
+                  "12_home_visits:sentence:001",
+                  "10_follow_up_discount:sentence:001",
+                  "10_follow_up_discount:sentence:000"
+                ],
+                "retrieved_parents": [
+                  "12_home_visits",
+                  "10_follow_up_discount"
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "query_count": 4
+    }
+  },
+  "heldout_sha256": "9420ec6119f044c71e88b4fb790fd15b53396855bad3b433523a8f138d0d6829",
+  "policies": {
+    "custom": "Existing RAGIndex.retrieve policy parent-question-focus-component-reservation-v2; raw anchor plus parent/focus/component evidence selection",
+    "raw_cosine": "Direct collection.query top-k by whole-query cosine distance; no reranking"
+  },
+  "protected_artifacts_after": {
+    "rag/calibration.json": "fc8fab2c0b3372f9c472d9aa23fb3294b684ef266fcc20ddb502c5c49692ca70",
+    "rag/deployment.json": "d8e538d92948a0208cb80c482ec1ece2312772eaa145a6ae3ae0a0bd81c579ad",
+    "transcripts/task4_demo.json": "5803462451bec572a6d6a09c3e521ba2ecf92db90021bd93198d84fd61081c87",
+    "transcripts/task5_evaluation.json": "b447bc225a0a06fbd51c9b74a12a56883dfb31c0f75bd811555d470edb39da68"
+  },
+  "protected_artifacts_before": {
+    "rag/calibration.json": "fc8fab2c0b3372f9c472d9aa23fb3294b684ef266fcc20ddb502c5c49692ca70",
+    "rag/deployment.json": "d8e538d92948a0208cb80c482ec1ece2312772eaa145a6ae3ae0a0bd81c579ad",
+    "transcripts/task4_demo.json": "5803462451bec572a6d6a09c3e521ba2ecf92db90021bd93198d84fd61081c87",
+    "transcripts/task5_evaluation.json": "b447bc225a0a06fbd51c9b74a12a56883dfb31c0f75bd811555d470edb39da68"
+  },
+  "protected_artifacts_unchanged": true,
+  "retrieval_fingerprint": "26fa037347d761648207b3671ae7341a470dd6ea38f459d73693622311659c0c",
+  "top_k_chunks": 3
+}

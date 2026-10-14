@@ -32,6 +32,7 @@ def main() -> None:
         from scripts.calibrate_threshold import calibrate
         from scripts.run_part1_demo import run_demo
         from scripts.stress_threshold import run_stress
+        from scripts.compare_retrieval import run_comparison
 
         print("API-key environment variables cleared; MOCK_LLM=true")
         print("Outbound Python sockets and DNS blocked before framework imports")
@@ -45,6 +46,7 @@ def main() -> None:
             run_demo(index, strategy=report["recommended_strategy"],
                      calibration_path=calibration_path)
             run_stress(index, calibration_path=calibration_path)
+            run_comparison(index, persist=False)
     if attempts:
         raise AssertionError(f"Unexpected outbound attempts: {len(attempts)}")
     print(f"Outbound Python network attempts: {len(attempts)}")

@@ -1,0 +1,92 @@
+{
+  "source": "https://pypi.org/pypi/crewai/json",
+  "crewai_version": "1.15.28",
+  "direct_requirements_compared": [
+    {
+      "package": "chromadb",
+      "crewai_requirement": "~=1.5.9",
+      "part1_pin": "1.1.1",
+      "compatible": false
+    },
+    {
+      "package": "click",
+      "crewai_requirement": "<9,>=8.1.7",
+      "part1_pin": "8.5.0",
+      "compatible": true
+    },
+    {
+      "package": "httpx",
+      "crewai_requirement": "~=0.28.1",
+      "part1_pin": "0.28.1",
+      "compatible": true
+    },
+    {
+      "package": "oauthlib",
+      "crewai_requirement": "<5,>=4.0.0",
+      "part1_pin": "4.0.0",
+      "compatible": true
+    },
+    {
+      "package": "opentelemetry-api",
+      "crewai_requirement": "<2,>=1.42",
+      "part1_pin": "1.45.1",
+      "compatible": true
+    },
+    {
+      "package": "opentelemetry-sdk",
+      "crewai_requirement": "<2,>=1.42",
+      "part1_pin": "1.45.1",
+      "compatible": true
+    },
+    {
+      "package": "pydantic",
+      "crewai_requirement": "<2.13,>=2.11.9",
+      "part1_pin": "2.14.1",
+      "compatible": false
+    },
+    {
+      "package": "python-dotenv",
+      "crewai_requirement": "<2,>=1.2.2",
+      "part1_pin": "1.2.4",
+      "compatible": true
+    },
+    {
+      "package": "pyyaml",
+      "crewai_requirement": "~=6.0",
+      "part1_pin": "6.0.3",
+      "compatible": true
+    },
+    {
+      "package": "regex",
+      "crewai_requirement": "~=2026.1.15",
+      "part1_pin": "2026.9.29",
+      "compatible": false
+    },
+    {
+      "package": "tokenizers",
+      "crewai_requirement": "<1,>=0.21",
+      "part1_pin": "0.22.2",
+      "compatible": true
+    }
+  ],
+  "direct_pin_conflicts": [
+    {
+      "package": "chromadb",
+      "crewai_requirement": "~=1.5.9",
+      "part1_pin": "1.1.1",
+      "compatible": false
+    },
+    {
+      "package": "pydantic",
+      "crewai_requirement": "<2.13,>=2.11.9",
+      "part1_pin": "2.14.1",
+      "compatible": false
+    },
+    {
+      "package": "regex",
+      "crewai_requirement": "~=2026.1.15",
+      "part1_pin": "2026.9.29",
+      "compatible": false
+    }
+  ]
+}

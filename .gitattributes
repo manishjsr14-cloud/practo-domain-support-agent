@@ -1,2 +1,5 @@
 # Preserve the exact bytes of the student's handwritten policy files.
 kb/*.md -text
+# Keep frozen experiment inputs stable across Windows and Unix checkouts.
+*.py text eol=lf
+rag/*.json text eol=lf

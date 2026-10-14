@@ -266,5 +266,302 @@ Calibration SHA-256 before: fc8fab2c0b3372f9c472d9aa23fb3294b684ef266fcc20ddb502
 Calibration SHA-256 after: fc8fab2c0b3372f9c472d9aa23fb3294b684ef266fcc20ddb502c5c49692ca70
 Calibration bytes unchanged: True
 Accepted unsupported queries are measured limitations of the similarity-only gate
+Diagnostic retrieval comparison; no deployment selection or tuning
+Corpus fingerprint: 20b708cbde2d997bc9d1eab11304bd12a6c6d73d4a1105ed9d6c1113bf04f812
+Retrieval fingerprint: 26fa037347d761648207b3671ae7341a470dd6ea38f459d73693622311659c0c
+Frozen input manifest: transcripts/retrieval_comparison_freeze.json
+Held-out query SHA-256: 9420ec6119f044c71e88b4fb790fd15b53396855bad3b433523a8f138d0d6829
+Top-k chunks: 3
+Cosine similarity = 1 - Chroma cosine distance; no similarity filtering
+raw_cosine: Direct collection.query top-k by whole-query cosine distance; no reranking
+custom: Existing RAGIndex.retrieve policy parent-question-focus-component-reservation-v2; raw anchor plus parent/focus/component evidence selection
+
+Query group: demo; queries=9
+| Query | Collection | Raw precision | Raw recall | Custom precision | Custom recall |
+|---|---|---|---|---|---|
+| q01 | fixed_overlap | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q01 | sentence | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q02 | fixed_overlap | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q02 | sentence | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q03 | fixed_overlap | 1 relevant of 3 retrieved = 0.333333 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q03 | sentence | 1 relevant of 3 retrieved = 0.333333 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q04 | fixed_overlap | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q04 | sentence | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q05 | fixed_overlap | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q05 | sentence | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q06 | fixed_overlap | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q06 | sentence | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| q07 | fixed_overlap | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q07 | sentence | 1 relevant of 3 retrieved = 0.333333 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| q08 | fixed_overlap | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |
+| q08 | sentence | 2 relevant of 3 retrieved = 0.666667 | 2 retrieved of 2 relevant = 1.000000 | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |
+| q09 | fixed_overlap | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |
+| q09 | sentence | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |
+Macro average fixed_overlap: raw precision=0.703704, recall=1.000000; custom precision=0.888889, recall=1.000000; custom higher on at least one metric and no lower on the other
+Macro average sentence: raw precision=0.759259, recall=1.000000; custom precision=0.944444, recall=1.000000; custom higher on at least one metric and no lower on the other
+
+q01: How do I book an appointment and know that my slot is confirmed?
+Relevant parents: 01_appointment_booking
+fixed_overlap/raw_cosine parents: 01_appointment_booking
+  01_appointment_booking:fixed_overlap:001 parent=01_appointment_booking distance=0.335666835 similarity=0.664333165
+  01_appointment_booking:fixed_overlap:002 parent=01_appointment_booking distance=0.357556701 similarity=0.642443299
+  01_appointment_booking:fixed_overlap:000 parent=01_appointment_booking distance=0.364801526 similarity=0.635198474
+fixed_overlap/custom parents: 01_appointment_booking
+  01_appointment_booking:fixed_overlap:001 parent=01_appointment_booking distance=0.335666835 similarity=0.664333165
+  01_appointment_booking:fixed_overlap:000 parent=01_appointment_booking distance=0.364801526 similarity=0.635198474
+  01_appointment_booking:fixed_overlap:002 parent=01_appointment_booking distance=0.357556701 similarity=0.642443299
+sentence/raw_cosine parents: 01_appointment_booking
+  01_appointment_booking:sentence:001 parent=01_appointment_booking distance=0.254946351 similarity=0.745053649
+  01_appointment_booking:sentence:000 parent=01_appointment_booking distance=0.388937593 similarity=0.611062407
+  01_appointment_booking:sentence:002 parent=01_appointment_booking distance=0.391060889 similarity=0.608939111
+sentence/custom parents: 01_appointment_booking
+  01_appointment_booking:sentence:001 parent=01_appointment_booking distance=0.254946351 similarity=0.745053649
+  01_appointment_booking:sentence:000 parent=01_appointment_booking distance=0.388937593 similarity=0.611062407
+  01_appointment_booking:sentence:002 parent=01_appointment_booking distance=0.391060889 similarity=0.608939111
+
+q02: What is the cancellation and rescheduling window?
+Relevant parents: 02_cancellation_rescheduling
+fixed_overlap/raw_cosine parents: 02_cancellation_rescheduling, 12_home_visits
+  02_cancellation_rescheduling:fixed_overlap:000 parent=02_cancellation_rescheduling distance=0.424668789 similarity=0.575331211
+  02_cancellation_rescheduling:fixed_overlap:001 parent=02_cancellation_rescheduling distance=0.444160223 similarity=0.555839777
+  12_home_visits:fixed_overlap:002 parent=12_home_visits distance=0.589648187 similarity=0.410351813
+fixed_overlap/custom parents: 02_cancellation_rescheduling
+  02_cancellation_rescheduling:fixed_overlap:000 parent=02_cancellation_rescheduling distance=0.424668789 similarity=0.575331211
+  02_cancellation_rescheduling:fixed_overlap:001 parent=02_cancellation_rescheduling distance=0.444160223 similarity=0.555839777
+  02_cancellation_rescheduling:fixed_overlap:002 parent=02_cancellation_rescheduling distance=0.599129319 similarity=0.400870681
+sentence/raw_cosine parents: 02_cancellation_rescheduling
+  02_cancellation_rescheduling:sentence:000 parent=02_cancellation_rescheduling distance=0.451656401 similarity=0.548343599
+  02_cancellation_rescheduling:sentence:001 parent=02_cancellation_rescheduling distance=0.515939355 similarity=0.484060645
+  02_cancellation_rescheduling:sentence:002 parent=02_cancellation_rescheduling distance=0.586774826 similarity=0.413225174
+sentence/custom parents: 02_cancellation_rescheduling
+  02_cancellation_rescheduling:sentence:000 parent=02_cancellation_rescheduling distance=0.451656401 similarity=0.548343599
+  02_cancellation_rescheduling:sentence:001 parent=02_cancellation_rescheduling distance=0.515939355 similarity=0.484060645
+  02_cancellation_rescheduling:sentence:002 parent=02_cancellation_rescheduling distance=0.586774826 similarity=0.413225174
+
+q03: What are the consultation fees for each specialty?
+Relevant parents: 03_consultation_fees
+fixed_overlap/raw_cosine parents: 03_consultation_fees, 10_follow_up_discount, 07_telemedicine
+  03_consultation_fees:fixed_overlap:000 parent=03_consultation_fees distance=0.307518005 similarity=0.692481995
+  10_follow_up_discount:fixed_overlap:001 parent=10_follow_up_discount distance=0.333564162 similarity=0.666435838
+  07_telemedicine:fixed_overlap:001 parent=07_telemedicine distance=0.371626198 similarity=0.628373802
+fixed_overlap/custom parents: 03_consultation_fees, 10_follow_up_discount
+  03_consultation_fees:fixed_overlap:000 parent=03_consultation_fees distance=0.307518005 similarity=0.692481995
+  03_consultation_fees:fixed_overlap:001 parent=03_consultation_fees distance=0.401807666 similarity=0.598192334
+  10_follow_up_discount:fixed_overlap:001 parent=10_follow_up_discount distance=0.333564162 similarity=0.666435838
+sentence/raw_cosine parents: 03_consultation_fees, 07_telemedicine, 10_follow_up_discount
+  03_consultation_fees:sentence:000 parent=03_consultation_fees distance=0.305220604 similarity=0.694779396
+  07_telemedicine:sentence:001 parent=07_telemedicine distance=0.345102370 similarity=0.654897630
+  10_follow_up_discount:sentence:001 parent=10_follow_up_discount distance=0.402637064 similarity=0.597362936
+sentence/custom parents: 03_consultation_fees
+  03_consultation_fees:sentence:000 parent=03_consultation_fees distance=0.305220604 similarity=0.694779396
+  03_consultation_fees:sentence:001 parent=03_consultation_fees distance=0.407059669 similarity=0.592940331
+  03_consultation_fees:sentence:002 parent=03_consultation_fees distance=0.446910381 similarity=0.553089619
+
+q04: How long do routine and specialized lab test reports take?
+Relevant parents: 06_lab_turnaround
+fixed_overlap/raw_cosine parents: 06_lab_turnaround, 04_insurance_claims
+  06_lab_turnaround:fixed_overlap:000 parent=06_lab_turnaround distance=0.349132001 similarity=0.650867999
+  06_lab_turnaround:fixed_overlap:002 parent=06_lab_turnaround distance=0.492002368 similarity=0.507997632
+  04_insurance_claims:fixed_overlap:001 parent=04_insurance_claims distance=0.562057018 similarity=0.437942982
+fixed_overlap/custom parents: 06_lab_turnaround
+  06_lab_turnaround:fixed_overlap:000 parent=06_lab_turnaround distance=0.349132001 similarity=0.650867999
+  06_lab_turnaround:fixed_overlap:002 parent=06_lab_turnaround distance=0.492002368 similarity=0.507997632
+  06_lab_turnaround:fixed_overlap:001 parent=06_lab_turnaround distance=0.597983897 similarity=0.402016103
+sentence/raw_cosine parents: 06_lab_turnaround
+  06_lab_turnaround:sentence:000 parent=06_lab_turnaround distance=0.352040172 similarity=0.647959828
+  06_lab_turnaround:sentence:002 parent=06_lab_turnaround distance=0.527389526 similarity=0.472610474
+  06_lab_turnaround:sentence:001 parent=06_lab_turnaround distance=0.542816341 similarity=0.457183659
+sentence/custom parents: 06_lab_turnaround
+  06_lab_turnaround:sentence:000 parent=06_lab_turnaround distance=0.352040172 similarity=0.647959828
+  06_lab_turnaround:sentence:002 parent=06_lab_turnaround distance=0.527389526 similarity=0.472610474
+  06_lab_turnaround:sentence:001 parent=06_lab_turnaround distance=0.542816341 similarity=0.457183659
+
+q05: When does a follow-up visit qualify for a discount?
+Relevant parents: 10_follow_up_discount
+fixed_overlap/raw_cosine parents: 10_follow_up_discount, 03_consultation_fees
+  10_follow_up_discount:fixed_overlap:000 parent=10_follow_up_discount distance=0.316364884 similarity=0.683635116
+  03_consultation_fees:fixed_overlap:002 parent=03_consultation_fees distance=0.400166988 similarity=0.599833012
+  03_consultation_fees:fixed_overlap:001 parent=03_consultation_fees distance=0.406637132 similarity=0.593362868
+fixed_overlap/custom parents: 10_follow_up_discount
+  10_follow_up_discount:fixed_overlap:000 parent=10_follow_up_discount distance=0.316364884 similarity=0.683635116
+  10_follow_up_discount:fixed_overlap:001 parent=10_follow_up_discount distance=0.477501273 similarity=0.522498727
+  10_follow_up_discount:fixed_overlap:002 parent=10_follow_up_discount distance=0.530325770 similarity=0.469674230
+sentence/raw_cosine parents: 10_follow_up_discount, 03_consultation_fees
+  10_follow_up_discount:sentence:000 parent=10_follow_up_discount distance=0.271978498 similarity=0.728021502
+  10_follow_up_discount:sentence:001 parent=10_follow_up_discount distance=0.408294559 similarity=0.591705441
+  03_consultation_fees:sentence:001 parent=03_consultation_fees distance=0.437246919 similarity=0.562753081
+sentence/custom parents: 10_follow_up_discount
+  10_follow_up_discount:sentence:000 parent=10_follow_up_discount distance=0.271978498 similarity=0.728021502
+  10_follow_up_discount:sentence:001 parent=10_follow_up_discount distance=0.408294559 similarity=0.591705441
+  10_follow_up_discount:sentence:002 parent=10_follow_up_discount distance=0.563513398 similarity=0.436486602
+
+q06: How do I submit an insurance reimbursement claim?
+Relevant parents: 04_insurance_claims
+fixed_overlap/raw_cosine parents: 04_insurance_claims
+  04_insurance_claims:fixed_overlap:002 parent=04_insurance_claims distance=0.460514665 similarity=0.539485335
+  04_insurance_claims:fixed_overlap:000 parent=04_insurance_claims distance=0.477999330 similarity=0.522000670
+  04_insurance_claims:fixed_overlap:001 parent=04_insurance_claims distance=0.562438965 similarity=0.437561035
+fixed_overlap/custom parents: 04_insurance_claims
+  04_insurance_claims:fixed_overlap:002 parent=04_insurance_claims distance=0.460514665 similarity=0.539485335
+  04_insurance_claims:fixed_overlap:000 parent=04_insurance_claims distance=0.477999330 similarity=0.522000670
+  04_insurance_claims:fixed_overlap:001 parent=04_insurance_claims distance=0.562438965 similarity=0.437561035
+sentence/raw_cosine parents: 04_insurance_claims
+  04_insurance_claims:sentence:000 parent=04_insurance_claims distance=0.485489249 similarity=0.514510751
+  04_insurance_claims:sentence:001 parent=04_insurance_claims distance=0.507156014 similarity=0.492843986
+  04_insurance_claims:sentence:002 parent=04_insurance_claims distance=0.543418944 similarity=0.456581056
+sentence/custom parents: 04_insurance_claims
+  04_insurance_claims:sentence:000 parent=04_insurance_claims distance=0.485489249 similarity=0.514510751
+  04_insurance_claims:sentence:002 parent=04_insurance_claims distance=0.543418944 similarity=0.456581056
+  04_insurance_claims:sentence:001 parent=04_insurance_claims distance=0.507156014 similarity=0.492843986
+
+q07: My doctor asked me to come back, do I have to pay the full price again?
+Relevant parents: 10_follow_up_discount
+fixed_overlap/raw_cosine parents: 10_follow_up_discount, 02_cancellation_rescheduling
+  10_follow_up_discount:fixed_overlap:001 parent=10_follow_up_discount distance=0.449666142 similarity=0.550333858
+  02_cancellation_rescheduling:fixed_overlap:002 parent=02_cancellation_rescheduling distance=0.469882846 similarity=0.530117154
+  10_follow_up_discount:fixed_overlap:000 parent=10_follow_up_discount distance=0.474933863 similarity=0.525066137
+fixed_overlap/custom parents: 10_follow_up_discount, 02_cancellation_rescheduling
+  10_follow_up_discount:fixed_overlap:001 parent=10_follow_up_discount distance=0.449666142 similarity=0.550333858
+  10_follow_up_discount:fixed_overlap:000 parent=10_follow_up_discount distance=0.474933863 similarity=0.525066137
+  02_cancellation_rescheduling:fixed_overlap:001 parent=02_cancellation_rescheduling distance=0.481837869 similarity=0.518162131
+sentence/raw_cosine parents: 03_consultation_fees, 10_follow_up_discount, 12_home_visits
+  03_consultation_fees:sentence:002 parent=03_consultation_fees distance=0.422926247 similarity=0.577073753
+  10_follow_up_discount:sentence:001 parent=10_follow_up_discount distance=0.425396085 similarity=0.574603915
+  12_home_visits:sentence:001 parent=12_home_visits distance=0.466719568 similarity=0.533280432
+sentence/custom parents: 03_consultation_fees, 10_follow_up_discount
+  03_consultation_fees:sentence:002 parent=03_consultation_fees distance=0.422926247 similarity=0.577073753
+  10_follow_up_discount:sentence:001 parent=10_follow_up_discount distance=0.425396085 similarity=0.574603915
+  10_follow_up_discount:sentence:000 parent=10_follow_up_discount distance=0.471150517 similarity=0.528849483
+
+q08: What will I pay for a home visit by a cardiologist?
+Relevant parents: 03_consultation_fees, 12_home_visits
+fixed_overlap/raw_cosine parents: 03_consultation_fees, 12_home_visits
+  03_consultation_fees:fixed_overlap:000 parent=03_consultation_fees distance=0.451162696 similarity=0.548837304
+  12_home_visits:fixed_overlap:000 parent=12_home_visits distance=0.471360564 similarity=0.528639436
+  12_home_visits:fixed_overlap:001 parent=12_home_visits distance=0.483448803 similarity=0.516551197
+fixed_overlap/custom parents: 03_consultation_fees, 12_home_visits
+  03_consultation_fees:fixed_overlap:000 parent=03_consultation_fees distance=0.451162696 similarity=0.548837304
+  12_home_visits:fixed_overlap:000 parent=12_home_visits distance=0.471360564 similarity=0.528639436
+  12_home_visits:fixed_overlap:001 parent=12_home_visits distance=0.483448803 similarity=0.516551197
+sentence/raw_cosine parents: 03_consultation_fees, 12_home_visits, 04_insurance_claims
+  03_consultation_fees:sentence:000 parent=03_consultation_fees distance=0.427406669 similarity=0.572593331
+  12_home_visits:sentence:001 parent=12_home_visits distance=0.486671805 similarity=0.513328195
+  04_insurance_claims:sentence:000 parent=04_insurance_claims distance=0.534759343 similarity=0.465240657
+sentence/custom parents: 03_consultation_fees, 12_home_visits
+  03_consultation_fees:sentence:000 parent=03_consultation_fees distance=0.427406669 similarity=0.572593331
+  12_home_visits:sentence:001 parent=12_home_visits distance=0.486671805 similarity=0.513328195
+  12_home_visits:sentence:000 parent=12_home_visits distance=0.539529681 similarity=0.460470319
+
+q09: Can I get a second opinion over a video call?
+Relevant parents: 07_telemedicine, 11_second_opinion
+fixed_overlap/raw_cosine parents: 11_second_opinion, 07_telemedicine
+  11_second_opinion:fixed_overlap:000 parent=11_second_opinion distance=0.671036959 similarity=0.328963041
+  11_second_opinion:fixed_overlap:001 parent=11_second_opinion distance=0.675086021 similarity=0.324913979
+  07_telemedicine:fixed_overlap:000 parent=07_telemedicine distance=0.686818898 similarity=0.313181102
+fixed_overlap/custom parents: 11_second_opinion, 07_telemedicine
+  11_second_opinion:fixed_overlap:000 parent=11_second_opinion distance=0.671036959 similarity=0.328963041
+  07_telemedicine:fixed_overlap:000 parent=07_telemedicine distance=0.686818898 similarity=0.313181102
+  11_second_opinion:fixed_overlap:001 parent=11_second_opinion distance=0.675086021 similarity=0.324913979
+sentence/raw_cosine parents: 11_second_opinion, 07_telemedicine
+  11_second_opinion:sentence:001 parent=11_second_opinion distance=0.603963256 similarity=0.396036744
+  07_telemedicine:sentence:000 parent=07_telemedicine distance=0.683091879 similarity=0.316908121
+  11_second_opinion:sentence:000 parent=11_second_opinion distance=0.700959384 similarity=0.299040616
+sentence/custom parents: 11_second_opinion, 07_telemedicine
+  11_second_opinion:sentence:001 parent=11_second_opinion distance=0.603963256 similarity=0.396036744
+  07_telemedicine:sentence:000 parent=07_telemedicine distance=0.683091879 similarity=0.316908121
+  11_second_opinion:sentence:000 parent=11_second_opinion distance=0.700959384 similarity=0.299040616
+
+Query group: heldout; queries=4
+| Query | Collection | Raw precision | Raw recall | Custom precision | Custom recall |
+|---|---|---|---|---|---|
+| ho01 | fixed_overlap | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| ho01 | sentence | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| ho02 | fixed_overlap | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| ho02 | sentence | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 |
+| ho03 | fixed_overlap | 1 relevant of 1 retrieved = 1.000000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| ho03 | sentence | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 | 1 relevant of 2 retrieved = 0.500000 | 1 retrieved of 1 relevant = 1.000000 |
+| ho04 | fixed_overlap | 2 relevant of 3 retrieved = 0.666667 | 2 retrieved of 2 relevant = 1.000000 | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |
+| ho04 | sentence | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 | 2 relevant of 2 retrieved = 1.000000 | 2 retrieved of 2 relevant = 1.000000 |
+Macro average fixed_overlap: raw precision=0.916667, recall=1.000000; custom precision=0.875000, recall=1.000000; raw cosine higher on at least one metric and no lower on the other
+Macro average sentence: raw precision=0.750000, recall=1.000000; custom precision=0.875000, recall=1.000000; custom higher on at least one metric and no lower on the other
+
+ho01: My refill request has been submitted; does that mean I am guaranteed the same medicine?
+Relevant parents: 05_prescription_refills
+fixed_overlap/raw_cosine parents: 05_prescription_refills
+  05_prescription_refills:fixed_overlap:001 parent=05_prescription_refills distance=0.274686933 similarity=0.725313067
+  05_prescription_refills:fixed_overlap:000 parent=05_prescription_refills distance=0.299600124 similarity=0.700399876
+  05_prescription_refills:fixed_overlap:002 parent=05_prescription_refills distance=0.368379891 similarity=0.631620109
+fixed_overlap/custom parents: 05_prescription_refills
+  05_prescription_refills:fixed_overlap:001 parent=05_prescription_refills distance=0.274686933 similarity=0.725313067
+  05_prescription_refills:fixed_overlap:000 parent=05_prescription_refills distance=0.299600124 similarity=0.700399876
+  05_prescription_refills:fixed_overlap:002 parent=05_prescription_refills distance=0.368379891 similarity=0.631620109
+sentence/raw_cosine parents: 05_prescription_refills
+  05_prescription_refills:sentence:001 parent=05_prescription_refills distance=0.181364536 similarity=0.818635464
+  05_prescription_refills:sentence:000 parent=05_prescription_refills distance=0.336389899 similarity=0.663610101
+  05_prescription_refills:sentence:002 parent=05_prescription_refills distance=0.478943884 similarity=0.521056116
+sentence/custom parents: 05_prescription_refills
+  05_prescription_refills:sentence:001 parent=05_prescription_refills distance=0.181364536 similarity=0.818635464
+  05_prescription_refills:sentence:000 parent=05_prescription_refills distance=0.336389899 similarity=0.663610101
+  05_prescription_refills:sentence:002 parent=05_prescription_refills distance=0.478943884 similarity=0.521056116
+
+ho02: The clinic cancelled my appointment with hardly any notice. What refund can I expect, and when?
+Relevant parents: 02_cancellation_rescheduling
+fixed_overlap/raw_cosine parents: 02_cancellation_rescheduling
+  02_cancellation_rescheduling:fixed_overlap:002 parent=02_cancellation_rescheduling distance=0.217316031 similarity=0.782683969
+  02_cancellation_rescheduling:fixed_overlap:000 parent=02_cancellation_rescheduling distance=0.311969399 similarity=0.688030601
+  02_cancellation_rescheduling:fixed_overlap:001 parent=02_cancellation_rescheduling distance=0.332320511 similarity=0.667679489
+fixed_overlap/custom parents: 02_cancellation_rescheduling
+  02_cancellation_rescheduling:fixed_overlap:002 parent=02_cancellation_rescheduling distance=0.217316031 similarity=0.782683969
+  02_cancellation_rescheduling:fixed_overlap:000 parent=02_cancellation_rescheduling distance=0.311969399 similarity=0.688030601
+  02_cancellation_rescheduling:fixed_overlap:001 parent=02_cancellation_rescheduling distance=0.332320511 similarity=0.667679489
+sentence/raw_cosine parents: 02_cancellation_rescheduling, 04_insurance_claims
+  02_cancellation_rescheduling:sentence:001 parent=02_cancellation_rescheduling distance=0.243827760 similarity=0.756172240
+  02_cancellation_rescheduling:sentence:000 parent=02_cancellation_rescheduling distance=0.287648618 similarity=0.712351382
+  04_insurance_claims:sentence:001 parent=04_insurance_claims distance=0.364327610 similarity=0.635672390
+sentence/custom parents: 02_cancellation_rescheduling
+  02_cancellation_rescheduling:sentence:001 parent=02_cancellation_rescheduling distance=0.243827760 similarity=0.756172240
+  02_cancellation_rescheduling:sentence:000 parent=02_cancellation_rescheduling distance=0.287648618 similarity=0.712351382
+  02_cancellation_rescheduling:sentence:002 parent=02_cancellation_rescheduling distance=0.418055415 similarity=0.581944585
+
+ho03: Can a child use the video service from home instead of visiting the clinic?
+Relevant parents: 07_telemedicine
+fixed_overlap/raw_cosine parents: 07_telemedicine
+  07_telemedicine:fixed_overlap:000 parent=07_telemedicine distance=0.418922663 similarity=0.581077337
+  07_telemedicine:fixed_overlap:001 parent=07_telemedicine distance=0.573802769 similarity=0.426197231
+  07_telemedicine:fixed_overlap:002 parent=07_telemedicine distance=0.600939393 similarity=0.399060607
+fixed_overlap/custom parents: 07_telemedicine, 12_home_visits
+  07_telemedicine:fixed_overlap:000 parent=07_telemedicine distance=0.418922663 similarity=0.581077337
+  12_home_visits:fixed_overlap:000 parent=12_home_visits distance=0.605507910 similarity=0.394492090
+  07_telemedicine:fixed_overlap:001 parent=07_telemedicine distance=0.573802769 similarity=0.426197231
+sentence/raw_cosine parents: 07_telemedicine, 12_home_visits
+  07_telemedicine:sentence:000 parent=07_telemedicine distance=0.431113303 similarity=0.568886697
+  12_home_visits:sentence:000 parent=12_home_visits distance=0.548350275 similarity=0.451649725
+  07_telemedicine:sentence:002 parent=07_telemedicine distance=0.572851717 similarity=0.427148283
+sentence/custom parents: 07_telemedicine, 12_home_visits
+  07_telemedicine:sentence:000 parent=07_telemedicine distance=0.431113303 similarity=0.568886697
+  12_home_visits:sentence:000 parent=12_home_visits distance=0.548350275 similarity=0.451649725
+  07_telemedicine:sentence:002 parent=07_telemedicine distance=0.572851717 similarity=0.427148283
+
+ho04: Can I arrange a home appointment and use my discounted return visit for its travel charge?
+Relevant parents: 10_follow_up_discount, 12_home_visits
+fixed_overlap/raw_cosine parents: 10_follow_up_discount, 03_consultation_fees, 12_home_visits
+  10_follow_up_discount:fixed_overlap:001 parent=10_follow_up_discount distance=0.410132527 similarity=0.589867473
+  03_consultation_fees:fixed_overlap:001 parent=03_consultation_fees distance=0.443559051 similarity=0.556440949
+  12_home_visits:fixed_overlap:001 parent=12_home_visits distance=0.448268950 similarity=0.551731050
+fixed_overlap/custom parents: 10_follow_up_discount, 12_home_visits
+  10_follow_up_discount:fixed_overlap:001 parent=10_follow_up_discount distance=0.410132527 similarity=0.589867473
+  12_home_visits:fixed_overlap:000 parent=12_home_visits distance=0.558948398 similarity=0.441051602
+  12_home_visits:fixed_overlap:001 parent=12_home_visits distance=0.448268950 similarity=0.551731050
+sentence/raw_cosine parents: 12_home_visits, 10_follow_up_discount
+  12_home_visits:sentence:001 parent=12_home_visits distance=0.454770267 similarity=0.545229733
+  10_follow_up_discount:sentence:001 parent=10_follow_up_discount distance=0.496294618 similarity=0.503705382
+  10_follow_up_discount:sentence:000 parent=10_follow_up_discount distance=0.497631729 similarity=0.502368271
+sentence/custom parents: 12_home_visits, 10_follow_up_discount
+  12_home_visits:sentence:001 parent=12_home_visits distance=0.454770267 similarity=0.545229733
+  10_follow_up_discount:sentence:000 parent=10_follow_up_discount distance=0.497631729 similarity=0.502368271
+  10_follow_up_discount:sentence:001 parent=10_follow_up_discount distance=0.496294618 similarity=0.503705382
+
+Protected artifacts unchanged: True
+Held-out results are diagnostic only and do not select deployment, calibration, or demo queries.
 Outbound Python network attempts: 0
 Offline verification: PASS

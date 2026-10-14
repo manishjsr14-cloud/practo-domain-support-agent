@@ -9,7 +9,7 @@ This file is the single source of truth for coding agents working in this repo. 
 
 ## 0. Rules for the coding agent (read first)
 
-1. **Scope control.** Work only on the Part/Task the user names in the current session. Do not start later Parts unprompted. Default current scope: **Part 1 (Tasks 1-5)**.
+1. **Scope control.** Work only on the Part/Task the user names in the current session. Do not start later Parts unprompted. There is no default Part: Part 1 is complete, and implementation of Part 2 requires an explicit request. Dependency preflight and changes to the future task specification do not authorize Part 2 implementation.
 2. **Plan first.** Before coding, show the planned files and any open choices, then proceed.
 3. **No invented numbers.** Every number in the README, transcripts, or comments (similarity scores, precision/recall, percentiles, thresholds, eval scores) must come from code you actually ran. Save real output to `transcripts/`. If something could not be run, say so; never write plausible-looking values.
 4. **Offline and keyless.** Everything must run with zero API keys, zero paid accounts, and zero network access at run time (after dependencies and the embedding model are downloaded). The graded mode is `MOCK_LLM`. A real LLM may optionally be wired behind an env flag, but every criterion must pass under `MOCK_LLM` alone.
@@ -111,6 +111,7 @@ PII handling:
 - For EACH collection: map retrieved chunks to parent documents, dedupe, then compute precision and recall per query with visible arithmetic (e.g. "2 relevant of 3 retrieved = 0.667").
 - Print per-query results and averages for both collections side by side.
 - Write 2-3 sentences recommending which strategy to deploy, citing the actual numbers.
+- Preserve a plain cosine top-k baseline alongside any custom retrieval comparison. Label results on queries used during retrieval development as in-sample, and report a separately frozen held-out check without retuning on its results. Keep the demo/evaluation query set unchanged; held-out queries are a separate supplement and must not select deployment or calibration settings.
 
 ---
 
@@ -129,8 +130,9 @@ Implement `check_appointment_status(record_id: str) -> dict` returning `status`,
 
 **Task 10: Guardrails.**
 - Input side: PII masking (contact number) and prompt-injection detection.
-- Output side: groundedness check that refuses to answer when retrieved context does not support the question.
+- Output side: groundedness check that refuses to answer when retrieved context does not support the question. Use an independent question-support signal in addition to calibrated similarity: distinctive location, date/day, age, service, and other qualifiers (for example, "Sundays" or "Mumbai") must be supported by the retrieved passages. Missing qualifiers require refusal or clarification. Word overlap alone is insufficient: preserve negation, eligibility restrictions, and the relationship between the question and the cited answer.
 - Demonstrate each guardrail firing on one deliberate test case.
+- Include the unsupported Sunday-hours and Mumbai-waiting-time cases, and demonstrate refusal even when their similarity exceeds the calibrated threshold. This is a Part 2 requirement, not a claim about the Part 1 similarity-only generator.
 
 ---
 
@@ -256,7 +258,7 @@ The README must:
 
 | Part | Status | Notes |
 |---|---|---|
-| Part 1 | completed; handwritten KB imported and database rebuilt | Supplied 12 handwritten policy files copied byte-for-byte; old persisted RAG database deleted and both collections rebuilt exclusively from these files. Validator/tests now enforce fixed standard fees and recorded-fee authority. Generic component reservation and complete-sentence evidence preserve paraphrase coverage. Original query labels, chunk sizes, top-k, dataset, calibration queries and selection rule unchanged; calibration/deployment refreshed for new corpus. All 38 tests and serial fresh offline verification passed. Parallel offline attempt hit Chroma segment-reader error; failed output preserved. Near-topic false acceptances remain documented. No later-Part work; cached model used. |
-| Part 2 | not started | |
+| Part 1 | complete; baseline and held-out evidence added | Current-corpus plain cosine baseline and unchanged custom retriever compared on the same development queries; separate held-out labels and source hashes frozen before measurement. Fixed-chunk held-out precision regression retained without retuning. First-person README, history archive, and Bash commands added. All 45 tests and fresh socket-blocked offline workflow passed, including comparison. KB, dataset, production retrieval, calibration and deployment unchanged. Similarity-only false acceptances remain; no later-Part implementation. |
+| Part 2 | not implemented; dependency preflight complete | CrewAI 1.15.28 installed in a fresh standalone environment; pip check and imports passed. Combined installation with exact Part 1 pins failed on ChromaDB; metadata also conflicts with Pydantic and regex. Joint integration remains unverified; no kickoff or LLM request. Groundedness specification now requires an independent question-support signal. |
 | Part 3 | not started | |
 | Part 4 | not started | |

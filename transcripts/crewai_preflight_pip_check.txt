@@ -1,0 +1,5 @@
+Command: "C:\Users\dell\OneDrive\Documents\ChatGPT\Capstone Project\.runtime\crewai-preflight-20261014\standalone\Scripts\python.exe" -m pip check
+
+No broken requirements found.
+
+Exit code: 0
